@@ -1,0 +1,144 @@
+<tr
+          
+          id="CartDrawer-Item-{{INDEX}}"
+          class="cart-item "
+          role="row"
+          data-has-selling-plans="true"
+          data-variant-id="{{VARIANT_ID}}"
+        >
+          <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
+            
+              
+              <a href="#" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
+              <img
+                class="cart-item__image"
+                src="assets/img/PRODUCT_SALE_w300.png"
+                alt=""
+                loading="lazy"
+              >
+            
+          </td>
+
+          
+
+          <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct"><div class="cart-details-wrapper">
+              <div class="cart-items-wrapper">
+                <a href="#" class="cart-item__name h4 break">
+                  
+NAC &amp; NAD+ Combinados
+                </a><dl><div class="product-option">
+                          <dt>Group:</dt>
+                          <dd>
+                            {{VARIANT_TITLE}}
+                          </dd>
+                        </div></dl>
+</div>
+              <div class="cart-item__pricing-info">
+                <div class="cart-item__price-wrapper">
+                  
+                    <div class="gb-price-drawer">
+                      
+                        {{LINE_PRICE}}
+                      
+                    </div>
+                    
+                  
+                  
+                </div>
+              </div>
+            </div>
+<div
+              class="cart-item__quantity "
+              role="cell"
+              headers="CartDrawer-ColumnQuantity"
+            >
+              <quantity-popover>
+                <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
+                  <div
+                    
+                    class="quantity-popover-container"
+                  >
+                    <quantity-input class="quantity cart-quantity">
+                      <button class="quantity__button" name="minus" type="button">
+                        <span class="visually-hidden">Decrease quantity for NAC &amp;amp; NAD+ Combinados</span>
+                        <span class="svg-wrapper content"><svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-minus" viewBox="0 0 10 2"><path fill="currentColor" fill-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 1 1 0 1H1A.5.5 0 0 1 .5 1" clip-rule="evenodd"/></svg>
+</span>
+                        <div class="spin-animation">
+                          <span></span>
+                        </div>
+                      </button>
+                      <input
+                        class="quantity__input"
+                        type="number"
+                        data-quantity-variant-id="{{VARIANT_ID}}"
+                        name="updates[]"
+                        value="{{QUANTITY}}"
+                        
+                        data-cart-quantity="{{QUANTITY}}"
+                        min="1"
+                        data-min="1"
+                        
+                        step="1"
+                        
+                        aria-label="Quantity for NAC &amp;amp; NAD+ Combinados"
+                        id="Drawer-quantity-{{INDEX}}"
+                        data-index="{{INDEX}}"
+                      >
+                      <button class="quantity__button" name="plus" type="button">
+                        <span class="visually-hidden">Increase quantity for NAC &amp;amp; NAD+ Combinados</span>
+                        <span class="svg-wrapper content"><svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-plus" viewBox="0 0 10 10"><path fill="currentColor" fill-rule="evenodd" d="M1 4.51a.5.5 0 0 0 0 1h3.5l.01 3.5a.5.5 0 0 0 1-.01V5.5l3.5-.01a.5.5 0 0 0-.01-1H5.5L5.49.99a.5.5 0 0 0-1 .01v3.5l-3.5.01z" clip-rule="evenodd"/></svg>
+</span>
+                        <div class="spin-animation">
+                          <span></span>
+                        </div>
+                      </button>
+                    </quantity-input>
+                    <cart-remove-button
+                      id="CartDrawer-Remove-{{INDEX}}"
+                      data-index="{{INDEX}}"
+                      data-id="{{VARIANT_ID}}"
+                    >
+                      <button
+                        type="button"
+                        class="button button--tertiary cart-remove-button   "
+                        aria-label="Remove NAC &amp;amp; NAD+ Combinados - {{VARIANT_TITLE}}"
+                        data-variant-id="{{VARIANT_ID}}"
+                      >
+                        <span class="svg-wrapper gb-cart-del-img content">
+                          
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M8 1.5V2.5H3C2.44772 2.5 2 2.94772 2 3.5V4.5C2 5.05228 2.44772 5.5 3 5.5H21C21.5523 5.5 22 5.05228 22 4.5V3.5C22 2.94772 21.5523 2.5 21 2.5H16V1.5C16 0.947715 15.5523 0.5 15 0.5H9C8.44772 0.5 8 0.947715 8 1.5Z" fill="currentColor"/>
+                            <path d="M3.9231 7.5H20.0767L19.1344 20.2216C19.0183 21.7882 17.7135 23 16.1426 23H7.85724C6.28636 23 4.98148 21.7882 4.86544 20.2216L3.9231 7.5Z" fill="currentColor"/>
+                          </svg>
+                        </span>
+                        <div class="spin-animation">
+                          <span></span>
+                        </div>
+                      </button>
+                    </cart-remove-button>
+                  </div>
+                  
+
+                </div><div
+                  id="CartDrawer-LineItemError-{{INDEX}}"
+                  class="cart-item__error"
+                  role="alert"
+                  
+                    style="display: none;"
+                  
+                >
+                  <small class="cart-item__error-text">
+                    
+                  </small>
+                  <span class="svg-wrapper"><svg class="icon icon-error" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="5.5" stroke="#fff" stroke-width="2"/><circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width=".7"/><path fill="#fff" d="m5.874 3.528.1 4.044h1.053l.1-4.044zm.627 6.133c.38 0 .68-.288.68-.656s-.3-.656-.68-.656-.681.288-.681.656.3.656.68.656"/><path fill="#fff" stroke="#EB001B" stroke-width=".7" d="M5.874 3.178h-.359l.01.359.1 4.044.008.341h1.736l.008-.341.1-4.044.01-.359H5.873Zm.627 6.833c.56 0 1.03-.432 1.03-1.006s-.47-1.006-1.03-1.006-1.031.432-1.031 1.006.47 1.006 1.03 1.006Z"/></svg>
+</span>
+                </div>
+              </quantity-popover></div>
+          </td>
+        </tr>

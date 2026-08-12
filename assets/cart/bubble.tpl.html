@@ -1,0 +1,73 @@
+<div id="shopify-section-cart-icon-bubble" class="shopify-section"><span class="svg-wrapper"><span class="cart-icon-bag" style="display: none;">
+    <svg
+      class="cart-bag-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="rgb(var(--color-drawer-text))"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <path d="M16 10a4 4 0 0 1-8 0"></path>
+    </svg>
+  </span><span class="cart-icon-cart" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-cart icon-cart-custom" viewBox="0 0 100 100">
+  <path fill="currentColor" d="m7.0003 10c-1.6569 0-3 1.3432-3 3s1.3432 3 3 3h11.968c4.9652 12.298 9.8559 24.618 14.782 36.938l-4.5312 10.906c-0.3796 0.9092-0.2728 2.0058 0.2751 2.8246 0.5478 0.819 1.5208 1.3359 2.5062 1.332h50c1.585 0.0221 3.0427-1.415 3.0427-3s-1.4577-3.0221-3.0427-3h-45.5l2.5938-6.1875 48.156-3.8438c1.2604-0.099 2.4013-1.0811 2.6875-2.3125l6-26c0.3923-1.751-1.143-3.6621-2.9375-3.6562h-65.968l-3.25-8.125c-0.445-1.1-1.595-1.875-2.781-1.875zm22.438 16h59.781l-4.6562 20.188-45.594 3.625zm12.562 44c-5.4873 0-10 4.5127-10 10s4.5127 10 10 10 10-4.5127 10-10-4.5127-10-10-10zm30 0c-5.4873 0-10 4.5127-10 10s4.5127 10 10 10 10-4.5127 10-10-4.5127-10-10-10zm-30 6c2.2448 0 4 1.7552 4 4s-1.7552 4-4 4c-2.2448 0-4-1.7556-4-4s1.7552-4 4-4zm30 0c2.2445 0 4 1.7555 4 4s-1.7555 4-4 4c-2.2448 0-4-1.7552-4-4s1.7552-4 4-4z" fill-rule="evenodd"/>
+</svg>
+
+  </span><span class="cart-icon-cart-empty" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-cart-empty icon-cart-empty-custom" viewBox="0 0 100 100">
+  <path fill="currentColor" d="m7.0003 10c-1.6569 0-3 1.3432-3 3s1.3432 3 3 3h11.968c4.9652 12.298 9.8559 24.618 14.782 36.938l-4.5312 10.906c-0.3796 0.9092-0.2728 2.0058 0.2751 2.8246 0.5478 0.819 1.5208 1.3359 2.5062 1.332h50c1.585 0.0221 3.0427-1.415 3.0427-3s-1.4577-3.0221-3.0427-3h-45.5l2.5938-6.1875 48.156-3.8438c1.2604-0.099 2.4013-1.0811 2.6875-2.3125l6-26c0.3923-1.751-1.143-3.6621-2.9375-3.6562h-65.968l-3.25-8.125c-0.445-1.1-1.595-1.875-2.781-1.875zm22.438 16h59.781l-4.6562 20.188-45.594 3.625zm12.562 44c-5.4873 0-10 4.5127-10 10s4.5127 10 10 10 10-4.5127 10-10-4.5127-10-10-10zm30 0c-5.4873 0-10 4.5127-10 10s4.5127 10 10 10 10-4.5127 10-10-4.5127-10-10-10zm-30 6c2.2448 0 4 1.7552 4 4s-1.7552 4-4 4c-2.2448 0-4-1.7556-4-4s1.7552-4 4-4zm30 0c2.2445 0 4 1.7555 4 4s-1.7555 4-4 4c-2.2448 0-4-1.7552-4-4s1.7552-4 4-4z" fill-rule="evenodd"/>
+</svg>
+
+  </span>
+</span>
+
+<span class="visually-hidden">Cart</span><!--CART_BUBBLE--><style>
+  /* Icon wrapper visibility - JS will toggle these */
+  .cart-icon-bag,
+  .cart-icon-cart,
+  .cart-icon-cart-empty {
+    display: none;
+  }
+  
+  /* Specific styling for cart bag icon */
+  .cart-bag-icon {
+    fill: none !important;
+    height: 27px !important;
+    width: 27px !important;
+    stroke: rgb(var(--color-drawer-text)) !important;
+  }
+
+  .cart-bag-icon path,
+  .cart-bag-icon line {
+    fill: none !important;
+    stroke: rgb(var(--color-drawer-text)) !important;
+  }
+
+  /* Override any icon classes that might interfere */
+  svg.cart-bag-icon.icon,
+  svg.cart-bag-icon.icon-cart-empty,
+  svg.cart-bag-icon.icon-cart-empty-custom {
+    fill: none !important;
+    height: 27px !important;
+    width: 27px !important;
+    stroke: rgb(var(--color-drawer-text)) !important;
+  }
+
+  svg.cart-bag-icon.icon path,
+  svg.cart-bag-icon.icon-cart-empty path,
+  svg.cart-bag-icon.icon-cart-empty-custom path,
+  svg.cart-bag-icon.icon line,
+  svg.cart-bag-icon.icon-cart-empty line,
+  svg.cart-bag-icon.icon-cart-empty-custom line {
+    fill: none !important;
+    stroke: rgb(var(--color-drawer-text)) !important;
+  }
+</style>
+</div>
