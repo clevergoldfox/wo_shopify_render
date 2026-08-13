@@ -1,0 +1,349 @@
+<link href="{{ 'custom-announcement-bar.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+<style>
+  .announcement-bar-section-{{ section.id }} {
+    
+      background: #18191b !important;
+    
+    background-image: none !important;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .announcement-bar-section-{{ section.id }},
+  .announcement-bar-section-{{ section.id }} * {
+    color: #ffffff !important;
+    font-size: 14px;
+  }
+
+  
+
+  @media screen and (min-width: 750px) {
+    .announcement-bar-section-{{ section.id }},
+    .announcement-bar-section-{{ section.id }} * {
+      font-size: 16px;
+    }
+  }
+
+  /* Slider Container - fixed height from settings */
+  .announcement-slider-{{ section.id }} {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 40px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .announcement-slider-{{ section.id }} {
+      height: 45px;
+    }
+  }
+
+  /* All slides are absolute and fill full height */
+  .announcement-slider-{{ section.id }} .announcement-slide-{{ section.id }} {
+    position: absolute;
+    height: 100%;
+  }
+
+  .announcement-slider-{{ section.id }} .announcement-slide-{{ section.id }}.active {
+    position: absolute;
+    height: 100%;
+  }
+
+  /* Individual Slides - active slide is relative to set container height */
+  .announcement-slide-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 500ms ease;
+    pointer-events: none;
+    z-index: 1;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    visibility: hidden;
+  }
+
+  /* Entering slide - positioned for animation start */
+  .announcement-slide-{{ section.id }}.entering {
+    transform: translateY(100%);
+    visibility: visible;
+  }
+
+  /* Active slide is position relative so it determines container height */
+  .announcement-slide-{{ section.id }}.active {
+    position: relative;
+    transform: translateY(0);
+    pointer-events: auto;
+    z-index: 3;
+    visibility: visible;
+  }
+
+  /* Exiting slide stays fully visible while sliding out */
+  .announcement-slide-{{ section.id }}.exiting {
+    transform: translateY(-100%);
+    z-index: 2;
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 749px) {
+    .announcement-slide-{{ section.id }} {
+      padding: 8px 15px;
+    }
+  }
+
+  /* Per-slide highlight text styling */
+  .announcement-slide-{{ section.id }}[data-slide-index="0"] .announcement-highlight {
+    color: #ffd700 !important;
+    
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="1"] .announcement-highlight {
+    color: #ffd700 !important;
+    
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="2"] .announcement-highlight {
+    color: #ffd700 !important;
+    
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="3"] .announcement-highlight {
+    color: #ffd700 !important;
+    
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="4"] .announcement-highlight {
+    color: #ffd700 !important;
+    
+  }
+
+  /* Static mode (no slider) */
+  .announcement-static-{{ section.id }} {
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .announcement-static-{{ section.id }} {
+      padding: 8px 15px;
+    }
+  }
+
+  .announcement-slide-{{ section.id }} p,
+  .announcement-static-{{ section.id }} p {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Slide content wrapper with icon - applies to ALL slides */
+  .announcement-slide-content-{{ section.id }},
+  .announcement-slider-{{ section.id }} .announcement-slide-content-{{ section.id }},
+  .announcement-slide-{{ section.id }} .announcement-slide-content-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Padding is now on the slide itself, not the content wrapper */
+    padding: 0 !important;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .announcement-slide-icon-{{ section.id }} {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .announcement-slide-icon-{{ section.id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .announcement-slide-text-{{ section.id }} {
+    display: inline;
+  }
+
+  .announcement-slide-text-{{ section.id }} p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .announcement-slide-text-{{ section.id }},
+    .announcement-slide-text-{{ section.id }} p {
+      display: block;
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    .announcement-slide-content-{{ section.id }} {
+      flex-direction: row;
+      gap: 8px;
+      width: 100%;
+    }
+  }
+
+  /* Button styling */
+  .announcement-slide-button-{{ section.id }} {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000 !important;
+    font-size: 12px !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  .announcement-slide-button-{{ section.id }}:hover {
+    opacity: 0.85;
+  }
+
+  /* Per-slide background colors */
+  .announcement-slide-{{ section.id }}[data-slide-index="0"][data-custom-bg="true"] {
+    background-color: #000000;
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="1"][data-custom-bg="true"] {
+    background-color: #000000;
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="2"][data-custom-bg="true"] {
+    background-color: #000000;
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="3"][data-custom-bg="true"] {
+    background-color: #000000;
+  }
+  .announcement-slide-{{ section.id }}[data-slide-index="4"][data-custom-bg="true"] {
+    background-color: #000000;
+  }
+
+  /* Navigation Arrows */
+  .announcement-nav-{{ section.id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .announcement-nav-{{ section.id }}:hover {
+    opacity: 1;
+  }
+
+  .announcement-nav-{{ section.id }} svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .announcement-nav-prev-{{ section.id }} {
+    left: 10px;
+  }
+
+  .announcement-nav-next-{{ section.id }} {
+    right: 10px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .announcement-nav-{{ section.id }} {
+      padding: 10px;
+    }
+
+    .announcement-nav-{{ section.id }} svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .announcement-nav-prev-{{ section.id }} {
+      left: 20px;
+    }
+
+    .announcement-nav-next-{{ section.id }} {
+      right: 20px;
+    }
+  }
+
+  /* Per-slide text colors - need higher specificity to override global */
+  
+  
+  
+  
+  
+</style>
+
+<div class="announcement-bar-section announcement-bar-section-{{ section.id }}  scroll-trigger animate--fade-in">
+  
+<div class="announcement-static-{{ section.id }}">
+      <div class="announcement-slide-content announcement-slide-content-{{ section.id }}">
+        <span class="announcement-slide-text announcement-slide-text-{{ section.id }}"><p><strong>BUY 2 GET 1 FREE THIS SUMMER</strong></p></span>
+      </div>
+    </div>
+  
+</div>
+
+<script>
+  (function() {
+    // Highlight text function
+    function highlightText(container, textToHighlight) {
+      if (!container || !textToHighlight || textToHighlight.trim() === '') return;
+      
+      const textSpan = container.querySelector('.announcement-slide-text-{{ section.id }}');
+      if (!textSpan) return;
+      
+      const html = textSpan.innerHTML;
+      const escapedText = textToHighlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp('(' + escapedText + ')', 'gi');
+      
+      if (regex.test(html)) {
+        textSpan.innerHTML = html.replace(regex, '<span class="announcement-highlight">$1</span>');
+      }
+    }
+    
+    // Apply highlights to each slide
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Also handle static single slide
+    
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Custom announcement bar",
+  "settings": []
+}
+{% endschema %}

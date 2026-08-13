@@ -1,0 +1,466 @@
+<link href="{{ 'satisfaction-guarantee.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+
+  
+
+
+<script src="{{ 'satisfaction-guarantee.js' | asset_url }}" defer></script>
+
+<style>
+  .guarantee-section {
+    --section-background: linear-gradient(90deg, rgba(26, 95, 200, 1), rgba(26, 95, 200, 1) 100%);
+    --padding-top-mobile: 40px;
+    --padding-bottom-mobile: 40px;
+    --padding-top: 60px;
+    --padding-bottom: 60px;
+    --overflow-setting: hidden;
+    --padding-top-no-photos-mobile: 15px;
+    --padding-top-no-photos-desktop: 15px;
+
+    --polaroid-size-mobile: 100px;
+    --polaroid-size-desktop: 180px;
+    --polaroid-z-index: auto;
+
+    
+    
+    --mobile-photos-margin-top: -8px;
+
+    
+    
+    
+    
+    --photos-margin-top: 12px;
+    --photos-margin-bottom: -12px;
+    --photos-z-index: 1;
+
+    --content-padding-mobile: 15px;
+    --content-padding-desktop: 20px;
+    --content-width: 100%;
+    --content-max-width: 300px;
+    --content-max-width-no-photos: 450px;
+
+    --icon-color: #ffffff;
+    --icon-margin-bottom: 10px;
+
+    --heading-size-mobile: 24px;
+    --heading-size-desktop: 26px;
+    --heading-line-height: 1.3;
+
+    --risk-free-color: ;
+    --beauty-revolution-color: ;
+    --accent-text-margin-right: 5px;
+    --accent-font-family: , ;
+    --accent-font-weight: ;
+    --accent-font-style: ;
+
+    --description-size-mobile: 14px;
+    --description-size-desktop: 16px;
+    --description-color: #a4c3ed;
+    --description-line-height: 1.5;
+
+    --button-background: #2bb2fd;
+    --button-background-hover: #029df3;
+    --button-text-color: #ffffff;
+
+    --benefit-size-mobile: 12px;
+    --benefit-size-desktop: 14px;
+    --benefit-text-color: #a4c3ed;
+    --checkmark-color: #1b8bff;
+  }
+
+  /* Fix for double background issue */
+  .guarantee-section .guarantee-section {
+    background: transparent !important;
+  }
+
+  /* Button Styling with Global Support */
+  /* Higher specificity selector to override global-button-fix */
+  .guarantee-section__cta,
+  .theme-button.guarantee-section__cta {
+    /* Always use global spacing and consistency */
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    padding: var(--global-button-padding-y, 12px) 20px !important;
+    letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+
+    
+      /* Use Section Custom Button Styling */
+      background: #2bb2fd !important;
+      background-color: #2bb2fd !important;
+      background-image: none !important;
+      color: #ffffff !important;
+      border: none !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      border-radius: 8px !important;
+      padding: 12px 20px !important;
+    
+  }
+
+  /* Extra specificity for custom button when global styling is disabled */
+  
+  .guarantee-section__cta.disable-global-button-styling,
+  a.guarantee-section__cta.disable-global-button-styling,
+  .guarantee-section .guarantee-section__cta.disable-global-button-styling {
+    background: #2bb2fd !important;
+    background-color: #2bb2fd !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    border: none !important;
+  }
+  
+  .guarantee-section__cta.disable-global-button-styling:hover,
+  a.guarantee-section__cta.disable-global-button-styling:hover,
+  .guarantee-section .guarantee-section__cta.disable-global-button-styling:hover {
+    background: #029df3 !important;
+    background-color: #029df3 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+  }
+  
+
+  /* Higher specificity for hover state */
+  .guarantee-section__cta:hover,
+  .theme-button.guarantee-section__cta:hover {
+    
+      /* Custom Section Hover State */
+      background-color: var(--button-background-hover) !important;
+      color: var(--button-text-color) !important;
+      border: none !important;
+    
+  }
+
+  .guarantee-section {
+    background: var(--section-background);
+  }
+
+  .guarantee-section__wrapper {
+    width: 100%;
+    max-width: 100%;
+    font-family: var(--font-body-family-override);
+    font-weight: var(--font-weight-regular);
+    box-sizing: border-box;
+    letter-spacing: var(--letter-spacing-body);
+    padding: 60px 40px;
+    margin-top: var(--margin-top-mobile);
+    margin-bottom: var(--margin-bottom-mobile);
+    overflow: var(--overflow-setting);
+    position: relative;
+    
+    
+    
+  }
+
+  .guarantee-section__container {
+    
+  }
+
+  
+
+  
+
+  @media screen and (max-width: 768px) {
+    .guarantee-section__wrapper {
+      padding: 40px 20px;
+      
+      
+      
+    }
+  }
+
+  /* Global heading typography */
+  .guarantee-section__heading {
+    color: #ffffff !important;
+    line-height: var(--heading-line-height) !important;
+  }
+
+  /* Enhanced accent text styling */
+  .guarantee-section .accent-text {
+    
+      /* Use Section-Specific Accent Typography */
+      
+      
+      
+    
+
+    /* Apply spacing between accent text and regular text */
+    margin-right: var(--accent-text-margin-right) !important;
+
+    /* Color and Gradient Application */color: #ef4a65 !important;padding-right: 0px !important;
+    display: inline-block !important;
+  }
+</style>
+
+
+<div class="guarantee-section__wrapper  scroll-trigger animate--fade-up">
+  <div class="guarantee-section__container">
+    <!-- Mobile View -->
+    <div class="guarantee-section__mobile no-photos">
+      <!-- Polaroid Photos moved above content -->
+      
+
+      <div class="guarantee-section__content">
+        <div class="shield-icon">
+          
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="80" height="80">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16L4.35009 13.3929C2.24773 11.8912 1 9.46667 1 6.88306V3L8 0L15 3V6.88306C15 9.46667 13.7523 11.8912 11.6499 13.3929L8 16ZM12.2071 5.70711L10.7929 4.29289L7 8.08579L5.20711 6.29289L3.79289 7.70711L7 10.9142L12.2071 5.70711Z" fill="currentColor"/>
+              </svg>
+          
+        </div>
+
+        <h2 class="guarantee-section__heading heading-text">
+          <span class="accent-text"></span>
+          Garantía de Devolución de Dinero de 30 Días
+        </h2>
+
+        <p class="guarantee-section__description">
+          Pruébelo por 30 días. Si no siente la diferencia — mañanas más nítidas, menos niebla, recuperación más fácil — le reembolsaremos en su totalidad. Sin formularios. Sin complicaciones. Solo responda al correo electrónico de su pedido.
+        </p>
+
+        
+        
+
+        
+
+        <a href="#" class="guarantee-section__cta disable-global-button-styling" data-scroll-to-first-section="true">
+          AGREGAR AL CARRITO
+        </a>
+
+        <div class="guarantee-section__benefits">
+          
+            <div class="benefit">
+              <svg class="checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+              </svg>
+              100% Satisfacción
+            </div>
+          
+          
+            <div class="benefit">
+              <svg class="checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+              </svg>
+              Envío Rápido
+            </div>
+          
+          
+            <div class="benefit">
+              <svg class="checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+              </svg>
+              Devoluciones Fáciles
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop View -->
+    <div class="guarantee-section__desktop no-photos">
+      
+
+      <div class="guarantee-section__content">
+        <div class="shield-icon">
+          
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="80" height="80">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16L4.35009 13.3929C2.24773 11.8912 1 9.46667 1 6.88306V3L8 0L15 3V6.88306C15 9.46667 13.7523 11.8912 11.6499 13.3929L8 16ZM12.2071 5.70711L10.7929 4.29289L7 8.08579L5.20711 6.29289L3.79289 7.70711L7 10.9142L12.2071 5.70711Z" fill="currentColor"/>
+              </svg>
+          
+        </div>
+
+        <h2 class="guarantee-section__heading heading-text">
+          <span class="accent-text"></span>
+          Garantía de Devolución de Dinero de 30 Días
+        </h2>
+
+        <p class="guarantee-section__description">
+          Pruébelo por 30 días. Si no siente la diferencia — mañanas más nítidas, menos niebla, recuperación más fácil — le reembolsaremos en su totalidad. Sin formularios. Sin complicaciones. Solo responda al correo electrónico de su pedido.
+        </p>
+
+        <a href="#" class="guarantee-section__cta disable-global-button-styling" data-scroll-to-first-section="true">
+          AGREGAR AL CARRITO
+        </a>
+
+        <div class="guarantee-section__benefits">
+          
+            <div class="benefit">
+              <svg class="checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+              </svg>
+              100% Satisfacción
+            </div>
+          
+          
+            <div class="benefit">
+              <svg class="checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+              </svg>
+              Envío Rápido
+            </div>
+          
+          
+            <div class="benefit">
+              <svg class="checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/>
+              </svg>
+              Devoluciones Fáciles
+            </div>
+          
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Handle scroll-to-first-section functionality
+    const guaranteeButtons = document.querySelectorAll('.guarantee-section__cta[data-scroll-to-first-section]');
+
+    guaranteeButtons.forEach((button) => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        console.log('🎯 Scrolling to first section...');
+
+        // Find the product details section or first section on the page (excluding header/navigation)
+        const selectors = [
+          // Product details section (highest priority)
+          '[data-section-type="product"]',
+          '.shopify-section[data-section-type="product"]',
+          '.product-section',
+          '.shop-product-section',
+          '.product-details',
+          '.product-template',
+          '#ProductSection',
+          '#shopify-section-product-template',
+
+          // Most common first section patterns
+          'main section:first-of-type',
+          '.main-content section:first-of-type',
+          '.page-content section:first-of-type',
+
+          // Shopify section patterns
+          '.shopify-section:not([data-section-type="header"]):not([data-section-type="announcement-bar"])',
+          'section.shopify-section:not([data-section-type="header"])',
+
+          // General section patterns
+          'main > *:first-child',
+          '.content section:first-of-type',
+          'section:not(header):not([role="banner"])',
+
+          // Fallback to any section
+          'section:first-of-type',
+          '[data-section-type]:not([data-section-type="header"])',
+
+          // Last resort - any content element
+          'main > div:first-child',
+          '.main > *:first-child',
+        ];
+
+        let targetElement = null;
+        let usedSelector = '';
+
+        for (let selector of selectors) {
+          try {
+            const elements = document.querySelectorAll(selector);
+            if (elements.length > 0) {
+              // Get the first element that's not a header/nav
+              for (let element of elements) {
+                const tagName = element.tagName.toLowerCase();
+                const sectionType = element.getAttribute('data-section-type');
+
+                // Skip header/navigation elements
+                if (
+                  tagName === 'header' ||
+                  tagName === 'nav' ||
+                  sectionType === 'header' ||
+                  sectionType === 'announcement-bar' ||
+                  element.getAttribute('role') === 'banner'
+                ) {
+                  continue;
+                }
+
+                targetElement = element;
+                usedSelector = selector;
+                break;
+              }
+
+              if (targetElement) {
+                console.log(`✅ Found first section with selector: ${selector}`);
+                break;
+              }
+            }
+          } catch (e) {
+            // Skip invalid selectors
+            continue;
+          }
+        }
+
+        if (targetElement) {
+          // Calculate offset for fixed headers
+          const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+          const stickyHeader =
+            document.querySelector('.sticky-header, .header-sticky, [style*="position: fixed"]')?.offsetHeight || 0;
+          const adminBarHeight = document.querySelector('#admin_bar_iframe, .admin-bar')?.offsetHeight || 0;
+          const announcementBar = document.querySelector('.announcement-bar, .promo-bar')?.offsetHeight || 0;
+
+          const offset = Math.max(headerHeight, stickyHeader) + adminBarHeight + announcementBar + 20;
+
+          const elementPosition = targetElement.offsetTop;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth',
+          });
+
+          console.log(`✅ Scrolled to first section using selector: ${usedSelector}`);
+
+          // Optional: Add visual highlight to show successful targeting
+          targetElement.style.transition = 'all 0.3s ease';
+          targetElement.style.transform = 'scale(1.01)';
+          setTimeout(() => {
+            targetElement.style.transform = 'scale(1)';
+          }, 300);
+        } else {
+          console.warn('❌ Could not find any suitable first section to scroll to');
+          console.log('🔍 Available sections on page:');
+
+          // Debug: Show available sections
+          const allSections = document.querySelectorAll('section, .shopify-section, main > *, .main > *');
+          allSections.forEach((section, index) => {
+            const tagName = section.tagName.toLowerCase();
+            const id = section.id || 'no-id';
+            const sectionType = section.getAttribute('data-section-type') || 'no-section-type';
+            const className = section.className || 'no-class';
+
+            console.log(
+              `   ${index + 1}. <${tagName}> id="${id}" data-section-type="${sectionType}" class="${className}"`
+            );
+          });
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Satisfaction guarantee",
+  "settings": []
+}
+{% endschema %}

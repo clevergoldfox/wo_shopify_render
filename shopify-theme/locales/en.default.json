@@ -1,0 +1,24 @@
+{
+  "general": {
+    "share": { "success_message": "Link copied to clipboard" }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "value_unavailable": "{{ option_value }} - Unavailable",
+      "media": { "image_available": "Image {{ index }} is now available in gallery view" }
+    }
+  },
+  "sections": {
+    "cart": {
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart."
+    }
+  },
+  "recipient": {
+    "form": { "expanded": "Gift card recipient form expanded", "collapsed": "Gift card recipient form collapsed" }
+  },
+  "localization": { "country_results_count": "{{ count }} countries/regions found" }
+}

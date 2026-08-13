@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "shop-product-details": { "type": "shop-product-details" },
+    "scrolling-ticker": { "type": "scrolling-ticker" },
+    "scrollable-ingredients": { "type": "scrollable-ingredients" },
+    "statistics-column": { "type": "statistics-column" },
+    "image-with-text-1": { "type": "image-with-text-1" },
+    "roadmap": { "type": "roadmap" },
+    "four-benefits-1": { "type": "four-benefits-1" },
+    "product-benefits": { "type": "product-benefits" },
+    "image-with-text-2": { "type": "image-with-text-2" },
+    "product-comparison": { "type": "product-comparison" },
+    "customer-reviews": { "type": "customer-reviews" },
+    "testimonials": { "type": "testimonials" },
+    "four-benefits-2": { "type": "four-benefits-2" },
+    "satisfaction-guarantee": { "type": "satisfaction-guarantee" },
+    "store-faq": { "type": "store-faq" }
+  },
+  "order": [
+    "shop-product-details",
+    "scrolling-ticker",
+    "scrollable-ingredients",
+    "statistics-column",
+    "image-with-text-1",
+    "roadmap",
+    "four-benefits-1",
+    "product-benefits",
+    "image-with-text-2",
+    "product-comparison",
+    "customer-reviews",
+    "testimonials",
+    "four-benefits-2",
+    "satisfaction-guarantee",
+    "store-faq"
+  ]
+}

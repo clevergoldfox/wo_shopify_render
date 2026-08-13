@@ -1,0 +1,16 @@
+{
+  "current": {
+    "source_product_id": "10344956428617",
+    "variant_buy_one": "55042567799113",
+    "variant_buy_two": "55042567831881",
+    "variant_buy_three": "55042567864649",
+    "shipping_protection_handle": "shipping-protection",
+    "blocks": {
+      "kaching_bundles_app_embed": {
+        "type": "shopify://apps/kaching-bundles/blocks/app-embed-block-v2/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  }
+}

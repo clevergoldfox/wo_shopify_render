@@ -1,0 +1,112 @@
+<link href="{{ 'announcement-bar.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+<style>
+  .announcement-text strong,
+  .announcement-text b {
+    font-weight: 700 !important;
+  }
+</style>
+
+<div class="section-announcement">
+  <div class="announcement-bar shine-active" style="
+    
+        background: linear-gradient(
+          -45deg,
+          
+            #1a5fc8,
+            #1a5fc8,
+            #1a5fc8,
+            #1a5fc8
+          
+        );
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+    
+  ">
+    <div class="announcement-text" style="color: #ffffff;">
+      SUMMER BLOWOUT SALE
+    </div>
+    <div class="countdown">
+      
+      <div class="countdown-item" style="padding: 3px 1px; background-color: #ffffff;">
+        <span class="time days" style="color: #0f2945;">00</span>
+        <span class="label label-smaller" style="margin-top: 1px; color: #0f2945;">DAYS</span>
+      </div>
+      <span class="separator" style="color: #ffffff;">:</span>
+      
+      <div class="countdown-item" style="padding: 3px 1px; background-color: #ffffff;">
+        <span class="time hours" style="color: #0f2945;">24</span>
+        <span class="label label-smaller" style="margin-top: 1px; color: #0f2945;">HRS</span>
+      </div>
+      <span class="separator" style="color: #ffffff;">:</span>
+      <div class="countdown-item" style="padding: 3px 1px; background-color: #ffffff;">
+        <span class="time minutes" style="color: #0f2945;">00</span>
+        <span class="label" style="margin-top: 1px; color: #0f2945;">MIN</span>
+      </div>
+      <span class="separator" style="color: #ffffff;">:</span>
+      <div class="countdown-item" style="padding: 3px 1px; background-color: #ffffff;">
+        <span class="time seconds" style="color: #0f2945;">00</span>
+        <span class="label" style="margin-top: 1px; color: #0f2945;">SEC</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function getTimezoneMidnight() {
+    const timezone = 'America/New_York';
+    const now = new Date();
+    const localTime = new Date(now.toLocaleString('en-US', { timeZone: timezone }));
+    const midnight = new Date(localTime);
+    midnight.setHours(24, 0, 0, 0);
+    return midnight;
+  }
+
+  function calculateTimeLeft() {
+    const timezone = 'America/New_York';
+    const now = new Date();
+    const localTime = new Date(now.toLocaleString('en-US', { timeZone: timezone }));
+    
+    
+    // Use custom end date if set
+    const endDate = new Date('2026-08-31 23:59:59');
+    let diff = endDate - now;
+    
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+  }
+
+  function updateDisplay() {
+    const timeLeft = calculateTimeLeft();
+    
+    
+    document.querySelector('.days').textContent = timeLeft.days.toString().padStart(2, '0');
+    
+    document.querySelector('.hours').textContent = timeLeft.hours.toString().padStart(2, '0');
+    document.querySelector('.minutes').textContent = timeLeft.minutes.toString().padStart(2, '0');
+    document.querySelector('.seconds').textContent = timeLeft.seconds.toString().padStart(2, '0');
+  }
+
+  // Update immediately and then every second
+  updateDisplay();
+  const timer = setInterval(updateDisplay, 1000);
+
+  // Cleanup on section unload to avoid memory leaks
+  document.addEventListener('shopify:section:unload', function() {
+    clearInterval(timer);
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": []
+}
+{% endschema %}

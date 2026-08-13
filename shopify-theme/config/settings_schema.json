@@ -1,0 +1,50 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "NAC600 & NAD",
+    "theme_version": "1.0.0",
+    "theme_author": "Standard Lab replica",
+    "theme_documentation_url": "https://shopify.dev",
+    "theme_support_url": "https://shopify.dev"
+  },
+  {
+    "name": "Product mapping",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "The page markup was captured from another store, so these ids point at that store's catalogue. Replace them with the matching ids from this store or add-to-cart will fail."
+      },
+      {
+        "type": "text",
+        "id": "source_product_id",
+        "label": "Product ID",
+        "default": "15186300076396"
+      },
+      {
+        "type": "text",
+        "id": "variant_buy_one",
+        "label": "Variant ID - Buy One",
+        "default": "54004446593388"
+      },
+      {
+        "type": "text",
+        "id": "variant_buy_two",
+        "label": "Variant ID - Buy 2 Get 1 FREE",
+        "default": "54004446626156"
+      },
+      {
+        "type": "text",
+        "id": "variant_buy_three",
+        "label": "Variant ID - Buy 3 Get 2 FREE",
+        "default": "54004446658924"
+      },
+      {
+        "type": "text",
+        "id": "shipping_protection_handle",
+        "label": "Product handle - Shipping Protection",
+        "info": "The theme reads the variant id and the price from this product.",
+        "default": "shipping-protection"
+      }
+    ]
+  }
+]
