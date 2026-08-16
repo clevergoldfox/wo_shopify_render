@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_631340594190353010": {
+      "settings": {
+        "checksum": "b498a933624205e6dac0311fcad6ff22f94fead97f307073e804d3c698800d33_1_1_1_0__1",
+        "gg4OMwhyBY9_text": "<p><span style=\"background-color:rgb(251,238,240);color:rgb(125,31,43);\"><strong>🇰🇷 Formulated in Korea</strong></span></p>",
+        "ggIjLIUTLq2_errorMessage": "Cannot add product to cart",
+        "ggIjLIUTLq2_label": "ADD TO CART, CLAIM MY FREE BOTTLE",
+        "ggIjLIUTLq2_outOfStockLabel": "Out of stock",
+        "ggIjLIUTLq2_successMessage": "Add product to cart successfully",
+        "ggIjLIUTLq2_unavailableLabel": "Unavailable",
+        "ggIjLIUTLq2_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "ggKByJDEDDy_childItem_0": "<p>Absorbs <strong>345% deeper</strong> than ordinary serums, patented EGF delivery</p>",
+        "ggKByJDEDDy_childItem_1": "<p>Visibly firmer, lifted skin in <strong>2 weeks</strong></p>",
+        "ggKByJDEDDy_childItem_2": "<p>Plumps the look of fine lines on face &amp; neck</p>",
+        "ggKByJDEDDy_childItem_3": "<p>Gentle, no needles, no redness, no downtime</p>",
+        "ggOW2tNbtwR_text": "<p>The serum that actually <i>gets in</i>. Powered by NAD+, EGF &amp; Low-Molecular Collagen to visibly firm, lift and smooth fine lines, across your face <i>and</i> neck.</p>",
+        "ggVeTrkYoBf_text": "<p>2,347+ Happy Customers</p>",
+        "ggbhY5iPulW_text": "<p><span style=\"background-color:rgb(255,250,251);color:rgb(74,58,61);\">🛡 60-Day Money-Back Guarantee, love it or your money back</span></p>",
+        "ggzooWglnGe_text": "<p><span style=\"background-color:rgb(251,238,240);color:rgb(125,31,43);\"><strong>🏆 #1 NAD+ Firming Serum</strong></span></p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-631340594190353010"
+    },
+    "gp_section_631340594408522572": {
+      "settings": {
+        "checksum": "3c82b9ced754814105aa58230708f980b43a4a2ebbf9c8a3a624496ab8a95e59_1_1_1_0__1",
+        "gg2FyVotT5e_text": "<p>This has become part of my daily routine!</p>",
+        "gg3uJQB5usx_text": "<p><strong>Megan K. 58</strong></p>",
+        "gg3yIKIaqOC_text": "<p>🍀</p>",
+        "gg4NnXBDqER_text": "<p>😍</p>",
+        "gg4V7h46hwB_text": "<p>Strong</p>",
+        "gg7-BpLyIm4_text": "<p>Glowing</p>",
+        "gg9faz1LjPW_text": "<p>I didn’t expect it to work this well!</p>",
+        "ggDai0K52CB_text": "<p>Amazing</p>",
+        "ggH5wkp2ZYY_text": "<p>Soft</p>",
+        "ggJrMhjFkx7_text": "\"My neck and jaw look lifted for the first time in years. Gentle on my sensitive skin, no redness. I stopped hiding from the camera.\"",
+        "ggJvVoTESbX_text": "<p><strong>Elena G. 49</strong></p>",
+        "ggLueRLX1D7_text": "<p>☀️</p>",
+        "ggOtBR5AI0B_text": "<p>😍</p>",
+        "ggPejeW7TVE_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/ChatGPT_Image_4_ago_2026_19_01_14_03ead383-a2f9-4c45-a837-8a23535297d1.png",
+        "ggRaTzF_MZG_text": "\"People kept telling me I looked tired, even after sleeping. Two weeks in, my skin looks awake again. It actually sinks in instead of sitting on my face.\"",
+        "ggRldJS48OR_text": "<p>Healthy</p>",
+        "ggVYfPX_sKM_text": "<p>Glowing</p>",
+        "ggV_y3zP4K0_text": "<p>Confident</p>",
+        "ggWAx1eMduV_text": "<p><strong>Jasmine H. 54</strong></p>",
+        "ggWSPaj_3pD_text": "<p>😍</p>",
+        "ggZpsvH55ln_text": "<p>☀️</p>",
+        "gg_Zrl6vfAw_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/ChatGPT_Image_4_ago_2026_19_00_01_f3ead692-cd88-4c4a-b386-1f1276c79ff3.png",
+        "ggcpOBkv3vE_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/Frame_1171281110.png",
+        "gghsCkRnOeM_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/Frame_1171281110.png",
+        "ggi3K5VcGvi_text": "<p>Smooth</p>",
+        "ggkeA1UNsas_text": "<p>I’m so happy with the results!</p>",
+        "ggoz0rkENCg_text": "<p>🍀</p>",
+        "ggp_gJykmM4_text": "<p>☀️</p>",
+        "ggtqnKyekc6_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/ChatGPT_Image_4_ago_2026_18_58_16_05ec9f79-a256-4d22-a460-72c544624249.png",
+        "ggtqnKyekc6_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/ChatGPT_Image_4_ago_2026_18_58_16_05ec9f79-a256-4d22-a460-72c544624249.png",
+        "gguToze2YZt_text": "<p>Fresh</p>",
+        "ggusuJcAvfI_text": "\"I've spent hundreds on serums that did nothing. This is the first one my skin actually drank in. Softer, firmer, brighter every morning.\"",
+        "ggwyvJXxdMm_text": "<p>🍀</p>",
+        "ggxClPGTtsW_text": "Real results from real women",
+        "ggxcRxuLLqp_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/Frame_1171281110.png"
+      },
+      "type": "gp-section-631340594408522572"
+    },
+    "gp_section_631342202840220657": {
+      "settings": {
+        "checksum": "fb4dc2417413db866a0c5baf2a65406d15b516e412f72daaca8f66403070bcd7_1_1_1_0__1",
+        "ggDelw7kVYU_text": "<p>Peptides + Low-Molecular Collagen visibly firm and lift, across the face and the neck most creams ignore.</p>",
+        "ggIV4nLXhQv_text": "<p><span style=\"background-color:rgb(255,250,251);color:rgb(125,31,43);\"><strong>WHY WOMEN CHOOSE NUVIRA</strong></span></p>",
+        "ggMrgZOzDS-_text": "Gentle every night",
+        "ggWl6ETwx8R_text": "It actually gets in",
+        "ggbHbhEM5mw_text": "Wakes tired cells",
+        "ggmD09gcab5_text": "<p>NAD+ is the fuel your skin cells run on. It helps them rebuild collagen the way they did at 30.</p>",
+        "ggpA3FN6X2N_text": "Firms &amp; lifts",
+        "ggpJY7vIy3k_text": "Firmer, lifted skin that finally matches how young you feel",
+        "ggvLyQzRaWP_text": "<p>No retinol sting, no peeling, no downtime. Just firmer, smoother skin while you sleep.</p>",
+        "ggw6ueKELG3_text": "<p>Most NAD serums sit on top of your skin and rinse off by morning. Ours is bonded to EGF and shrunk small enough to truly absorb, 345% deeper.</p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-631342202840220657"
+    },
+    "gp_section_631342465370031089": {
+      "settings": {
+        "checksum": "4ba421684b3dd7f0e327bcc100ee52db0e1d46eb79bff007dee43378615a4944_1_1_1_0__1",
+        "gg7sjJtMFK2_text": "<p>The carrier protein that shrinks NAD so it finally absorbs.</p>",
+        "gg8AaIIewzH_text": "<p>Holds 1,000× its weight in water, inside your skin, not on top.</p>",
+        "ggAu-nwIF1O_text": "<p><span style=\"background-color:rgb(246,226,229);color:rgb(125,31,43);\"><strong>THE REASON NOTHING WORKED BEFORE</strong></span></p>",
+        "ggBrxZc91xa_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/nad-ingredients.jpg-2.webp",
+        "ggBrxZc91xa_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/ChatGPT_Image_4_ago_2026_18_56_35_8bed55ff-a5c6-4d9d-a2c7-61283b401cc2.png",
+        "ggCxYF-MXLD_text": "<p>Small enough to reach deeper and plump from within.</p>",
+        "ggGj30sHXQ3_text": "<p>NAD+</p>",
+        "ggKMMyzIp_E_text": "<p>Low-Molecular Collagen</p>",
+        "ggKfoZGf3Ka_text": "You've tried NAD. It never got in, and it wasn't your fault.",
+        "ggaBdWMbS-g_text": "<p>The cellular fuel that helps skin rebuild firmness and bounce.</p>",
+        "gggcXDF4391_text": "<p>Hyaluronic Acid</p>",
+        "gglsR2Q2Efy_text": "<p>EGF</p>",
+        "gguPX-V49g3_text": "<p>Your skin is a wall, it only lets in what's small enough. The NAD molecule is huge, far too big to pass through. So every NAD serum you've bought just dried on the surface and washed away on your pillow.</p><p>Our Korean lab bonded NAD to <strong>EGF</strong>, a protein that shrinks it small enough to slip through your skin barrier, boosting absorption by a <strong>patented 345%</strong>. For the first time, NAD gets in, down to where your firmness is quietly collapsing, and tells your cells to rebuild.</p>"
+      },
+      "type": "gp-section-631342465370031089"
+    },
+    "gp_section_631342887702889074": {
+      "settings": {
+        "checksum": "faedbc1caad3cb8c3b7ed564c61335276a752052d2d75e9fbcb28eb173efb348_1_1_1_0__1",
+        "ggKw2cHtosc_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(74,58,61);\">Real, gradual results, the honest kind that last. Firmer, smoother, lifted skin that finally matches how young you still feel inside.</span></p>",
+        "ggplWDKrlEs_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/nad-before.jpg-3.webp",
+        "ggtXD_1rqWo_text": "Visible lift &amp; firmness in 2 weeks"
+      },
+      "type": "gp-section-631342887702889074"
+    },
+    "gp_section_631343219170345722": {
+      "settings": {
+        "checksum": "c34e28e64061d49f1acfd3c05b52e5cadc1ef6011da4752e3814376c7e89d097_1_1_1_0__1"
+      },
+      "type": "gp-section-631343219170345722"
+    },
+    "gp_section_631343972198908748": {
+      "settings": {
+        "checksum": "a9fd30549199c8a70fb6695eb41dee49b3352e7e6926fdb46a4d7503e7d64be6_1_1_1_0__1"
+      },
+      "type": "gp-section-631343972198908748"
+    },
+    "gp_section_631344984703894348": {
+      "settings": {
+        "checksum": "980580a6beb81f83dbb29a651e9a660ecea249c0da702c19e06c3cf4a92eec4f_1_1_1_0__1",
+        "gg32b3T_73O_text": "<p><br><span style=\"background-color:rgb(255,255,255);color:rgb(74,58,61);\">You're covered by our 60-Day Money-Back Guarantee. If you're not thrilled, send it back for a full refund.</span></p>",
+        "gg3_72PabO9_text": "<p>Frequently asked questions</p>",
+        "gg3m0FXeqjh_text": "<p>Yes. It's formulated to be gentle, no retinol, no stinging, no peeling. Soothing ingredients support the skin barrier. As with any new product, patch-test first.</p>",
+        "ggH-p7q059Y_text": "<p>Many notice softer, more hydrated skin within the first week. Visible firmness and smoother fine lines typically appear around 2 weeks, with best results at 6 to 8 weeks of nightly use.</p>",
+        "ggQAHHfLPuv_childItem_0": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(36,26,28);\"><strong>How is this different from other NAD serums?</strong></span></p>",
+        "ggQAHHfLPuv_childItem_1": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(36,26,28);\"><strong>How long until I see results?</strong></span></p>",
+        "ggQAHHfLPuv_childItem_2": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(36,26,28);\"><strong>Can I use it on my neck?</strong></span></p>",
+        "ggQAHHfLPuv_childItem_3": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(36,26,28);\"><strong>Is EGF safe?</strong></span></p>",
+        "ggQAHHfLPuv_childItem_4": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(36,26,28);\"><strong>What if it doesn&#039;t work for me?</strong></span></p>",
+        "ggVV7k-uhHI_text": "<p>Absolutely, it's made for face and neck, the areas that show aging first. Apply a few drops morning and night.</p>",
+        "ggm5d1CLph8_text": "<p>STILL GOT QUESTIONS?</p>",
+        "ggwNfavEju-_text": "<p>The EGF used is a cosmetic-grade skin-communicating protein used widely in K-beauty for renewal. If you have a history of skin cancer, consult your doctor before use.</p>"
+      },
+      "type": "gp-section-631344984703894348"
+    },
+    "gp_section_631402505254732533": {
+      "settings": {
+        "checksum": "e26f8cd7f62e4660873eaaee8cad1a2567760208d7555bead95ebec21c6927bd_1_1_1_0__1"
+      },
+      "type": "gp-section-631402505254732533"
+    }
+  },
+  "order": [
+    "gp_section_631340594190353010",
+    "gp_section_631402505254732533",
+    "gp_section_631342202840220657",
+    "gp_section_631342465370031089",
+    "gp_section_631342887702889074",
+    "gp_section_631343219170345722",
+    "gp_section_631343972198908748",
+    "gp_section_631340594408522572",
+    "gp_section_631344984703894348"
+  ]
+}

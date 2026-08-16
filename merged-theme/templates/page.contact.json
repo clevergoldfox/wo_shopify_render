@@ -1,0 +1,259 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "60910267-55e8-4e0d-a9f9-79b26b3533dc": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18407212810569__60910267-55e8-4e0d-a9f9-79b26b3533dc-16795881913b1fb5f3-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Talk about your brand",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1"
+          }
+        },
+        "template--18407212810569__60910267-55e8-4e0d-a9f9-79b26b3533dc-16795881913b1fb5f3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At [Your company], your satisfaction is our top priority. We encourage you to reach out with any questions, concerns, or feedback, as our dedicated team is always eager to assist you. Whether you need help with product inquiries or simply want to share your experience with us, we're just a message away. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18407212810569__60910267-55e8-4e0d-a9f9-79b26b3533dc-16795881913b1fb5f3-0",
+        "template--18407212810569__60910267-55e8-4e0d-a9f9-79b26b3533dc-16795881913b1fb5f3-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 12,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Contacta con nosotros",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "button_full_width": true,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "sp_faq_wJj3qH": {
+      "type": "sp-faq",
+      "blocks": {
+        "question_ibtJpV": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué es Nuvira Lab?",
+            "answer": "<p>Nuvira Lab es una tienda enfocada en bienestar y cuidado personal, con una selección cuidada de productos pensados para integrarse fácilmente en la rutina diaria, con compra protegida y atención al cliente antes y después del pedido.</p>"
+          }
+        },
+        "question_VNiCAg": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué tipo de productos puedo encontrar en Nuvira Lab?",
+            "answer": "<p>En Nuvira Lab puedes encontrar productos de bienestar, suplementación y cuidado personal. Cada ficha de producto incluye información específica sobre ingredientes principales, uso recomendado y características del producto. </p>"
+          }
+        },
+        "question_kKLagc": {
+          "type": "question",
+          "settings": {
+            "question": "¿A qué países realizáis envíos?",
+            "answer": "<p>Actualmente realizamos envíos a México y Estados Unidos. Si tu dirección no aparece disponible al finalizar la compra, significa que por el momento no podemos enviar a ese destino. </p>"
+          }
+        },
+        "question_UBUAgU": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto tarda en procesarse mi pedido?",
+            "answer": "<p>Los pedidos se procesan normalmente en un plazo de 1 a 3 días hábiles. Una vez preparados, recibirás la confirmación correspondiente para que puedas seguir el estado de tu compra. </p>"
+          }
+        },
+        "question_dCppct": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto tarda en llegar mi pedido?",
+            "answer": "<p>El plazo estimado de entrega es de 6 a 10 días hábiles, dependiendo de la ubicación del cliente y de las condiciones logísticas del transporte. Los fines de semana y festivos no se consideran días hábiles. </p>"
+          }
+        },
+        "question_JR94kK": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cómo puedo hacer seguimiento de mi pedido?",
+            "answer": "<p>Cuando tu pedido haya sido procesado, recibirás un correo con el número de seguimiento. Además, la tienda dispone de una página de seguimiento de pedido para consultar el estado del envío. </p>"
+          }
+        },
+        "question_t7hpyh": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué métodos de pago aceptáis?",
+            "answer": "<p>Aceptamos distintos métodos de pago seguros, entre ellos Visa, Mastercard, PayPal, Apple Pay, Google Pay, Shop Pay, Klarna y American Express, entre otros disponibles en el checkout. </p>"
+          }
+        },
+        "question_t6t8mm": {
+          "type": "question",
+          "settings": {
+            "question": "¿Puedo solicitar una devolución?",
+            "answer": "<p>Sí. Dispones de 30 días desde la recepción del pedido para solicitar una devolución, siempre que el producto cumpla las condiciones indicadas en nuestra política de reembolso. </p>"
+          }
+        },
+        "question_yA7kcB": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué condiciones debe cumplir un producto para poder devolverse?",
+            "answer": "<p>Para aceptar una devolución, el artículo debe estar sin uso, en buen estado, con su embalaje original y acompañado del comprobante de compra. </p>"
+          }
+        },
+        "question_cyJ8cg": {
+          "type": "question",
+          "settings": {
+            "question": "¿Quién asume el coste del envío de la devolución?",
+            "answer": "<p>El coste del envío de la devolución corre por cuenta del cliente, salvo en casos de producto defectuoso o error en el envío. En esas situaciones, asumimos los gastos correspondientes. </p>"
+          }
+        },
+        "question_iEnYGP": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué productos no admiten devolución?",
+            "answer": "<p>No se aceptan devoluciones de productos personalizados, productos en oferta, productos perecederos, ropa íntima, productos de cuidado personal o cosméticos, ni materiales peligrosos, inflamables o similares. </p>"
+          }
+        },
+        "question_EBjkUL": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué hago si mi pedido llega dañado o he recibido un producto incorrecto?",
+            "answer": "<p>Debes revisarlo al recibirlo y contactarnos lo antes posible, enviando fotos del problema para que podamos evaluarlo y ofrecerte una solución adecuada. </p>"
+          }
+        },
+        "question_eeCxUk": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuándo recibiré mi reembolso si se aprueba la devolución?",
+            "answer": "<p>Una vez recibida e inspeccionada la devolución, y si se aprueba, el reembolso se emite al método de pago original en un plazo de 24 a 48 horas. El tiempo de reflejo final puede depender del banco o entidad financiera y tardar hasta 15 días hábiles. </p>"
+          }
+        },
+        "question_CRAFPp": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cómo puedo contactar con atención al cliente?",
+            "answer": "<p>Puedes escribirnos a info@nuviralab.com o utilizar el formulario de contacto disponible en la página de contacto. Nuestro horario de atención indicado en la web es de lunes a viernes, de 9:00am a 5:00pm.</p>"
+          }
+        },
+        "question_kNT6di": {
+          "type": "question",
+          "settings": {
+            "question": "¿Los suplementos alimenticios sustituyen una alimentación equilibrada o son medicamentos?",
+            "answer": "<p>No. Los suplementos alimenticios no sustituyen una alimentación equilibrada, no son medicamentos y sus resultados pueden variar según la persona y la constancia de uso. </p>"
+          }
+        },
+        "question_4QJ4iB": {
+          "type": "question",
+          "settings": {
+            "question": "¿Dónde puedo consultar los ingredientes y el modo de uso?",
+            "answer": "<p>En cada ficha de producto encontrarás la información principal sobre ingredientes, uso recomendado y detalles del producto para que puedas comprar con más claridad.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_ibtJpV",
+        "question_VNiCAg",
+        "question_kKLagc",
+        "question_UBUAgU",
+        "question_dCppct",
+        "question_JR94kK",
+        "question_t7hpyh",
+        "question_t6t8mm",
+        "question_yA7kcB",
+        "question_cyJ8cg",
+        "question_iEnYGP",
+        "question_EBjkUL",
+        "question_eeCxUk",
+        "question_CRAFPp",
+        "question_kNT6di",
+        "question_4QJ4iB"
+      ],
+      "name": "🚀SP - FAQ",
+      "settings": {
+        "override_fonts": false,
+        "headline_font": "system_ui_n4",
+        "text_font": "system_ui_n4",
+        "text_size": 12,
+        "mobile_text_size": 12,
+        "text_line_height": "inherit",
+        "headline_size": 23,
+        "mobile_headline_size": 23,
+        "headline_line_height": "inherit",
+        "text_color": "#111",
+        "link_color": "#d7c09a",
+        "show_on_device": "all",
+        "section_background_color": "linear-gradient(319deg, rgba(215, 192, 154, 1) 13%, rgba(234, 253, 246, 1) 85%)",
+        "section_padding_top_bottom": 25,
+        "mobile_section_padding_top_bottom": 25,
+        "section_padding_left_right": 25,
+        "mobile_section_padding_left_right": 25,
+        "container_background_color": "",
+        "container_max_width": 1000,
+        "container_padding_top_bottom": 10,
+        "mobile_container_padding_top_bottom": 10,
+        "container_padding_left_right": 10,
+        "mobile_container_padding_left_right": 10,
+        "element_spacing": 15,
+        "container_radius": 0,
+        "container_shadow": false,
+        "container_border_size": 0,
+        "container_border_color": "#888",
+        "question_text_size": 25,
+        "question_color": "#111111",
+        "answer_color": "#555555",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "headline": "<strong>Preguntas Frecuentes</strong>",
+        "text": "",
+        "headline_spacing": 15
+      }
+    }
+  },
+  "order": [
+    "60910267-55e8-4e0d-a9f9-79b26b3533dc",
+    "main",
+    "form",
+    "sp_faq_wJj3qH"
+  ]
+}

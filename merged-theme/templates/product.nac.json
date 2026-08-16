@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "nac-shop-product-details": { "type": "nac-shop-product-details" },
+    "nac-scrolling-ticker": { "type": "nac-scrolling-ticker" },
+    "nac-scrollable-ingredients": { "type": "nac-scrollable-ingredients" },
+    "nac-statistics-column": { "type": "nac-statistics-column" },
+    "nac-image-with-text-1": { "type": "nac-image-with-text-1" },
+    "nac-roadmap": { "type": "nac-roadmap" },
+    "nac-four-benefits-1": { "type": "nac-four-benefits-1" },
+    "nac-product-benefits": { "type": "nac-product-benefits" },
+    "nac-image-with-text-2": { "type": "nac-image-with-text-2" },
+    "nac-product-comparison": { "type": "nac-product-comparison" },
+    "nac-customer-reviews": { "type": "nac-customer-reviews" },
+    "nac-testimonials": { "type": "nac-testimonials" },
+    "nac-four-benefits-2": { "type": "nac-four-benefits-2" },
+    "nac-satisfaction-guarantee": { "type": "nac-satisfaction-guarantee" },
+    "nac-store-faq": { "type": "nac-store-faq" }
+  },
+  "order": [
+    "nac-shop-product-details",
+    "nac-scrolling-ticker",
+    "nac-scrollable-ingredients",
+    "nac-statistics-column",
+    "nac-image-with-text-1",
+    "nac-roadmap",
+    "nac-four-benefits-1",
+    "nac-product-benefits",
+    "nac-image-with-text-2",
+    "nac-product-comparison",
+    "nac-customer-reviews",
+    "nac-testimonials",
+    "nac-four-benefits-2",
+    "nac-satisfaction-guarantee",
+    "nac-store-faq"
+  ]
+}

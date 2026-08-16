@@ -1,0 +1,76 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+<div class="tsl tsl-testimonials tsl-reveal" style="background-color: {{ section.settings.bg }};">
+  {%- if section.settings.heading != blank -%}
+    <div class="tsl-testimonials__header">
+      <h2 class="tsl__heading">
+        {{ section.settings.heading }}
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="tsl__accent">{{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="tsl__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="tsl-testimonials__grid">
+    {%- for block in section.blocks -%}
+      {%- assign initial = block.settings.name | strip | slice: 0 -%}
+      <article class="tsl-testimonial" {{ block.shopify_attributes }}>
+        <span class="tsl-testimonial__stars" role="img" aria-label="5 / 5">
+          {%- for i in (1..5) -%}{% render 'tsl-icon', icon: 'star' %}{%- endfor -%}
+        </span>
+        {%- if block.settings.title != blank -%}
+          <h3 class="tsl-testimonial__title">{{ block.settings.title }}</h3>
+        {%- endif -%}
+        <div class="tsl-testimonial__text">{{ block.settings.text }}</div>
+        <div class="tsl-testimonial__author">
+          {%- if block.settings.avatar != blank -%}
+            {{ block.settings.avatar | image_url: width: 120 | image_tag:
+               loading: 'lazy', class: 'tsl-testimonial__avatar', alt: block.settings.name }}
+          {%- else -%}
+            <span class="tsl-testimonial__avatar" aria-hidden="true">{{ initial | upcase }}</span>
+          {%- endif -%}
+          <div>
+            <div class="tsl-testimonial__name">{{ block.settings.name }}</div>
+            {%- if block.settings.verified_label != blank -%}
+              <div class="tsl-testimonial__verified">
+                {% render 'tsl-icon', icon: 'verified' %}{{ block.settings.verified_label }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Testimonials",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Cifras reales. Alivio real." },
+    { "type": "text", "id": "heading_accent", "label": "Accent heading" },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Headline" },
+        { "type": "richtext", "id": "text", "label": "Quote" },
+        { "type": "text", "id": "name", "label": "Name / location" },
+        { "type": "text", "id": "verified_label", "label": "Verified label", "default": "Verified customer" },
+        { "type": "image_picker", "id": "avatar", "label": "Avatar (optional)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TSL Testimonials" }]
+}
+{% endschema %}

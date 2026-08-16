@@ -1,0 +1,22 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Selerb NAD+",
+    "theme_version": "1.0.0",
+    "theme_author": "Replica build",
+    "theme_documentation_url": "https://shopify.dev",
+    "theme_support_url": "https://shopify.dev"
+  },
+  {
+    "name": "Product mapping",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "The markup was captured from another store. Point these at this store's catalogue or add-to-cart will fail."
+      },
+      { "type": "text", "id": "source_product_id", "label": "Product ID", "default": "10347301372233" },
+      { "type": "text", "id": "main_variant_id", "label": "Variant ID", "default": "55056669999433" },
+      { "type": "text", "id": "product_handle", "label": "Product handle", "default": "selerb-nad" }
+    ]
+  }
+]

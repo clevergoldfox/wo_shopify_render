@@ -1,0 +1,177 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign bg = section.settings.bg
+  assign text_color = section.settings.text_color
+  assign layout = 'tsl-imgtext--image-left'
+  if section.settings.image_position == 'right'
+    assign layout = 'tsl-imgtext--image-right'
+  endif
+-%}
+
+<div class="tsl tsl-imgtext {{ layout }} tsl-reveal"
+     style="background: {{ bg }}; color: {{ text_color }};">
+  <div class="tsl-imgtext__inner">
+
+    {%- if section.settings.image != blank -%}
+      <div class="tsl-imgtext__media">
+        {{ section.settings.image | image_url: width: 1600 | image_tag:
+           loading: 'lazy', alt: section.settings.heading, widths: '600,900,1200,1600' }}
+      </div>
+    {%- endif -%}
+
+    <div class="tsl-imgtext__text">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+          {%- when 'heading' -%}
+            <h2 class="tsl__heading tsl-imgtext__heading" style="color: {{ text_color }};" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+              {%- if block.settings.accent != blank -%}
+                <span class="tsl__accent" {% if block.settings.accent_color != blank %}style="color: {{ block.settings.accent_color }};"{% endif %}>{{ block.settings.accent }}</span>
+              {%- endif -%}
+            </h2>
+
+          {%- when 'subtitle' -%}
+            <h3 class="tsl-imgtext__subtitle" style="color: {{ block.settings.color }};" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </h3>
+
+          {%- when 'divider' -%}
+            <div class="tsl-imgtext__divider" style="background-color: {{ block.settings.color }};" {{ block.shopify_attributes }}></div>
+
+          {%- when 'paragraph' -%}
+            <div class="tsl-imgtext__body" style="color: {{ block.settings.color }};" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </div>
+
+          {%- when 'bullet_list' -%}
+            <ul class="tsl-imgtext__list" style="color: {{ block.settings.color }};" {{ block.shopify_attributes }}>
+              {%- assign rows = block.settings.items | newline_to_br | split: '<br />' -%}
+              {%- for row in rows -%}
+                {%- assign line = row | strip_newlines | strip -%}
+                {%- if line != blank -%}
+                  <li>{% render 'tsl-icon', icon: 'check-circle' %}<span>{{ line }}</span></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+          {%- when 'accordion' -%}
+            <div class="tsl-acc" data-tsl-toggle-single="{{ block.settings.single }}" {{ block.shopify_attributes }}>
+              {%- for n in (1..3) -%}
+                {%- assign hkey = 'item_' | append: n | append: '_heading' -%}
+                {%- assign ckey = 'item_' | append: n | append: '_content' -%}
+                {%- assign h = block.settings[hkey] -%}
+                {%- if h != blank -%}
+                  <div class="tsl-acc__item" data-tsl-toggle-item>
+                    <button type="button" class="tsl-acc__head" data-tsl-toggle aria-expanded="false">
+                      <span>{{ h }}</span>
+                      <span class="tsl-acc__toggle" aria-hidden="true">+</span>
+                    </button>
+                    <div class="tsl-acc__body">{{ block.settings[ckey] }}</div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+          {%- when 'button' -%}
+            <div {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.link | default: '#tsl-buybox' }}"
+                 class="tsl__btn"
+                 style="background-color: {{ block.settings.bg }}; border-color: {{ block.settings.bg }}; color: {{ block.settings.color }};"
+                 {% if block.settings.link == blank %}data-tsl-scroll-to-buy{% endif %}>
+                {{ block.settings.label }}
+              </a>
+            </div>
+
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Image with text",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "select", "id": "image_position", "label": "Image position", "default": "right",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    { "type": "text", "id": "bg", "label": "Background (CSS colour or gradient)", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Text colour", "default": "#0f2945" }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Heading" },
+        { "type": "text", "id": "accent", "label": "Accent heading" },
+        { "type": "color", "id": "accent_color", "label": "Accent colour" }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "name": "Subtitle",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Subtitle" },
+        { "type": "color", "id": "color", "label": "Colour", "default": "#000000" }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        { "type": "color", "id": "color", "label": "Colour", "default": "#8a9db4" }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Text" },
+        { "type": "color", "id": "color", "label": "Colour", "default": "#000000" }
+      ]
+    },
+    {
+      "type": "bullet_list",
+      "name": "Bullet list",
+      "settings": [
+        { "type": "textarea", "id": "items", "label": "Items (one per line)" },
+        { "type": "color", "id": "color", "label": "Colour", "default": "#ffffff" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        { "type": "checkbox", "id": "single", "label": "Only one open at a time", "default": false },
+        { "type": "text", "id": "item_1_heading", "label": "Item 1 heading" },
+        { "type": "richtext", "id": "item_1_content", "label": "Item 1 content" },
+        { "type": "text", "id": "item_2_heading", "label": "Item 2 heading" },
+        { "type": "richtext", "id": "item_2_content", "label": "Item 2 content" },
+        { "type": "text", "id": "item_3_heading", "label": "Item 3 heading" },
+        { "type": "richtext", "id": "item_3_content", "label": "Item 3 content" }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "PRUÉBALO AHORA" },
+        { "type": "url", "id": "link", "label": "Link", "info": "Leave blank to scroll to the buy box." },
+        { "type": "color", "id": "bg", "label": "Background", "default": "#2bb2fd" },
+        { "type": "color", "id": "color", "label": "Text colour", "default": "#ffffff" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TSL Image with text" }]
+}
+{% endschema %}

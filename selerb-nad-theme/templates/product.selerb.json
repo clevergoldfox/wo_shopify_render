@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "gp-section-1": { "type": "gp-section-1" },
+    "gp-section-2": { "type": "gp-section-2" },
+    "gp-section-3": { "type": "gp-section-3" },
+    "gp-section-4": { "type": "gp-section-4" },
+    "gp-section-5": { "type": "gp-section-5" },
+    "gp-section-6": { "type": "gp-section-6" },
+    "gp-section-7": { "type": "gp-section-7" },
+    "gp-section-8": { "type": "gp-section-8" }
+  },
+  "order": [
+    "gp-section-1",
+    "gp-section-2",
+    "gp-section-3",
+    "gp-section-4",
+    "gp-section-5",
+    "gp-section-6",
+    "gp-section-7",
+    "gp-section-8"
+  ]
+}

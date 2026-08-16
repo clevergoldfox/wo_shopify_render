@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_622351187357729313": {
+      "settings": {
+        "checksum": "11749089b0e52db88c0efedcc18bf0fcf112f885e7ed76c39b24c80061ee084d_1_1_1_0__1",
+        "ggMLeEcYuz6_label": "<p>Ver más</p>",
+        "ggW9U-F3MCt_text": "<span style=\"color:rgb(0,0,0);\">Pequeñas lecturas diarias pueden ayudarte a entender mejor tu bienestar</span>",
+        "ggZ0T2UWz2O_text": "<p><span style=\"color:rgb(0,0,0);\">SEGUIMIENTO DIARIO DESDE CASA</span></p>",
+        "ggbAVnOD8fc_text": "<p>Tener una forma sencilla de revisar tus indicadores en casa puede ayudarte a crear una rutina más constante y ordenada.</p><p>El Monitor Inteligente 8 en 1 está pensado para consultar lecturas orientativas como glucosa estimada, presión, oxígeno, pulso y otros indicadores generales de bienestar.</p><p>No se trata de reemplazar una consulta médica, sino de tener más información sobre tu día a día y detectar cambios que puedas comentar con un profesional de salud cuando sea necesario.</p>",
+        "ggvQJf9HDDI_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/giphy_8e2615ab-4c5a-49e9-aa32-e25d9c44b642.webp",
+        "section_preload": "true"
+      },
+      "type": "gp-section-622351187357729313"
+    },
+    "gp_section_622351187408060961": {
+      "settings": {
+        "checksum": "ffada39e865c7c76afbe0bda694525fdd51c5de3f8b6f52061b0095b940e9304_1_1_1_0__1",
+        "gg6PGviQIgu_text": "<p><span style=\"color:rgb(0,0,0);\">No. Este monitor es una herramienta de seguimiento orientativo. No sustituye glucómetros clínicos autorizados, análisis médicos ni indicaciones de un profesional de salud.</span></p>",
+        "gg9hjXNDcB3_text": "<p>No necesita tiras reactivas ni punción para las lecturas orientativas del dispositivo.</p><p>Solo debes encenderlo, colocar el dedo correctamente en el sensor y esperar unos segundos para ver la lectura en pantalla.</p>",
+        "ggJ8zkd7jr2_text": "<p><span style=\"color:rgb(0,0,0);\">s un dispositivo portátil diseñado para ayudarte a consultar indicadores generales de bienestar desde casa, como glucosa estimada, presión, oxígeno, pulso y otros datos orientativos.</span></p>",
+        "ggZmeg99v5i_text": "<p>Sí. Su pantalla clara y su funcionamiento sencillo lo hacen práctico para adultos, personas mayores y familias que quieren tener una herramienta de seguimiento en casa.</p>",
+        "gge1yj2pd85_childItem_0": "<p><span style=\"color:rgb(0,0,0);\">¿Qué es el Monitor Inteligente?</span></p>",
+        "gge1yj2pd85_childItem_1": "<p><span style=\"color:rgb(0,0,0);\">¿Este monitor sustituye un glucómetro tradicional?</span></p>",
+        "gge1yj2pd85_childItem_2": "<p><span style=\"color:rgb(0,0,0);\">¿Necesita tiras reactivas o agujas?</span></p>",
+        "gge1yj2pd85_childItem_3": "<p><span style=\"color:rgb(0,0,0);\">¿Cuánto tarda en mostrar los resultados?</span></p>",
+        "gge1yj2pd85_childItem_4": "<p><span style=\"color:rgb(0,0,0);\">¿Lo puede usar una persona mayor?</span></p>",
+        "gge1yj2pd85_childItem_5": "<p><span style=\"color:rgb(0,0,0);\">¿Puedo usarlo para ajustar medicamentos?</span></p>",
+        "gggYoS2PDdD_text": "<p>El monitor muestra lecturas rápidas en pocos segundos, siempre que se utilice correctamente y siguiendo las instrucciones del manual.</p>",
+        "gghIg_gIsIe_text": "Frequently Asked Questions",
+        "ggwVamkyw_7_text": "<p><span style=\"color:rgb(0,0,0);\">No. Nunca debes ajustar medicamentos, dosis de insulina o tratamientos basándote únicamente en este monitor.</span></p>"
+      },
+      "type": "gp-section-622351187408060961"
+    },
+    "gp_section_622351187424838424": {
+      "settings": {
+        "checksum": "68068ce618752387388db545ff94c3b52a592e475d18e2815a314e09be675f6e_1_1_1_0__1",
+        "gg3P4LNQq82_text": "<p>5</p>",
+        "gg4xGLU9aA2_text": "<p>2</p>",
+        "gg5jijzTQ5N_text": "<span style=\"color:rgb(0,0,0);\">Así funciona</span>",
+        "gg6g_Klyzmy_text": "<p>Presiona el botón principal y selecciona el modo de lectura que quieras consultar. Su interfaz está pensada para que cualquier persona pueda usarlo sin conocimientos técnicos.</p>",
+        "ggBFDce1EC9_text": "<p><strong>Un monitor multifunción diseñado para ayudarte a revisar indicadores generales de bienestar desde casa de forma rápida, sencilla y sin complicaciones.</strong></p>",
+        "ggB_BOEDgWH_text": "<p>1</p>",
+        "ggBjWQ4BePv_text": "<p>En pocos segundos podrás ver en pantalla diferentes lecturas orientativas como glucosa estimada, presión, oxígeno, pulso y otros indicadores generales de bienestar.</p>",
+        "ggDXptlvePG_text": "<span style=\"color:rgb(0,0,0);\">Enciende el monitor</span>",
+        "ggDuO0QzByJ_text": "<p>El objetivo no es reemplazar una consulta médica, sino ayudarte a tener más información sobre tu día a día y poder comentar tus lecturas con un profesional de salud cuando sea necesario.</p>",
+        "ggEkQHzzGuj_text": "<span style=\"color:rgb(0,0,0);\">Coloca el dedo en el sensor</span>",
+        "ggFuWDDB-xr_text": "<span style=\"color:rgb(0,0,0);\">Registra tus lecturas diarias</span>",
+        "ggQ82bdIm6u_text": "<p>Sitúa el dedo correctamente sobre el área de medición siguiendo las instrucciones del manual. El dispositivo comenzará a procesar la lectura de forma automática.</p>",
+        "ggelbOc6Yd2_text": "<p>4</p>",
+        "ggga0FHeS8d_text": "<span style=\"color:rgb(0,0,0);\">Comparte tus datos con un profesional si lo necesitas</span>",
+        "gggc6XiRQ4A_text": "<p>3</p>",
+        "ggub2Y96h99_text": "<p>Anota tus resultados para llevar un seguimiento más ordenado con el paso de los días. Esto te ayuda a observar cambios, patrones y variaciones en tu rutina.</p>",
+        "ggxb1d3PdHk_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/DeWatermark.ai_1742489558874.webp",
+        "ggzDyTMTW5b_text": "<span style=\"color:rgb(0,0,0);\">Consulta tus indicadores en segundos</span>"
+      },
+      "type": "gp-section-622351187424838424"
+    },
+    "gp_section_622351187441615501": {
+      "settings": {
+        "checksum": "ccc31c6815a3fe2e494e152d36de4caae1b621e32378e74af686f4ef34a0aa05_1_1_1_0__1",
+        "gg-0uxZZvHt_text": "<p>Aprovecha la oferta de lanzamiento y consigue tu monitor con precio especial por tiempo limitado.</p>",
+        "gg1oOmvch0N_text": "<span style=\"color:rgb(0,0,0);\">Pago seguro</span>",
+        "gg20z9dunDW_text": "<span style=\"color:rgb(0,0,0);\">Pack familiar disponible</span>",
+        "gg5M9WaJLnT_text": "<span style=\"color:rgb(0,0,0);\">Soporte post-compra</span>",
+        "ggCMalyrkia_text": "<span style=\"color:rgb(0,0,0);\">Envío a todo México</span>",
+        "ggDBmlhwOob_text": "<p>Recibe tu monitor directamente en tu domicilio de forma segura y sin complicaciones.</p>",
+        "ggQ_vXHYI1a_text": "<p>Llévate 2 unidades y ten una en casa y otra para tus padres, abuelos o familiares cercanos.</p>",
+        "ggUXJnVWOKz_text": "<p>Si el producto llega dañado o presenta un fallo de fábrica, te damos solución según nuestras políticas.</p>",
+        "ggVSHfhaKHM_text": "Ahorra en tu pedido",
+        "ggcWb1qj91H_text": "<strong>Compra tu Monitor con beneficios exclusivos</strong>",
+        "ggh5vD_fKey_text": "<p>Tu compra se procesa mediante una pasarela protegida para que puedas ordenar con tranquilidad.</p>",
+        "ggot-KmNYte_text": "<p>Te ayudamos si tienes dudas sobre el uso, configuración o funcionamiento del dispositivo.</p>",
+        "ggp0NZzRylj_text": "Garantía de funcionamiento"
+      },
+      "type": "gp-section-622351187441615501"
+    },
+    "gp_section_622351187491947041": {
+      "settings": {
+        "checksum": "408888ea1ad31e1cb6dd970926b04c3ef2d11cf54176fdfbac30aedaa82d8234_1_1_1_0__1",
+        "gg2OfJkZR8E_text": "<p><span style=\"color:rgb(0,0,0);\">Bienestar diario, fácil y accesible</span></p>",
+        "ggLR5slvGDQ_text": "<p>4.7/5 basado en +5000 comentarios</p>",
+        "ggMLu2jcC4e_text": "<p>Este monitor es ideal para ti si:&nbsp;</p>",
+        "ggQlqqTiJt3_text": "<p>Sin tiras reactivas</p>",
+        "ggUNzEADERm_childItem_0": "<p><span style=\"color:rgb(0,0,0);\">Quieres llevar un seguimiento más práctico de tus indicadores desde casa</span></p>",
+        "ggUNzEADERm_childItem_1": "<p><span style=\"color:rgb(0,0,0);\">Buscas una forma rápida y sencilla de consultar tus lecturas diarias</span></p>",
+        "ggUNzEADERm_childItem_2": "<p><span style=\"color:rgb(0,0,0);\">Prefieres un dispositivo cómodo, portátil y fácil de entender</span></p>",
+        "ggUNzEADERm_childItem_3": "<p><span style=\"color:rgb(0,0,0);\">Quieres crear una rutina de bienestar para ti o tu familia</span></p>",
+        "ggZPr83iO9X_text": "<p><strong>Un monitor compacto pensado para ayudarte a consultar indicadores generales de bienestar como glucosa estimada, presión, oxígeno, pulso y otros datos orientativos desde la comodidad de tu hogar.</strong></p>",
+        "ggblU_t7VRr_text": "<p>Fácil de usar en casa</p>",
+        "ggkaVb3QG98_errorMessage": "Cannot add product to cart",
+        "ggkaVb3QG98_label": "Añadir al carrito",
+        "ggkaVb3QG98_outOfStockLabel": "Out of stock",
+        "ggkaVb3QG98_successMessage": "Add product to cart successfully",
+        "ggkaVb3QG98_unavailableLabel": "Unavailable",
+        "ggkaVb3QG98_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "section_preload": "true"
+      },
+      "type": "gp-section-622351187491947041"
+    },
+    "gp_section_622351188263699224": {
+      "settings": {
+        "checksum": "c2db32e626e4bc2c9a09a63c04f7e99220ba3a461161f6c8a8648d24fd99e187_1_1_1_0__1",
+        "gg4WFZDT6Ii_text": "<span style=\"color:rgb(0,0,0);\">Clientes que ya lo usan en su rutina diaria</span>",
+        "gg4xa5XWYzS_text": "<span style=\"color:rgb(0,0,0);\">Bueno para personas mayores</span>",
+        "gg6NSIF26_b_text": "<p><span style=\"color:rgb(0,0,0);\">María G., 54</span></p>",
+        "gg6pHh_jd_o_text": "<span style=\"color:rgb(0,0,0);\">Ideal para tenerlo en casa</span>",
+        "gg8Sm_MPiii_text": "<p><span style=\"color:rgb(0,0,0);\">Rosa M., 61</span></p>",
+        "ggB0RD-D57y_text": "<p>“En mi familia queríamos algo sencillo para revisar datos básicos de bienestar sin depender de varios aparatos. Es compacto, fácil de guardar y cualquiera en casa puede usarlo siguiendo las instrucciones.”</p>",
+        "ggJKR3zpXLm_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/shutterstock_2639467661.jpg",
+        "ggQXHvBg-ZZ_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/shutterstock_2612342309.jpg",
+        "ggW8el3TcJR_text": "<p>Compradora verificada</p>",
+        "ggX1OsfgIwu_text": "<span style=\"color:rgb(0,0,0);\">Me da más tranquilidad</span>",
+        "ggZwgygrPu__text": "<p>Compradora verificada</p>",
+        "gg_oDw4vdqD_text": "<p>“No lo uso para sustituir al médico, sino como apoyo para estar más pendiente de mi rutina. Me parece útil para revisar mis lecturas y anotar cambios durante la semana.”</p>",
+        "gg_tJ0xIJGZ_text": "<p><span style=\"color:rgb(0,0,0);\">Patricia L., 49</span></p>",
+        "ggacTPIZsDS_text": "<p>Compradora verificada</p>",
+        "ggfbQzfoFii_text": "<p><strong>Ana R., 38</strong></p>",
+        "ggnFiWAsvJr_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/shutterstock_2235667567.jpg",
+        "ggrIounrb2v_text": "Más fácil de usar de lo que esperaba",
+        "ggtY0GAtuaB_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/shutterstock_2746512331.jpg",
+        "ggv0r2ws1fk_text": "<p>“Se lo compré a mi papá porque necesitaba algo simple. La pantalla se ve clara, el uso es sencillo y no tiene menús complicados. Para seguimiento en casa nos ha resultado muy práctico.”</p>",
+        "ggvAvRxfa0r_text": "<p>Compradora verificada</p>",
+        "ggw8EDLnmkJ_text": "<p><span style=\"color:rgb(0,0,0);\">Lo compré para tener una forma más práctica de revisar mis indicadores en casa. Me gustó que la pantalla se entiende rápido y que no necesitas complicarte con muchos botones. Lo uso por las mañanas y me ayuda a llevar un seguimiento más ordenado.</span></p>",
+        "ggx8wxRbc3t_text": "<p>4.7/5 basado en +5000 comentarios</p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-622351188263699224"
+    }
+  },
+  "order": [
+    "gp_section_622351187491947041",
+    "gp_section_622351188263699224",
+    "gp_section_622351187357729313",
+    "gp_section_622351187424838424",
+    "gp_section_622351187441615501",
+    "gp_section_622351187408060961"
+  ]
+}

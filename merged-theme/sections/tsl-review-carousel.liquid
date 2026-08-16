@@ -1,0 +1,56 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+<div class="tsl tsl-reviews tsl-reveal" id="reviews" style="background-color: {{ section.settings.bg }};">
+  {%- if section.blocks.size > 0 -%}
+    <div class="tsl-reviews__track">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.image != blank -%}
+          <div class="tsl-reviews__slide" {{ block.shopify_attributes }}>
+            {{ block.settings.image | image_url: width: 800 | image_tag:
+               loading: 'lazy', alt: '', widths: '400,600,800' }}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.heading != blank -%}
+    <h2 class="tsl__heading tsl-reviews__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.subheading != blank -%}
+    <p class="tsl-reviews__sub">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.rating_text != blank -%}
+    <div class="tsl-reviews__rating">
+      <span class="tsl-reviews__stars" role="img" aria-label="{{ section.settings.rating_text }}">
+        {%- for i in (1..5) -%}{% render 'tsl-icon', icon: 'star' %}{%- endfor -%}
+      </span>
+      <span>{{ section.settings.rating_text }}</span>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "TSL Review carousel",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Historias Reales, Resultados Reales" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Experiencias honestas con NAC600 & NAD Daily Complex" },
+    { "type": "text", "id": "rating_text", "label": "Rating text", "default": "4.7 / 5 — 69,708+ clientes" },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Review image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TSL Review carousel" }]
+}
+{% endschema %}

@@ -1,0 +1,1135 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h2",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "rating_stars",
+          "settings": {
+            "rating": 4.8,
+            "star_color": "#d7c09a",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "960 opiniones (4.85/5)",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
+          }
+        },
+        "reviews_8UgFbe": {
+          "type": "reviews",
+          "settings": {
+            "color_scheme": "background-1",
+            "show_custom_bg": true,
+            "custom_bg_color": "#fdfbfa",
+            "corner_radius": 12,
+            "border_width": 0,
+            "border_color": "#fbf8f5",
+            "avatar_alignment": "top",
+            "avatar_corner_radius": 40,
+            "star_color": "#ffcc00",
+            "stars_translate": 0,
+            "checkmark_color": "#6d388b",
+            "checkmark_icon_color": "#ffffff",
+            "slider_type": "slide",
+            "autoplay": false,
+            "autoplay_speed": 5,
+            "display_arrows": false,
+            "display_dots": true,
+            "author_1": "<strong>Dr. Andrés R. 47 - </strong>Fisioterapeuta de medicina funcional.<strong> </strong>[stars]",
+            "image_1": "shopify://shop_images/portrait-attractive-male-doctor-683x1024.jpg",
+            "text_1": "<p>“Llevo años recomendando NAD+ a mis pacientes, pero el formato de toma siempre había sido un problema. El NAD+ líquido es una opción excepcional: de rápida absorción y bien tolerada. He empezado a integrarlo en protocolos de apoyo cognitivo, energía y envejecimiento celular. Los pacientes están notando resultados en cuestión de semanas. Es una herramienta muy prometedora en el mundo de la longevidad.”</p>",
+            "author_2": "",
+            "text_2": "",
+            "author_3": "",
+            "text_3": "",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "custom_liquid_pHrTnz": {
+          "type": "custom_liquid",
+          "name": "BENEFICIOS",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"aa-benefit-card\" role=\"note\" aria-label=\"Beneficios principales\">\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓</span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Apoya la función normal del sistema nervioso</div>\n      <div class=\"aa-benefit-desc\">Con vitaminas del grupo B pensadas para tu rutina diaria.*</div>\n    </div>\n  </div>\n\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓</span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Contribuye al metabolismo energético</div>\n      <div class=\"aa-benefit-desc\">Ideal para acompañar días exigentes y mantener constancia.*</div>\n    </div>\n  </div>\n\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓</span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Formato líquido sublingual, fácil de integrar</div>\n      <div class=\"aa-benefit-desc\">Unas gotas, listo: práctico para quienes evitan pastillas grandes.</div>\n    </div>\n  </div>\n\n  <div class=\"aa-benefit-footnote\">\n    *Complemento alimenticio. No sustituye una dieta equilibrada. Resultados pueden variar.\n  </div>\n</div>\n\n<style>\n  .aa-benefit-card{\n    background:#f6efe4;                 /* beige claro */\n    border:1px solid rgba(0,0,0,.08);\n    border-radius:14px;\n    padding:16px 16px;\n    display:grid;\n    gap:14px;\n  }\n\n  .aa-benefit-row{\n    display:grid;\n    grid-template-columns: 22px 1fr;\n    gap:10px;\n    align-items:start;\n  }\n\n  .aa-check{\n    width:22px;\n    height:22px;\n    border-radius:999px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    background:#d7c09a;                 /* mismo tono que tu barra */\n    color:#fff;\n    font-weight:900;\n    font-size:13px;\n    line-height:1;\n    margin-top:1px;\n    flex:0 0 auto;\n  }\n\n  .aa-benefit-title{\n    font-weight:800;\n    font-size:13px;\n    line-height:1.15;\n    letter-spacing:.1px;\n    color:#111;\n    margin:0;\n  }\n\n  .aa-benefit-desc{\n    margin-top:4px;\n    font-size:12px;\n    line-height:1.35;\n    color:rgba(0,0,0,.72);\n  }\n\n  .aa-benefit-footnote{\n    font-size:10.5px;\n    line-height:1.25;\n    color:rgba(0,0,0,.55);\n    padding-top:2px;\n  }\n\n  @media (max-width: 520px){\n    .aa-benefit-card{ padding:14px 14px; border-radius:12px; }\n    .aa-benefit-title{ font-size:13px; }\n    .aa-benefit-desc{ font-size:12px; }\n  }\n</style>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "margin_top": 9,
+            "margin_bottom": 15
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_types": "pills, dropdown, dropdown",
+            "custom_labels": "[name] - [selected]",
+            "swatches_size": "medium",
+            "swatches_border_radius": 100,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+            "full_width_classic": false,
+            "enable_quantity_discounts": true,
+            "style": "normal",
+            "headline": "BUNDLE & SAVE",
+            "preselected": "option_3",
+            "update_prices": false,
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "hide_pickers_overlay": true,
+            "pickers_label": "",
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "accent-1",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_label": "Buy [quantity]",
+            "option_1_benefit": "",
+            "option_1_caption": "You save [amount_saved]",
+            "option_1_percentage_off_text": "0",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_label": "Buy [quantity]",
+            "option_2_benefit": "",
+            "option_2_caption": "You save [amount_saved]",
+            "option_2_percentage_off_text": "0",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 3,
+            "option_3_badge": "",
+            "option_3_label": "Buy [quantity]",
+            "option_3_benefit": "",
+            "option_3_caption": "You save [amount_saved]",
+            "option_3_percentage_off_text": "0",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 0,
+            "option_4_badge": "",
+            "option_4_label": "Buy [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "icon_scale": 120,
+            "icon_spacing": 10,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#53af01",
+            "enable_secondary_btn": false,
+            "secondary_btn_label": "Buy It Now",
+            "secondary_btn_enable_custom_color": false,
+            "secondary_btn_custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "custom_liquid_qP8DF3": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .blink {\n    animation: blink-animation 1.5s steps(5, start) infinite;\n    color: red;\n    display: inline-block; /* Display as inline-block */\n    vertical-align: middle; /* Align vertically to middle */\n    font-size: 10px; /* Set font size */\n  }\n\n  @keyframes blink-animation {\n    to {\n      visibility: hidden;\n    }\n  }\n\n  .red-div {\n    background-color: #ffcccc;\n    padding: 2px 10px; /* 6px vertical, 10px horizontal */\n    border-radius: 8px; /* Rounded corners */\n    display: inline-block; /* Display as inline-block */\n    text-align: center; /* Center align the content */\n    margin: 0 auto; /* Horizontally center the red-div */\n  }\n\n  .text {\n    display: inline-block; /* Display as inline-block */\n    vertical-align: middle; /* Align vertically to middle */\n    margin-left: 10px; /* Add some space between the dot and the text */\n    color: #AD0000; /* Text color */\n    font-weight: 500; /* Medium font weight */\n    font-size: 12px; /* Set font size */\n    text-align: justify; /* Justify the text to the center */\n  }\n</style>\n\n<div class=\"red-div\">\n  <div class=\"blink\">&#9679;</div>\n  <div class=\"text\">Solo quedan 14 unidades disponibles</div>\n</div>"
+          }
+        },
+        "emoji_benefits_QNAiTT": {
+          "type": "emoji_benefits",
+          "settings": {
+            "benefits": "<p><strong>✨ Promueve la longevidad</strong></p><p><strong>💖 Restaura el brillo y la firmeza de la piel</strong></p><p><strong>🧬 Devuelve la energía juvenil en menos de 2 semanas</strong></p>",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "icon_with_text_EyYMnp": {
+          "type": "icon_with_text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_color": "accent-1",
+            "desktop_icon_size": 48,
+            "desktop_spacing": 12,
+            "desktop_text_size": 18,
+            "mobile_icon_size": 40,
+            "mobile_spacing": 10,
+            "mobile_text_size": 14,
+            "icon_1": "nest_eco_leaf",
+            "icon_1_fill": false,
+            "heading_1": "100% Orgánico",
+            "icon_2": "verified",
+            "icon_2_fill": false,
+            "heading_2": "Testado clínicamente",
+            "icon_3": "verified_user",
+            "icon_3_fill": false,
+            "heading_3": "30 días de garantía",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "collapsible_tab_mMdNjd": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "¿A qué sabe?",
+            "heading_size": "medium",
+            "icon": "help",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>El NAD+ líquido tiene un sabor suave y ligero. No es amargo, ni arenoso, ni artificial, y no deja ningún sabor residual. La mayoría de los usuarios dice que es fácil de tomar y que sabe muy bien.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_cX7JEb": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "¿Cómo mejora la piel?",
+            "heading_size": "medium",
+            "icon": "help",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>El NAD+ líquido restaura los niveles de NAD+, una molécula que tu cuerpo necesita para reparar las células de la piel y el ADN. Después de los 40 años, los niveles de NAD+ comienzan a disminuir, lo que hace que las células de la piel sean menos eficientes para reparar el daño y mantener una apariencia juvenil. Al recuperar los niveles de NAD+, tu piel comienza a repararse nuevamente: mejora la textura, las arrugas se suavizan y la firmeza regresa.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_HiB7R8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "¿También puede mejorar la energía?",
+            "heading_size": "medium",
+            "icon": "help",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>Sí. Muchos usuarios reportan que sus niveles de energía se dispararon después de usar NAD+ líquido de forma constante durante al menos 2 semanas. El NAD+ ayuda a que tus células reparen el daño muscular, lo que puede reducir el dolor y la fatiga.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_gVTQQA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "¿De verdad ayuda a revertir el envejecimiento?",
+            "heading_size": "medium",
+            "icon": "help",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>¡Puede hacer retroceder el tiempo! Y definitivamente puede ayudar a que tu cuerpo actúe de una forma más joven. Al restaurar el ciclo natural de reparación de tu ADN, el NAD+ líquido ayuda a reducir los signos visibles del envejecimiento: arrugas, flacidez y falta de luminosidad. La mayoría de los usuarios dice que no solo se ve mejor, sino que también vuelve a sentirse más segura de sí misma.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_jYM6Tp": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Información de envío",
+            "heading_size": "medium",
+            "icon": "check_box",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>Enviamos todos los pedidos de forma rápida y confiable. Puedes esperar que tu paquete llegue dentro de 5 a 7 días hábiles, dependiendo de tu ubicación.</p><p>Si tienes alguna pregunta o inquietud sobre tu envío, nuestro equipo de atención al cliente siempre está listo para ayudarte y responde a todas las consultas en menos de 15 minutos.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_CH999C": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Nuestra garantía",
+            "heading_size": "medium",
+            "icon": "check_box",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": true,
+            "open": false,
+            "content": "<p>Pruébalo durante 30 días sin ningún riesgo. Si no estás completamente satisfecho con tus resultados, simplemente devuelve el producto y te reembolsaremos el total de tu compra, sin hacer preguntas.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "custom_liquid_JU8meJ": {
+          "type": "custom_liquid",
+          "name": "RESEÑAS ",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"nv-block nv-block--reviews\">\n  <div class=\"nv-review-wrap\">\n    <h3 class=\"nv-review-title\">Reseñas Reales de Clientes</h3>\n    <p class=\"nv-review-sub\">Opiniones verificadas de clientes en México que ya lo integraron a su rutina diaria.</p>\n\n    <div class=\"nv-review-card\">\n      <div class=\"nv-review-top\">\n        <span class=\"nv-verified\">Cliente verificado</span>\n        <div class=\"nv-stars\" aria-label=\"5 estrellas\">★★★★★</div>\n      </div>\n\n      <div class=\"nv-review-quote\" id=\"nvQuote\">\n        “Me gustó porque no son pastillas. Lo pongo debajo de la lengua y listo. Súper práctico para el día a día.”\n      </div>\n\n      <div class=\"nv-review-person\" id=\"nvPerson\">— Fernanda M. · Guadalajara</div>\n\n      <div class=\"nv-dots\" aria-hidden=\"true\">\n        <span class=\"nv-dot nv-dot--active\"></span>\n        <span class=\"nv-dot\"></span>\n        <span class=\"nv-dot\"></span>\n        <span class=\"nv-dot\"></span>\n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n  /* ESPACIADO ENTRE LIQUIDS */\n  .nv-block--reviews{\n    margin-top: 18px;   /* separa del liquid de arriba */\n    margin-bottom: 18px;\n  }\n\n  .nv-review-wrap{ margin:0; }\n  .nv-review-title{ font-weight:800; font-size:18px; margin:0 0 4px; color:#111; }\n  .nv-review-sub{ margin:0 0 10px; font-size:12px; color:rgba(0,0,0,.55); }\n\n  .nv-review-card{\n    background:#f6efe4;\n    border:1px solid rgba(0,0,0,.08);\n    border-radius:14px;\n    padding:14px 14px 12px;\n  }\n\n  .nv-review-top{\n    display:flex; align-items:center; justify-content:space-between;\n    gap:12px; margin-bottom:10px;\n  }\n\n  .nv-verified{\n    font-style:italic;\n    font-size:12px;\n    color:rgba(0,0,0,.55);\n  }\n\n  .nv-stars{\n    color:#d7a31a;\n    font-size:13px;\n    letter-spacing:1px;\n    line-height:1;\n    white-space:nowrap;\n  }\n\n  .nv-review-quote{\n    font-size:13px;\n    line-height:1.5;\n    color:#111;\n    margin:0 0 10px;\n  }\n\n  .nv-review-person{\n    font-weight:700;\n    font-size:12px;\n    color:#111;\n    margin:0 0 10px;\n  }\n\n  .nv-dots{\n    display:flex; align-items:center; justify-content:center;\n    gap:6px; margin-top:2px;\n  }\n\n  .nv-dot{\n    width:7px; height:7px; border-radius:999px;\n    background:rgba(0,0,0,.18);\n  }\n\n  .nv-dot--active{ background:rgba(0,0,0,.55); }\n</style>\n\n<script>\n(function(){\n  const reviews = [\n    { quote:\"Me gustó porque no son pastillas. Lo pongo debajo de la lengua y listo. Súper práctico para el día a día.\", person:\"— Fernanda M. · Guadalajara\" },\n    { quote:\"Llegó rápido y bien empacado. Está fácil de usar y el sabor no es pesado. Lo agregué a mi rutina en la mañana.\", person:\"— Daniel R. · CDMX\" },\n    { quote:\"Me gustó que viene en gotero y no batallas. Se siente como un complemento práctico para días con mucho ritmo.\", person:\"— Karla S. · Monterrey\" },\n    { quote:\"Muy cómodo para quienes no queremos cápsulas grandes. Buen servicio y presentación. Lo volvería a pedir.\", person:\"— José L. · Puebla\" }\n  ];\n\n  const quoteEl = document.getElementById('nvQuote');\n  const personEl = document.getElementById('nvPerson');\n  const dots = document.querySelectorAll('.nv-dot');\n  if(!quoteEl || !personEl || dots.length < 4) return;\n\n  let i = 0;\n  function render(){\n    quoteEl.textContent = \"“\" + reviews[i].quote.trim() + \"”\";\n    personEl.textContent = reviews[i].person;\n    dots.forEach((d,idx)=>d.classList.toggle('nv-dot--active', idx===i));\n  }\n  render();\n  setInterval(()=>{ i=(i+1)%reviews.length; render(); }, 4500);\n})();\n</script>"
+          }
+        },
+        "e0a0b690-50df-4ca4-acfd-ce2980696cce": {
+          "type": "shipping_checkpoints",
+          "disabled": true,
+          "settings": {
+            "icon_1": "add_shopping_cart",
+            "filled_icon_1": false,
+            "top_text_1": "<strong>[start_date]</strong>",
+            "bottom_text_1": "Ordered",
+            "min_days_1": 0,
+            "max_days_1": 0,
+            "icon_2": "local_shipping",
+            "filled_icon_2": false,
+            "top_text_2": "<strong>[start_date] - [end_date]</strong>",
+            "bottom_text_2": "Order Ready",
+            "min_days_2": 1,
+            "max_days_2": 2,
+            "icon_3": "redeem",
+            "filled_icon_3": false,
+            "top_text_3": "<strong>[start_date] - [end_date]</strong>",
+            "bottom_text_3": "Delivered",
+            "min_days_3": 10,
+            "max_days_3": 12,
+            "icon_4": "",
+            "filled_icon_4": false,
+            "top_text_4": "",
+            "bottom_text_4": "",
+            "date_format": "mm_dd",
+            "days_labels": "Mon, Tue, Wed, Thu, Fri, Sat, Sun",
+            "months_labels": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec",
+            "color_scheme": "inverse",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "display_when": "after_scroll",
+            "button_label": "Add to cart",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "color_scheme": "background-1",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "combined",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": true,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": false,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "custom_liquid_jzcMH4": {
+          "type": "custom_liquid",
+          "name": "ACORDEON",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"nv-accordion-card\">\n\n  <details class=\"nv-item\" open>\n    <summary>Ingredientes Principales</summary>\n    <div class=\"nv-content\">\n      <p><strong>Vitamina B12 (Metilcobalamina) – 5000 mcg</strong><br>\n      Forma activa que contribuye al metabolismo energético normal y al funcionamiento del sistema nervioso.*</p>\n\n      <p><strong>Vitamina B6 (Piridoxina HCl) – 3.4 mg</strong><br>\n      Contribuye a reducir el cansancio y la fatiga.*</p>\n\n      <p><strong>Vitamina B1 (Tiamina) – 2.4 mg</strong><br>\n      Apoya el metabolismo normal de los carbohidratos.*</p>\n\n      <p><strong>Ácido Fólico – 400 mcg DFE</strong><br>\n      Participa en funciones celulares clave.*</p>\n    </div>\n  </details>\n\n  <details class=\"nv-item\">\n    <summary>Cómo Tomarlo</summary>\n    <div class=\"nv-content\">\n      <p><strong>Dosis recomendada:</strong> 1 gotero (1 ml) al día.</p>\n      <p>Colocar debajo de la lengua durante 20–30 segundos antes de tragar.</p>\n      <p>Ideal por la mañana como parte de tu rutina diaria.</p>\n    </div>\n  </details>\n\n  <details class=\"nv-item\">\n    <summary>Garantía de satisfacción 30 días</summary>\n    <div class=\"nv-content\">\n      <p>Compra con tranquilidad. Si no estás satisfecho en los primeros 30 días, puedes solicitar devolución.</p>\n      <p>Proceso simple y sin complicaciones.</p>\n    </div>\n  </details>\n\n</div>\n\n<style>\n.nv-accordion-card{\n  background:#f6efe4;\n  border:1px solid rgba(0,0,0,.08);\n  border-radius:16px;\n  padding:18px;\n  display:grid;\n  gap:14px;\n}\n\n.nv-item{\n  border-bottom:1px solid rgba(0,0,0,.08);\n  padding-bottom:12px;\n}\n\n.nv-item:last-child{\n  border-bottom:none;\n  padding-bottom:0;\n}\n\n.nv-item summary{\n  font-weight:700;\n  font-size:14px;\n  cursor:pointer;\n  list-style:none;\n  position:relative;\n}\n\n.nv-item summary::-webkit-details-marker{\n  display:none;\n}\n\n.nv-item summary::after{\n  content:\"+\";\n  position:absolute;\n  right:0;\n  font-size:16px;\n}\n\n.nv-item[open] summary::after{\n  content:\"–\";\n}\n\n.nv-content{\n  margin-top:10px;\n  font-size:13px;\n  line-height:1.5;\n  color:#333;\n}\n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "reviews_8UgFbe",
+        "custom_liquid_pHrTnz",
+        "price",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "custom_liquid_qP8DF3",
+        "emoji_benefits_QNAiTT",
+        "icon_with_text_EyYMnp",
+        "collapsible_tab_mMdNjd",
+        "collapsible_tab_cX7JEb",
+        "collapsible_tab_HiB7R8",
+        "collapsible_tab_gVTQQA",
+        "collapsible_tab_jYM6Tp",
+        "collapsible_tab_CH999C",
+        "custom_liquid_JU8meJ",
+        "e0a0b690-50df-4ca4-acfd-ce2980696cce",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
+        "description",
+        "custom_liquid_jzcMH4"
+      ],
+      "custom_css": [],
+      "settings": {
+        "display_id": false,
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "disable_prepend": true,
+        "hide_variants": false,
+        "variant_image_filtering": "none",
+        "image_zoom": "none",
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": false,
+        "dots_color_scheme": "inverse",
+        "video_player": "play_btn",
+        "enable_video_looping": false,
+        "autoplay_videos_pause_btn": false,
+        "video_sound_btn": false,
+        "video_timeline": false,
+        "play_btn_color_scheme": "accent-1",
+        "sound_btn_color_scheme": "inverse",
+        "timeline_color": "accent-1",
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail_slider",
+        "desktop_thumbnails_count": 5,
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "desktop_arrows_position": "hidden",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing_pixels": 0,
+        "mobile_arrows_position": "sides",
+        "mobile_pagination": "dots_overlay",
+        "mobile_thumbnails": "hide",
+        "mobile_thumbnails_count": 5,
+        "mobile_scroll_padding_percentage": 0,
+        "mobile_scroll_padding_pixels": 14,
+        "enable_mobile_outher_spacing": false,
+        "mobile_slides_container_width": 100,
+        "mobile_slides_inner_width": 100,
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 36
+      }
+    },
+    "sp_media_review_grid_wpDqjy": {
+      "type": "sp-media-review-grid",
+      "blocks": {
+        "image_3qtTED": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8510.webp",
+            "testimonial": "“Soy muy selectiva con lo que consumo, y el NAD+ líquido cumple con todo lo que busco: es limpio, efectivo y respaldado por la ciencia. Después de un mes, noté una mejora en mi claridad mental, mi piel se veía con un tono más uniforme y me sentía con más energía y resistencia. Es como si me apoyara a nivel celular: siento que funciona desde dentro hacia fuera.”",
+            "attr_1": "María",
+            "attr_2": ""
+          }
+        },
+        "image_8EQQUg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8511.webp",
+            "testimonial": "“Estoy en reuniones todo el día y entreno los fines de semana, así que necesito resistencia y concentración, sin tiempo para bajones. El NAD+ líquido me da una energía constante y limpia, sin picos ni caídas. Mi resistencia en la bici ha mejorado notablemente y mi tiempo de recuperación es más corto. Además, mi piel se ve más saludable que en la última década.”",
+            "attr_1": "Hugo",
+            "attr_2": ""
+          }
+        },
+        "image_9DmLbp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8512.webp",
+            "testimonial": "“No me di cuenta de lo nublada que me sentía hasta que empecé a tomar NAD+ líquido. En dos semanas, sentí la mente más despejada, la energía más estable y ya no tenía ese bajón de las 3 de la tarde como antes. ¿La mejor sorpresa? Mi piel empezó a verse más luminosa; mis amigas literalmente me preguntaron qué tratamiento facial me había hecho.”",
+            "attr_1": "Laura",
+            "attr_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_3qtTED",
+        "image_8EQQUg",
+        "image_9DmLbp"
+      ],
+      "name": "🚀SP - Media Review Grid",
+      "settings": {
+        "override_fonts": false,
+        "text_font": "system_ui_n4",
+        "headline_font": "system_ui_n4",
+        "text_size": 15,
+        "mobile_text_size": 15,
+        "text_line_height": "inherit",
+        "headline_size": 25,
+        "mobile_headline_size": 40,
+        "headline_line_height": "inherit",
+        "text_color": "#111",
+        "headline_color": "#111",
+        "review_background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
+        "highlight_color": "#111",
+        "section_background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "section_padding_top_bottom": 25,
+        "mobile_section_padding_top_bottom": 25,
+        "section_padding_left_right": 25,
+        "mobile_section_padding_left_right": 25,
+        "element_spacing": 15,
+        "container_background_color": "linear-gradient(164deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "container_max_width": 1000,
+        "container_padding_top_bottom": 10,
+        "mobile_container_padding_top_bottom": 10,
+        "container_padding_left_right": 10,
+        "mobile_container_padding_left_right": 10,
+        "container_radius": 0,
+        "container_shadow": false,
+        "container_border_size": 0,
+        "container_border_color": "#888",
+        "button_padding_tb": 10,
+        "button_padding_lr": 25,
+        "button_border_radius": 5,
+        "button_background_color": "linear-gradient(164deg, rgba(17, 17, 17, 1), rgba(51, 51, 51, 1) 100%)",
+        "button_text_color": "#fff",
+        "grid_gap": 20,
+        "mobile_display": "slideshow",
+        "mobile_columns": "1fr",
+        "progress_background_color": "linear-gradient(177deg, rgba(17, 17, 17, .25) 3%, rgba(17, 17, 17, 0.25) 100%)",
+        "progress_foreground_color": "linear-gradient(177deg, rgba(17, 17, 17, 1) 3%, rgba(17, 17, 17, 1) 100%)",
+        "indicator_color": "#111",
+        "enable_autoplay": true,
+        "autoplay_time": "5000",
+        "media_aspect_ratio": "4 / 3",
+        "big_play_pause_button": true,
+        "media_radius": 5,
+        "media_shadow": true,
+        "headline_alignment": "center",
+        "headline": "<strong>¿Qué opinan nuestros clientes reales?</strong>",
+        "text": "",
+        "headline_spacing": 15
+      }
+    },
+    "image_with_text_zh9LeB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_eFkLNE": {
+          "type": "heading",
+          "settings": {
+            "title": "Una revolución innovadora en la absorción de NAD+",
+            "title_highlight_color": "#6D388B",
+            "heading_size": "h1"
+          }
+        },
+        "text_jH7t97": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Experimenta tasas de absorción líderes en su categoría con NAD+ líquido.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_eFkLNE",
+        "text_jH7t97"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/ChatGPT_Image_29_abr_2026_13_16_37.png",
+        "height": "adapt",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "section_color_scheme": "background-1",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_full_media_width": false,
+        "mobile_direction": "normal",
+        "mobile_image_quanlity": "2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#2E2A39",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#FFFFFF",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d",
+        "custom_section_colors_background": "#FFFFFF",
+        "custom_section_gradient_background": ""
+      }
+    },
+    "image_with_text_fJXVaT": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cCJwfb": {
+          "type": "heading",
+          "settings": {
+            "title": "Cada ingrediente cuidadosamente elegido",
+            "title_highlight_color": "#6D388B",
+            "heading_size": "h1"
+          }
+        },
+        "text_76DN68": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ingredientes claros y transparentes, cada uno respaldado clínicamente e incluido en una dosis significativa.<br/><br/>✅ <strong>Ribósido de nicotinamida (550 mg)</strong><br/>Un precursor directo del NAD+ que ayuda a elevar rápidamente sus niveles para restaurar la energía celular y favorecer la reparación.</p><p>✅ <strong>Quercetina fitosoma (300 mg)</strong><br/>Estimula la creación de nuevas mitocondrias, impulsando la producción de energía desde el núcleo celular.</p><p>✅ <strong>Trans-resveratrol (150 mg)</strong><br/>Activa las sirtuinas, las proteínas de la longevidad responsables de la protección del ADN y la reparación celular.</p><p>✅ <strong>PQQ (40 mg)</strong><br/>Un potente antioxidante que estimula aún más el crecimiento de nuevas mitocondrias, los motores energéticos de tus células.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cCJwfb",
+        "text_76DN68"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/ChatGPT_Image_29_abr_2026_13_17_48.png",
+        "height": "adapt",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "section_color_scheme": "background-1",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_full_media_width": false,
+        "mobile_direction": "normal",
+        "mobile_image_quanlity": "2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#2E2A39",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#FFFFFF",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d",
+        "custom_section_colors_background": "#FFFFFF",
+        "custom_section_gradient_background": ""
+      }
+    },
+    "custom_liquid_hVGUtb": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"yl-reviews-section\">\n  <style>\n    .yl-reviews-section {\n      font-family: Arial, sans-serif;\n      background-color: #f5fdf5;\n      margin: 0;\n      padding: 1px 0 0;\n    }\n\n    .yl-reviews-section h1.d3FsH6IqT4 {\n      margin-top: 30px;\n      font-size: 26px;\n      font-weight: bold;\n      color: #333;\n      text-align: center;\n      line-height: 1.25;\n      padding: 0 16px;\n    }\n\n    .yl-reviews-section h1 .AaB2Y5Gp9f {\n      background: linear-gradient(to bottom, #28a745 0%, #d3f9d8 100%);\n      -webkit-background-clip: text;\n      color: transparent;\n    }\n\n    .yl-reviews-section p.RwV2N5Lt0I {\n      margin-top: 5px;\n      font-size: 16px;\n      color: #555;\n      text-align: center;\n      padding: 0 16px;\n    }\n\n    .yl-reviews-section .LaVtZ1Q0xK {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-family: Arial, sans-serif;\n      font-size: 14px;\n      color: #333;\n      margin-top: 10px;\n      flex-wrap: wrap;\n      gap: 8px;\n      padding: 0 16px;\n      text-align: center;\n    }\n\n    .yl-reviews-section .KsF9M8H2Ej {\n      display: flex;\n      align-items: center;\n      margin-right: 10px;\n    }\n\n    .yl-reviews-section .KsF9M8H2Ej img {\n      max-width: 100px;\n      width: 100px;\n      height: auto;\n    }\n\n    .yl-reviews-section .jX4N5P7Dr6 {\n      font-weight: normal;\n    }\n\n    .yl-reviews-section .Yk4V8N6Vf1 {\n      font-weight: bold;\n    }\n\n    .yl-reviews-section .F0rW6K8yEz {\n      display: flex;\n      flex-wrap: nowrap;\n      gap: 20px;\n      overflow-x: auto;\n      padding: 20px;\n      margin: 20px auto;\n      width: 90%;\n      box-sizing: border-box;\n      scroll-snap-type: x mandatory;\n      -webkit-overflow-scrolling: touch;\n    }\n\n    .yl-reviews-section .nQ0V3S1vD7 {\n      background-color: white;\n      border-radius: 8px;\n      padding: 20px;\n      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n      text-align: left;\n      position: relative;\n      border-left: 4px solid #28a745;\n      width: 400px;\n      flex-shrink: 0;\n      scroll-snap-align: start;\n    }\n\n    .yl-reviews-section .nQ0V3S1vD7 .Fb0W9T8TjZ {\n      font-weight: bold;\n      margin-bottom: 5px;\n      font-size: 14px;\n      color: #333;\n    }\n\n    .yl-reviews-section .nQ0V3S1vD7 .rT9B3G2MdF {\n      font-size: 12px;\n      color: #777;\n      margin-bottom: 15px;\n    }\n\n    .yl-reviews-section .nQ0V3S1vD7 .gP9Z3A2Kn7 {\n      font-size: 14px;\n      color: #555;\n      margin-bottom: 15px;\n      line-height: 1.6;\n    }\n\n    .yl-reviews-section .nQ0V3S1vD7 .Vh3J2R4Nw1 {\n      font-size: 12px;\n      color: #28a745;\n      font-weight: bold;\n    }\n\n    .yl-reviews-section .nQ0V3S1vD7 .Bz5W3F7Wz2 {\n      margin-top: 10px;\n      display: flex;\n      gap: 2px;\n    }\n\n    .yl-reviews-section .Bz5W3F7Wz2 svg {\n      width: 16px;\n      height: 16px;\n      fill: #28a745;\n    }\n\n    .yl-reviews-section .iX7Q3H6Fv4 {\n      font-size: 14px;\n      margin-top: 20px;\n      color: #555;\n      text-align: center;\n      background: linear-gradient(to top, #d3f9d8 0%, #e1f7e0 60%, #f5fdf5 100%);\n      padding: 20px;\n    }\n\n    .yl-reviews-section .iX7Q3H6Fv4 span {\n      background-color: #28a745;\n      color: white;\n      padding: 2px 8px;\n      border-radius: 4px;\n    }\n\n    .yl-reviews-section .F0rW6K8yEz::-webkit-scrollbar {\n      height: 8px;\n    }\n\n    .yl-reviews-section .F0rW6K8yEz::-webkit-scrollbar-thumb {\n      background-color: #28a745;\n      border-radius: 10px;\n    }\n\n    .yl-reviews-section .F0rW6K8yEz::-webkit-scrollbar-track {\n      background-color: #f5fdf5;\n    }\n\n    @media screen and (max-width: 749px) {\n      .yl-reviews-section h1.d3FsH6IqT4 {\n        font-size: 23px;\n      }\n\n      .yl-reviews-section .F0rW6K8yEz {\n        width: 100%;\n        padding: 16px;\n        gap: 14px;\n      }\n\n      .yl-reviews-section .nQ0V3S1vD7 {\n        width: 82%;\n        min-width: 82%;\n        padding: 18px;\n      }\n    }\n  </style>\n\n  <h1 class=\"d3FsH6IqT4\">Tu <span class=\"AaB2Y5Gp9f\">bienestar</span> es nuestro éxito</h1>\n  <p class=\"RwV2N5Lt0I\">Clientes que ya integraron Liquid NAD+ a su rutina diaria</p>\n\n  <div class=\"LaVtZ1Q0xK\">\n    <div class=\"KsF9M8H2Ej\">\n      <img src=\"https://i.imgur.com/EHjNmTM.png\" alt=\"5 estrellas\">\n    </div>\n    <div class=\"jX4N5P7Dr6\">\n      Puntuación <span class=\"Yk4V8N6Vf1\">4.9 | 14,500+</span> reseñas\n    </div>\n  </div>\n\n  <div class=\"F0rW6K8yEz\">\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Mariana G.</div>\n      <div class=\"rT9B3G2MdF\">Hace unos minutos</div>\n      <div class=\"gP9Z3A2Kn7\">\"Llevo casi 3 semanas tomándolo y lo que más noté fue la energía más estable durante el día. Antes me daba un bajón fuerte en la tarde, pero ahora llego mejor al final del día. El sabor es ligero y se toma fácil.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Claudia R.</div>\n      <div class=\"rT9B3G2MdF\">Hace 2 horas</div>\n      <div class=\"gP9Z3A2Kn7\">\"No esperaba notar nada en la piel, pero después de varios días sentí la cara menos apagada y con mejor aspecto. Me gusta porque no son cápsulas enormes, es práctico y fácil de incluir en la rutina.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Daniel M.</div>\n      <div class=\"rT9B3G2MdF\">Hace 1 día</div>\n      <div class=\"gP9Z3A2Kn7\">\"Trabajo muchas horas frente a la computadora y últimamente me sentía sin pila. Con este NAD+ líquido he sentido más claridad y menos cansancio mental. No es magia, pero sí se nota cuando lo tomas constante.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Patricia L.</div>\n      <div class=\"rT9B3G2MdF\">Hace 3 días</div>\n      <div class=\"gP9Z3A2Kn7\">\"He probado suplementos en cápsulas y siempre los dejo. Este me gustó porque es líquido, sabe bien y no me cae pesado. Lo tomo por las mañanas y siento que empiezo el día con más energía.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Alejandra S.</div>\n      <div class=\"rT9B3G2MdF\">Hace 5 días</div>\n      <div class=\"gP9Z3A2Kn7\">\"Me gustó mucho. La presentación se siente premium, el sabor no es fuerte y después de dos semanas empecé a notar más energía y mejor ánimo. Ya pedí otro para no quedarme sin.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Fernanda A.</div>\n      <div class=\"rT9B3G2MdF\">Hace 1 semana</div>\n      <div class=\"gP9Z3A2Kn7\">\"Lo tomo cada mañana antes de empezar el día. Me gusta porque no me da nervios como el café, solo siento energía más limpia y constante. También he notado mi piel un poco más luminosa.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Lucía P.</div>\n      <div class=\"rT9B3G2MdF\">Hace 1 semana</div>\n      <div class=\"gP9Z3A2Kn7\">\"Soy pésima para tomar cápsulas, por eso me animé con este formato. Se toma rápido, no deja mal sabor y me ha ayudado a sentirme más activa. Me parece muy cómodo.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n    <div class=\"nQ0V3S1vD7\">\n      <div class=\"Fb0W9T8TjZ\">Gabriela T.</div>\n      <div class=\"rT9B3G2MdF\">Hace 2 semanas</div>\n      <div class=\"gP9Z3A2Kn7\">\"Antes a las 4 o 5 pm ya estaba agotada. Desde que lo tomo, siento que mi energía dura más. También me veo menos cansada en el espejo, que para mí ya es bastante.\"</div>\n      <div class=\"Vh3J2R4Nw1\">✔ Reseña de cliente</div>\n      <div class=\"Bz5W3F7Wz2\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 .587l3.668 7.431L24 9.748l-6 5.832 1.42 8.271L12 18.896l-7.42 4.955L6 15.58l-6-5.832 8.332-1.73z\"/></svg>\n      </div>\n    </div>\n\n  </div>\n\n  <div class=\"iX7Q3H6Fv4\">Basado en <span>14,500+</span> experiencias de clientes</div>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "title": "You may also like",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "horizontal_ticker_ghzCDQ": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_Fnebk8": {
+          "type": "text",
+          "settings": {
+            "title": "🛡️ COMPRA 100% PROTEGIDA"
+          }
+        },
+        "text_fVF4iB": {
+          "type": "text",
+          "settings": {
+            "title": "🚚 ENVÍO GRATIS DESDE $858 MXN"
+          }
+        },
+        "text_6jgHzi": {
+          "type": "text",
+          "settings": {
+            "title": "✅ GARANTÍA 30 DÍAS (SIN RIESGO)"
+          }
+        }
+      },
+      "block_order": [
+        "text_Fnebk8",
+        "text_fVF4iB",
+        "text_6jgHzi"
+      ],
+      "disabled": true,
+      "name": "Horizontal Ticker",
+      "settings": {
+        "visibility": "always-display",
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "custom_colors_background": "#d7c09a",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39"
+      }
+    },
+    "8beb6911-28c6-482c-976a-e5421ad3e8df": {
+      "type": "custom-columns",
+      "blocks": {
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-heading-1": {
+          "type": "heading",
+          "settings": {
+            "column": "col_1",
+            "visibility": "always-display",
+            "heading": "Custom columns",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "column": "col_1",
+            "visibility": "always-display",
+            "text": "<p>Use the flexible grid system to create any layout. Each block can be placed in any of the columns.</p>",
+            "text_style": "body",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-1": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_2",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 30
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-2": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_2",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-image-1": {
+          "type": "image",
+          "settings": {
+            "column": "col_3",
+            "visibility": "always-display",
+            "width": 100,
+            "alignment": "center",
+            "mobile_alignment": "center",
+            "border_radius": 0,
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-3": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_4",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 30
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-4": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_4",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-heading-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-richtext-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-2",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-image-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-3",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "columns_count": 4,
+        "column_gap_desktop": 40,
+        "row_gap_desktop": 40,
+        "desktop_vertical_alignment": "center",
+        "column_gap_mobile": 20,
+        "row_gap_mobile": 30,
+        "mobile_vertical_alignment": "flex-start",
+        "col_1_desktop_width": 12,
+        "col_1_mobile_width": 4,
+        "col_1_visibility": "always-display",
+        "col_2_desktop_width": 4,
+        "col_2_mobile_width": 4,
+        "col_2_visibility": "always-display",
+        "col_3_desktop_width": 4,
+        "col_3_mobile_width": 4,
+        "col_3_visibility": "always-display",
+        "col_4_desktop_width": 4,
+        "col_4_mobile_width": 4,
+        "col_4_visibility": "always-display",
+        "col_5_desktop_width": 3,
+        "col_5_mobile_width": 4,
+        "col_5_visibility": "always-display",
+        "col_6_desktop_width": 3,
+        "col_6_mobile_width": 4,
+        "col_6_visibility": "always-display",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a": {
+      "type": "icons-with-content",
+      "blocks": {
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Content heading",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair icons with content to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "icon_size": "m",
+        "icon_position": "next-to-title",
+        "icon_color": "accent-1",
+        "icon_heading_size": "h3",
+        "icon_text_alignment": "left",
+        "icons_desktop_layout": "1-column",
+        "icons_mobile_layout": "1-column",
+        "desktop_content_alignment": "left",
+        "layout": "image_first",
+        "mobile_layout": "text_first",
+        "hide_content_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
+      "type": "testimonials",
+      "blocks": {
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        },
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        },
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-1",
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-2",
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Testimonials",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "text": "",
+        "color_scheme": "background-1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "show_stars": true,
+        "stars_color": "#ffd700",
+        "show_quotes": true,
+        "quotes_color_scheme": "accent-2",
+        "cards_color_scheme": "bg-overlay",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_cards_colors_background": "#f3f3f3",
+        "custom_cards_gradient_background": "",
+        "custom_cards_colors_text": "#2e2a39"
+      }
+    },
+    "b321ab88-2b59-4dba-bade-54885c874ca5": {
+      "type": "section-divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "accent-1",
+        "custom_shape_color": "#dd1d1d",
+        "background_color": "background-1",
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sp_media_review_grid_wpDqjy",
+    "image_with_text_zh9LeB",
+    "image_with_text_fJXVaT",
+    "custom_liquid_hVGUtb",
+    "related-products",
+    "horizontal_ticker_ghzCDQ",
+    "8beb6911-28c6-482c-976a-e5421ad3e8df",
+    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a",
+    "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
+    "b321ab88-2b59-4dba-bade-54885c874ca5"
+  ]
+}

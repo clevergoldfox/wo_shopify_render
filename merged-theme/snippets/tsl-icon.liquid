@@ -1,0 +1,35 @@
+{%- comment -%}
+  Shared inline SVG icons.
+  Usage: {% render 'tsl-icon', icon: 'check', class: 'my-class' %}
+  Icons: check, check-circle, x, plus, star, shield, truck, refresh, verified, leaf, sparkle
+{%- endcomment -%}
+{%- liquid
+  assign i = icon | default: 'check'
+  assign cls = class | default: ''
+-%}
+{%- case i -%}
+  {%- when 'check' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+  {%- when 'check-circle' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+  {%- when 'x' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  {%- when 'plus' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg>
+  {%- when 'star' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M11.52 3.46a.5.5 0 0 1 .95 0l1.66 5.1a.5.5 0 0 0 .48.35h5.36a.5.5 0 0 1 .3.9l-4.34 3.16a.5.5 0 0 0-.18.56l1.66 5.1a.5.5 0 0 1-.77.56l-4.34-3.15a.5.5 0 0 0-.59 0L7.37 19.2a.5.5 0 0 1-.77-.56l1.66-5.1a.5.5 0 0 0-.18-.56L3.73 9.81a.5.5 0 0 1 .3-.9h5.36a.5.5 0 0 0 .48-.35l1.65-5.1Z"/></svg>
+  {%- when 'shield' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+  {%- when 'truck' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg>
+  {%- when 'refresh' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+  {%- when 'verified' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 1.5 14.3 4l3.4-.4.9 3.3 3 1.7-1.5 3.1 1.5 3.1-3 1.7-.9 3.3-3.4-.4L12 22.5 9.7 20l-3.4.4-.9-3.3-3-1.7L3.9 12 2.4 8.9l3-1.7.9-3.3L9.7 4 12 1.5Zm-1.2 14.2 5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2Z"/></svg>
+  {%- when 'leaf' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+  {%- when 'sparkle' -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7L12 2Z"/></svg>
+  {%- else -%}
+    <svg class="{{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+{%- endcase -%}

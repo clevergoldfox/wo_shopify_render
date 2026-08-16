@@ -34,13 +34,27 @@ shopify theme pull --store aqyfkx-dn.myshopify.com --theme 187482046793 --only c
 layout/theme.liquid       head, header group, cart drawer, footer, content_for_header
 layout/password.liquid    minimal password-page layout
 sections/                 20 sections; the product page is 15 of them
-templates/product.json    the product page, in order
+templates/product.nac.json   the landing page sections, in order
+templates/product.json       plain default for every other product
 templates/*.liquid        stubs for every other storefront route
 config/settings_schema.json  theme info + the product mapping below
 config/settings_data.json    mapping values + the Kaching app embed toggle
 locales/en.default.json   the strings the theme JS reads
 assets/                   180 files, flattened (Shopify's assets/ has no subdirectories)
 ```
+
+## Assigning the landing page
+
+The captured page sits on a **named template**. A JSON template called `product.json`
+applies to every product in the store, which is wrong for a single-product landing page.
+
+**Products → NAC & NAD+ Combinados → Theme template → `nac` → Save.** Everything else
+falls back to `templates/product.json`, a minimal title / price / image / add-to-cart page
+rendered by `sections/main-product.liquid`.
+
+Note that `template_suffix` is a property of the *product*, not of the theme. Setting a
+product to `nac` is harmless in the Selerb theme -- it looks for `product.nac.json`, does
+not find it, and falls back to its own default.
 
 ## Product mapping
 

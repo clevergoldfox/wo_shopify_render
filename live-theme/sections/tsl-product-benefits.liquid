@@ -1,0 +1,69 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+<div class="tsl tsl-pbenefits tsl-reveal" style="background-color: {{ section.settings.bg }};">
+  <div class="tsl-pbenefits__grid">
+    {%- if section.settings.image != blank -%}
+      <div class="tsl-pbenefits__media">
+        {{ section.settings.image | image_url: width: 1200 | image_tag:
+           loading: 'lazy', alt: section.settings.heading, widths: '580,900,1160' }}
+      </div>
+    {%- endif -%}
+
+    <div class="tsl-pbenefits__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="tsl__heading tsl-pbenefits__heading">
+          {{ section.settings.heading }}
+          {%- if section.settings.heading_accent != blank -%}
+            <span class="tsl__accent">{{ section.settings.heading_accent }}</span>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="tsl-pbenefits__sub">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        <div class="tsl-pbenefit" {{ block.shopify_attributes }}>
+          <div class="tsl-pbenefit__icon">
+            {%- if block.settings.icon != blank -%}
+              {{ block.settings.icon | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}
+            {%- else -%}
+              {{ forloop.index }}
+            {%- endif -%}
+          </div>
+          <div>
+            <h3 class="tsl-pbenefit__title">{{ block.settings.title }}</h3>
+            <div class="tsl-pbenefit__text">{{ block.settings.text }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Product benefits",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "No Es un Suplemento" },
+    { "type": "text", "id": "heading_accent", "label": "Accent heading", "default": "de NAC Cualquiera" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Cada detalle diseñado para ayudar a su cuerpo a desintoxicarse, y realmente sentirlo." },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon (optional)", "info": "Leave blank to show a number." },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TSL Product benefits" }]
+}
+{% endschema %}

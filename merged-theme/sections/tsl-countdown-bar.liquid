@@ -1,0 +1,33 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+<div class="tsl tsl-countdown" style="background-color: {{ section.settings.bg }}; color: {{ section.settings.text_color }};">
+  <div class="tsl-countdown__inner" id="tsl-cd-{{ section.id }}" data-tsl-countdown="{{ section.settings.hours }}">
+    <span class="tsl-countdown__label">{{ section.settings.label }}</span>
+    <span class="tsl-countdown__timer">
+      {%- assign units = 'days,DAYS|hours,HRS|mins,MIN|secs,SEC' | split: '|' -%}
+      {%- for u in units -%}
+        {%- assign parts = u | split: ',' -%}
+        <span class="tsl-countdown__unit">
+          <span class="tsl-countdown__num" data-cd="{{ parts[0] }}">00</span>
+          <span class="tsl-countdown__cap">{{ parts[1] }}</span>
+        </span>
+        {%- unless forloop.last -%}<span class="tsl-countdown__sep">:</span>{%- endunless -%}
+      {%- endfor -%}
+    </span>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Countdown bar",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "SUMMER BLOWOUT SALE" },
+    { "type": "range", "id": "hours", "label": "Countdown length (hours)", "min": 1, "max": 72, "step": 1, "default": 24 },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#1a5fc8" },
+    { "type": "color", "id": "text_color", "label": "Text colour", "default": "#ffffff" }
+  ],
+  "presets": [{ "name": "TSL Countdown bar" }]
+}
+{% endschema %}

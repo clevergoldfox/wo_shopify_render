@@ -1,0 +1,59 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+<div class="tsl tsl-ingredients tsl-reveal" style="background-color: {{ section.settings.bg }};">
+  {%- if section.settings.heading != blank -%}
+    <div class="tsl-ingredients__header">
+      <h2 class="tsl__heading">
+        {{ section.settings.heading }}
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="tsl__accent">{{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="tsl__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="tsl-ingredients__list">
+    {%- for block in section.blocks -%}
+      <article class="tsl-ingredient" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 900 | image_tag:
+             loading: 'lazy', class: 'tsl-ingredient__img',
+             alt: block.settings.title, widths: '400,600,900' }}
+        {%- endif -%}
+        <div class="tsl-ingredient__body">
+          <h3 class="tsl-ingredient__title">{{ block.settings.title }}</h3>
+          <div class="tsl-ingredient__text">{{ block.settings.text }}</div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Ingredient cards",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "4 Beneficios Clínicamente Estudiados de" },
+    { "type": "text", "id": "heading_accent", "label": "Accent heading", "default": "NAC600 & NAD" },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TSL Ingredient cards" }]
+}
+{% endschema %}

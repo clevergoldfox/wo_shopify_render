@@ -1,0 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_622494374520947233": {
+      "settings": {
+        "checksum": "4964f7c6dbeb2b6bf774fc38ce13d71e8019fdca9d27007c879977c94f9329ac_1_1_1_0__1",
+        "ggEh2fZHJ4d_text": "Estimula el drenaje",
+        "ggFzGJS88XV_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(255,255,255);\">Disfruta de una piel más lisa y tonificada.</span></p>",
+        "ggNkdjnIp1U_text": "Tu camino hacia una sensación más ligera",
+        "ggTl92aqcPJ_text": "Piel más firme",
+        "ggUc-jCnTnI_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(255,255,255);\">Empieza a utilizar el cepillo con movimientos suaves hacia arriba.</span></p>",
+        "ggXZsk341s-_text": "Reduce la hinchazón",
+        "ggYrrf0svF7_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/unnamed_1_4c762d0b-b79e-4fa3-ab18-79fad618df62.png",
+        "ggeWSdReMFY_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(255,255,255);\">Alivia la retención de líquidos y la sensación de pesadez.</span></p>",
+        "ggmFngOgeXy_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(255,255,255);\">Ayuda a estimular el drenaje linfático y la circulación.</span></p>",
+        "ggr4QxKWorG_text": "Activa tu rutina",
+        "section_preload": "true"
+      },
+      "type": "gp-section-622494374520947233"
+    },
+    "gp_section_622494374655165432": {
+      "settings": {
+        "checksum": "9f5b73907d8e10a461236ea4e1b3d9dea52979a06f7e61e1960696cae6cf569c_1_1_1_0__1",
+        "gg6SCLKzK_K_errorMessage": "Cannot add product to cart",
+        "gg6SCLKzK_K_label": "Añadir al carrito",
+        "gg6SCLKzK_K_outOfStockLabel": "Out of stock",
+        "gg6SCLKzK_K_successMessage": "Add product to cart successfully",
+        "gg6SCLKzK_K_unavailableLabel": "Unavailable",
+        "gg6SCLKzK_K_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "gg8CwGw6jj3_text": "<p>Cuando el sistema linfático se vuelve más <strong>lento, los líquidos y toxinas pueden </strong>acumularse, provocando hinchazón, fatiga y una piel con aspecto apagado.</p><p>&nbsp;</p><p><strong>Linfaxa ayuda a favorecer un flujo linfático </strong>saludable, permitiendo que tu cuerpo libere la retención de líquidos, mejore la circulación y recupere tu brillo natural de forma suave y efectiva.</p>",
+        "gg93P3OnMh6_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_25.png",
+        "ggChjx4RMvN_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_28.png",
+        "ggHDoGGBuIi_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_26.png",
+        "ggUNH380TOp_text": "<p>4.8/5 EXCELENTE +7000 opiniones</p>",
+        "ggYHbsFh8kT_childItem_0": "<p><strong>Descripción del Producto</strong></p>",
+        "ggYHbsFh8kT_childItem_1": "<p><strong>Cómo usar</strong></p>",
+        "ggYHbsFh8kT_childItem_2": "<p><strong>¿Por qué necesitas drenaje linfático?</strong></p>",
+        "ggYHbsFh8kT_childItem_3": "<p><strong>Ingredientes cuidadosamente seleccionados</strong></p>",
+        "ggd5nDF8SL-_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_29.png",
+        "gglkMoOPlOk_text": "<p>Toma&nbsp;<strong>1–2 goteros (1–2 ml)</strong>&nbsp;una o dos veces al día. Añádelos al agua, té o jugo, o colócalos directamente debajo de la lengua.</p><p>&nbsp;</p><p>Para obtener mejores resultados, úsalo de forma constante y mantente bien hidratado durante el día.</p>",
+        "ggmHQkICOa9_text": "<p>Cada ingrediente ha sido cuidadosamente seleccionado para apoyar los procesos naturales de desintoxicación de tu cuerpo:</p><p>&nbsp;</p><p>•&nbsp;<strong>Cleavers (Partes aéreas)</strong></p><p>Favorece el flujo linfático y una limpieza suave del organismo</p><p>•&nbsp;<strong>Extracto de Flor de Trébol Rojo</strong></p><p>Ayuda a mejorar la circulación y favorece una piel más limpia y saludable</p><p>•&nbsp;<strong>Corteza de Prickly Ash</strong></p><p>Contribuye a aumentar la energía y apoyar la microcirculación</p><p>•&nbsp;<strong>Raíz de Stillingia</strong></p><p>Ayuda a una desintoxicación suave y al drenaje natural del organismo</p>",
+        "ggr0I9sH929_childItem_0": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(17,17,17);\">Flujo linfático</span></p>",
+        "ggr0I9sH929_childItem_1": "<p><span style=\"color:rgb(17,17,17);\">Detox natural</span></p>",
+        "gguvtmRurr0_text": "<p><strong>Las gotas de drenaje linfático Linfaxa </strong>están formuladas para apoyar el flujo natural de desintoxicación del cuerpo, ayudando a reducir la hinchazón, la retención de líquidos y la sensación de pesadez, mientras favorecen una mejor circulación y más energía.</p><p>&nbsp;</p><p>Esta suave mezcla de <strong>ingredientes naturales </strong>ayuda a restablecer el equilibrio diario, para que puedas despertarte sintiéndote más ligera, desinflamada y renovada cada día.</p>",
+        "ggvPUbjzENa_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_27.png",
+        "ggyeF1EnPSR_text": "<p><strong>Tras nuestras pruebas semanales en laboratorio</strong>, mejoramos la fórmula para favorecer una<strong>mejor circulación</strong> y un flujo linfático más eficiente, optimizando la <strong>proporción de hierbas.</strong></p>",
+        "ggyis2mG_Qc_childItem_0": "<p><span style=\"color:rgb(17,17,17);\">Menos hinchazón</span></p>",
+        "ggyis2mG_Qc_childItem_1": "<p><span style=\"color:rgb(17,17,17);\">Energía constante</span></p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-622494374655165432"
+    },
+    "gp_section_622494374688719640": {
+      "settings": {
+        "checksum": "f45aa7657291d4c531a96c401356d0d86793881e87bf716b10e61022cbe698dc_1_1_1_0__1",
+        "gg-TTAIoPls_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "gg0ncfgnB1V_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "gg2XUU_mAIH_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "gg2XUU_mAIH_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg2XUU_mAIH_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "gg2XUU_mAIH_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg2XUU_mAIH_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "gg2XUU_mAIH_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg4MuckEWls_text": "<p><strong>Marta G., 50 | Bienestar diario</strong></p>",
+        "gg6KnQJM-hy_text": "<p>“Por fin algo suave y constante”</p>",
+        "gg7UvrSRVmm_text": "<p><strong>Sofía L., 42 | Cuidado natural</strong></p>",
+        "gg8In8UrsVp_text": "<p>Paso muchas horas sentada y solía terminar con piernas pesadas y sensación de retención. Desde que lo añadí a mi rutina, me siento menos cargada al final del día y con más energía para seguir con mis cosas.</p>",
+        "ggCtUrpoY-6_text": "<p>No quería un producto agresivo ni algo que me hiciera ir al baño todo el día. Me gustó porque se siente como un apoyo suave para el cuerpo. Con constancia y bebiendo más agua, noté menos retención y una sensación general de bienestar.</p>",
+        "ggE7cPKAa_u_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggE7cPKAa_u_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggE7cPKAa_u_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggE7cPKAa_u_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggE7cPKAa_u_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggE7cPKAa_u_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggGEkp6rh9u_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggGEkp6rh9u_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggGEkp6rh9u_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggGEkp6rh9u_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggGEkp6rh9u_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggGEkp6rh9u_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggLaYbsbv1h_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "ggNWeWRXM1x_text": "<p>“Más ligera al final del día”</p>",
+        "ggPHPfaU3Cn_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "ggT52sE1x99_text": "<p><strong>Carmen R., 47 | Vida activa</strong></p>",
+        "ggUoswQAKH1_text": "<p>“Me sentí menos pesada en pocos días”</p>",
+        "ggZ4wUZMGfh_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggZ4wUZMGfh_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggZ4wUZMGfh_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggZ4wUZMGfh_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggZ4wUZMGfh_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggZ4wUZMGfh_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg_5lJJTvHF_text": "<p><strong>Laura M., 38 | Rutina wellness</strong></p>",
+        "ggePWZcZ3xD_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "ggw9y2me8ef_text": "<p>Lo compré porque me sentía inflamada casi todos los días, incluso comiendo normal. Después de usarlo de forma constante, noté que mi digestión se sentía más ligera y que la hinchazón era mucho más manejable.</p>",
+        "ggxq1Sz7P3J_text": "<p>“Mi abdomen ya no se siente tan hinchado”</p>",
+        "ggzAFaK0ixu_text": "<p><span style=\"color:rgb(0,0,0);\">Lo que más noté fue esa sensación de ligereza después de comer. Antes acababa el día con el abdomen hinchado y las piernas cansadas, pero al incorporarlo a mi rutina diaria empecé a sentirme mucho más cómoda y menos inflamada.</span></p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-622494374688719640"
+    },
+    "gp_section_622494374705496717": {
+      "settings": {
+        "checksum": "c10d0ababa814b67436c78f558f64a958817338c6761839e77f9cb456e169ef2_1_1_1_0__1",
+        "ggFtmpU9hv-_text": "<p>Movilizar - Favorece la claridad interna</p>",
+        "ggG7qilAUzC_text": "<p>La raíz de Stillingia favorece una desintoxicación suave y el drenaje de líquidos, ayudándote a sentirte más ligera, equilibrada y renovada desde el interior.</p>",
+        "ggR0wlYDc76_text": "<p>Estimular - Activa una circulación saludable</p>",
+        "ggUjTEtKyi-_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/hf_20260328_191833_png_ff0f4926-f3c4-4596-97e0-feccf66e2c22.webp",
+        "ggkObOOdR92_text": "<p>La corteza de Prickly Ash ayuda a activar el cuerpo y estimular la circulación, apoyando el proceso natural de eliminación y el equilibrio interno.</p>",
+        "ggpD2CVVWpI_text": "<p>y Equilibrar - Liberar y Renovar</p>",
+        "ggwUIFVW1IU_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(37,37,37);\">La corteza de Prickly Ash ayuda a calentar y energizar el cuerpo, favoreciendo la circulación sanguínea y preparando tu organismo para una desintoxicación natural.</span></p>"
+      },
+      "type": "gp-section-622494374705496717"
+    },
+    "gp_section_622494374722274072": {
+      "settings": {
+        "checksum": "b4e08372f480e0a7a8529fca2554a4c7549863221a0dc7887f8b67709fa6a665_1_1_1_0__1",
+        "gg-cP2BjzMQ_text": "<p><span style=\"color:rgb(0,0,0);\">Si no te sientes más ligera y cómoda, te devolvemos el dinero</span></p>",
+        "ggKSpB0EzPD_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/shutterstock_2315184091-_Converted_73836ed7-ff71-4270-9475-c925becdec10.png",
+        "ggKtueiFKF2_text": "<p>Usa VitaNexa a diario y dale a tu cuerpo el apoyo que necesita. Si en 60 días no notas menos hinchazón, más ligereza y una mayor sensación de bienestar, te devolvemos tu pedido.</p>",
+        "gglybhX72sJ_text": "<span style=\"color:rgb(0,0,0);\">Pruébalo sin riesgo durante 60 días</span>",
+        "ggvtOyY2nGZ_label": "<p>Comprar ahora</p>"
+      },
+      "type": "gp-section-622494374722274072"
+    },
+    "gp_section_622494374722339608": {
+      "settings": {
+        "checksum": "1dbd71a53abfafdeb0c7e6a6e7ad6ce227f32406422fad361bc8aa60e4996f5f_1_1_1_0__1",
+        "gg02_n2cVIp_text": "<p>No</p>",
+        "gg98DwI-cz1_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgba(0,0,0,0.81);\">Probado por terceros</span></p>",
+        "ggPk6yMWy2j_text": "<p>Envío gratis</p>",
+        "ggSXlCUsuOj_text": "Descubre la diferencia &nbsp;<i>Por ti misma&nbsp;</i>",
+        "ggVmvhG8kGm_text": "<p>Otros productos</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+        "ggYxO3uMfxj_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgba(0,0,0,0.81);\">Fórmula natural de origen vegetal</span></p>",
+        "ggZGEhR81Ov_text": "<p>No</p><p>&nbsp;</p>",
+        "gg_uE-jmuXe_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgba(0,0,0,0.81);\">Cambios reales y visibles</span></p>",
+        "gga3liMVvm__text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgba(0,0,0,0.81);\">Desintoxicación diaria suave</span></p>",
+        "ggbvknJ7Z6a_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/Kaching-Bundles-2_png.webp",
+        "gggVL4Mb6t-_text": "<p>No</p><p>&nbsp;</p>",
+        "ggimp9fuA09_text": "<p>No</p><p>&nbsp;</p>",
+        "ggoQMNdfdQY_text": "<p>No</p><p>&nbsp;</p>",
+        "ggqTsz_RPAF_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgba(0,0,0,0.81);\">Favorece el flujo linfático saludable</span></p>",
+        "ggyjnCaJx11_text": "<p>No</p><p>&nbsp;</p>"
+      },
+      "type": "gp-section-622494374722339608"
+    }
+  },
+  "order": [
+    "gp_section_622494374655165432",
+    "gp_section_622494374688719640",
+    "gp_section_622494374520947233",
+    "gp_section_622494374705496717",
+    "gp_section_622494374722339608",
+    "gp_section_622494374722274072"
+  ]
+}

@@ -1,0 +1,33 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+
+{%- assign items = section.settings.items | split: '|' -%}
+
+<div class="tsl tsl-ticker"
+     style="background-color: {{ section.settings.bg }}; color: {{ section.settings.text_color }}; --scroll-speed: {{ section.settings.speed }}s;">
+  <div class="tsl-ticker__track">
+    {%- comment -%} Two identical groups: the -50% keyframe makes the loop seamless. {%- endcomment -%}
+    {%- for pass in (1..2) -%}
+      <div class="tsl-ticker__group" {% if pass == 2 %}aria-hidden="true"{% endif %}>
+        {%- for item in items -%}
+          <span class="tsl-ticker__item">{{ item | strip }}</span>
+          <span class="tsl-ticker__divider" aria-hidden="true">{{ section.settings.divider }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Scrolling ticker",
+  "tag": "section",
+  "settings": [
+    { "type": "textarea", "id": "items", "label": "Items (separate with |)", "default": "APOYA LA SALUD HEPÁTICA|SIN ERUCTOS DE AZUFRE|SE ACABARON LAS RESACAS DE DOS DÍAS|DOSIS CLÍNICA DE 600MG" },
+    { "type": "text", "id": "divider", "label": "Divider character", "default": "+" },
+    { "type": "range", "id": "speed", "label": "Scroll duration (s)", "min": 5, "max": 60, "step": 1, "default": 15 },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#1a5fc8" },
+    { "type": "color", "id": "text_color", "label": "Text colour", "default": "#ffffff" }
+  ],
+  "presets": [{ "name": "TSL Scrolling ticker" }]
+}
+{% endschema %}

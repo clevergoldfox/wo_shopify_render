@@ -1,0 +1,817 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "trustpilot_stars_CbVHaX": {
+          "type": "trustpilot_stars",
+          "settings": {
+            "rating": 5,
+            "star_color": "#00b67a",
+            "bg_star_color": "#c8c8c8",
+            "star_symbol_color": "#ffffff",
+            "label": "4.8/5 opiniones",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "custom_liquid_DmdtT9": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"features-container\">\n  <div class=\"feature\">\n    <span class=\"feature-icon\">✓</span>\n    <div class=\"feature-text\">\n      <h3 class=\"feature-title\">Apoyo a la energía celular durante el día</h3>\n    </div>\n  </div>\n\n  <div class=\"feature\">\n    <span class=\"feature-icon\">✓</span>\n    <div class=\"feature-text\">\n      <h3 class=\"feature-title\">Ideal si notas cansancio, niebla mental o bajones de rendimiento</h3>\n    </div>\n  </div>\n\n  <div class=\"divider horizontal-divider\"></div>\n  <div class=\"divider vertical-divider\"></div>\n\n  <div class=\"feature\">\n    <span class=\"feature-icon\">✓</span>\n    <div class=\"feature-text\">\n      <h3 class=\"feature-title\">Fórmula 4 en 1: NMN + Resveratrol + Quercetina + TMG</h3>\n    </div>\n  </div>\n\n  <div class=\"feature\">\n    <span class=\"feature-icon\">✓</span>\n    <div class=\"feature-text\">\n      <h3 class=\"feature-title\">60 cápsulas · Rutina simple de 2 cápsulas al día</h3>\n    </div>\n  </div>\n</div>\n\n<style>\n.features-container {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.2rem;\n  position: relative;\n  max-width: 650px;\n  margin: 18px auto;\n  padding: 14px 0;\n}\n\n.feature {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n}\n\n.feature-icon {\n  width: 22px;\n  height: 22px;\n  min-width: 22px;\n  border-radius: 50%;\n  background: #111111;\n  color: #ffffff;\n  font-size: 14px;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  line-height: 1;\n  margin-top: 1px;\n}\n\n.feature-text {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.feature-title {\n  font-size: 13px;\n  line-height: 1.35;\n  font-weight: 600;\n  margin: 0;\n  color: #111111;\n}\n\n.divider {\n  background-color: #e2e2e2;\n  position: absolute;\n}\n\n.horizontal-divider {\n  top: 50%;\n  left: 0;\n  width: 100%;\n  height: 1px;\n  transform: translateY(-50%);\n}\n\n.vertical-divider {\n  top: 0;\n  bottom: 0;\n  left: 50%;\n  width: 1px;\n  transform: translateX(-50%);\n}\n\n@media (max-width: 600px) {\n  .features-container {\n    grid-template-columns: 1fr;\n    gap: 0.85rem;\n    padding: 12px 0;\n  }\n\n  .feature {\n    align-items: flex-start;\n  }\n\n  .feature-title {\n    font-size: 13px;\n  }\n\n  .horizontal-divider,\n  .vertical-divider {\n    display: none;\n  }\n}\n</style>"
+          }
+        },
+        "custom_liquid_pHrTnz": {
+          "type": "custom_liquid",
+          "name": "BENEFICIOS",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"aa-benefit-card\" role=\"note\" aria-label=\"Beneficios principales\">\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓</span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Apoya la función normal del sistema nervioso</div>\n      <div class=\"aa-benefit-desc\">Con vitaminas del grupo B pensadas para tu rutina diaria.*</div>\n    </div>\n  </div>\n\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓</span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Contribuye al metabolismo energético</div>\n      <div class=\"aa-benefit-desc\">Ideal para acompañar días exigentes y mantener constancia.*</div>\n    </div>\n  </div>\n\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓</span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Formato líquido sublingual, fácil de integrar</div>\n      <div class=\"aa-benefit-desc\">Unas gotas, listo: práctico para quienes evitan pastillas grandes.</div>\n    </div>\n  </div>\n\n  <div class=\"aa-benefit-footnote\">\n    *Complemento alimenticio. No sustituye una dieta equilibrada. Resultados pueden variar.\n  </div>\n</div>\n\n<style>\n  .aa-benefit-card{\n    background:#f6efe4;                 /* beige claro */\n    border:1px solid rgba(0,0,0,.08);\n    border-radius:14px;\n    padding:16px 16px;\n    display:grid;\n    gap:14px;\n  }\n\n  .aa-benefit-row{\n    display:grid;\n    grid-template-columns: 22px 1fr;\n    gap:10px;\n    align-items:start;\n  }\n\n  .aa-check{\n    width:22px;\n    height:22px;\n    border-radius:999px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    background:#d7c09a;                 /* mismo tono que tu barra */\n    color:#fff;\n    font-weight:900;\n    font-size:13px;\n    line-height:1;\n    margin-top:1px;\n    flex:0 0 auto;\n  }\n\n  .aa-benefit-title{\n    font-weight:800;\n    font-size:13px;\n    line-height:1.15;\n    letter-spacing:.1px;\n    color:#111;\n    margin:0;\n  }\n\n  .aa-benefit-desc{\n    margin-top:4px;\n    font-size:12px;\n    line-height:1.35;\n    color:rgba(0,0,0,.72);\n  }\n\n  .aa-benefit-footnote{\n    font-size:10.5px;\n    line-height:1.25;\n    color:rgba(0,0,0,.55);\n    padding-top:2px;\n  }\n\n  @media (max-width: 520px){\n    .aa-benefit-card{ padding:14px 14px; border-radius:12px; }\n    .aa-benefit-title{ font-size:13px; }\n    .aa-benefit-desc{ font-size:12px; }\n  }\n</style>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "margin_top": 9,
+            "margin_bottom": 15
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_types": "pills, dropdown, dropdown",
+            "custom_labels": "[name] - [selected]",
+            "swatches_size": "medium",
+            "swatches_border_radius": 100,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+            "full_width_classic": false,
+            "enable_quantity_discounts": true,
+            "style": "normal",
+            "headline": "BUNDLE & SAVE",
+            "preselected": "option_3",
+            "update_prices": false,
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "hide_pickers_overlay": true,
+            "pickers_label": "",
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "accent-1",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_label": "Buy [quantity]",
+            "option_1_benefit": "",
+            "option_1_caption": "You save [amount_saved]",
+            "option_1_percentage_off_text": "0",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_label": "Buy [quantity]",
+            "option_2_benefit": "",
+            "option_2_caption": "You save [amount_saved]",
+            "option_2_percentage_off_text": "0",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 3,
+            "option_3_badge": "",
+            "option_3_label": "Buy [quantity]",
+            "option_3_benefit": "",
+            "option_3_caption": "You save [amount_saved]",
+            "option_3_percentage_off_text": "0",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 0,
+            "option_4_badge": "",
+            "option_4_label": "Buy [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "icon_scale": 120,
+            "icon_spacing": 10,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#53af01",
+            "enable_secondary_btn": false,
+            "secondary_btn_label": "Buy It Now",
+            "secondary_btn_enable_custom_color": false,
+            "secondary_btn_custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "payment_badges_6XCYb4": {
+          "type": "payment_badges",
+          "settings": {
+            "enabled_payment_types": "",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "custom_liquid_t6Ur93": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"nuvira-guarantee-box\">\n  <div class=\"nuvira-guarantee-icon\">\n    <svg viewBox=\"0 0 64 64\" class=\"nuvira-medal-icon\" aria-hidden=\"true\">\n      <path d=\"M22 38V60L32 53L42 60V38\" fill=\"#D7C09A\"/>\n      <circle cx=\"32\" cy=\"24\" r=\"18\" fill=\"none\" stroke=\"#D7C09A\" stroke-width=\"5\"/>\n      <circle cx=\"32\" cy=\"24\" r=\"10\" fill=\"#D7C09A\"/>\n    </svg>\n  </div>\n\n  <div class=\"nuvira-guarantee-content\">\n    <h3>Garantía de satisfacción 30 días</h3>\n    <p>\n      Prueba NMN+ de Nuvira Lab sin riesgo. Si no estás satisfecho con tu compra durante los primeros 30 días, puedes solicitar la devolución de forma sencilla.\n      <br>\n      Sin formularios eternos. Sin complicaciones. Compra protegida desde el primer pedido.\n    </p>\n  </div>\n</div>\n\n<style>\n  .nuvira-guarantee-box {\n    display: flex;\n    align-items: flex-start;\n    gap: 16px;\n    width: 100%;\n    padding: 16px 20px;\n    border: 1.5px solid #D7C09A;\n    border-radius: 8px;\n    background: rgba(215, 192, 154, 0.10);\n    box-sizing: border-box;\n    margin: 18px 0;\n  }\n\n  .nuvira-guarantee-icon {\n    width: 58px;\n    min-width: 58px;\n    display: flex;\n    align-items: flex-start;\n    justify-content: center;\n    padding-top: 2px;\n  }\n\n  .nuvira-medal-icon {\n    width: 52px;\n    height: 52px;\n    display: block;\n  }\n\n  .nuvira-guarantee-content h3 {\n    margin: 0 0 4px 0;\n    font-size: 18px;\n    line-height: 1.25;\n    font-weight: 800;\n    color: #1A1A1A;\n    letter-spacing: 0.3px;\n  }\n\n  .nuvira-guarantee-content p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.45;\n    color: #1A1A1A;\n    letter-spacing: 0.2px;\n  }\n\n  @media (max-width: 600px) {\n    .nuvira-guarantee-box {\n      gap: 12px;\n      padding: 14px 14px;\n    }\n\n    .nuvira-guarantee-icon {\n      width: 46px;\n      min-width: 46px;\n    }\n\n    .nuvira-medal-icon {\n      width: 42px;\n      height: 42px;\n    }\n\n    .nuvira-guarantee-content h3 {\n      font-size: 16px;\n    }\n\n    .nuvira-guarantee-content p {\n      font-size: 14px;\n    }\n  }\n</style>"
+          }
+        },
+        "custom_liquid_YHectY": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<section class=\"nuvira-faq-section\">\n  <div class=\"nuvira-faq-container\">\n\n    <details class=\"nuvira-faq-item\">\n      <summary>\n        <span>Nuestro sistema único</span>\n        <span class=\"nuvira-faq-plus\">+</span>\n      </summary>\n      <div class=\"nuvira-faq-content\">\n        <p>\n          NMN+ de Nuvira Lab combina en una sola fórmula NMN, Resveratrol, Quercetina y TMG. Una rutina 4 en 1 pensada para apoyar la energía celular, la vitalidad diaria y el bienestar desde dentro, sin tener que tomar varios suplementos por separado.\n        </p>\n      </div>\n    </details>\n\n    <details class=\"nuvira-faq-item\">\n      <summary>\n        <span>Cómo tomarlo</span>\n        <span class=\"nuvira-faq-plus\">+</span>\n      </summary>\n      <div class=\"nuvira-faq-content\">\n        <p>\n          Toma 2 cápsulas al día, preferiblemente por la mañana junto con un vaso de agua. Para mejores resultados, incorpóralo como parte de una rutina diaria constante.\n        </p>\n      </div>\n    </details>\n\n    <details class=\"nuvira-faq-item\">\n      <summary>\n        <span>Ingredientes</span>\n        <span class=\"nuvira-faq-plus\">+</span>\n      </summary>\n      <div class=\"nuvira-faq-content\">\n        <p>\n          Su fórmula combina NMN, Resveratrol, Quercetina y TMG. Una selección de ingredientes enfocada en apoyar la energía celular, el envejecimiento saludable, la vitalidad y el bienestar diario.\n        </p>\n      </div>\n    </details>\n\n    <details class=\"nuvira-faq-item\">\n      <summary>\n        <span>Garantía de satisfacción 30 días</span>\n        <span class=\"nuvira-faq-plus\">+</span>\n      </summary>\n      <div class=\"nuvira-faq-content\">\n        <p>\n          Prueba NMN+ de Nuvira Lab sin riesgo. Si no estás satisfecho con tu compra durante los primeros 30 días, puedes solicitar la devolución de forma sencilla. Sin formularios eternos. Sin complicaciones.\n        </p>\n      </div>\n    </details>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-faq-section {\n    width: 100%;\n    background: #ffffff;\n    padding: 24px 20px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-faq-container {\n    max-width: 900px;\n    margin: 0 auto;\n  }\n\n  .nuvira-faq-item {\n    border-bottom: 1px solid #111111;\n  }\n\n  .nuvira-faq-item:first-child {\n    border-top: none;\n  }\n\n  .nuvira-faq-item summary {\n    list-style: none;\n    cursor: pointer;\n    padding: 22px 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 20px;\n    color: #111111;\n    font-size: 22px;\n    line-height: 1.25;\n    font-weight: 400;\n    letter-spacing: 0.6px;\n  }\n\n  .nuvira-faq-item summary::-webkit-details-marker {\n    display: none;\n  }\n\n  .nuvira-faq-plus {\n    font-size: 26px;\n    line-height: 1;\n    font-weight: 300;\n    color: #111111;\n    transition: transform 0.25s ease;\n  }\n\n  .nuvira-faq-item[open] .nuvira-faq-plus {\n    transform: rotate(45deg);\n    color: #D7C09A;\n  }\n\n  .nuvira-faq-content {\n    padding: 0 0 22px 0;\n    max-width: 820px;\n  }\n\n  .nuvira-faq-content p {\n    margin: 0;\n    color: #333333;\n    font-size: 15px;\n    line-height: 1.65;\n    letter-spacing: 0.3px;\n  }\n\n  @media (max-width: 768px) {\n    .nuvira-faq-section {\n      padding: 18px 16px;\n    }\n\n    .nuvira-faq-item summary {\n      padding: 19px 0;\n      font-size: 19px;\n    }\n\n    .nuvira-faq-plus {\n      font-size: 24px;\n    }\n\n    .nuvira-faq-content p {\n      font-size: 14px;\n      line-height: 1.6;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .nuvira-faq-section {\n      padding: 14px 14px;\n    }\n\n    .nuvira-faq-item summary {\n      font-size: 17px;\n      letter-spacing: 0.3px;\n    }\n  }\n</style>"
+          }
+        },
+        "reviews_8UgFbe": {
+          "type": "reviews",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "background-1",
+            "show_custom_bg": true,
+            "custom_bg_color": "#fdfbfa",
+            "corner_radius": 12,
+            "border_width": 0,
+            "border_color": "#fbf8f5",
+            "avatar_alignment": "top",
+            "avatar_corner_radius": 40,
+            "star_color": "#ffcc00",
+            "stars_translate": 0,
+            "checkmark_color": "#6d388b",
+            "checkmark_icon_color": "#ffffff",
+            "slider_type": "slide",
+            "autoplay": false,
+            "autoplay_speed": 5,
+            "display_arrows": false,
+            "display_dots": true,
+            "author_1": "<strong>— Laura G.  </strong>[stars]",
+            "text_1": "<p>Lo compré por recomendación y la verdad es que se nota la diferencia en el día a día. El formato en gotas es súper cómodo y el sabor es agradable. Lo volveré a pedir.</p>",
+            "author_2": "<strong>— Andrés R. </strong>[stars]",
+            "text_2": "<p>Había probado cápsulas antes y no me convencían. Este formato sublingual me resulta mucho más práctico. Lo incorporé a mi rutina diaria y estoy muy contento.</p>",
+            "author_3": "<strong>— Marta C </strong>[stars]",
+            "text_3": "<p>Entrega rápida y producto bien presentado. Me gusta que combine varias vitaminas B en un solo producto. Fácil de usar y sin complicaciones.</p>",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "e0a0b690-50df-4ca4-acfd-ce2980696cce": {
+          "type": "shipping_checkpoints",
+          "disabled": true,
+          "settings": {
+            "icon_1": "add_shopping_cart",
+            "filled_icon_1": false,
+            "top_text_1": "<strong>[start_date]</strong>",
+            "bottom_text_1": "Ordered",
+            "min_days_1": 0,
+            "max_days_1": 0,
+            "icon_2": "local_shipping",
+            "filled_icon_2": false,
+            "top_text_2": "<strong>[start_date] - [end_date]</strong>",
+            "bottom_text_2": "Order Ready",
+            "min_days_2": 1,
+            "max_days_2": 2,
+            "icon_3": "redeem",
+            "filled_icon_3": false,
+            "top_text_3": "<strong>[start_date] - [end_date]</strong>",
+            "bottom_text_3": "Delivered",
+            "min_days_3": 10,
+            "max_days_3": 12,
+            "icon_4": "",
+            "filled_icon_4": false,
+            "top_text_4": "",
+            "bottom_text_4": "",
+            "date_format": "mm_dd",
+            "days_labels": "Mon, Tue, Wed, Thu, Fri, Sat, Sun",
+            "months_labels": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec",
+            "color_scheme": "inverse",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "display_when": "after_scroll",
+            "button_label": "Add to cart",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "color_scheme": "background-1",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "combined",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": true,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": false,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "trustpilot_stars_CbVHaX",
+        "custom_liquid_DmdtT9",
+        "custom_liquid_pHrTnz",
+        "price",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "payment_badges_6XCYb4",
+        "custom_liquid_t6Ur93",
+        "custom_liquid_YHectY",
+        "reviews_8UgFbe",
+        "e0a0b690-50df-4ca4-acfd-ce2980696cce",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
+        "description"
+      ],
+      "custom_css": [],
+      "settings": {
+        "display_id": false,
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "disable_prepend": true,
+        "hide_variants": false,
+        "variant_image_filtering": "none",
+        "image_zoom": "none",
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": false,
+        "dots_color_scheme": "inverse",
+        "video_player": "play_btn",
+        "enable_video_looping": false,
+        "autoplay_videos_pause_btn": false,
+        "video_sound_btn": false,
+        "video_timeline": false,
+        "play_btn_color_scheme": "accent-1",
+        "sound_btn_color_scheme": "inverse",
+        "timeline_color": "accent-1",
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail_slider",
+        "desktop_thumbnails_count": 5,
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "desktop_arrows_position": "hidden",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing_pixels": 0,
+        "mobile_arrows_position": "sides",
+        "mobile_pagination": "dots_overlay",
+        "mobile_thumbnails": "hide",
+        "mobile_thumbnails_count": 5,
+        "mobile_scroll_padding_percentage": 0,
+        "mobile_scroll_padding_pixels": 14,
+        "enable_mobile_outher_spacing": false,
+        "mobile_slides_container_width": 100,
+        "mobile_slides_inner_width": 100,
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "title": "You may also like",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "custom_liquid_iJfYjA": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"nuvira-reviews-section\">\n  <div class=\"nuvira-reviews-header\">\n    <h2>Lo que dicen nuestros clientes</h2>\n    <div class=\"nuvira-reviews-rating\">\n      <span class=\"nuvira-stars\">★★★★★</span>\n      <span>Opiniones de compradores verificados</span>\n    </div>\n  </div>\n\n  <div class=\"nuvira-reviews-grid\">\n    \n    <div class=\"nuvira-review-card\">\n      <div class=\"nuvira-review-top\">\n        <div class=\"nuvira-avatar\">M</div>\n        <div>\n          <h3>Marta G.</h3>\n          <div class=\"nuvira-card-stars\">★★★★★</div>\n          <p class=\"nuvira-verified\">Compra verificada</p>\n        </div>\n      </div>\n\n      <h4>Más energía en mi rutina</h4>\n      <p class=\"nuvira-review-text\">\n        \"Lo empecé a tomar porque últimamente me notaba con menos energía durante el día. Me gusta que sea una fórmula completa y que solo tenga que tomar 2 cápsulas al día.\"\n      </p>\n    </div>\n\n    <div class=\"nuvira-review-card\">\n      <div class=\"nuvira-review-top\">\n        <div class=\"nuvira-avatar\">C</div>\n        <div>\n          <h3>Carlos R.</h3>\n          <div class=\"nuvira-card-stars\">★★★★★</div>\n          <p class=\"nuvira-verified\">Compra verificada</p>\n        </div>\n      </div>\n\n      <h4>Fórmula muy completa</h4>\n      <p class=\"nuvira-review-text\">\n        \"Buscaba NMN, pero me convenció que también llevara resveratrol, quercetina y TMG. Es fácil de incorporar por la mañana y el formato de 60 cápsulas me parece muy cómodo.\"\n      </p>\n    </div>\n\n    <div class=\"nuvira-review-card\">\n      <div class=\"nuvira-review-top\">\n        <div class=\"nuvira-avatar\">L</div>\n        <div>\n          <h3>Laura P.</h3>\n          <div class=\"nuvira-card-stars\">★★★★★</div>\n          <p class=\"nuvira-verified\">Compra verificada</p>\n        </div>\n      </div>\n\n      <h4>Perfecto para empezar el día</h4>\n      <p class=\"nuvira-review-text\">\n        \"Lo tomo por la mañana junto con el desayuno. Me gusta porque no es una rutina complicada y encaja muy bien si quieres cuidar tu energía celular y rendimiento diario.\"\n      </p>\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-reviews-section {\n    width: 100%;\n    background: #D7C09A;\n    padding: 70px 20px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-reviews-header {\n    text-align: center;\n    max-width: 900px;\n    margin: 0 auto 46px auto;\n  }\n\n  .nuvira-reviews-header h2 {\n    color: #111111;\n    font-size: 38px;\n    line-height: 1.15;\n    font-weight: 800;\n    margin: 0 0 14px 0;\n    letter-spacing: -0.5px;\n  }\n\n  .nuvira-reviews-rating {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    color: #111111;\n    font-size: 13px;\n    font-weight: 700;\n  }\n\n  .nuvira-stars {\n    color: #ffffff;\n    letter-spacing: 2px;\n    font-size: 17px;\n  }\n\n  .nuvira-reviews-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 30px;\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .nuvira-review-card {\n    background: #ffffff;\n    border-radius: 8px;\n    padding: 32px 26px;\n    box-sizing: border-box;\n    min-height: 245px;\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);\n  }\n\n  .nuvira-review-top {\n    display: flex;\n    align-items: center;\n    gap: 14px;\n    margin-bottom: 18px;\n  }\n\n  .nuvira-avatar {\n    width: 58px;\n    height: 58px;\n    min-width: 58px;\n    border-radius: 50%;\n    background: #D7C09A;\n    color: #111111;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 22px;\n    font-weight: 800;\n  }\n\n  .nuvira-review-card h3 {\n    margin: 0 0 4px 0;\n    font-size: 13px;\n    line-height: 1.2;\n    font-weight: 800;\n    color: #1a1a1a;\n  }\n\n  .nuvira-card-stars {\n    color: #111111;\n    font-size: 13px;\n    letter-spacing: 1px;\n    line-height: 1;\n    margin-bottom: 5px;\n  }\n\n  .nuvira-verified {\n    margin: 0;\n    font-size: 12px;\n    color: #555555;\n    position: relative;\n    padding-left: 16px;\n  }\n\n  .nuvira-verified::before {\n    content: \"✓\";\n    position: absolute;\n    left: 0;\n    top: 0;\n    color: #D7C09A;\n    font-weight: 900;\n  }\n\n  .nuvira-review-card h4 {\n    margin: 0 0 10px 0;\n    font-size: 17px;\n    line-height: 1.25;\n    font-weight: 800;\n    color: #1a1a1a;\n  }\n\n  .nuvira-review-text {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.45;\n    color: #444444;\n  }\n\n  @media (max-width: 900px) {\n    .nuvira-reviews-section {\n      padding: 54px 18px;\n    }\n\n    .nuvira-reviews-grid {\n      grid-template-columns: 1fr;\n      gap: 18px;\n      max-width: 520px;\n    }\n\n    .nuvira-reviews-header {\n      margin-bottom: 32px;\n    }\n\n    .nuvira-reviews-header h2 {\n      font-size: 30px;\n    }\n\n    .nuvira-review-card {\n      padding: 26px 22px;\n      min-height: auto;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .nuvira-reviews-section {\n      padding: 46px 14px;\n    }\n\n    .nuvira-reviews-header h2 {\n      font-size: 26px;\n    }\n\n    .nuvira-reviews-rating {\n      flex-direction: column;\n      gap: 5px;\n      font-size: 12px;\n    }\n\n    .nuvira-review-card {\n      padding: 24px 20px;\n    }\n\n    .nuvira-avatar {\n      width: 52px;\n      height: 52px;\n      min-width: 52px;\n      font-size: 20px;\n    }\n\n    .nuvira-review-text {\n      font-size: 14px;\n    }\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_NMgV9N": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"nuvira-benefit-strip\">\n  <div class=\"nuvira-benefit-inner\">\n\n    <div class=\"nuvira-benefit-item\">\n      <div class=\"nuvira-benefit-icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <circle cx=\"32\" cy=\"32\" r=\"19\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <circle cx=\"32\" cy=\"32\" r=\"6\" fill=\"currentColor\"/>\n          <path d=\"M32 7v8M32 49v8M7 32h8M49 32h8M15 15l6 6M43 43l6 6M49 15l-6 6M21 43l-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n          <path d=\"M35 20l-10 14h8l-4 10 11-16h-8l3-8z\" fill=\"currentColor\"/>\n        </svg>\n      </div>\n      <p>Apoyo a la energía celular durante el día</p>\n    </div>\n\n    <div class=\"nuvira-benefit-item\">\n      <div class=\"nuvira-benefit-icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <circle cx=\"18\" cy=\"22\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <circle cx=\"46\" cy=\"22\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <circle cx=\"32\" cy=\"44\" r=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <path d=\"M24 25l16 0M22 28l7 11M42 28l-7 11\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n          <circle cx=\"18\" cy=\"22\" r=\"2\" fill=\"currentColor\"/>\n          <circle cx=\"46\" cy=\"22\" r=\"2\" fill=\"currentColor\"/>\n          <circle cx=\"32\" cy=\"44\" r=\"2\" fill=\"currentColor\"/>\n        </svg>\n      </div>\n      <p>Fórmula 4 en 1: NMN + Resveratrol + Quercetina + TMG</p>\n    </div>\n\n    <div class=\"nuvira-benefit-item\">\n      <div class=\"nuvira-benefit-icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <rect x=\"16\" y=\"25\" width=\"32\" height=\"15\" rx=\"7.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <path d=\"M32 25v15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <rect x=\"23\" y=\"12\" width=\"18\" height=\"34\" rx=\"9\" transform=\"rotate(-35 32 29)\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n          <path d=\"M24 20l16 23\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/>\n        </svg>\n      </div>\n      <p>60 cápsulas — rutina simple de 2 cápsulas al día</p>\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-benefit-strip {\n    width: 100vw;\n    margin-left: calc(50% - 50vw);\n    background: #EEF1F5;\n    padding: 26px 20px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-benefit-inner {\n    max-width: 1050px;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    align-items: center;\n    gap: 42px;\n  }\n\n  .nuvira-benefit-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 16px;\n    text-align: left;\n  }\n\n  .nuvira-benefit-icon {\n    width: 46px;\n    min-width: 46px;\n    height: 46px;\n    color: #D7C09A;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .nuvira-benefit-icon svg {\n    width: 46px;\n    height: 46px;\n    display: block;\n  }\n\n  .nuvira-benefit-item p {\n    margin: 0;\n    color: #111111;\n    font-size: 16px;\n    line-height: 1.35;\n    font-weight: 800;\n    letter-spacing: 0.6px;\n    max-width: 285px;\n  }\n\n  @media (max-width: 900px) {\n    .nuvira-benefit-inner {\n      grid-template-columns: 1fr;\n      gap: 22px;\n      max-width: 520px;\n    }\n\n    .nuvira-benefit-item {\n      justify-content: flex-start;\n    }\n\n    .nuvira-benefit-strip {\n      padding: 28px 22px;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .nuvira-benefit-strip {\n      padding: 24px 18px;\n    }\n\n    .nuvira-benefit-item {\n      gap: 14px;\n    }\n\n    .nuvira-benefit-icon {\n      width: 40px;\n      min-width: 40px;\n      height: 40px;\n    }\n\n    .nuvira-benefit-icon svg {\n      width: 40px;\n      height: 40px;\n    }\n\n    .nuvira-benefit-item p {\n      font-size: 14px;\n      letter-spacing: 0.4px;\n    }\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_db4P3A": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"nuvira-problem-section\">\n  <div class=\"nuvira-problem-container\">\n\n    <div class=\"nuvira-problem-header\">\n      <h2>NO ES SOLO CANSANCIO.</h2>\n      <h3>ES ENERGÍA CELULAR.</h3>\n      <p>\n        Si últimamente notas menos energía, falta de concentración o una vitalidad más baja, puede que tu cuerpo necesite apoyo desde dentro.\n      </p>\n    </div>\n\n    <div class=\"nuvira-problem-list\">\n\n      <div class=\"nuvira-problem-item\">\n        <span class=\"nuvira-check-icon\">✓</span>\n        <p><strong>Te cuesta mantener la energía durante todo el día</strong></p>\n      </div>\n\n      <div class=\"nuvira-problem-item\">\n        <span class=\"nuvira-check-icon\">✓</span>\n        <p><strong>Notas niebla mental o falta de concentración</strong></p>\n      </div>\n\n      <div class=\"nuvira-problem-item\">\n        <span class=\"nuvira-check-icon\">✓</span>\n        <p><strong>Sientes que tu piel y vitalidad no son las de antes</strong></p>\n      </div>\n\n      <div class=\"nuvira-problem-item\">\n        <span class=\"nuvira-check-icon\">✓</span>\n        <p><strong>Buscas una rutina simple, no 4 suplementos distintos</strong></p>\n      </div>\n\n      <div class=\"nuvira-problem-item\">\n        <span class=\"nuvira-check-icon\">✓</span>\n        <p><strong>Quieres cuidar tu bienestar desde dentro</strong></p>\n      </div>\n\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-problem-section {\n    width: 100%;\n    background: #ffffff;\n    padding: 70px 20px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-problem-container {\n    max-width: 1180px;\n    margin: 0 auto;\n    text-align: center;\n  }\n\n  .nuvira-problem-header h2 {\n    margin: 0 0 18px 0;\n    color: #111111;\n    font-size: 32px;\n    line-height: 1.15;\n    font-weight: 900;\n    letter-spacing: 2px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-problem-header h3 {\n    margin: 0 0 18px 0;\n    color: #D7C09A;\n    font-size: 32px;\n    line-height: 1.15;\n    font-weight: 900;\n    letter-spacing: 2px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-problem-header p {\n    max-width: 850px;\n    margin: 0 auto 34px auto;\n    color: #1a1a1a;\n    font-size: 16px;\n    line-height: 1.6;\n    letter-spacing: 0.6px;\n  }\n\n  .nuvira-problem-list {\n    max-width: 850px;\n    margin: 0 auto;\n    text-align: left;\n  }\n\n  .nuvira-problem-item {\n    display: flex;\n    align-items: flex-start;\n    gap: 12px;\n    margin-bottom: 18px;\n  }\n\n  .nuvira-check-icon {\n    width: 20px;\n    height: 20px;\n    min-width: 20px;\n    border-radius: 50%;\n    background: #D7C09A;\n    color: #ffffff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 13px;\n    font-weight: 900;\n    line-height: 1;\n    margin-top: 2px;\n  }\n\n  .nuvira-problem-item p {\n    margin: 0;\n    color: #1a1a1a;\n    font-size: 17px;\n    line-height: 1.45;\n    letter-spacing: 0.7px;\n  }\n\n  .nuvira-problem-item strong {\n    font-weight: 900;\n  }\n\n  @media (max-width: 768px) {\n    .nuvira-problem-section {\n      padding: 54px 16px;\n    }\n\n    .nuvira-problem-header h2,\n    .nuvira-problem-header h3 {\n      font-size: 26px;\n      letter-spacing: 1.2px;\n    }\n\n    .nuvira-problem-header p {\n      font-size: 15px;\n      line-height: 1.5;\n      margin-bottom: 28px;\n    }\n\n    .nuvira-problem-list {\n      max-width: 100%;\n    }\n\n    .nuvira-problem-item {\n      margin-bottom: 16px;\n      gap: 10px;\n    }\n\n    .nuvira-problem-item p {\n      font-size: 15px;\n      letter-spacing: 0.3px;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .nuvira-problem-section {\n      padding: 46px 14px;\n    }\n\n    .nuvira-problem-header h2,\n    .nuvira-problem-header h3 {\n      font-size: 23px;\n    }\n\n    .nuvira-check-icon {\n      width: 19px;\n      height: 19px;\n      min-width: 19px;\n      font-size: 12px;\n    }\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_MpF8ip": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"nuvira-stories-section\">\n  <div class=\"nuvira-stories-container\">\n\n    <h2 class=\"nuvira-stories-title\">\n      HISTORIAS DE <span>CLIENTES COMO TÚ</span>\n    </h2>\n\n    <div class=\"nuvira-stories-grid\">\n\n      <div class=\"nuvira-story-card\">\n        <div class=\"nuvira-story-header\">\n          <div class=\"nuvira-story-avatar\">M</div>\n          <div>\n            <div class=\"nuvira-story-stars\">★★★★★</div>\n            <h3>Marta G. — 46 años</h3>\n            <p>Compra verificada</p>\n          </div>\n        </div>\n\n        <div class=\"nuvira-story-text\">\n          <p>\n            Llevaba meses sintiéndome con menos energía de lo normal. No era algo extremo, pero llegaba a media tarde con bajón y me costaba mantener el ritmo del día. Empecé con NMN+ porque buscaba una rutina sencilla y me gustó que llevara NMN, resveratrol, quercetina y TMG en una sola fórmula.\n          </p>\n          <p>\n            Lo que más valoro es que no tengo que tomar cuatro suplementos distintos. Dos cápsulas al día y listo. Para mí se ha convertido en una parte fácil de mi rutina de bienestar.\n          </p>\n        </div>\n      </div>\n\n      <div class=\"nuvira-story-card\">\n        <div class=\"nuvira-story-header\">\n          <div class=\"nuvira-story-avatar\">J</div>\n          <div>\n            <div class=\"nuvira-story-stars\">★★★★★</div>\n            <h3>Javier R. — 52 años</h3>\n            <p>Compra verificada</p>\n          </div>\n        </div>\n\n        <div class=\"nuvira-story-text\">\n          <p>\n            Yo buscaba algo relacionado con energía celular y envejecimiento saludable, pero no quería una fórmula básica. Me llamó la atención que NMN+ combinara NMN con resveratrol, quercetina y TMG, porque ya había leído sobre esos ingredientes por separado.\n          </p>\n          <p>\n            Lo tomo por la mañana con el desayuno. Me gusta porque encaja bien con mi día a día y no me complica. La sensación general es que estoy cuidándome desde dentro de una forma más completa.\n          </p>\n        </div>\n      </div>\n\n      <div class=\"nuvira-story-card\">\n        <div class=\"nuvira-story-header\">\n          <div class=\"nuvira-story-avatar\">L</div>\n          <div>\n            <div class=\"nuvira-story-stars\">★★★★★</div>\n            <h3>Laura P. — 43 años</h3>\n            <p>Compra verificada</p>\n          </div>\n        </div>\n\n        <div class=\"nuvira-story-text\">\n          <p>\n            Empecé a interesarme por NMN porque notaba que mi vitalidad no era la de antes. Entre el trabajo, la familia y el cansancio mental, quería probar algo que no fuera solo cafeína o estimulantes.\n          </p>\n          <p>\n            NMN+ me gustó porque la fórmula es limpia, directa y fácil de seguir. No esperaba milagros, quería constancia. Y eso es justo lo que me aporta: una rutina diaria simple para apoyar mi bienestar.\n          </p>\n        </div>\n      </div>\n\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-stories-section {\n    width: 100%;\n    background: #ffffff;\n    padding: 70px 20px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-stories-container {\n    max-width: 1180px;\n    margin: 0 auto;\n  }\n\n  .nuvira-stories-title {\n    text-align: center;\n    margin: 0 0 34px 0;\n    color: #111111;\n    font-size: 34px;\n    line-height: 1.2;\n    font-weight: 900;\n    letter-spacing: 1.2px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-stories-title span {\n    color: #D7C09A;\n  }\n\n  .nuvira-stories-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 30px;\n  }\n\n  .nuvira-story-card {\n    background: #eef1f6;\n    padding: 32px 32px 34px 32px;\n    box-sizing: border-box;\n    min-height: 520px;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n  }\n\n  .nuvira-story-header {\n    display: flex;\n    align-items: center;\n    gap: 18px;\n    margin-bottom: 24px;\n  }\n\n  .nuvira-story-avatar {\n    width: 74px;\n    height: 74px;\n    min-width: 74px;\n    border-radius: 50%;\n    background: #D7C09A;\n    color: #111111;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 30px;\n    font-weight: 900;\n  }\n\n  .nuvira-story-stars {\n    color: #D7C09A;\n    font-size: 16px;\n    line-height: 1;\n    letter-spacing: 1px;\n    margin-bottom: 8px;\n  }\n\n  .nuvira-story-header h3 {\n    margin: 0 0 4px 0;\n    color: #1a1a1a;\n    font-size: 17px;\n    line-height: 1.35;\n    font-weight: 900;\n  }\n\n  .nuvira-story-header p {\n    margin: 0;\n    color: #555555;\n    font-size: 13px;\n    line-height: 1.3;\n    font-weight: 600;\n  }\n\n  .nuvira-story-text p {\n    margin: 0 0 18px 0;\n    color: #111111;\n    font-size: 16px;\n    line-height: 1.75;\n    letter-spacing: 0.8px;\n  }\n\n  .nuvira-story-text p:last-child {\n    margin-bottom: 0;\n  }\n\n  @media (max-width: 950px) {\n    .nuvira-stories-grid {\n      grid-template-columns: 1fr;\n      gap: 22px;\n      max-width: 620px;\n      margin: 0 auto;\n    }\n\n    .nuvira-story-card {\n      min-height: auto;\n    }\n\n    .nuvira-stories-title {\n      font-size: 28px;\n    }\n  }\n\n  @media (max-width: 520px) {\n    .nuvira-stories-section {\n      padding: 52px 14px;\n    }\n\n    .nuvira-stories-title {\n      font-size: 24px;\n      margin-bottom: 28px;\n      letter-spacing: 0.8px;\n    }\n\n    .nuvira-story-card {\n      padding: 26px 22px;\n    }\n\n    .nuvira-story-header {\n      gap: 14px;\n      margin-bottom: 20px;\n    }\n\n    .nuvira-story-avatar {\n      width: 60px;\n      height: 60px;\n      min-width: 60px;\n      font-size: 24px;\n    }\n\n    .nuvira-story-header h3 {\n      font-size: 15px;\n    }\n\n    .nuvira-story-text p {\n      font-size: 15px;\n      line-height: 1.65;\n      letter-spacing: 0.4px;\n    }\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_8aET4z": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"nuvira-results-section\">\n  <div class=\"nuvira-results-container\">\n\n    <p class=\"nuvira-results-kicker\">AVALADO POR CLIENTES REALES</p>\n\n    <h2 class=\"nuvira-results-title\">\n      DESPUÉS DE INCORPORAR NMN+ A SU RUTINA, NUESTROS CLIENTES DESTACAN:\n    </h2>\n\n    <div class=\"nuvira-results-grid\">\n\n      <div class=\"nuvira-result-item\">\n        <div class=\"nuvira-result-percent\">91%</div>\n        <p>\n          Valoró la <strong>fórmula 4 en 1</strong> por combinar NMN, Resveratrol, Quercetina y TMG en una sola rutina.\n        </p>\n      </div>\n\n      <div class=\"nuvira-result-item\">\n        <div class=\"nuvira-result-percent\">87%</div>\n        <p>\n          Reportó sentirse con una <strong>rutina diaria más constante</strong> y fácil de mantener.\n        </p>\n      </div>\n\n      <div class=\"nuvira-result-item\">\n        <div class=\"nuvira-result-percent\">89%</div>\n        <p>\n          Dijo notar una mejor sensación de <strong>energía, vitalidad y bienestar general</strong> durante el día.\n        </p>\n      </div>\n\n    </div>\n\n    <p class=\"nuvira-results-note\">\n      * Basado en encuestas y testimonios de clientes. Los resultados individuales pueden variar.\n    </p>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-results-section {\n    width: 100%;\n    background: #D7C09A;\n    padding: 58px 20px 42px 20px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-results-container {\n    max-width: 1280px;\n    margin: 0 auto;\n    text-align: center;\n  }\n\n  .nuvira-results-kicker {\n    margin: 0 0 34px 0;\n    color: #111111;\n    font-size: 15px;\n    line-height: 1.2;\n    font-weight: 900;\n    letter-spacing: 1.2px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-results-title {\n    margin: 0 0 36px 0;\n    color: #111111;\n    font-size: 25px;\n    line-height: 1.35;\n    font-weight: 900;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-results-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 54px;\n    align-items: center;\n    margin-bottom: 42px;\n  }\n\n  .nuvira-result-item {\n    display: grid;\n    grid-template-columns: auto 1fr;\n    gap: 26px;\n    align-items: center;\n    text-align: left;\n  }\n\n  .nuvira-result-percent {\n    color: #ffffff;\n    font-size: 54px;\n    line-height: 1;\n    font-weight: 900;\n    letter-spacing: -1px;\n    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);\n  }\n\n  .nuvira-result-item p {\n    margin: 0;\n    color: #111111;\n    font-size: 20px;\n    line-height: 1.25;\n    font-weight: 700;\n    letter-spacing: 0.2px;\n  }\n\n  .nuvira-result-item strong {\n    font-weight: 900;\n  }\n\n  .nuvira-results-note {\n    margin: 0;\n    color: #111111;\n    font-size: 12px;\n    line-height: 1.4;\n    font-weight: 700;\n    font-style: italic;\n    letter-spacing: 0.6px;\n    opacity: 0.85;\n  }\n\n  @media (max-width: 1000px) {\n    .nuvira-results-grid {\n      gap: 28px;\n    }\n\n    .nuvira-result-percent {\n      font-size: 46px;\n    }\n\n    .nuvira-result-item p {\n      font-size: 17px;\n    }\n  }\n\n  @media (max-width: 760px) {\n    .nuvira-results-section {\n      padding: 48px 18px 36px 18px;\n    }\n\n    .nuvira-results-kicker {\n      font-size: 13px;\n      margin-bottom: 24px;\n    }\n\n    .nuvira-results-title {\n      font-size: 21px;\n      margin-bottom: 30px;\n    }\n\n    .nuvira-results-grid {\n      grid-template-columns: 1fr;\n      gap: 28px;\n      max-width: 520px;\n      margin: 0 auto 34px auto;\n    }\n\n    .nuvira-result-item {\n      grid-template-columns: 90px 1fr;\n      gap: 18px;\n    }\n\n    .nuvira-result-percent {\n      font-size: 46px;\n    }\n\n    .nuvira-result-item p {\n      font-size: 16px;\n      line-height: 1.35;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .nuvira-results-section {\n      padding: 42px 14px 32px 14px;\n    }\n\n    .nuvira-results-title {\n      font-size: 18px;\n      letter-spacing: 0.5px;\n    }\n\n    .nuvira-result-item {\n      grid-template-columns: 78px 1fr;\n      gap: 14px;\n    }\n\n    .nuvira-result-percent {\n      font-size: 40px;\n    }\n\n    .nuvira-result-item p {\n      font-size: 15px;\n    }\n\n    .nuvira-results-note {\n      font-size: 11px;\n    }\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_faqQDr": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"nuvira-comparison-section\">\n  <div class=\"nuvira-comparison-container\">\n\n    <div class=\"nuvira-comparison-heading\">\n      <h2>LA DIFERENCIA</h2>\n      <h3>NUVIRA LAB</h3>\n    </div>\n\n    <div class=\"nuvira-comparison-grid\">\n\n      <div class=\"nuvira-comparison-card nuvira-main-card\">\n        <div class=\"nuvira-card-icon nuvira-check-main\">✓</div>\n\n        <h4>Por qué NMN+ encaja en tu rutina</h4>\n\n        <div class=\"nuvira-benefit-list\">\n          <div class=\"nuvira-benefit-item\">\n            <span>✓</span>\n            <p>Apoyo a la energía celular durante el día</p>\n          </div>\n\n          <div class=\"nuvira-benefit-item\">\n            <span>✓</span>\n            <p>Fórmula 4 en 1: NMN + Resveratrol + Quercetina + TMG</p>\n          </div>\n\n          <div class=\"nuvira-benefit-item\">\n            <span>✓</span>\n            <p>Rutina simple de solo 2 cápsulas al día</p>\n          </div>\n\n          <div class=\"nuvira-benefit-item\">\n            <span>✓</span>\n            <p>Ideal para apoyar vitalidad, concentración y bienestar diario</p>\n          </div>\n\n          <div class=\"nuvira-benefit-item\">\n            <span>✓</span>\n            <p>Una alternativa práctica a tomar varios suplementos por separado</p>\n          </div>\n\n          <div class=\"nuvira-benefit-item\">\n            <span>✓</span>\n            <p>60 cápsulas para una rutina constante y fácil de mantener</p>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"nuvira-comparison-card nuvira-secondary-card\">\n        <div class=\"nuvira-card-icon nuvira-cross-main\">×</div>\n\n        <h4>Otros suplementos</h4>\n\n        <div class=\"nuvira-other-list\">\n          <div class=\"nuvira-other-item\">\n            <span>×</span>\n            <p>Fórmulas básicas con un solo ingrediente</p>\n          </div>\n\n          <div class=\"nuvira-other-item\">\n            <span>×</span>\n            <p>Te obligan a combinar varios productos distintos</p>\n          </div>\n\n          <div class=\"nuvira-other-item\">\n            <span>×</span>\n            <p>Rutinas poco prácticas y difíciles de mantener</p>\n          </div>\n\n          <div class=\"nuvira-other-item\">\n            <span>×</span>\n            <p>No incluyen cofactores como TMG en la misma fórmula</p>\n          </div>\n\n          <div class=\"nuvira-other-item\">\n            <span>×</span>\n            <p>Menos enfoque en energía celular y bienestar integral</p>\n          </div>\n\n          <div class=\"nuvira-other-item\">\n            <span>×</span>\n            <p>Más cápsulas, más botes y más complicación diaria</p>\n          </div>\n        </div>\n      </div>\n\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .nuvira-comparison-section {\n    width: 100%;\n    background: #ffffff;\n    padding: 70px 20px 80px;\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nuvira-comparison-container {\n    max-width: 1180px;\n    margin: 0 auto;\n  }\n\n  .nuvira-comparison-heading {\n    text-align: center;\n    margin-bottom: 58px;\n  }\n\n  .nuvira-comparison-heading h2 {\n    margin: 0;\n    color: #111111;\n    font-size: 34px;\n    line-height: 1.1;\n    font-weight: 900;\n    letter-spacing: 1.2px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-comparison-heading h3 {\n    margin: 6px 0 0;\n    color: #D7C09A;\n    font-size: 34px;\n    line-height: 1.1;\n    font-weight: 900;\n    letter-spacing: 1.2px;\n    text-transform: uppercase;\n  }\n\n  .nuvira-comparison-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 28px;\n    align-items: stretch;\n  }\n\n  .nuvira-comparison-card {\n    position: relative;\n    border-radius: 14px;\n    padding: 70px 24px 24px;\n    box-sizing: border-box;\n  }\n\n  .nuvira-main-card {\n    background: #111111;\n  }\n\n  .nuvira-secondary-card {\n    background: #eeeeee;\n  }\n\n  .nuvira-card-icon {\n    position: absolute;\n    top: -34px;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 76px;\n    height: 76px;\n    border-radius: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 44px;\n    font-weight: 900;\n    line-height: 1;\n    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);\n  }\n\n  .nuvira-check-main {\n    background: #D7C09A;\n    color: #111111;\n  }\n\n  .nuvira-cross-main {\n    background: #ffffff;\n    color: #111111;\n  }\n\n  .nuvira-comparison-card h4 {\n    margin: 0 0 26px;\n    text-align: center;\n    font-size: 25px;\n    line-height: 1.2;\n    font-weight: 900;\n  }\n\n  .nuvira-main-card h4 {\n    color: #ffffff;\n  }\n\n  .nuvira-secondary-card h4 {\n    color: #111111;\n    text-transform: uppercase;\n  }\n\n  .nuvira-benefit-list,\n  .nuvira-other-list {\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n  }\n\n  .nuvira-benefit-item,\n  .nuvira-other-item {\n    display: flex;\n    align-items: center;\n    gap: 13px;\n    background: #ffffff;\n    border-radius: 9px;\n    padding: 16px 18px;\n    box-sizing: border-box;\n  }\n\n  .nuvira-benefit-item span {\n    width: 22px;\n    height: 22px;\n    min-width: 22px;\n    border-radius: 50%;\n    background: #D7C09A;\n    color: #111111;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 14px;\n    font-weight: 900;\n  }\n\n  .nuvira-other-item span {\n    width: 21px;\n    height: 21px;\n    min-width: 21px;\n    border-radius: 50%;\n    border: 1.5px solid #111111;\n    color: #111111;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 16px;\n    font-weight: 600;\n    line-height: 1;\n  }\n\n  .nuvira-benefit-item p,\n  .nuvira-other-item p {\n    margin: 0;\n    color: #1a1a1a;\n    font-size: 15px;\n    line-height: 1.35;\n    font-weight: 800;\n  }\n\n  .nuvira-other-item p {\n    font-weight: 500;\n  }\n\n  @media (max-width: 900px) {\n    .nuvira-comparison-section {\n      padding: 58px 16px 64px;\n    }\n\n    .nuvira-comparison-grid {\n      grid-template-columns: 1fr;\n      gap: 58px;\n      max-width: 620px;\n      margin: 0 auto;\n    }\n\n    .nuvira-comparison-heading {\n      margin-bottom: 52px;\n    }\n\n    .nuvira-comparison-heading h2,\n    .nuvira-comparison-heading h3 {\n      font-size: 28px;\n    }\n\n    .nuvira-comparison-card {\n      padding: 62px 18px 20px;\n    }\n\n    .nuvira-comparison-card h4 {\n      font-size: 22px;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .nuvira-comparison-section {\n      padding: 50px 14px 58px;\n    }\n\n    .nuvira-comparison-heading h2,\n    .nuvira-comparison-heading h3 {\n      font-size: 25px;\n    }\n\n    .nuvira-card-icon {\n      width: 64px;\n      height: 64px;\n      top: -30px;\n      font-size: 36px;\n    }\n\n    .nuvira-benefit-item,\n    .nuvira-other-item {\n      padding: 14px 14px;\n      gap: 11px;\n    }\n\n    .nuvira-benefit-item p,\n    .nuvira-other-item p {\n      font-size: 14px;\n    }\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "8beb6911-28c6-482c-976a-e5421ad3e8df": {
+      "type": "custom-columns",
+      "blocks": {
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-heading-1": {
+          "type": "heading",
+          "settings": {
+            "column": "col_1",
+            "visibility": "always-display",
+            "heading": "Custom columns",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "column": "col_1",
+            "visibility": "always-display",
+            "text": "<p>Use the flexible grid system to create any layout. Each block can be placed in any of the columns.</p>",
+            "text_style": "body",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-1": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_2",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 30
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-2": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_2",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-image-1": {
+          "type": "image",
+          "settings": {
+            "column": "col_3",
+            "visibility": "always-display",
+            "width": 100,
+            "alignment": "center",
+            "mobile_alignment": "center",
+            "border_radius": 0,
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-3": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_4",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 30
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-4": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_4",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-heading-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-richtext-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-2",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-image-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-3",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "columns_count": 4,
+        "column_gap_desktop": 40,
+        "row_gap_desktop": 40,
+        "desktop_vertical_alignment": "center",
+        "column_gap_mobile": 20,
+        "row_gap_mobile": 30,
+        "mobile_vertical_alignment": "flex-start",
+        "col_1_desktop_width": 12,
+        "col_1_mobile_width": 4,
+        "col_1_visibility": "always-display",
+        "col_2_desktop_width": 4,
+        "col_2_mobile_width": 4,
+        "col_2_visibility": "always-display",
+        "col_3_desktop_width": 4,
+        "col_3_mobile_width": 4,
+        "col_3_visibility": "always-display",
+        "col_4_desktop_width": 4,
+        "col_4_mobile_width": 4,
+        "col_4_visibility": "always-display",
+        "col_5_desktop_width": 3,
+        "col_5_mobile_width": 4,
+        "col_5_visibility": "always-display",
+        "col_6_desktop_width": 3,
+        "col_6_mobile_width": 4,
+        "col_6_visibility": "always-display",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a": {
+      "type": "icons-with-content",
+      "blocks": {
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Content heading",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair icons with content to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "icon_size": "m",
+        "icon_position": "next-to-title",
+        "icon_color": "accent-1",
+        "icon_heading_size": "h3",
+        "icon_text_alignment": "left",
+        "icons_desktop_layout": "1-column",
+        "icons_mobile_layout": "1-column",
+        "desktop_content_alignment": "left",
+        "layout": "image_first",
+        "mobile_layout": "text_first",
+        "hide_content_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
+      "type": "testimonials",
+      "blocks": {
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        },
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        },
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-1",
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-2",
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Testimonials",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "text": "",
+        "color_scheme": "background-1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "show_stars": true,
+        "stars_color": "#ffd700",
+        "show_quotes": true,
+        "quotes_color_scheme": "accent-2",
+        "cards_color_scheme": "bg-overlay",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_cards_colors_background": "#f3f3f3",
+        "custom_cards_gradient_background": "",
+        "custom_cards_colors_text": "#2e2a39"
+      }
+    },
+    "b321ab88-2b59-4dba-bade-54885c874ca5": {
+      "type": "section-divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "accent-1",
+        "custom_shape_color": "#dd1d1d",
+        "background_color": "background-1",
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "custom_liquid_iJfYjA",
+    "custom_liquid_NMgV9N",
+    "custom_liquid_db4P3A",
+    "custom_liquid_MpF8ip",
+    "custom_liquid_8aET4z",
+    "custom_liquid_faqQDr",
+    "8beb6911-28c6-482c-976a-e5421ad3e8df",
+    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a",
+    "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
+    "b321ab88-2b59-4dba-bade-54885c874ca5"
+  ]
+}

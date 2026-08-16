@@ -1,0 +1,374 @@
+<link href="{{ 'component-benefits-grid.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+<div class="benefits-grid   scroll-trigger animate--fade-up" data-component="benefits-grid" data-layout="row" data-image-mode="standard" data-mobile-image-position="after_header" id="benefits-{{ section.id }}" >
+  <div class="benefits-grid__container">
+    
+    <!-- Image (Mobile: before header - placed OUTSIDE content for proper positioning) -->
+    
+    
+    
+    
+    
+    <!-- Content Layout -->
+    <div class="benefits-grid__content-wrapper benefits-grid__content-wrapper--no-image">
+      
+      <!-- Benefits Content -->
+      <div class="benefits-grid__content">
+        
+        <!-- Header -->
+        
+          <div class="benefits-grid__header">
+            
+              <h2 class="benefits-grid__heading">
+                Ingredientes Limpios.
+                
+                  <span class="benefits-grid__heading-accent">Sin Tonterías.</span>
+                
+              </h2>
+            
+            
+              <p class="benefits-grid__subtitle">Somos obsesivos con lo que entra (y lo que se queda fuera).</p>
+            
+          </div>
+        
+
+        <!-- Image (Mobile: after header / between header and benefits) -->
+        
+        
+        
+        
+
+        <!-- Benefits Items -->
+        <div class="benefits-grid__items" data-layout="row">
+          
+            
+
+<div class="benefit-item" 
+     data-index="1" 
+     data-block-id="benefit_zyNrEB" 
+     >
+  
+  <div class="benefit-item__icon">
+    
+      <div class="benefit-item__icon-svg" aria-hidden="true">
+        
+            <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          
+      </div>
+    
+  </div>
+  
+  <h3 class="benefit-item__title">No Transgénico (Non-GMO)</h3>
+  
+  
+</div>
+          
+            
+
+<div class="benefit-item" 
+     data-index="2" 
+     data-block-id="benefit_jb7Nfb" 
+     >
+  
+  <div class="benefit-item__icon">
+    
+      <div class="benefit-item__icon-svg" aria-hidden="true">
+        
+            <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          
+      </div>
+    
+  </div>
+  
+  <h3 class="benefit-item__title">Sin Basura Artificial</h3>
+  
+  
+</div>
+          
+            
+
+<div class="benefit-item" 
+     data-index="3" 
+     data-block-id="benefit_zmnL4L" 
+     >
+  
+  <div class="benefit-item__icon">
+    
+      <div class="benefit-item__icon-svg" aria-hidden="true">
+        
+            <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          
+      </div>
+    
+  </div>
+  
+  <h3 class="benefit-item__title">Libre de Gluten</h3>
+  
+  
+</div>
+          
+            
+
+<div class="benefit-item" 
+     data-index="4" 
+     data-block-id="benefit_xDM7Ua" 
+     >
+  
+  <div class="benefit-item__icon">
+    
+      <div class="benefit-item__icon-svg" aria-hidden="true">
+        
+            <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          
+      </div>
+    
+  </div>
+  
+  <h3 class="benefit-item__title">Certificado GMP</h3>
+  
+  
+</div>
+          
+        </div>
+      </div>
+
+      <!-- Image (Desktop: side by side) -->
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Section-specific customizations */
+  #benefits-{{ section.id }} {
+    
+      
+        background: #FFFFFF;
+      
+    
+
+    padding: 20px 20px 
+             40px 20px;
+    
+    
+    
+    
+  }
+  
+  /* Background overlay */
+  
+  
+  /* Mobile background image */
+  @media screen and (max-width: 767px) {
+    
+  }
+  
+  #benefits-{{ section.id }} .benefits-grid__heading,
+  #benefits-{{ section.id }} .benefits-grid__heading * {
+    color: #0f2945 !important;
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+  
+  #benefits-{{ section.id }} .benefits-grid__heading {
+    margin-bottom: 16px !important;
+  }
+  
+  #benefits-{{ section.id }} .benefits-grid__heading-accent {
+    padding: 2px 4px !important;
+    margin: -2px -4px !important;
+    display: inline-block !important;
+    margin-left: 0px !important;
+    
+    
+    
+      color: #2bb2fd !important;
+    
+    
+    
+    
+      font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      font-style: var(--font-accent-style, normal) !important;
+      font-weight: var(--font-accent-weight, inherit) !important;
+      letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+      text-transform: var(--font-accent-text-transform, none) !important;
+    
+  }
+  
+  /* Override any body font on accent text children */
+  #benefits-{{ section.id }} .benefits-grid__heading-accent * {
+    font-family: inherit !important;
+    font-style: inherit !important;
+    font-weight: inherit !important;
+  }
+
+  #benefits-{{ section.id }} .benefits-grid__subtitle {
+    color: #758da7 !important;
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+  
+  #benefits-{{ section.id }} .benefit-item {
+    text-align: center !important;
+  }
+  
+  #benefits-{{ section.id }} .benefit-item__icon {
+    
+      margin-left: auto !important;
+      margin-right: auto !important;
+  
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  #benefits-{{ section.id }} .benefit-item__icon-image,
+  #benefits-{{ section.id }} .benefit-item__icon-svg {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  #benefits-{{ section.id }} .benefit-item__title {
+    color: #0f2945 !important;
+    font-size: 18px !important;
+    text-align: center !important;
+    
+    
+      font-weight: 700 !important;
+    
+  }
+  
+  #benefits-{{ section.id }} .benefit-item__description {
+    color: #758da7 !important;
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+  
+  #benefits-{{ section.id }} .benefit-item__icon {
+    
+      background: radial-gradient(rgba(43, 178, 253, 1) 3%, rgba(43, 178, 253, 1) 100%);
+      border-radius: 50% !important;
+    
+    
+    
+    
+      
+      
+      box-shadow: 0px 4px 12px 0px rgba(43, 178, 253, 0.55) !important;
+    
+  }
+
+  @media screen and (min-width: 768px) {
+    #benefits-{{ section.id }} {
+      padding: 30px 20px 
+               60px 20px;
+    }
+    
+    #benefits-{{ section.id }} .benefits-grid__container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    #benefits-{{ section.id }} .benefits-grid__content-wrapper--no-image .benefits-grid__content {
+      max-width: 800px !important;
+    }
+    
+    #benefits-{{ section.id }} .benefits-grid__heading,
+    #benefits-{{ section.id }} .benefits-grid__heading * {
+      color: #0f2945 !important;
+      font-size: 56px !important;
+      line-height: 1.2 !important;
+      text-align: center !important;
+    }
+    
+    #benefits-{{ section.id }} .benefits-grid__heading-accent {
+      padding: 2px 4px !important;
+      margin: -2px -4px !important;
+      display: inline-block !important;
+      margin-left: 0px !important;
+      
+      
+      
+        color: #2bb2fd !important;
+      
+      
+      
+      
+        font-family: var(--font-accent-family, var(--font-body-family)) !important;
+        font-style: var(--font-accent-style, normal) !important;
+        font-weight: var(--font-accent-weight, inherit) !important;
+        letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+        text-transform: var(--font-accent-text-transform, none) !important;
+      
+    }
+
+    #benefits-{{ section.id }} .benefits-grid__subtitle {
+      color: #758da7 !important;
+      font-size: 16px !important;
+      text-align: center !important;
+    }
+    
+    #benefits-{{ section.id }} .benefits-grid__items {
+      
+        justify-items: center !important;
+      
+    }
+
+    #benefits-{{ section.id }} .benefit-item {
+      text-align: center !important;
+      
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      
+    }
+    
+    #benefits-{{ section.id }} .benefit-item__icon {
+      
+        margin-left: auto !important;
+        margin-right: auto !important;
+      
+      width: 100px !important;
+      height: 100px !important;
+    }
+    
+    #benefits-{{ section.id }} .benefit-item__icon-image,
+    #benefits-{{ section.id }} .benefit-item__icon-svg {
+      width: 98px !important;
+      height: 98px !important;
+    }
+    
+    #benefits-{{ section.id }} .benefit-item__title {
+      color: #0f2945 !important;
+      font-size: 20px !important;
+      text-align: center !important;
+      
+      
+        font-weight: 700 !important;
+    
+  }
+
+    #benefits-{{ section.id }} .benefit-item__description {
+      color: #758da7 !important;
+      font-size: 15px !important;
+      text-align: center !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Four benefits 2",
+  "settings": []
+}
+{% endschema %}

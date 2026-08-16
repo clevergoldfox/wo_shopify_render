@@ -1,0 +1,980 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "rating_stars",
+          "settings": {
+            "rating": 4.4,
+            "star_color": "#d7c09a",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "(+ 5984 Reseñas)",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
+          }
+        },
+        "custom_liquid_pHrTnz": {
+          "type": "custom_liquid",
+          "name": "BENEFICIOS",
+          "settings": {
+            "custom_liquid": "<div class=\"aa-benefit-card\" role=\"note\" aria-label=\"Beneficios principales\">\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓<\/span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Apoya la función normal del sistema nervioso<\/div>\n      <div class=\"aa-benefit-desc\">Con vitaminas del grupo B pensadas para tu rutina diaria.*<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓<\/span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Contribuye al metabolismo energético<\/div>\n      <div class=\"aa-benefit-desc\">Ideal para acompañar días exigentes y mantener constancia.*<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"aa-benefit-row\">\n    <span class=\"aa-check\" aria-hidden=\"true\">✓<\/span>\n    <div class=\"aa-benefit-text\">\n      <div class=\"aa-benefit-title\">Formato líquido sublingual, fácil de integrar<\/div>\n      <div class=\"aa-benefit-desc\">Unas gotas, listo: práctico para quienes evitan pastillas grandes.<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"aa-benefit-footnote\">\n    *Complemento alimenticio. No sustituye una dieta equilibrada. Resultados pueden variar.\n  <\/div>\n<\/div>\n\n<style>\n  .aa-benefit-card{\n    background:#f6efe4;                 \/* beige claro *\/\n    border:1px solid rgba(0,0,0,.08);\n    border-radius:14px;\n    padding:16px 16px;\n    display:grid;\n    gap:14px;\n  }\n\n  .aa-benefit-row{\n    display:grid;\n    grid-template-columns: 22px 1fr;\n    gap:10px;\n    align-items:start;\n  }\n\n  .aa-check{\n    width:22px;\n    height:22px;\n    border-radius:999px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    background:#d7c09a;                 \/* mismo tono que tu barra *\/\n    color:#fff;\n    font-weight:900;\n    font-size:13px;\n    line-height:1;\n    margin-top:1px;\n    flex:0 0 auto;\n  }\n\n  .aa-benefit-title{\n    font-weight:800;\n    font-size:13px;\n    line-height:1.15;\n    letter-spacing:.1px;\n    color:#111;\n    margin:0;\n  }\n\n  .aa-benefit-desc{\n    margin-top:4px;\n    font-size:12px;\n    line-height:1.35;\n    color:rgba(0,0,0,.72);\n  }\n\n  .aa-benefit-footnote{\n    font-size:10.5px;\n    line-height:1.25;\n    color:rgba(0,0,0,.55);\n    padding-top:2px;\n  }\n\n  @media (max-width: 520px){\n    .aa-benefit-card{ padding:14px 14px; border-radius:12px; }\n    .aa-benefit-title{ font-size:13px; }\n    .aa-benefit-desc{ font-size:12px; }\n  }\n<\/style>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "margin_top": 9,
+            "margin_bottom": 15
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_types": "pills, dropdown, dropdown",
+            "custom_labels": "[name] - [selected]",
+            "swatches_size": "medium",
+            "swatches_border_radius": 100,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+            "full_width_classic": false,
+            "enable_quantity_discounts": true,
+            "style": "normal",
+            "headline": "BUNDLE & SAVE",
+            "preselected": "option_3",
+            "update_prices": false,
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "hide_pickers_overlay": true,
+            "pickers_label": "",
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "accent-1",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_label": "Buy [quantity]",
+            "option_1_benefit": "",
+            "option_1_caption": "You save [amount_saved]",
+            "option_1_percentage_off_text": "0",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_label": "Buy [quantity]",
+            "option_2_benefit": "",
+            "option_2_caption": "You save [amount_saved]",
+            "option_2_percentage_off_text": "0",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 3,
+            "option_3_badge": "",
+            "option_3_label": "Buy [quantity]",
+            "option_3_benefit": "",
+            "option_3_caption": "You save [amount_saved]",
+            "option_3_percentage_off_text": "0",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 0,
+            "option_4_badge": "",
+            "option_4_label": "Buy [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "icon_scale": 120,
+            "icon_spacing": 10,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#53af01",
+            "enable_secondary_btn": false,
+            "secondary_btn_label": "Buy It Now",
+            "secondary_btn_enable_custom_color": false,
+            "secondary_btn_custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "reviews_8UgFbe": {
+          "type": "reviews",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "background-1",
+            "show_custom_bg": true,
+            "custom_bg_color": "#fdfbfa",
+            "corner_radius": 12,
+            "border_width": 0,
+            "border_color": "#fbf8f5",
+            "avatar_alignment": "top",
+            "avatar_corner_radius": 40,
+            "star_color": "#ffcc00",
+            "stars_translate": 0,
+            "checkmark_color": "#6d388b",
+            "checkmark_icon_color": "#ffffff",
+            "slider_type": "slide",
+            "autoplay": false,
+            "autoplay_speed": 5,
+            "display_arrows": false,
+            "display_dots": true,
+            "author_1": "<strong>— Laura G.  <\/strong>[stars]",
+            "text_1": "<p>Lo compré por recomendación y la verdad es que se nota la diferencia en el día a día. El formato en gotas es súper cómodo y el sabor es agradable. Lo volveré a pedir.<\/p>",
+            "author_2": "<strong>— Andrés R. <\/strong>[stars]",
+            "text_2": "<p>Había probado cápsulas antes y no me convencían. Este formato sublingual me resulta mucho más práctico. Lo incorporé a mi rutina diaria y estoy muy contento.<\/p>",
+            "author_3": "<strong>— Marta C <\/strong>[stars]",
+            "text_3": "<p>Entrega rápida y producto bien presentado. Me gusta que combine varias vitaminas B en un solo producto. Fácil de usar y sin complicaciones.<\/p>",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "custom_liquid_JU8meJ": {
+          "type": "custom_liquid",
+          "name": "RESEÑAS ",
+          "settings": {
+            "custom_liquid": "<div class=\"nv-block nv-block--reviews\">\n  <div class=\"nv-review-wrap\">\n    <h3 class=\"nv-review-title\">Reseñas Reales de Clientes<\/h3>\n    <p class=\"nv-review-sub\">Opiniones verificadas de clientes en México que ya lo integraron a su rutina diaria.<\/p>\n\n    <div class=\"nv-review-card\">\n      <div class=\"nv-review-top\">\n        <span class=\"nv-verified\">Cliente verificado<\/span>\n        <div class=\"nv-stars\" aria-label=\"5 estrellas\">★★★★★<\/div>\n      <\/div>\n\n      <div class=\"nv-review-quote\" id=\"nvQuote\">\n        “Me gustó porque no son pastillas. Lo pongo debajo de la lengua y listo. Súper práctico para el día a día.”\n      <\/div>\n\n      <div class=\"nv-review-person\" id=\"nvPerson\">— Fernanda M. · Guadalajara<\/div>\n\n      <div class=\"nv-dots\" aria-hidden=\"true\">\n        <span class=\"nv-dot nv-dot--active\"><\/span>\n        <span class=\"nv-dot\"><\/span>\n        <span class=\"nv-dot\"><\/span>\n        <span class=\"nv-dot\"><\/span>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/div>\n\n<style>\n  \/* ESPACIADO ENTRE LIQUIDS *\/\n  .nv-block--reviews{\n    margin-top: 18px;   \/* separa del liquid de arriba *\/\n    margin-bottom: 18px;\n  }\n\n  .nv-review-wrap{ margin:0; }\n  .nv-review-title{ font-weight:800; font-size:18px; margin:0 0 4px; color:#111; }\n  .nv-review-sub{ margin:0 0 10px; font-size:12px; color:rgba(0,0,0,.55); }\n\n  .nv-review-card{\n    background:#f6efe4;\n    border:1px solid rgba(0,0,0,.08);\n    border-radius:14px;\n    padding:14px 14px 12px;\n  }\n\n  .nv-review-top{\n    display:flex; align-items:center; justify-content:space-between;\n    gap:12px; margin-bottom:10px;\n  }\n\n  .nv-verified{\n    font-style:italic;\n    font-size:12px;\n    color:rgba(0,0,0,.55);\n  }\n\n  .nv-stars{\n    color:#d7a31a;\n    font-size:13px;\n    letter-spacing:1px;\n    line-height:1;\n    white-space:nowrap;\n  }\n\n  .nv-review-quote{\n    font-size:13px;\n    line-height:1.5;\n    color:#111;\n    margin:0 0 10px;\n  }\n\n  .nv-review-person{\n    font-weight:700;\n    font-size:12px;\n    color:#111;\n    margin:0 0 10px;\n  }\n\n  .nv-dots{\n    display:flex; align-items:center; justify-content:center;\n    gap:6px; margin-top:2px;\n  }\n\n  .nv-dot{\n    width:7px; height:7px; border-radius:999px;\n    background:rgba(0,0,0,.18);\n  }\n\n  .nv-dot--active{ background:rgba(0,0,0,.55); }\n<\/style>\n\n<script>\n(function(){\n  const reviews = [\n    { quote:\"Me gustó porque no son pastillas. Lo pongo debajo de la lengua y listo. Súper práctico para el día a día.\", person:\"— Fernanda M. · Guadalajara\" },\n    { quote:\"Llegó rápido y bien empacado. Está fácil de usar y el sabor no es pesado. Lo agregué a mi rutina en la mañana.\", person:\"— Daniel R. · CDMX\" },\n    { quote:\"Me gustó que viene en gotero y no batallas. Se siente como un complemento práctico para días con mucho ritmo.\", person:\"— Karla S. · Monterrey\" },\n    { quote:\"Muy cómodo para quienes no queremos cápsulas grandes. Buen servicio y presentación. Lo volvería a pedir.\", person:\"— José L. · Puebla\" }\n  ];\n\n  const quoteEl = document.getElementById('nvQuote');\n  const personEl = document.getElementById('nvPerson');\n  const dots = document.querySelectorAll('.nv-dot');\n  if(!quoteEl || !personEl || dots.length < 4) return;\n\n  let i = 0;\n  function render(){\n    quoteEl.textContent = \"“\" + reviews[i].quote.trim() + \"”\";\n    personEl.textContent = reviews[i].person;\n    dots.forEach((d,idx)=>d.classList.toggle('nv-dot--active', idx===i));\n  }\n  render();\n  setInterval(()=>{ i=(i+1)%reviews.length; render(); }, 4500);\n})();\n<\/script>"
+          }
+        },
+        "e0a0b690-50df-4ca4-acfd-ce2980696cce": {
+          "type": "shipping_checkpoints",
+          "disabled": true,
+          "settings": {
+            "icon_1": "add_shopping_cart",
+            "filled_icon_1": false,
+            "top_text_1": "<strong>[start_date]<\/strong>",
+            "bottom_text_1": "Ordered",
+            "min_days_1": 0,
+            "max_days_1": 0,
+            "icon_2": "local_shipping",
+            "filled_icon_2": false,
+            "top_text_2": "<strong>[start_date] - [end_date]<\/strong>",
+            "bottom_text_2": "Order Ready",
+            "min_days_2": 1,
+            "max_days_2": 2,
+            "icon_3": "redeem",
+            "filled_icon_3": false,
+            "top_text_3": "<strong>[start_date] - [end_date]<\/strong>",
+            "bottom_text_3": "Delivered",
+            "min_days_3": 10,
+            "max_days_3": 12,
+            "icon_4": "",
+            "filled_icon_4": false,
+            "top_text_4": "",
+            "bottom_text_4": "",
+            "date_format": "mm_dd",
+            "days_labels": "Mon, Tue, Wed, Thu, Fri, Sat, Sun",
+            "months_labels": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec",
+            "color_scheme": "inverse",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "display_when": "after_scroll",
+            "button_label": "Add to cart",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "color_scheme": "background-1",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "combined",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": true,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": false,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "custom_liquid_jzcMH4": {
+          "type": "custom_liquid",
+          "name": "ACORDEON",
+          "settings": {
+            "custom_liquid": "<div class=\"nv-accordion-card\">\n\n  <details class=\"nv-item\" open>\n    <summary>Ingredientes Principales<\/summary>\n    <div class=\"nv-content\">\n      <p><strong>Vitamina B12 (Metilcobalamina) – 5000 mcg<\/strong><br>\n      Forma activa que contribuye al metabolismo energético normal y al funcionamiento del sistema nervioso.*<\/p>\n\n      <p><strong>Vitamina B6 (Piridoxina HCl) – 3.4 mg<\/strong><br>\n      Contribuye a reducir el cansancio y la fatiga.*<\/p>\n\n      <p><strong>Vitamina B1 (Tiamina) – 2.4 mg<\/strong><br>\n      Apoya el metabolismo normal de los carbohidratos.*<\/p>\n\n      <p><strong>Ácido Fólico – 400 mcg DFE<\/strong><br>\n      Participa en funciones celulares clave.*<\/p>\n    <\/div>\n  <\/details>\n\n  <details class=\"nv-item\">\n    <summary>Cómo Tomarlo<\/summary>\n    <div class=\"nv-content\">\n      <p><strong>Dosis recomendada:<\/strong> 1 gotero (1 ml) al día.<\/p>\n      <p>Colocar debajo de la lengua durante 20–30 segundos antes de tragar.<\/p>\n      <p>Ideal por la mañana como parte de tu rutina diaria.<\/p>\n    <\/div>\n  <\/details>\n\n  <details class=\"nv-item\">\n    <summary>Garantía de satisfacción 30 días<\/summary>\n    <div class=\"nv-content\">\n      <p>Compra con tranquilidad. Si no estás satisfecho en los primeros 30 días, puedes solicitar devolución.<\/p>\n      <p>Proceso simple y sin complicaciones.<\/p>\n    <\/div>\n  <\/details>\n\n<\/div>\n\n<style>\n.nv-accordion-card{\n  background:#f6efe4;\n  border:1px solid rgba(0,0,0,.08);\n  border-radius:16px;\n  padding:18px;\n  display:grid;\n  gap:14px;\n}\n\n.nv-item{\n  border-bottom:1px solid rgba(0,0,0,.08);\n  padding-bottom:12px;\n}\n\n.nv-item:last-child{\n  border-bottom:none;\n  padding-bottom:0;\n}\n\n.nv-item summary{\n  font-weight:700;\n  font-size:14px;\n  cursor:pointer;\n  list-style:none;\n  position:relative;\n}\n\n.nv-item summary::-webkit-details-marker{\n  display:none;\n}\n\n.nv-item summary::after{\n  content:\"+\";\n  position:absolute;\n  right:0;\n  font-size:16px;\n}\n\n.nv-item[open] summary::after{\n  content:\"–\";\n}\n\n.nv-content{\n  margin-top:10px;\n  font-size:13px;\n  line-height:1.5;\n  color:#333;\n}\n<\/style>"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "custom_liquid_pHrTnz",
+        "price",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "reviews_8UgFbe",
+        "custom_liquid_JU8meJ",
+        "e0a0b690-50df-4ca4-acfd-ce2980696cce",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
+        "description",
+        "custom_liquid_jzcMH4"
+      ],
+      "custom_css": [],
+      "settings": {
+        "display_id": false,
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "disable_prepend": true,
+        "hide_variants": false,
+        "variant_image_filtering": "none",
+        "image_zoom": "none",
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": false,
+        "dots_color_scheme": "inverse",
+        "video_player": "play_btn",
+        "enable_video_looping": false,
+        "autoplay_videos_pause_btn": false,
+        "video_sound_btn": false,
+        "video_timeline": false,
+        "play_btn_color_scheme": "accent-1",
+        "sound_btn_color_scheme": "inverse",
+        "timeline_color": "accent-1",
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail_slider",
+        "desktop_thumbnails_count": 5,
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "desktop_arrows_position": "hidden",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing_pixels": 0,
+        "mobile_arrows_position": "sides",
+        "mobile_pagination": "dots_overlay",
+        "mobile_thumbnails": "hide",
+        "mobile_thumbnails_count": 5,
+        "mobile_scroll_padding_percentage": 0,
+        "mobile_scroll_padding_pixels": 14,
+        "enable_mobile_outher_spacing": false,
+        "mobile_slides_container_width": 100,
+        "mobile_slides_inner_width": 100,
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "title": "You may also like",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "horizontal_ticker_ghzCDQ": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_Fnebk8": {
+          "type": "text",
+          "settings": {
+            "title": "🛡️ COMPRA 100% PROTEGIDA"
+          }
+        },
+        "text_fVF4iB": {
+          "type": "text",
+          "settings": {
+            "title": "🚚 ENVÍO GRATIS DESDE $858 MXN"
+          }
+        },
+        "text_6jgHzi": {
+          "type": "text",
+          "settings": {
+            "title": "✅ GARANTÍA 30 DÍAS (SIN RIESGO)"
+          }
+        }
+      },
+      "block_order": [
+        "text_Fnebk8",
+        "text_fVF4iB",
+        "text_6jgHzi"
+      ],
+      "name": "Horizontal Ticker",
+      "settings": {
+        "visibility": "always-display",
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "custom_colors_background": "#d7c09a",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39"
+      }
+    },
+    "rich_text_PTHQ9d": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KWVAVG": {
+          "type": "heading",
+          "settings": {
+            "title": "Tu mejor versión, en 2 gotas",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KWVAVG"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "image_banner_gYeDpy": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify:\/\/shop_images\/6.png",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "8beb6911-28c6-482c-976a-e5421ad3e8df": {
+      "type": "custom-columns",
+      "blocks": {
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-heading-1": {
+          "type": "heading",
+          "settings": {
+            "column": "col_1",
+            "visibility": "always-display",
+            "heading": "Custom columns",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "column": "col_1",
+            "visibility": "always-display",
+            "text": "<p>Use the flexible grid system to create any layout. Each block can be placed in any of the columns.<\/p>",
+            "text_style": "body",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-1": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_2",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>",
+            "margin_top": 20,
+            "margin_bottom": 30
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-2": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_2",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-image-1": {
+          "type": "image",
+          "settings": {
+            "column": "col_3",
+            "visibility": "always-display",
+            "width": 100,
+            "alignment": "center",
+            "mobile_alignment": "center",
+            "border_radius": 0,
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-3": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_4",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>",
+            "margin_top": 20,
+            "margin_bottom": 30
+          }
+        },
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-4": {
+          "type": "icon_with_text",
+          "settings": {
+            "column": "col_4",
+            "visibility": "always-display",
+            "icon": "check_circle",
+            "filled_icon": false,
+            "icon_size": "m",
+            "icon_position": "next-to-title",
+            "icon_color": "accent-1",
+            "icon_heading_size": "h3",
+            "icon_text_alignment": "left",
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-heading-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-richtext-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-2",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-image-1",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-3",
+        "template--21507361800487__8beb6911-28c6-482c-976a-e5421ad3e8df-icon_with_text-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "columns_count": 4,
+        "column_gap_desktop": 40,
+        "row_gap_desktop": 40,
+        "desktop_vertical_alignment": "center",
+        "column_gap_mobile": 20,
+        "row_gap_mobile": 30,
+        "mobile_vertical_alignment": "flex-start",
+        "col_1_desktop_width": 12,
+        "col_1_mobile_width": 4,
+        "col_1_visibility": "always-display",
+        "col_2_desktop_width": 4,
+        "col_2_mobile_width": 4,
+        "col_2_visibility": "always-display",
+        "col_3_desktop_width": 4,
+        "col_3_mobile_width": 4,
+        "col_3_visibility": "always-display",
+        "col_4_desktop_width": 4,
+        "col_4_mobile_width": 4,
+        "col_4_visibility": "always-display",
+        "col_5_desktop_width": 3,
+        "col_5_mobile_width": 4,
+        "col_5_visibility": "always-display",
+        "col_6_desktop_width": 3,
+        "col_6_mobile_width": 4,
+        "col_6_visibility": "always-display",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "custom_liquid_Yz4tNn": {
+      "type": "custom-liquid",
+      "name": "Beneficios descripcion",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div class=\"nv-benefits\">\n  <div class=\"nv-benefit\">\n    <div class=\"nv-benefit__icon\">✓<\/div>\n    <div class=\"nv-benefit__text\">\n      <div class=\"nv-benefit__title\">Más energía durante el día<\/div>\n      <div class=\"nv-benefit__desc\">Las vitaminas del complejo B apoyan el metabolismo energético para que te sientas con mejor ritmo en tu rutina diaria.*<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"nv-benefit\">\n    <div class=\"nv-benefit__icon\">✓<\/div>\n    <div class=\"nv-benefit__text\">\n      <div class=\"nv-benefit__title\">Sistema nervioso en equilibrio<\/div>\n      <div class=\"nv-benefit__desc\">B1, B6 y B12 contribuyen al funcionamiento normal del sistema nervioso, ideal para días intensos y con mucho movimiento.*<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"nv-benefit\">\n    <div class=\"nv-benefit__icon\">✓<\/div>\n    <div class=\"nv-benefit__text\">\n      <div class=\"nv-benefit__title\">Enfoque y claridad mental<\/div>\n      <div class=\"nv-benefit__desc\">Un buen aporte de vitaminas B ayuda a mantener la concentración y el rendimiento mental en tus tareas de todos los días.*<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"nv-benefit\">\n    <div class=\"nv-benefit__icon\">✓<\/div>\n    <div class=\"nv-benefit__text\">\n      <div class=\"nv-benefit__title\">Sublingual y fácil de seguir<\/div>\n      <div class=\"nv-benefit__desc\">Gotas sublinguales: rápido, práctico y sin batallar con pastillas. Se integra en segundos a tu mañana.<\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"nv-benefits__foot\">\n    *Complemento alimenticio. No sustituye una alimentación equilibrada. Resultados pueden variar.\n  <\/div>\n<\/div>\n\n<style>\n  .nv-benefits{\n    display:grid;\n    gap:14px;\n    margin: 18px 0;\n  }\n\n  .nv-benefit{\n    background:#f6efe4;\n    border:1px solid rgba(0,0,0,.08);\n    border-radius:16px;\n    padding:14px 16px;\n    display:flex;\n    gap:12px;\n    align-items:flex-start;\n  }\n\n  .nv-benefit__icon{\n    width:26px;\n    height:26px;\n    border-radius:999px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    background:#d7c09a;\n    color:#fff;\n    font-weight:900;\n    font-size:14px;\n    line-height:1;\n    flex:0 0 auto;\n    margin-top:1px;\n  }\n\n  .nv-benefit__title{\n    font-weight:800;\n    font-size:14px;\n    line-height:1.2;\n    color:#111;\n    margin:0;\n  }\n\n  .nv-benefit__desc{\n    margin-top:4px;\n    font-size:12.5px;\n    line-height:1.45;\n    color:rgba(0,0,0,.68);\n  }\n\n  .nv-benefits__foot{\n    font-size:10.5px;\n    line-height:1.25;\n    color:rgba(0,0,0,.55);\n    margin-top:2px;\n  }\n\n  @media(max-width:520px){\n    .nv-benefit{ padding:13px 14px; border-radius:14px; }\n    .nv-benefit__title{ font-size:14px; }\n    .nv-benefit__desc{ font-size:12.25px; }\n  }\n<\/style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "eba88da5-80ac-47fc-aa75-997cfe7b2e59": {
+      "type": "image-slider",
+      "blocks": {
+        "video_slide_kRhYtQ": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Gaby✨🌻_7573455780481912078-no-watermark.mp4",
+            "loop": true,
+            "muted_autoplay": true,
+            "display_play_btn": true,
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "display_sound_btn": false,
+            "sound_btn_color_scheme": "inverse",
+            "display_timeline": false,
+            "timeline_color": "accent-1",
+            "description": "",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2"
+          }
+        },
+        "video_slide_4bgcXY": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Rodner Figueroa_7541887955338661133-no-watermark.mp4",
+            "loop": true,
+            "muted_autoplay": true,
+            "display_play_btn": true,
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "display_sound_btn": false,
+            "sound_btn_color_scheme": "inverse",
+            "display_timeline": false,
+            "timeline_color": "accent-1",
+            "description": "",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2"
+          }
+        },
+        "video_slide_gF6AJ9": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Nohely de la Mora_7580512318195338551-no-watermark.mp4",
+            "loop": true,
+            "muted_autoplay": true,
+            "display_play_btn": true,
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "display_sound_btn": false,
+            "sound_btn_color_scheme": "inverse",
+            "display_timeline": false,
+            "timeline_color": "accent-1",
+            "description": "",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2"
+          }
+        }
+      },
+      "block_order": [
+        "video_slide_kRhYtQ",
+        "video_slide_4bgcXY",
+        "video_slide_gF6AJ9"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "type": "loop",
+        "drag": "enabled",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "center_mode": false,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": false,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "desktop_border_radius": 0,
+        "slides_desktop": 3,
+        "per_move_desktop": 1,
+        "desktop_spacing": 28,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "hidden",
+        "desktop_arrows_position": "hidden",
+        "mobile_full_page": false,
+        "mobile_border_radius": 0,
+        "slides_mobile": 2,
+        "per_move_mobile": 1,
+        "mobile_spacing": 12,
+        "mobile_side_padding": 0,
+        "mobile_padding_calc": true,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "sides",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#121212"
+      }
+    },
+    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a": {
+      "type": "icons-with-content",
+      "blocks": {
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "Icon with text",
+            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<\/p>"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Content heading",
+            "title_highlight_color": "#6d388b",
+            "heading_size": "h1"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair icons with content to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1",
+        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "icon_size": "m",
+        "icon_position": "next-to-title",
+        "icon_color": "accent-1",
+        "icon_heading_size": "h3",
+        "icon_text_alignment": "left",
+        "icons_desktop_layout": "1-column",
+        "icons_mobile_layout": "1-column",
+        "desktop_content_alignment": "left",
+        "layout": "image_first",
+        "mobile_layout": "text_first",
+        "hide_content_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "custom_liquid_d6j799": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div class=\"nvr-reset14\">\n  <div class=\"nvr-reset14__hero\">\n    <h2 class=\"nvr-reset14__h\">\n      Tu reset de 14 días,<br>\n      sin complicarte\n    <\/h2>\n\n    <p class=\"nvr-reset14__p\">\n      Un ciclo corto diseñado para apoyarte con <strong>más energía diaria<\/strong> y\n      <strong>mejor enfoque<\/strong>, ayudándote a sentirte más despierta y en control\n      de tu día.\n    <\/p>\n\n    <div class=\"nvr-reset14__pill\" role=\"note\" aria-label=\"Aviso de stock\">\n      <span class=\"nvr-reset14__pillIco\" aria-hidden=\"true\">⏳<\/span>\n      <span><strong>Stock limitado<\/strong> — alta demanda esta semana<\/span>\n    <\/div>\n  <\/div>\n\n  <div class=\"nvr-reset14__list\" role=\"list\">\n    <div class=\"nvr-reset14__item\" role=\"listitem\">\n      <div class=\"nvr-reset14__ico\" aria-hidden=\"true\">⚡<\/div>\n      <div class=\"nvr-reset14__txt\">\n        <div class=\"nvr-reset14__t\">Energía más constante<\/div>\n        <div class=\"nvr-reset14__d\">\n          Las vitaminas del complejo B contribuyen al metabolismo energético para apoyar una sensación\n          de vitalidad durante el día.\n        <\/div>\n      <\/div>\n    <\/div>\n\n    <div class=\"nvr-reset14__item\" role=\"listitem\">\n      <div class=\"nvr-reset14__ico\" aria-hidden=\"true\">🧠<\/div>\n      <div class=\"nvr-reset14__txt\">\n        <div class=\"nvr-reset14__t\">Enfoque y claridad<\/div>\n        <div class=\"nvr-reset14__d\">\n          Un aporte adecuado de vitaminas B apoya funciones clave del día a día, ayudándote a sentirte\n          más concentrada y presente.\n        <\/div>\n      <\/div>\n    <\/div>\n\n    <div class=\"nvr-reset14__item\" role=\"listitem\">\n      <div class=\"nvr-reset14__ico\" aria-hidden=\"true\">🛡️<\/div>\n      <div class=\"nvr-reset14__txt\">\n        <div class=\"nvr-reset14__t\">Soporte al sistema nervioso<\/div>\n        <div class=\"nvr-reset14__d\">\n          B1, B6 y B12 ayudan a apoyar la función normal del sistema nervioso, especialmente en etapas\n          de alta demanda.\n        <\/div>\n      <\/div>\n    <\/div>\n\n    <div class=\"nvr-reset14__item\" role=\"listitem\">\n      <div class=\"nvr-reset14__ico\" aria-hidden=\"true\">✅<\/div>\n      <div class=\"nvr-reset14__txt\">\n        <div class=\"nvr-reset14__t\">Rutina simple<\/div>\n        <div class=\"nvr-reset14__d\">\n          Solo 1.5 mL al día en formato sublingual para mantener constancia sin complicarte (sin pastillas grandes).\n        <\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n\n  <div class=\"nvr-reset14__note\">\n    *Suplemento alimenticio. No está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados pueden variar según cada persona.\n  <\/div>\n<\/div>\n\n<style>\n  .nvr-reset14{\n    max-width: 1100px;\n    margin: 0 auto;\n    padding: 14px 10px 6px;\n  }\n\n  \/* HERO BEIGE *\/\n  .nvr-reset14__hero{\n    background: #fbf6f1;\n    border: 1px solid rgba(0,0,0,.06);\n    border-radius: 18px;\n    padding: 22px 18px 18px;\n    text-align: center;\n  }\n\n  .nvr-reset14__h{\n    margin: 0;\n    font-weight: 800;\n    font-size: 26px;\n    line-height: 1.15;\n    letter-spacing: -0.02em;\n    color: #111;\n  }\n\n  .nvr-reset14__p{\n    margin: 10px auto 0;\n    max-width: 680px;\n    font-size: 13.5px;\n    line-height: 1.45;\n    color: rgba(0,0,0,.72);\n  }\n  .nvr-reset14__p strong{ color:#111; font-weight: 800; }\n\n  .nvr-reset14__pill{\n    margin: 14px auto 0;\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    padding: 10px 18px;\n    border-radius: 999px;\n    background: #f2e7dd;\n    border: 1px solid rgba(0,0,0,.08);\n    font-size: 13px;\n    color: #111;\n    line-height: 1;\n    box-shadow: 0 2px 0 rgba(0,0,0,.02);\n  }\n  .nvr-reset14__pillIco{ font-size: 14px; }\n\n  \/* LIST CARDS *\/\n  .nvr-reset14__list{\n    margin-top: 14px;\n    display: grid;\n    gap: 10px;\n  }\n\n  .nvr-reset14__item{\n    display: flex;\n    gap: 12px;\n    align-items: flex-start;\n    background: #fff;\n    border: 1px solid rgba(0,0,0,.06);\n    border-radius: 14px;\n    padding: 14px 16px;\n    box-shadow: 0 8px 24px rgba(0,0,0,.06);\n  }\n\n  .nvr-reset14__ico{\n    width: 34px;\n    height: 34px;\n    min-width: 34px;\n    border-radius: 10px;\n    display: grid;\n    place-items: center;\n    background: rgba(0,0,0,.04);\n    font-size: 16px;\n  }\n\n  .nvr-reset14__t{\n    font-weight: 800;\n    font-size: 15px;\n    line-height: 1.2;\n    color: #111;\n    margin-top: 1px;\n  }\n\n  .nvr-reset14__d{\n    margin-top: 6px;\n    font-size: 12.5px;\n    line-height: 1.35;\n    color: rgba(0,0,0,.65);\n  }\n\n  .nvr-reset14__note{\n    margin-top: 10px;\n    font-size: 11.5px;\n    line-height: 1.35;\n    color: rgba(0,0,0,.55);\n  }\n\n  @media (max-width: 520px){\n    .nvr-reset14__h{ font-size: 22px; }\n    .nvr-reset14__p{ font-size: 13px; }\n    .nvr-reset14__item{ padding: 13px 14px; }\n  }\n<\/style>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_jpUQx3": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<section class=\"mx-testis\">\n  <div class=\"mx-testis__head\">\n    <h2 class=\"mx-testis__title\">Testimonios<\/h2>\n    <p class=\"mx-testis__sub\">Reseñas verificadas de clientes en México<\/p>\n  <\/div>\n\n  <div class=\"mx-testis__card\" role=\"region\" aria-label=\"Carrusel de testimonios\">\n    <div class=\"mx-testis__quoteIcon\" aria-hidden=\"true\">“<\/div>\n\n    <div class=\"mx-testis__stars\" aria-label=\"5 estrellas\">★★★★★<\/div>\n\n    <h3 class=\"mx-testis__h\" id=\"mxTTitle\">Me ayudó con el enfoque<\/h3>\n    <p class=\"mx-testis__p\" id=\"mxTText\">\n      “No sé explicarlo, pero ando más ‘presente’. Menos niebla mental y más fácil sentarme a trabajar sin distraerme tanto.”\n    <\/p>\n    <div class=\"mx-testis__by\" id=\"mxTBy\">— Fernanda M. · Monterrey<\/div>\n\n    <div class=\"mx-testis__dots\" role=\"tablist\" aria-label=\"Navegación testimonios\">\n      <button class=\"mx-dot is-active\" aria-label=\"Testimonio 1\"><\/button>\n      <button class=\"mx-dot\" aria-label=\"Testimonio 2\"><\/button>\n      <button class=\"mx-dot\" aria-label=\"Testimonio 3\"><\/button>\n      <button class=\"mx-dot\" aria-label=\"Testimonio 4\"><\/button>\n    <\/div>\n  <\/div>\n<\/section>\n\n<style>\n  .mx-testis{ margin: 22px 0 26px; }\n  .mx-testis__head{ text-align:center; margin-bottom: 10px; }\n  .mx-testis__title{\n    margin:0;\n    font-size: 34px;\n    line-height:1.05;\n    font-weight: 900;\n    color:#111;\n  }\n  .mx-testis__sub{\n    margin:6px 0 0;\n    font-size: 13px;\n    color: rgba(0,0,0,.55);\n  }\n\n  .mx-testis__card{\n    position:relative;\n    border-radius: 18px;\n    border: 1px solid rgba(0,0,0,.10);\n    background: linear-gradient(180deg, #f7f3ee 0%, #ead9bf 100%);\n    box-shadow: 0 16px 34px rgba(0,0,0,.08);\n    padding: 26px 18px 18px;\n    max-width: 980px;\n    margin: 14px auto 0;\n    text-align:center;\n  }\n\n  .mx-testis__quoteIcon{\n    position:absolute;\n    top:14px;\n    right:14px;\n    width:34px;\n    height:34px;\n    border-radius:999px;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    background: rgba(255,255,255,.65);\n    border: 1px solid rgba(0,0,0,.10);\n    color:#111;\n    font-weight: 900;\n    font-size: 18px;\n    line-height: 1;\n  }\n\n  .mx-testis__stars{\n    color: #c99a2e;\n    letter-spacing: 2px;\n    font-size: 16px;\n    margin-bottom: 10px;\n  }\n\n  .mx-testis__h{\n    margin: 0 0 8px;\n    font-size: 22px;\n    font-weight: 900;\n    color:#111;\n  }\n\n  .mx-testis__p{\n    margin: 0 auto 10px;\n    max-width: 820px;\n    font-size: 14px;\n    line-height: 1.6;\n    color: rgba(0,0,0,.70);\n  }\n\n  .mx-testis__by{\n    font-weight: 800;\n    font-size: 13px;\n    color: rgba(0,0,0,.70);\n    margin-bottom: 8px;\n  }\n\n  .mx-testis__dots{\n    display:flex;\n    gap:6px;\n    justify-content:center;\n    margin-top: 10px;\n  }\n  .mx-dot{\n    width:8px;\n    height:8px;\n    border-radius:999px;\n    border:none;\n    background: rgba(0,0,0,.20);\n    cursor:pointer;\n    padding:0;\n  }\n  .mx-dot.is-active{ background: rgba(0,0,0,.55); }\n\n  @media (max-width: 520px){\n    .mx-testis__title{ font-size: 28px; }\n    .mx-testis__h{ font-size: 20px; }\n    .mx-testis__card{ padding: 22px 14px 16px; }\n  }\n<\/style>\n\n<script>\n(function(){\n  const data = [\n    {\n      title: \"Me ayudó con el enfoque\",\n      text: \"“No sé explicarlo, pero ando más ‘presente’. Menos niebla mental y más fácil sentarme a trabajar sin distraerme tanto.”\",\n      by: \"— Fernanda M. · Monterrey\"\n    },\n    {\n      title: \"Energía sin picos raros\",\n      text: \"“Antes a media tarde me apagaba. Con las gotitas lo siento más parejo: me rinde el día y no termino hecha polvo.”\",\n      by: \"— Karla G. · Guadalajara\"\n    },\n    {\n      title: \"Cero pastillas, súper práctico\",\n      text: \"“Lo sublingual fue clave. Me lo pongo, espero unos segundos y listo. Me gustó porque no me cae pesado.”\",\n      by: \"— Diana R. · CDMX\"\n    },\n    {\n      title: \"Me ayudó a retomar rutina\",\n      text: \"“Entre trabajo y casa me estaba costando arrancar. Lo uso diario y me siento más constante y con mejor ánimo.”\",\n      by: \"— Paola S. · Puebla\"\n    }\n  ];\n\n  const titleEl = document.getElementById(\"mxTTitle\");\n  const textEl  = document.getElementById(\"mxTText\");\n  const byEl    = document.getElementById(\"mxTBy\");\n  const dots    = Array.from(document.querySelectorAll(\".mx-testis .mx-dot\"));\n\n  if(!titleEl || !textEl || !byEl || dots.length === 0) return;\n\n  let i = 0;\n  function render(idx){\n    i = idx;\n    titleEl.textContent = data[i].title;\n    textEl.textContent  = data[i].text;\n    byEl.textContent    = data[i].by;\n    dots.forEach((d, n)=> d.classList.toggle(\"is-active\", n===i));\n  }\n\n  dots.forEach((d, idx)=> d.addEventListener(\"click\", ()=>render(idx)));\n\n  \/\/ Autoplay suave\n  setInterval(()=> render((i+1) % data.length), 5200);\n\n  render(0);\n})();\n<\/script>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
+      "type": "testimonials",
+      "blocks": {
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..<\/p>",
+            "author": "<em><strong>Author<\/strong><\/em>"
+          }
+        },
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..<\/p>",
+            "author": "<em><strong>Author<\/strong><\/em>"
+          }
+        },
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..<\/p>",
+            "author": "<em><strong>Author<\/strong><\/em>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-1",
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-2",
+        "template--21507361800487__55bd100e-3bbd-426c-a5cf-eed7b2a3706f-column-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Testimonials",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "text": "",
+        "color_scheme": "background-1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "show_stars": true,
+        "stars_color": "#ffd700",
+        "show_quotes": true,
+        "quotes_color_scheme": "accent-2",
+        "cards_color_scheme": "bg-overlay",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_cards_colors_background": "#f3f3f3",
+        "custom_cards_gradient_background": "",
+        "custom_cards_colors_text": "#2e2a39"
+      }
+    },
+    "b321ab88-2b59-4dba-bade-54885c874ca5": {
+      "type": "section-divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "accent-1",
+        "custom_shape_color": "#dd1d1d",
+        "background_color": "background-1",
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "horizontal_ticker_ghzCDQ",
+    "rich_text_PTHQ9d",
+    "image_banner_gYeDpy",
+    "8beb6911-28c6-482c-976a-e5421ad3e8df",
+    "custom_liquid_Yz4tNn",
+    "eba88da5-80ac-47fc-aa75-997cfe7b2e59",
+    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a",
+    "custom_liquid_d6j799",
+    "custom_liquid_jpUQx3",
+    "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
+    "b321ab88-2b59-4dba-bade-54885c874ca5"
+  ]
+}

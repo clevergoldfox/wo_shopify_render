@@ -1,0 +1,95 @@
+{{ 'tsl-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tsl-page.js' | asset_url }}" defer></script>
+
+<div class="tsl tsl-compare tsl-reveal" style="background-color: {{ section.settings.bg }};">
+  <div class="tsl-compare__inner">
+
+    <div class="tsl-compare__text">
+      <h2 class="tsl__heading tsl-compare__heading">
+        {{ section.settings.heading }}
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="tsl__accent">{{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="tsl-compare__sub">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="tsl-compare__table-column">
+      <div class="tsl-compare__table-wrap">
+        <table class="tsl-compare__table">
+          <thead>
+            <tr>
+              <th class="tsl-compare__feature"></th>
+              <th class="tsl-compare__col--us">
+                <div class="tsl-compare__prod-title">{{ section.settings.col_1_title }}</div>
+                {%- if section.settings.col_1_subtitle != blank -%}
+                  <div class="tsl-compare__prod-sub">
+                    {% render 'tsl-icon', icon: 'verified' %}{{ section.settings.col_1_subtitle }}
+                  </div>
+                {%- endif -%}
+              </th>
+              <th class="tsl-compare__col--them">
+                <div class="tsl-compare__prod-title">{{ section.settings.col_2_title }}</div>
+                {%- if section.settings.col_2_subtitle != blank -%}
+                  <div class="tsl-compare__prod-sub" style="color: #ababab;">{{ section.settings.col_2_subtitle }}</div>
+                {%- endif -%}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              <tr {{ block.shopify_attributes }}>
+                <td class="tsl-compare__feature">{{ block.settings.feature }}</td>
+                <td class="tsl-compare__col--us">
+                  {%- if block.settings.col_1 -%}
+                    <span class="tsl-compare__yes">{% render 'tsl-icon', icon: 'check' %}</span>
+                  {%- else -%}
+                    <span class="tsl-compare__no">{% render 'tsl-icon', icon: 'x' %}</span>
+                  {%- endif -%}
+                </td>
+                <td class="tsl-compare__col--them">
+                  {%- if block.settings.col_2 -%}
+                    <span class="tsl-compare__yes" style="color: #1a5fc8;">{% render 'tsl-icon', icon: 'check' %}</span>
+                  {%- else -%}
+                    <span class="tsl-compare__no">{% render 'tsl-icon', icon: 'x' %}</span>
+                  {%- endif -%}
+                </td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TSL Comparison table",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "¿Por Qué Elegir" },
+    { "type": "text", "id": "heading_accent", "label": "Accent heading", "default": "The Standard Lab?" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Vea por qué miles han hecho el cambio a nuestro NAC." },
+    { "type": "text", "id": "col_1_title", "label": "Column 1 title", "default": "Nosotros" },
+    { "type": "text", "id": "col_1_subtitle", "label": "Column 1 subtitle", "default": "LEGÍTIMO" },
+    { "type": "text", "id": "col_2_title", "label": "Column 2 title", "default": "Otros" },
+    { "type": "text", "id": "col_2_subtitle", "label": "Column 2 subtitle", "default": "SÁLTESELOS" },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#f2f2f2" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Feature row",
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Feature" },
+        { "type": "checkbox", "id": "col_1", "label": "Column 1 has it", "default": true },
+        { "type": "checkbox", "id": "col_2", "label": "Column 2 has it", "default": false }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TSL Comparison table" }]
+}
+{% endschema %}

@@ -1,0 +1,162 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_623215391501452056": {
+      "settings": {
+        "checksum": "6c0f8c5f5e41f06a7ef101b498b96239c47bc8ea126c118034ba06eb1a67fd48_1_1_1_0__1",
+        "gg6SCLKzK_K_errorMessage": "Cannot add product to cart",
+        "gg6SCLKzK_K_label": "Añadir al carrito",
+        "gg6SCLKzK_K_outOfStockLabel": "Out of stock",
+        "gg6SCLKzK_K_successMessage": "Add product to cart successfully",
+        "gg6SCLKzK_K_unavailableLabel": "Unavailable",
+        "gg6SCLKzK_K_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "gg8CwGw6jj3_text": "<p>El magnesio es un mineral esencial que participa en funciones clave del cuerpo, incluyendo la función muscular, el sistema nervioso, la producción de energía y el descanso.</p><p>&nbsp;</p><p>Cuando tu rutina es intensa, duermes mal, entrenas, pasas muchas horas con estrés o no llegas a cubrir tus necesidades nutricionales, puedes notar más tensión, cansancio, dificultad para relajarte o molestias musculares.</p><p>&nbsp;</p><p>Magnesium Complex está diseñado para apoyar ese equilibrio diario, ayudando a tu cuerpo a relajarse mejor por la noche y recuperarse de forma más eficiente.</p>",
+        "gg93P3OnMh6_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_25.png",
+        "ggChjx4RMvN_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_28.png",
+        "ggHDoGGBuIi_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_26.png",
+        "ggUNH380TOp_text": "<p>4.8/5 EXCELENTE +7000 opiniones</p>",
+        "ggYHbsFh8kT_childItem_0": "<p><strong>Descripción del Producto</strong></p>",
+        "ggYHbsFh8kT_childItem_1": "<p><strong>Cómo usar</strong></p>",
+        "ggYHbsFh8kT_childItem_2": "<p><strong>¿Por qué necesitas magnesio?</strong></p>",
+        "ggYHbsFh8kT_childItem_3": "<p><span style=\"color:rgb(0,0,0);\">Fórmula completa con diferentes tipos de magnesio</span></p>",
+        "ggd5nDF8SL-_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_29.png",
+        "gglkMoOPlOk_text": "<p>Toma <strong>2 cápsulas al día con agua</strong>, preferiblemente por la noche, antes de dormir o junto a tu última comida.</p><p>&nbsp;</p><p>Para mejores resultados, úsalo de forma constante cada día. El magnesio funciona mejor cuando forma parte de una rutina diaria de descanso, hidratación y alimentación equilibrada.</p>",
+        "ggmHQkICOa9_text": "<p>No todos los magnesios actúan igual. Por eso esta fórmula combina varias formas de magnesio para ofrecer un apoyo más completo al descanso, los músculos, la energía y el bienestar diario.</p><p>&nbsp;</p><p><strong>Magnesio Glicinato</strong><br>Una forma suave y bien tolerada, ideal para apoyar la relajación y el descanso nocturno.</p><p><strong>Magnesio Malato</strong><br>Asociado al apoyo energético y a la función muscular diaria.</p><p><strong>Magnesio Taurato</strong><br>Una forma orientada al equilibrio nervioso y al bienestar cardiovascular.</p><p><strong>Magnesio Citrato</strong><br>Con buena absorción y apoyo digestivo suave.</p><p><strong>Magnesio Orotato</strong><br>Apoyo avanzado para el bienestar general y la función celular.</p><p><strong>Magnesio Aspartato</strong><br>Ayuda a complementar la fórmula desde el punto de vista energético y mineral.</p><p><strong>Magnesio Carbonato</strong><br>Forma utilizada para apoyar el equilibrio digestivo y mineral.</p><p><strong>Magnesio Óxido</strong><br>Aporta una alta concentración de magnesio elemental dentro de la fórmula.</p>",
+        "ggr0I9sH929_childItem_0": "<p><strong>Sueño reparador</strong></p>",
+        "ggr0I9sH929_childItem_1": "<p><strong>Relajación muscular</strong></p>",
+        "gguvtmRurr0_text": "<p>Magnesium Complex está formulado para aportar un apoyo completo al cuerpo durante la noche, ayudando a favorecer la relajación, el descanso profundo y la recuperación muscular diaria.</p><p>&nbsp;</p><p>Su combinación de diferentes formas de magnesio permite cubrir varias necesidades del organismo en una sola fórmula: descanso, función muscular, equilibrio nervioso, energía y bienestar general.</p><p>&nbsp;</p><p>Una forma sencilla de cuidar tu rutina desde dentro, especialmente si sientes tensión acumulada, calambres ocasionales, dificultad para desconectar por la noche o cansancio al despertar.</p>",
+        "ggvPUbjzENa_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/image_27.png",
+        "ggyeF1EnPSR_text": "<p><span style=\"color:rgb(0,0,0);\">Fórmula avanzada con diferentes formas de magnesio diseñada para apoyar el descanso nocturno, la relajación muscular y el equilibrio del sistema nervioso, sin depender de melatonina.</span></p>",
+        "ggyis2mG_Qc_childItem_0": "<p><strong>Energía diaria</strong></p>",
+        "ggyis2mG_Qc_childItem_1": "<p><span style=\"color:rgb(17,17,17);\"><strong>Sin melatonina</strong></span></p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-623215391501452056"
+    },
+    "gp_section_623215391501517592": {
+      "settings": {
+        "checksum": "c6d7aba47f682c8cf9211bdfb7ce7ce52c33101a6cdfc3ab9bfce20f7685a6e1_1_1_1_0__1",
+        "gg-TTAIoPls_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "gg0ncfgnB1V_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "gg2XUU_mAIH_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "gg2XUU_mAIH_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg2XUU_mAIH_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "gg2XUU_mAIH_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg2XUU_mAIH_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "gg2XUU_mAIH_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg4MuckEWls_text": "<p><strong>Marta G., 50 | Bienestar diario</strong></p>",
+        "gg6KnQJM-hy_text": "<p><span style=\"color:rgb(0,0,0);\">“Menos tensión al final del día”</span></p>",
+        "gg7UvrSRVmm_text": "<p><strong>Sofía L., 42 | Cuidado natural</strong></p>",
+        "gg8In8UrsVp_text": "<p><span style=\"color:rgb(0,0,0);\">No quería tomar algo que me diera sueño de golpe. Buscaba un apoyo natural para relajarme y mejorar mi rutina nocturna, y este complejo me encaja perfecto.</span></p>",
+        "ggCtUrpoY-6_text": "<p><span style=\"color:rgb(0,0,0);\">Trabajo muchas horas sentada y acababa con la espalda y las piernas cargadas. Desde que lo tomo por la noche, siento el cuerpo más relajado y me levanto con mejor sensación.</span></p>",
+        "ggE7cPKAa_u_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggE7cPKAa_u_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggE7cPKAa_u_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggE7cPKAa_u_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggE7cPKAa_u_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggE7cPKAa_u_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggGEkp6rh9u_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggGEkp6rh9u_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggGEkp6rh9u_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggGEkp6rh9u_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggGEkp6rh9u_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggGEkp6rh9u_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggLaYbsbv1h_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "ggNWeWRXM1x_text": "<p><span style=\"color:rgb(0,0,0);\">“Me gusta porque no lleva melatonina”</span></p>",
+        "ggPHPfaU3Cn_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "ggT52sE1x99_text": "<p><strong>Carmen R., 47 | Vida activa</strong></p>",
+        "ggUoswQAKH1_text": "<p><span style=\"color:rgb(0,0,0);\">“Por fin descanso de verdad”</span></p>",
+        "ggZ4wUZMGfh_background_desktop_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggZ4wUZMGfh_background_desktop_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggZ4wUZMGfh_background_mobile_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggZ4wUZMGfh_background_mobile_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "ggZ4wUZMGfh_background_tablet_video": "https://www.youtube.com/watch?v=cyzh48XRS4M",
+        "ggZ4wUZMGfh_background_tablet_videoHtml5": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+        "gg_5lJJTvHF_text": "<p><strong>Laura M., 38 | Rutina wellness</strong></p>",
+        "ggePWZcZ3xD_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0703/5214/2562/files/gempages_518090459516502570-fd204759-bd9d-4564-9e30-3ff2facb72de.png",
+        "ggw9y2me8ef_text": "<p><span style=\"color:rgb(0,0,0);\">Lo compré porque entreno y a veces tenía molestias musculares. Con constancia he notado una recuperación más cómoda y menos tensión por la noche.</span></p>",
+        "ggxq1Sz7P3J_text": "<p><span style=\"color:rgb(0,0,0);\">“Me ayuda con los calambres”</span></p>",
+        "ggzAFaK0ixu_text": "<p><span style=\"color:rgb(0,0,0);\">Empecé a tomarlo por la noche porque me costaba desconectar. No es algo que me deje atontada, simplemente noto que llego a la cama más relajada y descanso mejor.</span></p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-623215391501517592"
+    },
+    "gp_section_623215391501583128": {
+      "settings": {
+        "checksum": "cd8bbbd300f982fb28d3a31435563a6fe7a5d8ed2e136c1d9e9455ea19ce254e_1_1_1_0__1",
+        "gg02_n2cVIp_text": "<p>No</p>",
+        "gg98DwI-cz1_text": "<p><span style=\"color:rgb(0,0,0);\">Apoyo muscular y nervioso</span></p>",
+        "ggPk6yMWy2j_text": "<p><span style=\"color:rgb(0,0,0);\">Ideal para rutina nocturna</span><br>&nbsp;</p>",
+        "ggSXlCUsuOj_text": "Descubre la diferencia &nbsp;<i>Por ti misma&nbsp;</i>",
+        "ggVmvhG8kGm_text": "<p>Otros productos</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>",
+        "ggYxO3uMfxj_text": "<p><span style=\"color:rgb(0,0,0);\">Fórmula con diferentes formas de magnesio</span></p>",
+        "ggZGEhR81Ov_text": "<p>No</p><p>&nbsp;</p>",
+        "gg_uE-jmuXe_text": "<p><span style=\"color:rgb(0,0,0);\">Uso diario sencillo</span></p>",
+        "gga3liMVvm__text": "<p><span style=\"color:rgb(0,0,0);\">Sin melatonina</span></p>",
+        "ggbvknJ7Z6a_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/imgi_243_Frame2087327280.webp",
+        "gggVL4Mb6t-_text": "<p>No</p><p>&nbsp;</p>",
+        "ggimp9fuA09_text": "<p>No</p><p>&nbsp;</p>",
+        "ggoQMNdfdQY_text": "<p>No</p><p>&nbsp;</p>",
+        "ggqTsz_RPAF_text": "<p><span style=\"color:rgb(0,0,0);\">Apoya el descanso nocturno</span></p>",
+        "ggyjnCaJx11_text": "<p>No</p><p>&nbsp;</p>"
+      },
+      "type": "gp-section-623215391501583128"
+    },
+    "gp_section_623215391501648664": {
+      "settings": {
+        "checksum": "6f8e18c7dbb929c034a11fcd153a85abad3b30d8654cfc9d2946cdf443893512_1_1_1_0__1",
+        "ggEh2fZHJ4d_text": "Relaja cuerpo y mente",
+        "ggFzGJS88XV_text": "<p><span style=\"background-color:rgba(255,255,255,0);color:rgb(255,255,255);\">Un mejor descanso puede ayudarte a empezar el día con una sensación más renovada y equilibrada.</span></p>",
+        "ggNkdjnIp1U_text": "<span style=\"color:#FFFFFF;\">Tu camino hacia un descanso más reparador</span>",
+        "ggTl92aqcPJ_text": "Despierta con más energía",
+        "ggUc-jCnTnI_text": "<p><span style=\"color:#FFFFFF;\">Toma 2 cápsulas con agua por la noche e incorpóralas a tu rutina antes de dormir.</span></p>",
+        "ggXZsk341s-_text": "Descansa mejor",
+        "ggYrrf0svF7_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/unnamed_1_4c762d0b-b79e-4fa3-ab18-79fad618df62.png",
+        "ggeWSdReMFY_text": "<p><span style=\"background-color:rgba(255,255,255,0);color:rgb(255,255,255);\">Favorece una rutina nocturna más tranquila, sin depender de melatonina.</span></p>",
+        "ggmFngOgeXy_text": "<p><span style=\"background-color:rgba(255,255,255,0);color:rgb(255,255,255);\">El magnesio ayuda a apoyar la función normal del sistema nervioso y la relajación muscular.</span></p>",
+        "ggr4QxKWorG_text": "<span style=\"color:#FFFFFF;\">Toma tu dosis nocturna</span>"
+      },
+      "type": "gp-section-623215391501648664"
+    },
+    "gp_section_623215391501714200": {
+      "settings": {
+        "checksum": "0660400370874135e76c53d7c3bb7cd5c47b1a65c56fdb454362bfecf2d2d950_1_1_1_0__1",
+        "gg-cP2BjzMQ_text": "<p><span style=\"color:rgb(0,0,0);\">Si no notas una mejora en tu rutina de descanso, relajación o bienestar diario, te devolvemos el dinero.</span></p>",
+        "ggKSpB0EzPD_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0946/3011/7697/files/shutterstock_2315184091-_Converted_73836ed7-ff71-4270-9475-c925becdec10.png",
+        "ggKtueiFKF2_text": "<p>Usa Magnesium Complex cada noche y dale a tu cuerpo el apoyo mineral que necesita. Si después de 60 días no sientes que encaja contigo, contacta con nosotros y gestionaremos tu devolución.</p>",
+        "gglybhX72sJ_text": "<span style=\"color:rgb(0,0,0);\">Pruébalo sin riesgo durante 60 días</span>",
+        "ggvtOyY2nGZ_label": "<p>Comprar ahora</p>"
+      },
+      "type": "gp-section-623215391501714200"
+    },
+    "gp_section_623215391501779736": {
+      "settings": {
+        "checksum": "ce4246912a7290a4924b8cb59bfb24e2e6bcf0f9a979a3c5703fa8e94c514d9a_1_1_1_0__1",
+        "ggFtmpU9hv-_text": "<p><span style=\"color:rgb(0,0,0);\">Recuperar - Apoya músculos y tensión diaria</span></p>",
+        "ggG7qilAUzC_text": "<p>El magnesio participa en procesos relacionados con la energía, por lo que puede ser un gran apoyo cuando buscas sentirte más estable y recuperado.</p>",
+        "ggR0wlYDc76_text": "<p><span style=\"color:rgb(0,0,0);\">Relajar - Apoya tu sistema nervioso</span></p>",
+        "ggUjTEtKyi-_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/ChatGPT_Image_9_jun_2026_11_12_14.png",
+        "ggkObOOdR92_text": "<p>Su fórmula ayuda a mantener una función muscular normal, ideal si entrenas, pasas muchas horas de pie o acumulas tensión durante la jornada.</p>",
+        "ggpD2CVVWpI_text": "<p><span style=\"color:rgb(0,0,0);\">Equilibrar - Energía y bienestar diario</span></p>",
+        "ggwUIFVW1IU_text": "<p><span style=\"background-color:rgba(255,255,255,0);color:rgb(37,37,37);\">El magnesio contribuye al funcionamiento normal del sistema nervioso, ayudando a tu cuerpo a entrar en un estado más calmado al final del día.</span></p>"
+      },
+      "type": "gp-section-623215391501779736"
+    }
+  },
+  "order": [
+    "gp_section_623215391501452056",
+    "gp_section_623215391501517592",
+    "gp_section_623215391501648664",
+    "gp_section_623215391501779736",
+    "gp_section_623215391501583128",
+    "gp_section_623215391501714200"
+  ]
+}

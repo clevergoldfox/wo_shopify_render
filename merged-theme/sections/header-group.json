@@ -1,0 +1,160 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "2c2ec774-3430-481f-b927-e9c035b9d24e": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0": {
+          "type": "text",
+          "settings": {
+            "title": "WELCOME!"
+          }
+        },
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1": {
+          "type": "text",
+          "settings": {
+            "title": "SITEWIDE SALE"
+          }
+        },
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-2": {
+          "type": "text",
+          "settings": {
+            "title": "USE CODE X FOR X% OFF!"
+          }
+        }
+      },
+      "block_order": [
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0",
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1",
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "visibility": "always-display",
+        "speed": 3,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39"
+      }
+    },
+    "custom_liquid_rmGwPV": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<!-- NUVIRA-STYLE COUNTDOWN BAR (compact, centered) -->\n<div class=\"aa-countbar\"\n     data-mode=\"evergreen\"\n     data-duration-minutes=\"1440\"\n     data-hide-days-when-zero=\"false\">\n  <div class=\"aa-countbar__inner\">\n    <span class=\"aa-countbar__label\">LA OFERTA ACABA EN</span>\n\n    <div class=\"aa-countbar__timer\" aria-live=\"polite\">\n      <div class=\"aa-unit aa-days\" data-unit=\"days\">\n        <div class=\"aa-unit__num\" id=\"aaDays\">00</div>\n        <div class=\"aa-unit__txt\">DÍAS</div>\n      </div>\n\n      <div class=\"aa-unit\">\n        <div class=\"aa-unit__num\" id=\"aaHrs\">00</div>\n        <div class=\"aa-unit__txt\">HRS</div>\n      </div>\n\n      <div class=\"aa-unit\">\n        <div class=\"aa-unit__num\" id=\"aaMin\">00</div>\n        <div class=\"aa-unit__txt\">MIN</div>\n      </div>\n\n      <div class=\"aa-unit\">\n        <div class=\"aa-unit__num\" id=\"aaSec\">00</div>\n        <div class=\"aa-unit__txt\">SEC</div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n  /* ====== CONFIG RÁPIDA ====== */\n  :root{\n    --aa-bg: #d7c09a;   /* beige arena */\n    --aa-txt: #ffffff;  /* blanco */\n  }\n\n  /* Barra base */\n  .aa-countbar{\n    background: var(--aa-bg);\n    color: var(--aa-txt);\n    width: 100%;\n    margin: 0 !important;\n    padding: 0 !important;\n  }\n\n  /* Contenido centrado y compacto */\n  .aa-countbar__inner{\n    max-width: none !important;\n    margin: 0 auto !important;\n    padding: 6px 12px !important;     /* ALTURA de la barra */\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    gap: 12px !important;             /* un pelín más aire, sigue “pegado” */\n    flex-wrap: nowrap !important;\n  }\n\n  .aa-countbar__label{\n    font-weight: 800 !important;       /* más “réplica” */\n    letter-spacing: .6px !important;   /* más “réplica” */\n    text-transform: uppercase !important;\n    font-size: 13px !important;        /* +1 */\n    line-height: 1 !important;\n    white-space: nowrap !important;\n    margin: 0 !important;\n    padding: 0 !important;\n  }\n\n  .aa-countbar__timer{\n    display: flex !important;\n    align-items: center !important;\n    gap: 12px !important;              /* +2 */\n  }\n\n  .aa-unit{\n    display: grid !important;\n    justify-items: center !important;\n    gap: 1px !important;\n    min-width: auto !important;\n  }\n\n  .aa-unit__num{\n    font-weight: 800 !important;\n    font-size: 13px !important;        /* +1 */\n    line-height: 1 !important;\n    letter-spacing: .6px !important;   /* más “réplica” */\n  }\n\n  .aa-unit__txt{\n    font-size: 10px !important;        /* +1 */\n    font-weight: 800 !important;       /* más “réplica” */\n    line-height: 1 !important;\n    opacity: .98 !important;\n    letter-spacing: .6px !important;\n    text-transform: uppercase !important;\n  }\n\n  /* Móvil */\n  @media (max-width: 520px){\n    .aa-countbar__inner{\n      padding: 6px 10px !important;\n      gap: 10px !important;\n      flex-wrap: wrap !important;\n    }\n    .aa-countbar__timer{ gap: 10px !important; }\n    .aa-countbar__label{ font-size: 12px !important; }\n    .aa-unit__num{ font-size: 12px !important; }\n    .aa-unit__txt{ font-size: 9px !important; }\n  }\n</style>\n\n<script>\n(function(){\n  const bar = document.querySelector('.aa-countbar');\n  if(!bar) return;\n\n  /* 1) Quitar el padding/margen del WRAPPER de la sección Shopify */\n  const section = bar.closest('.shopify-section');\n  if(section){\n    section.style.paddingTop = '0';\n    section.style.paddingBottom = '0';\n    section.style.marginTop = '0';\n    section.style.marginBottom = '0';\n  }\n\n  /* Algunos themes meten padding en un contenedor interno: lo neutralizamos */\n  const innerWrap = bar.closest('.section, .section-padding, .page-width, .container');\n  if(innerWrap && innerWrap !== bar){\n    innerWrap.style.paddingTop = '0';\n    innerWrap.style.paddingBottom = '0';\n    innerWrap.style.marginTop = '0';\n    innerWrap.style.marginBottom = '0';\n    innerWrap.style.maxWidth = 'none';\n  }\n\n  /* 2) Lógica del contador */\n  const mode = (bar.dataset.mode || 'evergreen').toLowerCase();\n  const durationMinutes = parseInt(bar.dataset.durationMinutes || '1440', 10);\n  const hideDaysWhenZero = (bar.dataset.hideDaysWhenZero || 'false') === 'true';\n\n  const daysEl = document.getElementById('aaDays');\n  const hrsEl  = document.getElementById('aaHrs');\n  const minEl  = document.getElementById('aaMin');\n  const secEl  = document.getElementById('aaSec');\n  const daysWrap = bar.querySelector('[data-unit=\"days\"]');\n\n  const key = 'aa_countdown_end_' + location.pathname;\n  let end = 0;\n\n  if(mode === 'fixed' && bar.dataset.end){\n    end = new Date(bar.dataset.end).getTime();\n  } else {\n    end = parseInt(localStorage.getItem(key) || '0', 10);\n    if(!end || end < Date.now()){\n      end = Date.now() + durationMinutes * 60 * 1000;\n      localStorage.setItem(key, String(end));\n    }\n  }\n\n  function pad(n){ return String(n).padStart(2,'0'); }\n\n  function tick(){\n    let ms = end - Date.now();\n    if(ms <= 0){\n      end = Date.now() + durationMinutes * 60 * 1000;\n      localStorage.setItem(key, String(end));\n      ms = end - Date.now();\n    }\n\n    const totalSec = Math.floor(ms / 1000);\n    const d = Math.floor(totalSec / 86400);\n    const h = Math.floor((totalSec % 86400) / 3600);\n    const m = Math.floor((totalSec % 3600) / 60);\n    const s = totalSec % 60;\n\n    if(daysEl) daysEl.textContent = pad(d);\n    if(hrsEl)  hrsEl.textContent  = pad(h);\n    if(minEl)  minEl.textContent  = pad(m);\n    if(secEl)  secEl.textContent  = pad(s);\n\n    if(daysWrap && hideDaysWhenZero){\n      daysWrap.style.display = d > 0 ? '' : 'none';\n    } else if(daysWrap) {\n      daysWrap.style.display = '';\n    }\n  }\n\n  tick();\n  setInterval(tick, 250);\n})();\n</script>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "fe1c8c67-b84c-4466-a515-70df3134c1c0": {
+      "type": "announcement-bar",
+      "blocks": {
+        "sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "text_alignment": "center",
+            "mobile_text_size": 16,
+            "desktop_text_size": 20,
+            "icon": "storefront",
+            "filled_icon": false,
+            "mobile_icon_size": 20,
+            "desktop_icon_size": 26,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "hidden_products": "",
+            "enable_specific_display": false,
+            "displayed_products": ""
+          }
+        }
+      },
+      "block_order": [
+        "sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns_desktop": 1,
+        "columns_mobile": 1,
+        "desktop_spacing": 28,
+        "mobile_spacing": 16,
+        "show_separator": false,
+        "color_scheme": "accent-1",
+        "slider_mobile": true,
+        "slider_desktop": false,
+        "type": "loop",
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "custom_colors_background": "#dd1d1d",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "logo_link": "/",
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "highlight_active_link": true,
+        "highlighted_link_color_scheme": "accent-1",
+        "products_mega_menu_links": "",
+        "products_mega_menu_display_collection_products": true,
+        "products_mega_menu_display_collection_images": true,
+        "products_mega_menu_display_collection_images_on_mobile": true,
+        "mobile_menu_title": "Menu",
+        "secondary_menu": "",
+        "menu_color_scheme": "background-1",
+        "mobile_logo_position": "center",
+        "display_search": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "2c2ec774-3430-481f-b927-e9c035b9d24e",
+    "custom_liquid_rmGwPV",
+    "fe1c8c67-b84c-4466-a515-70df3134c1c0",
+    "header"
+  ]
+}

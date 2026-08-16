@@ -1,0 +1,754 @@
+<link href="{{ 'statistics-column.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+
+
+<style>
+  .section-{{ section.id }} {
+    --stats-number-size-mobile: 36px;
+    --stats-number-size-desktop: 48px;
+    --stats-title-size-mobile: 18px;
+    --stats-title-size-desktop: 22px;
+    --stats-description-size-mobile: 14px;
+    --stats-description-size-desktop: 16px;
+    --stats-disclaimer-padding-top: 16px;
+    --stats-disclaimer-padding-bottom: 16px;
+    --stats-disclaimer-padding-left: 16px;
+    --stats-disclaimer-padding-right: 16px;
+    --stats-disclaimer-size-mobile: 14px;
+    --stats-disclaimer-size-desktop: 16px;
+    --stats-disclaimer-border-radius: 8px;
+    --stats-disclaimer-background: #e0e0e0;
+    --stats-disclaimer-color: #666666;
+    --stats-disclaimer-icon-color: #007acc;
+    --stats-disclaimer-line-height: 1.4;
+    --stats-disclaimer-border-width: 1px;
+    --stats-disclaimer-border-style: none;
+    --stats-disclaimer-border-color: #e0e0e0;
+    
+    
+  }
+
+
+
+  .section-{{ section.id }} .stats-column-title {
+    font-size: var(--stats-title-size-mobile);
+    color: #000000;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .stats-column-title {
+      font-size: var(--stats-title-size-desktop);
+    }
+  }
+
+  .section-{{ section.id }} .stats-column-description {
+    font-size: var(--stats-description-size-mobile);
+    color: #666666;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .stats-column-description {
+      font-size: var(--stats-description-size-desktop);
+    }
+  }
+
+
+
+  .section-{{ section.id }} .studies-disclaimer {
+    margin-top: 2rem;
+  }
+
+  .section-{{ section.id }} .studies-disclaimer-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: var(--stats-disclaimer-padding-top) var(--stats-disclaimer-padding-right) var(--stats-disclaimer-padding-bottom) var(--stats-disclaimer-padding-left);
+    background-color: var(--stats-disclaimer-background);
+    border-radius: var(--stats-disclaimer-border-radius);
+    border: var(--stats-disclaimer-border-width) var(--stats-disclaimer-border-style) var(--stats-disclaimer-border-color);
+  }
+
+  .section-{{ section.id }} .disclaimer-icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    opacity: 0.7;
+    color: var(--stats-disclaimer-icon-color);
+  }
+
+  .section-{{ section.id }} .disclaimer-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .section-{{ section.id }} .studies-disclaimer-text {
+    font-weight: var(--font-weight-regular);
+    margin: 0;
+    line-height: var(--stats-disclaimer-line-height);
+    letter-spacing: var(--letter-spacing-body);
+    flex: 1;
+    font-size: var(--stats-disclaimer-size-mobile);
+    color: var(--stats-disclaimer-color);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .studies-disclaimer-text {
+      font-size: var(--stats-disclaimer-size-desktop);
+    }
+  }
+
+  .section-{{ section.id }} .studies-disclaimer-text strong {
+    color: var(--stats-disclaimer-icon-color);
+  }
+</style>
+
+
+
+
+
+<style data-shopify>.statistics-section-custom-background-{{ section.id }} {
+    background: linear-gradient(135deg, rgba(249, 249, 249, 1), rgba(249, 249, 249, 1) 100%);
+  }
+
+  /* Page-width container padding customization - applies regardless of contain_section */
+  .section-{{ section.id }} .page-width {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .page-width {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 0px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .stats-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stats-column-content {
+    flex: 1;
+    
+      order: 2;
+    
+  }
+
+  .stats-column-image {
+    flex: 1;
+    width: 100%;
+    
+      order: 1;
+    
+  }
+
+  @media screen and (min-width: 990px) {
+    .stats-column {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .stats-column-content {
+      
+        order: 2;
+      
+      max-width: calc(100% - 50%);
+    }
+
+    .stats-column-image {
+      
+        order: 1;
+      
+      max-width: 50%;
+      margin-bottom: 0;
+    }
+  }
+
+  .stats-column-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  /* Two Column Layout Styles */
+  .stats-column.two-column-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    /* Desktop container padding */
+    .stats-column-container.contained {
+      padding: 40px 40px 40px 40px !important;
+    }
+
+    .stats-column.two-column-layout {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+
+    
+
+    .stats-column.two-column-layout .stats-column-header-section {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .stats-column.two-column-layout .stats-column-content {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    /* Hide desktop header in two-column layout since it's in the header section */
+    .stats-column.two-column-layout .stats-column-content .desktop-header {
+      display: none;
+    }
+  }
+
+  /* Container Styles */
+  .stats-column-container {
+    width: 100%;
+  }
+
+  .stats-column-container.contained {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Override page-width max-width when contain_section is enabled */
+  
+
+  .stats-column-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .stats-column-list {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .stats-column-item {
+    display: flex;
+    
+      align-items: center;
+      gap: 1.5rem;
+    
+    padding: 1.5rem 0;
+    width: 100%;
+    min-height: 100px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .stats-column-item {
+      
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 2rem;
+        max-height: 150px;
+      
+      padding: 1.5rem 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .stats-column-item:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .section-{{ section.id }} .stats-column-number {
+    font-size: 36px !important;
+    font-weight: var(--font-weight-bold) !important;
+    
+      background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1) 100%) !important;
+      background-image: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1) 100%) !important;
+      -webkit-background-clip: text !important;
+      -moz-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      -moz-text-fill-color: transparent !important;
+      color: transparent !important;
+    
+    line-height: 1;
+    
+      flex-shrink: 0;
+      min-width: 4rem;
+    
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }} .stats-column-number {
+      font-size: 52px !important;
+      
+        min-width: 6rem;
+      
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      
+        background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1) 100%) !important;
+        background-image: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1) 100%) !important;
+        -webkit-background-clip: text !important;
+        -moz-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        -moz-text-fill-color: transparent !important;
+        color: transparent !important;
+      
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .stats-column-number {
+      font-size: 48px !important;
+      
+        min-width: 6rem;
+      
+      
+        background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1) 100%) !important;
+        background-image: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1) 100%) !important;
+        -webkit-background-clip: text !important;
+        -moz-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        -moz-text-fill-color: transparent !important;
+        color: transparent !important;
+      
+    }
+  }
+
+  .stats-column-text {
+    
+      flex: 1;
+      text-align: left;
+    
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stats-column-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    min-height: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .stats-column-text {
+      width: auto;
+      flex: 1;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .stats-column-title {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    color: #000000 !important;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  @media screen and (max-width: 749px) {
+    .stats-column-title {
+      font-size: 18px;
+      color: #000000 !important;
+      margin: 0 0 0.5rem 0;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .stats-column-title {
+      font-size: 22px;
+    }
+  }
+
+  .stats-column-description {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: #666666 !important;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  @media screen and (max-width: 749px) {
+    .stats-column-description {
+      font-size: 14px;
+      color: #666666 !important;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .stats-column-description {
+      font-size: 16px;
+      color: #666666 !important;
+    }
+  }
+
+  .stats-column-section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  /* Heading vertical alignment for two-column layout */
+  .stats-column-header-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Mobile Header - visible on mobile, hidden on desktop */
+  .stats-column-section-header.mobile-header {
+    display: block;
+  }
+
+  /* Desktop Header - hidden on mobile, visible on desktop */
+  .stats-column-section-header.desktop-header {
+    display: none;
+  }
+
+  @media screen and (min-width: 990px) {
+    .stats-column-section-header.mobile-header {
+      display: none;
+    }
+
+    .stats-column-section-header.desktop-header {
+      display: block;
+    }
+  }
+
+  .section-{{ section.id }} .section-subtitle-container {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-{{ section.id }} .stats-section-title {
+    font-size: 26px;
+    font-weight: var(--font-weight-bold);
+    color: #000000 !important;
+    margin: 0 0 1rem 0;
+    letter-spacing: var(--letter-spacing-heading);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .stats-section-title {
+      font-size: 36px;
+    }
+  }
+
+  .section-{{ section.id }} .section-subtitle {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: #f9f9f9 !important;
+    margin: 0;
+    letter-spacing: var(--letter-spacing-body);
+    text-align: center !important;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .section-{{ section.id }} .section-subtitle p {
+    margin: 0;
+    text-align: center !important;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} .section-subtitle {
+      font-size: 16px;
+    }
+  }
+
+
+
+  /* Enhanced accent text styling with global and local customization options */
+  .section-{{ section.id }} .stats-section-title .global-accent-text,
+  .section-{{ section.id }} .stats-section-title .custom-accent-text {
+    
+    margin-left: 0px !important;
+
+    
+    
+      
+      color: #1a5fc8 !important;
+    
+
+    
+      
+      font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      font-style: var(--font-accent-style, normal) !important;
+      font-weight: var(--font-accent-weight, inherit) !important;
+      letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+      text-transform: var(--font-accent-text-transform, none) !important;
+    
+  }
+
+  /* Theme background styling */
+  .statistics-section-theme-background-{{ section.id }} {
+    background-color: #0f2945 !important;
+  }</style><div class="section-{{ section.id }} statistics-section-custom-background-{{ section.id }} stats-column-section   scroll-trigger animate--fade-up">
+  <div class="page-width">
+    <div
+      class="stats-column-container "
+      style="
+        
+      "
+    >
+        <!-- Mobile Header --><div class="stats-column-section-header mobile-header">
+                <h2 class="stats-section-title">
+                  <strong>Lo que Más de 69,708 Clientes</strong>
+                  <span class="global-accent-text">
+                    Están Experimentando
+                  </span>
+                </h2>
+              
+</div><div class="stats-column">
+          
+
+          <div class="stats-column-content">
+            
+              <!-- Original Layout: Desktop Header (inside stats-column-content) --><div class="stats-column-section-header desktop-header">
+                      <h2 class="stats-section-title">
+                        <strong>Lo que Más de 69,708 Clientes</strong>
+                        <span class="global-accent-text">
+                          Están Experimentando
+                        </span>
+                      </h2>
+                    
+</div>
+
+            <div class="stats-column-list"><div class="stats-column-item" >
+                  
+
+
+
+
+                    <div
+                      class="stats-column-number counter-animate"
+                      data-target="91"
+                      data-suffix="%"
+                      data-duration="2000"
+                      data-delay="200"
+                    >
+                      0%
+                    </div>
+                  
+
+                  <div class="stats-column-text">
+                    <div class="stats-column-title-wrapper"><h3 class="stats-column-title">Días Más Claros y Más Energía</h3></div><p class="stats-column-description">91% notó una mejora en la energía o la claridad mental dentro de 3 semanas*</p></div>
+                </div><div class="stats-column-item" >
+                  
+
+
+
+
+                    <div
+                      class="stats-column-number counter-animate"
+                      data-target="92"
+                      data-suffix="%"
+                      data-duration="2000"
+                      data-delay="200"
+                    >
+                      0%
+                    </div>
+                  
+
+                  <div class="stats-column-text">
+                    <div class="stats-column-title-wrapper"><h3 class="stats-column-title">Mañanas Más Fáciles Después</h3></div><p class="stats-column-description">92% de los bebedores reportaron mañanas más fáciles después de beber*</p></div>
+                </div><div class="stats-column-item" >
+                  
+
+
+
+
+                    <div
+                      class="stats-column-number counter-animate"
+                      data-target="89"
+                      data-suffix="%"
+                      data-duration="2000"
+                      data-delay="200"
+                    >
+                      0%
+                    </div>
+                  
+
+                  <div class="stats-column-text">
+                    <div class="stats-column-title-wrapper"><h3 class="stats-column-title">Cero Problemas Estomacales</h3></div><p class="stats-column-description">89%  no reportó problemas estomacales en comparación con el polvo seco de NAC*</p></div>
+                </div><div class="stats-column-item" >
+                  
+
+
+
+
+                    <div
+                      class="stats-column-number counter-animate"
+                      data-target="87"
+                      data-suffix="%"
+                      data-duration="2000"
+                      data-delay="200"
+                    >
+                      0%
+                    </div>
+                  
+
+                  <div class="stats-column-text">
+                    <div class="stats-column-title-wrapper"><h3 class="stats-column-title">Regresando por Más</h3></div><p class="stats-column-description">87% dijo que continuaría usando NAC600 como parte de su rutina diaria</p></div>
+                </div></div><div class="studies-disclaimer">
+                <div class="studies-disclaimer-content">
+                  <div class="disclaimer-icon">
+                    <svg
+                      fill="currentColor"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 416.979 416.979"
+                    >
+                      <path d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85
+                        c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786
+                        c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576
+                        c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765
+                        c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z"/>
+                    </svg>
+                  </div>
+                  <p class="studies-disclaimer-text">*Basado en estudios internos y encuestas de retroalimentación de clientes.</p>
+                </div>
+              </div></div>
+
+          
+<div class="stats-column-image">
+                <img
+                  src="{{ 'image_9_w800.png' | asset_url }}"
+                  alt=""
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                >
+              </div>
+        </div>
+      </div>
+      <!-- Close stats-column-container -->
+    </div>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Counter Animation Function
+      function animateCounter(element) {
+        const target = parseFloat(element.dataset.target);
+        const suffix = element.dataset.suffix || '';
+        const duration = parseInt(element.dataset.duration) || 2000;
+        const delay = parseInt(element.dataset.delay) || 200;
+
+        // Don't animate if target is not a valid number
+        if (isNaN(target)) {
+          element.textContent = element.dataset.target + suffix;
+          return;
+        }
+
+        // Add delay before starting animation
+        setTimeout(() => {
+          const startTime = performance.now();
+          const startValue = 0;
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Use easeOutCubic for smooth animation
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = startValue + (target - startValue) * easeProgress;
+
+            // Format the number based on target type
+            let displayValue;
+            if (target % 1 === 0) {
+              // Integer
+              displayValue = Math.floor(currentValue);
+            } else {
+              // Decimal - preserve original decimal places
+              const decimalPlaces = target.toString().split('.')[1]?.length || 1;
+              displayValue = currentValue.toFixed(decimalPlaces);
+            }
+
+            element.textContent = displayValue + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              // Ensure final value is exact
+              element.textContent = target + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+        }, delay);
+      }
+
+      // Intersection Observer for triggering animations when elements come into view
+      const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all counter elements
+      const counters = document.querySelectorAll('.section-{{ section.id }} .counter-animate');
+      counters.forEach((counter) => {
+        observer.observe(counter);
+      });
+    });
+  </script>
+
+
+
+
+<script src="{{ 'statistics-column.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Statistics column",
+  "settings": []
+}
+{% endschema %}

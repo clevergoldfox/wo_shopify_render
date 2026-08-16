@@ -1,0 +1,632 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_details": {
+      "type": "tsl-product-details",
+      "blocks": {
+        "pills": {
+          "type": "pills",
+          "settings": {
+            "pills": "Soporte de Desintoxicación de Hígado|Despeja la Niebla Mental"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "rating": "4.7",
+            "rating_text": "Calificado 4.7 (69,708+ Clientes)"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "NAC600 & NAD Daily Complex"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "save_badge": ""
+          }
+        },
+        "bullets": {
+          "type": "bullets",
+          "settings": {
+            "bullets": "El Mismo Compuesto que Usan los Hospitales para Emergencias de Higado\nElimina el Alcohol, Tylenol y Años de Acumulación Tóxica\nApoya la Función Cerebral, la Salud Respiratoria y el Metabolismo\nDespeja la Niebla Mental de la Tarde\nSuave con tu Estómago (Aceite MCT, No Polvo Seco)\nDosis Clínica de 600mg — Sin Subdosificación"
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "highlight_index": 2,
+            "highlight_label": "MÁS POPULAR"
+          }
+        },
+        "add_to_cart": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_label": "AGREGAR AL CARRITO",
+            "note": "Devoluciones Gratuitas en 30 Días"
+          }
+        },
+        "payment_icons": {
+          "type": "payment_icons",
+          "settings": {}
+        },
+        "promo": {
+          "type": "promo",
+          "settings": {
+            "heading": "REBAJAS DEL DÍA DE LA INDEPENDENCIA",
+            "text": "Nuestros mayores ahorros del verano están aquí. Abastece tu despensa, ahorra más y disfruta de ofertas por tiempo limitado antes de que desaparezcan."
+          }
+        },
+        "guarantee_badge": {
+          "type": "guarantee_badge",
+          "settings": {
+            "heading": "Menos del 1%",
+            "text": "de los clientes reclaman nuestra Garantía de devolución de dinero"
+          }
+        },
+        "tabs": {
+          "type": "tabs",
+          "settings": {
+            "tab_1_label": "Expert Reviews",
+            "tab_1_content": "<p>\"El 67% de los pacientes reportaron una mejora sustancial en la memoria de trabajo, la concentración y la función ejecutiva después de la suplementación diaria con NAC.\"</p><p><strong>Estudio Clínico de la Facultad de Medicina de Yale, 2022</strong></p>",
+            "tab_2_label": "Comparison",
+            "tab_2_content": "<table class=\"tsl-tabs__table\"><thead><tr><th>NAC</th><th>Others</th></tr></thead><tbody><tr><td>Trabaja Con el Propio Sistema de Desintoxicación de su Cuerpo</td><td>NAC desencadena la producción de glutatión internamente. Las mezclas de hierbas contienen antioxidantes pero no pueden hacer lo mismo.*</td></tr><tr><td>Estudiado Clínicamente a una Dosis Significativa</td><td>Examinado en ensayos revisados por pares en Yale, la Facultad de Medicina de Baylor y Stanford. No existe evidencia comparable para los tés detox o el cardo mariano.*</td></tr><tr><td>Aborda la Causa Raíz, No los Síntomas</td><td>Apoya la capacidad del hígado para eliminar el alcohol, Tylenol y las toxinas acumuladas a nivel celular. Los productos herbales ofrecen apoyo superficial en el mejor de los casos.*</td></tr><tr><td>Apoyo de Energía Celular Incluido</td><td>NAD+ apoya la función mitocondrial junto con la desintoxicación. Ningún té detox o producto de cardo mariano aborda el declive de la energía celular con la edad.*</td></tr></tbody></table>",
+            "tab_3_label": "Ingredients",
+            "tab_3_content": "<table class=\"tsl-tabs__table\"><thead><tr><th>Ingredient</th><th>Benefit</th></tr></thead><tbody><tr><td>NAC (N-Acetil Cisteína)</td><td>Elimina el alcohol, Tylenol y la acumulación tóxica, para que su energía, claridad y recuperación finalmente se pongan al día.*</td></tr><tr><td>NAD+ (Nicotinamida Adenina Dinucleótido)</td><td>Recarga sus células junto con la desintoxicación, apoyando la energía constante y la claridad mental todo el día.</td></tr><tr><td>Aceite de Coco MCT</td><td>Mejor absorción, sin eructos de azufre, sin calambres estomacales.*</td></tr></tbody></table>"
+          }
+        },
+        "collapsible_how": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "¿Cómo Funciona?",
+            "content": "<p><strong>NAC → Glutatión → Hígado Limpio, Cerebro Calmo</strong></p><p>Su cuerpo usa NAC para producir glutatión — el \"antioxidante maestro\" que elimina las toxinas de su hígado. Alcohol, Tylenol, comida procesada — el glutatión lo limpia todo. Agregamos NAD+ para recargar sus células al mismo tiempo. Y lo suspendimos en aceite MCT para que su estómago no lo odie.</p>"
+          }
+        },
+        "collapsible_results": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "¿Cuánto tiempo hasta que veo resultados?",
+            "content": "<dl><dt>Semana 1-2:</dt><dd>La mayoría de las personas notan mejor energía, mejor sueño y menos antojos (azúcar, alcohol, nicotina).</dd><dt>Semana 2-4:</dt><dd>La niebla mental comienza a levantarse. Los impulsos compulsivos (rascarse, morderse las uñas) comienzan a calmarse. La recuperación a la mañana siguiente mejora si bebe.</dd><dt>Semana 4-6:</dt><dd>La curación de la piel se hace visible. La claridad mental se siente constante. Deja de preguntarse si está funcionando — simplemente se siente diferente.</dd></dl>"
+          }
+        },
+        "collapsible_refund": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "Devolución de dinero",
+            "content": "<p>Si no está 100% satisfecho dentro de los primeros 30 días, simplemente devuélvanoslo y le daremos un reembolso completo.</p>"
+          }
+        },
+        "collapsible_shipping": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "Transporte & Devoluciones",
+            "content": "<dl><dt>Tiempo de Procesamiento:</dt><dd>Los pedidos se preparan y envían dentro de 1–2 días hábiles.</dd><dt>Entrega Estándar (EE. UU. y Canadá):</dt><dd>Estimado dentro de 5–10 días hábiles.</dd><dt>Entrega Internacional:</dt><dd>Estimado dentro de 7–14 días hábiles, dependiendo del destino.</dd><dt>Rastreo de Pedidos:</dt><dd>Se proporciona un número de rastreo con cada pedido para total transparencia.</dd><dt>Garantía de Entrega:</dt><dd>Si su pedido no llega dentro de 30 días, se emitirá un reembolso completo.</dd></dl>"
+          }
+        }
+      },
+      "block_order": [
+        "pills",
+        "rating",
+        "title",
+        "price",
+        "bullets",
+        "variants",
+        "add_to_cart",
+        "payment_icons",
+        "promo",
+        "guarantee_badge",
+        "tabs",
+        "collapsible_how",
+        "collapsible_results",
+        "collapsible_refund",
+        "collapsible_shipping"
+      ],
+      "settings": {
+        "show_arrows": true
+      }
+    },
+
+    "ticker": {
+      "type": "tsl-ticker",
+      "settings": {
+        "items": "APOYA LA SALUD HEPÁTICA|SIN ERUCTOS DE AZUFRE|SE ACABARON LAS RESACAS DE DOS DÍAS|DOSIS CLÍNICA DE 600MG",
+        "divider": "+",
+        "speed": 15,
+        "bg": "#1a5fc8",
+        "text_color": "#ffffff"
+      }
+    },
+
+    "ingredients": {
+      "type": "tsl-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "card",
+          "settings": {
+            "title": "NAC a la Dosis Clínica",
+            "text": "<p>NAC (N-Acetil Cisteína), 600mg por porción, consistente con la dosis utilizada en la investigación clínica revisada por pares. Formulado para uso diario, no para suplementación ocasional.</p>"
+          }
+        },
+        "i2": {
+          "type": "card",
+          "settings": {
+            "title": "Apoyo de Glutatión",
+            "text": "<p>NAC es el precursor que el cuerpo utiliza para producir glutatión, el compuesto que neutraliza las toxinas procesadas a través del hígado. Diseñado para apoyar ese proceso de manera constante, todos los días.*</p>"
+          }
+        },
+        "i3": {
+          "type": "card",
+          "settings": {
+            "title": "NAC & NAD+ Combinados",
+            "text": "<p>Los niveles de NAD+ disminuyen naturalmente con la edad. Lo combinamos con NAC porque apoyar la desintoxicación y la energía celular juntas es más efectivo que cualquiera de los dos por separado. La mayoría de las marcas los venden por separado.*</p>"
+          }
+        },
+        "i4": {
+          "type": "card",
+          "settings": {
+            "title": "Entrega en Aceite de Coco",
+            "text": "<p>Suspendido en aceite MCT de coco, no en polvo seco. Diseñado para personas que desean apoyo hepático sin los eructos de azufre y el malestar estomacal comunes con las cápsulas estándar de NAC.*</p>"
+          }
+        }
+      },
+      "block_order": ["i1", "i2", "i3", "i4"],
+      "settings": {
+        "heading": "4 Beneficios Clínicamente Estudiados de",
+        "heading_accent": "NAC600 & NAD",
+        "subheading": "",
+        "bg": "#ffffff"
+      }
+    },
+
+    "stats": {
+      "type": "tsl-stats",
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": 91,
+            "suffix": "%",
+            "title": "Días Más Claros y Más Energía",
+            "text": "91% notó una mejora en la energía o la claridad mental dentro de 3 semanas*"
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": 92,
+            "suffix": "%",
+            "title": "Mañanas Más Fáciles Después",
+            "text": "92% de los bebedores reportaron mañanas más fáciles después de beber*"
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": 89,
+            "suffix": "%",
+            "title": "Cero Problemas Estomacales",
+            "text": "89% no reportó problemas estomacales en comparación con el polvo seco de NAC*"
+          }
+        },
+        "s4": {
+          "type": "stat",
+          "settings": {
+            "value": 87,
+            "suffix": "%",
+            "title": "Regresando por Más",
+            "text": "87% dijo que continuaría usando NAC600 como parte de su rutina diaria"
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {
+        "heading": "Lo que Más de 69,708 Clientes",
+        "heading_accent": "Están Experimentando",
+        "footnote": "*Basado en estudios internos y encuestas de retroalimentación de clientes.",
+        "bg": "#ffffff"
+      }
+    },
+
+    "filter_story": {
+      "type": "tsl-image-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "text": "El Filtro de su Cuerpo No Ha Sido",
+            "accent": "Cambiado en Décadas.",
+            "accent_color": "#1a5fc8"
+          }
+        },
+        "subtitle": {
+          "type": "subtitle",
+          "settings": {
+            "text": "El problema real nunca fue abordado. Esto es lo que realmente está sucediendo.",
+            "color": "#000000"
+          }
+        },
+        "divider": {
+          "type": "divider",
+          "settings": { "color": "#8a9db4" }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Su hígado procesa todo: las bebidas, los analgésicos, la comida procesada, las toxinas ambientales. Ha estado trabajando horas extras durante años. Y a diferencia del filtro de aceite de su auto, no puede simplemente cambiarlo. Pero puede darle lo que necesita para que realmente haga su trabajo.</p><p>NAC es cómo su cuerpo produce glutatión, el compuesto que elimina la acumulación. Cuando su filtro funciona, todo funciona: energía, claridad, recuperación, todo.</p>",
+            "color": "#000000"
+          }
+        },
+        "accordion": {
+          "type": "accordion",
+          "settings": {
+            "single": false,
+            "item_1_heading": "Para quienes han castigado su hígado",
+            "item_1_content": "<p>Su hígado se desintoxica a través del glutatión. Sin glutatión, no hay desintoxicación real. Y su cuerpo solo produce glutatión si tiene NAC. Esos tés y limpiezas nunca le dieron eso. Ha estado trapeando el piso sin jabón. NAC es lo que usan los hospitales en goteos intravenosos cuando el hígado de alguien está fallando — el mismo compuesto, solo que en una cápsula blanda que puede tomar antes de salir.</p>",
+            "item_2_heading": "Para quienes se sienten con la mente nublada, cansados y \"desajustados\"",
+            "item_2_content": "<p>No es la edad. Es acumulación. Su hígado ha estado filtrando toxinas durante décadas — comida procesada, alcohol, medicamentos, contaminación — y nadie le dijo que cambiara el filtro. Esa niebla y fatiga no es envejecer. Es su cuerpo funcionando en un sistema obstruido, rogando por un reinicio.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "subtitle", "divider", "paragraph", "accordion"],
+      "settings": {
+        "image_position": "right",
+        "bg": "#ffffff",
+        "text_color": "#0f2945"
+      }
+    },
+
+    "roadmap": {
+      "type": "tsl-roadmap",
+      "blocks": {
+        "r1": {
+          "type": "step",
+          "settings": {
+            "badge": "Semana 1",
+            "title": "Duerme toda la noche",
+            "text": "<p>Nada dramático. Pero el lunes no golpea como solía hacerlo. La mañana siguiente es más fácil. Usted no hizo nada diferente — su hígado lo hizo.</p>"
+          }
+        },
+        "r2": {
+          "type": "step",
+          "settings": {
+            "badge": "Semanas 2–4",
+            "title": "Llegan las 3pm y sigue agudo",
+            "text": "<p>El muro de la tarde comienza a moverse. Termina las cosas a la primera. La niebla mental no desaparece — simplemente deja de dominar el día.</p>"
+          }
+        },
+        "r3": {
+          "type": "step",
+          "settings": {
+            "badge": "Mes 2",
+            "title": "Olvida que lo está tomando",
+            "text": "<p>Ahí es cuando sabe que está funcionando. Ya no está rastreando su energía. Simplemente está funcionando. Algunos chicos se hacen análisis de sangre en esta etapa. Las enzimas se ven diferentes.</p>"
+          }
+        },
+        "r4": {
+          "type": "step",
+          "settings": {
+            "badge": "Mes 3+",
+            "title": "Esta es su línea base ahora",
+            "text": "<p>No un nuevo usted. Solo el que existía antes de que lo alcanzaran 20 años de desgaste. Siga bebiendo los fines de semana. Simplemente no pague por ello de lunes a viernes.</p>"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "heading": "Su Viaje Hacia un Usted Mejor",
+        "subheading": "Los cambios reales ocurren gradualmente. Así es como suele desarrollarse.",
+        "bg": "#f8f8f8"
+      }
+    },
+
+    "benefits_daily": {
+      "type": "tsl-benefits-grid",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "title": "Apoya la Desintoxicación Hepática" } },
+        "b2": { "type": "benefit", "settings": { "title": "Despeja la Niebla Mental" } },
+        "b3": { "type": "benefit", "settings": { "title": "Recarga la Energía Celular" } },
+        "b4": { "type": "benefit", "settings": { "title": "Mañanas Más Fáciles Después de Beber" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "heading": "Siéntete mejor cada día",
+        "bg": "#ffffff"
+      }
+    },
+
+    "product_benefits": {
+      "type": "tsl-product-benefits",
+      "blocks": {
+        "p1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Compuesto que Usan los Hospitales para Emergencias Hepáticas",
+            "text": "<p>NAC es reconocido por las autoridades sanitarias de todo el mundo como un compuesto estándar de apoyo hepático, ahora en una cápsula blanda que puede tomar todos los días.*</p>"
+          }
+        },
+        "p2": {
+          "type": "benefit",
+          "settings": {
+            "title": "NAC & NAD+ en Una Sola Cápsula Blanda",
+            "text": "<p>La mayoría de las marcas los venden por separado. Combinamos ambos porque la desintoxicación y la energía celular funcionan mejor cuando se apoyan juntas.*</p>"
+          }
+        },
+        "p3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Entrega en Aceite MCT, No en Polvo Seco",
+            "text": "<p>Las cápsulas secas causan calambres estomacales y eructos de azufre. Las nuestras están suspendidas en aceite MCT de coco — absorción más suave, cero castigo intestinal.</p>"
+          }
+        },
+        "p4": {
+          "type": "benefit",
+          "settings": {
+            "title": "Dosis Clínica de 600mg",
+            "text": "<p>La mayoría de los suplementos de NAC subdosifican para reducir costos. Empacamos 600mg por porción porque realmente queremos que esto funcione.*</p>"
+          }
+        }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "settings": {
+        "heading": "No Es un Suplemento",
+        "heading_accent": "de NAC Cualquiera",
+        "subheading": "Cada detalle diseñado para ayudar a su cuerpo a desintoxicarse, y realmente sentirlo.",
+        "bg": "#ffffff"
+      }
+    },
+
+    "why_switching": {
+      "type": "tsl-image-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "text": "¿POR QUÉ LA GENTE ESTÁ CAMBIANDO?",
+            "accent": "",
+            "accent_color": "#ffffff"
+          }
+        },
+        "list": {
+          "type": "bullet_list",
+          "settings": {
+            "items": "Más Energía Durante el Día\nPensamiento Más Claro y Nítido\nMañanas Más Fáciles Después de Beber\nMejor Calidad de Sueño\nMenos Niebla Mental por la Tarde\nRecuperación Más Rápida",
+            "color": "#ffffff"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "label": "PRUÉBALO AHORA",
+            "link": "",
+            "bg": "#2bb2fd",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": ["heading", "list", "button"],
+      "settings": {
+        "image_position": "right",
+        "bg": "#1a5fc8",
+        "text_color": "#ffffff"
+      }
+    },
+
+    "comparison": {
+      "type": "tsl-comparison",
+      "blocks": {
+        "c1": { "type": "row", "settings": { "feature": "NAC & NAD+ en una sola fórmula", "col_1": true, "col_2": false } },
+        "c2": { "type": "row", "settings": { "feature": "Dosis clínica de 600mg por porción", "col_1": true, "col_2": false } },
+        "c3": { "type": "row", "settings": { "feature": "Suspendido en aceite de coco", "col_1": true, "col_2": false } },
+        "c4": { "type": "row", "settings": { "feature": "Suave para el estómago, sin eructos de azufre", "col_1": true, "col_2": false } },
+        "c5": { "type": "row", "settings": { "feature": "Probado por terceros para pureza y potencia", "col_1": true, "col_2": false } },
+        "c6": { "type": "row", "settings": { "feature": "Garantía de Devolución de Dinero de 30 Días", "col_1": true, "col_2": false } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4", "c5", "c6"],
+      "settings": {
+        "heading": "¿Por Qué Elegir",
+        "heading_accent": "The Standard Lab?",
+        "subheading": "Vea por qué miles han hecho el cambio a nuestro NAC.",
+        "col_1_title": "Nosotros",
+        "col_1_subtitle": "LEGÍTIMO",
+        "col_2_title": "Otros",
+        "col_2_subtitle": "SÁLTESELOS",
+        "bg": "#f2f2f2"
+      }
+    },
+
+    "review_carousel": {
+      "type": "tsl-review-carousel",
+      "blocks": {
+        "rv1": { "type": "slide", "settings": {} },
+        "rv2": { "type": "slide", "settings": {} },
+        "rv3": { "type": "slide", "settings": {} },
+        "rv4": { "type": "slide", "settings": {} }
+      },
+      "block_order": ["rv1", "rv2", "rv3", "rv4"],
+      "settings": {
+        "heading": "Historias Reales, Resultados Reales",
+        "subheading": "Experiencias honestas con NAC600 & NAD Daily Complex",
+        "rating_text": "4.7 / 5 — 69,708+ clientes",
+        "bg": "#ffffff"
+      }
+    },
+
+    "testimonials": {
+      "type": "tsl-testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Para las 2pm era un inútil.",
+            "text": "<p>Trabajo de alta presión, café todo el día, vino por la noche. Pensé que el agotamiento era solo parte del trato. Niebla mental tan espesa que releía el mismo correo electrónico tres veces. Dentro de tres semanas con NAC, la niebla se levantó. Ahora realmente termino mi día de trabajo con energía.</p>",
+            "name": "Melissa R., 54, Ohio",
+            "verified_label": "Verified customer"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Luego vi mis análisis de sangre.",
+            "text": "<p>Bebo. No una locura, pero suficiente. Mi médico seguía advirtiéndome sobre mis enzimas hepáticas subiendo. Comencé a tomar NAC a diario. Tres meses después, mis niveles volvieron al rango normal. El doctor preguntó qué cambié. Solo sonreí.</p>",
+            "name": "Linda P., 48, Florida",
+            "verified_label": "Verified customer"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Me sentía 10 años mayor de lo que era.",
+            "text": "<p>Tengo 48. Crecí con comida procesada, humo de segunda mano y agua de manguera. A mediados de mis 40, estaba cansada todo el tiempo. Olvidaba palabras a mitad de una oración. Mi médico dijo que estaba \"bien\". Yo no me sentía bien. Dos semanas con NAC, la niebla comenzó a levantarse. Para la semana cuatro, sentí que recuperé 10 años. No exagero. Me siento como yo misma de nuevo.</p>",
+            "name": "Michelle S., 44, Arizona",
+            "verified_label": "Verified customer"
+          }
+        },
+        "t4": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Mi tío bebe como un pez. ¿Sus enzimas hepáticas? Impecables.",
+            "text": "<p>Le pregunté qué diablos estaba haciendo. Me mostró estas cápsulas blandas. Dijo que toma NAC antes de cada salida nocturna. Lo probé antes de una boda. Bebí como lo haría normalmente. Me desperté a la mañana siguiente, sin dolor de cabeza, sin niebla, sin recuperación de dos días. Ya no bebo sin él. No es un pase libre. Pero es el mejor seguro que he encontrado.</p>",
+            "name": "Mark D., 52, Nevada",
+            "verified_label": "Verified customer"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {
+        "heading": "Cifras reales. Alivio real.",
+        "bg": "#ffffff"
+      }
+    },
+
+    "benefits_clean": {
+      "type": "tsl-benefits-grid",
+      "blocks": {
+        "cb1": { "type": "benefit", "settings": { "title": "No Transgénico (Non-GMO)" } },
+        "cb2": { "type": "benefit", "settings": { "title": "Sin Basura Artificial" } },
+        "cb3": { "type": "benefit", "settings": { "title": "Libre de Gluten" } },
+        "cb4": { "type": "benefit", "settings": { "title": "Certificado GMP" } }
+      },
+      "block_order": ["cb1", "cb2", "cb3", "cb4"],
+      "settings": {
+        "heading": "Ingredientes Limpios.",
+        "heading_accent": "Sin Tonterías.",
+        "subheading": "Somos obsesivos con lo que entra (y lo que se queda fuera).",
+        "bg": "#ffffff"
+      }
+    },
+
+    "guarantee": {
+      "type": "tsl-guarantee",
+      "blocks": {
+        "g1": { "type": "badge", "settings": { "icon": "shield", "label": "100% Satisfacción" } },
+        "g2": { "type": "badge", "settings": { "icon": "truck", "label": "Envío Rápido" } },
+        "g3": { "type": "badge", "settings": { "icon": "refresh", "label": "Devoluciones Fáciles" } }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "heading": "Garantía de Devolución de Dinero de 30 Días",
+        "text": "<p>Pruébelo por 30 días. Si no siente la diferencia — mañanas más nítidas, menos niebla, recuperación más fácil — le reembolsaremos en su totalidad. Sin formularios. Sin complicaciones. Solo responda al correo electrónico de su pedido.</p>",
+        "button_label": "AGREGAR AL CARRITO",
+        "button_link": "",
+        "bg": "#f8f8f8"
+      }
+    },
+
+    "faq": {
+      "type": "tsl-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo tomar esto si bebo alcohol?",
+            "answer": "<p>En absoluto. Aunque muchos clientes toman NAC600 para el apoyo hepático relacionado con el alcohol, es igualmente relevante para cualquier persona que lidie con hígado graso, toxinas acumuladas de alimentos procesados, medicamentos como Tylenol, o simplemente años de estrés dietético normal en el hígado. Muchos de nuestros clientes no beben en absoluto.*</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Por qué huele a azufre?",
+            "answer": "<p>Porque es NAC real. El NAC está hecho de azufre — un elemento esencial que su cuerpo necesita. El olor significa que es legítimo, no un relleno. No es un error, es una característica.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Ayuda esto con la enfermedad del hígado graso / NAFLD / MASH?",
+            "answer": "<p>NAC apoya la producción de glutatión, el compuesto que usa el hígado para limpiar la acumulación que contribuye al hígado graso. Muchos clientes con NAFLD reportan mejoras en cómo se sienten y en las lecturas de enzimas hepáticas durante 8–12 semanas. Consulte a su médico para obtener orientación específica sobre su condición.*</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuándo debo tomarlo y necesito comida?",
+            "answer": "<p>Dos cápsulas blandas al día con comida. La mayoría de los clientes las toman con el desayuno o el almuerzo. Evite tomarlas con el estómago vacío.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo tomar esto junto con medicamentos para la presión arterial u otros medicamentos?",
+            "answer": "<p>Generalmente bien tolerado, pero si está tomando medicamentos recetados, para la presión arterial, anticoagulantes o colesterol, consulte a su médico primero antes de comenzar.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Por qué no tomar simplemente un suplemento de glutatión?",
+            "answer": "<p>El glutatión oral se descompone antes de llegar a sus células, la biodisponibilidad es muy baja. NAC es lo que el cuerpo usa para producir glutatión internamente, lo cual es significativamente más efectivo. Es por eso que NAC es el enfoque clínicamente estudiado, no el glutatión directamente.*</p>"
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es esto adecuado para mujeres?",
+            "answer": "<p>Sí. Los beneficios de NAC y NAD+ no son específicos de género. NAC600 está formulado para cualquier adulto que busque apoyar la salud hepática, la claridad mental y la energía diaria.*</p>"
+          }
+        },
+        "q8": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Hay una garantía de devolución de dinero?",
+            "answer": "<p>Sí, de 30 días. Si no nota una diferencia, le reembolsaremos cada centavo. Sin preguntas, sin aros por los que saltar. Menos del 1% lo pide. Pero queremos que se sienta seguro al probarlo.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"],
+      "settings": {
+        "heading": "Preguntas Frecuentes",
+        "single": true,
+        "enable_schema": true,
+        "bg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "product_details",
+    "ticker",
+    "ingredients",
+    "stats",
+    "filter_story",
+    "roadmap",
+    "benefits_daily",
+    "product_benefits",
+    "why_switching",
+    "comparison",
+    "review_carousel",
+    "testimonials",
+    "benefits_clean",
+    "guarantee",
+    "faq"
+  ]
+}

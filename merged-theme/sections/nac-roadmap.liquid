@@ -1,0 +1,853 @@
+<link href="{{ 'component-accordion.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+
+
+
+
+<style data-shopify>.section-{{ section.id }}-padding {
+    
+      padding-top: 36px;
+      padding-bottom: 36px;
+      padding-left: 24px;
+      padding-right: 24px;
+    
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      
+        padding-top: 72px;
+        padding-bottom: 72px;
+        padding-left: 80px;
+        padding-right: 80px;
+      
+    }
+  }
+
+  .roadmap-section {
+    position: relative;
+    color: ;
+    
+    
+      /* Only gradient/color when no background image */
+    
+      background: linear-gradient(135deg, rgba(248, 248, 248, 1), rgba(248, 248, 248, 1) 100%);
+    
+    
+  }
+
+  /* Max section width for content when not contained (background stays full width) */
+  
+
+  /* Remove page-width constraints when full height is enabled */
+  
+
+  
+
+  /* Two-column layout on desktop (only for placeholder, not when image exists) */
+  
+
+  /* Mobile placeholder space (below timeline) */
+  
+
+  .roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+  }
+
+  /* Apply padding to roadmap content on mobile when full height is enabled */
+  
+
+  /* Mobile image above timeline styling */
+  .roadmap-image-mobile-above {
+    width: 100%;
+    margin-bottom: 30px;
+    display: none;
+  }
+
+  .roadmap-image-mobile-above img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Mobile background image */
+  @media screen and (max-width: 749px) {
+    .roadmap-section {
+      
+    }
+
+    
+  }
+
+  @media screen and (min-width: 750px) {
+    .roadmap-container {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 60px;
+      
+        max-width: 1200px;
+      
+      
+    }
+
+    /* Hide mobile image above timeline on desktop */
+    .roadmap-image-mobile-above {
+      display: none !important;
+    }
+
+    .roadmap-content {
+      
+        flex: 1;
+      
+      min-width: 0;
+      
+    }
+
+    .roadmap-image-column {
+      flex: 0 0 40%;
+      max-width: 40%;
+      
+    }
+
+    
+  }
+
+  .roadmap-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .roadmap-timeline {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+    border-radius: 2px;
+  }
+
+  /* Desktop: Adjust timeline height when button is present */
+  @media screen and (min-width: 750px) {
+    
+  }
+
+  /* Active fill line that animates with scroll */
+  .roadmap-timeline .timeline-fill {
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    width: 2px;
+    background: #1a5fc8;
+    border-radius: 2px;
+    height: 0%;
+    min-height: 0;
+    transition: height 0.3s ease-out;
+    z-index: 2;
+    transform-origin: top;
+    pointer-events: none;
+    /* Prevent fill from extending beyond roadmap items */
+    overflow: hidden;
+  }
+
+  .roadmap-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .roadmap-item.fade-out {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .roadmap-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .roadmap-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    
+    .roadmap-item.animate-in {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .roadmap-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .roadmap-circle {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1a5fc8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .roadmap-circle svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff !important;
+  }
+
+  .roadmap-badge {
+    display: inline-block;
+    background: #1a5fc8;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px;
+    letter-spacing: var(--letter-spacing-body);
+    border: 1px solid #1a5fc8;
+  }
+
+  .roadmap-title {
+    font-size: 20px !important;
+    font-weight: var(--font-weight-bold) !important;
+    
+      font-style: normal !important;
+      font-family: var(--font-body-family) !important;
+    
+    margin-bottom: 8px;
+    letter-spacing: var(--letter-spacing-heading) !important;
+    line-height: 1.3;
+    color: #121212 !important;
+  }
+
+  .roadmap-description {
+    font-size: 15px !important;
+    line-height: 1.6;
+    color: #666666 !important;
+    opacity: 0.9;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  /* Bullet list styling for roadmap descriptions */
+  .roadmap-description ul,
+  .roadmap-description ol {
+    margin: 10px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .roadmap-description ul li,
+  .roadmap-description ol li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  /* Default bullet style */
+  .roadmap-description ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 8px;
+    height: 8px;
+    background: #1a5fc8;
+    border-radius: 50%;
+  }
+
+  /* Ordered list numbers */
+  .roadmap-description ol {
+    counter-reset: list-counter;
+  }
+
+  .roadmap-description ol li::before {
+    counter-increment: list-counter;
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 600;
+    color: #1a5fc8;
+  }
+
+  .roadmap-header {
+    text-align: center !important;
+    margin-bottom: 40px;
+  }
+
+  .roadmap-header .heading {
+    font-size: 40px !important;
+    font-weight: var(--font-weight-bold);
+    color: #121212 !important;
+    margin-bottom: 15px;
+    letter-spacing: var(--letter-spacing-heading) !important;
+    line-height: 1.3;
+  }
+
+  .roadmap-header .subheading {
+    font-size: 16px !important;
+    color: #121212 !important;
+    opacity: 0.8;
+    letter-spacing: var(--letter-spacing-body) !important;
+  }
+
+  /* Enhanced accent text styling with global and local customization options */
+  .roadmap-section .accent,
+  .roadmap-section .global-accent-text,
+  .roadmap-section .custom-accent-text {
+    
+    padding-right: 0px !important;
+    display: inline-block !important;
+
+    
+    
+      
+      color: #1a5fc8 !important;
+    
+
+    
+      
+      font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      font-style: var(--font-accent-style, normal) !important;
+      font-weight: var(--font-accent-weight, inherit) !important;
+      letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+      text-transform: var(--font-accent-text-transform, none) !important;
+    
+  }
+
+  @media screen and (max-width: 749px) {
+    .roadmap-header {
+      text-align: center !important;
+      margin-bottom: 30px;
+    }
+
+    .roadmap-header .heading {
+      font-size: 28px !important;
+      color: #121212 !important;
+      letter-spacing: var(--letter-spacing-heading) !important;
+      line-height: 1.3;
+    }
+
+    .roadmap-header .subheading {
+      font-size: 14px !important;
+      color: #121212 !important;
+      letter-spacing: var(--letter-spacing-body) !important;
+    }
+
+    .roadmap-timeline::before {
+      left: 15px;
+      top: 25px;
+    }
+
+    .roadmap-item {
+      padding-left: 50px;
+      margin-bottom: 30px;
+    }
+
+    .roadmap-item.fade-out {
+      /* Reduce animation distance on mobile for better UX */
+      transform: translateY(20px);
+    }
+
+    .roadmap-item.animate-in {
+      transform: translateY(0);
+    }
+
+    .roadmap-circle {
+      left: 0;
+      top: 0px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .roadmap-circle svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .roadmap-badge {
+      font-size: 11px !important;
+      padding: 3px 10px;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-title {
+      font-size: 18px !important;
+      
+        font-style: normal !important;
+        font-family: var(--font-body-family) !important;
+      
+      color: #121212 !important;
+    }
+
+    .roadmap-description {
+      font-size: 13px !important;
+      color: #666666 !important;
+    }
+
+    /* Mobile bullet list adjustments */
+    .roadmap-description ul li,
+    .roadmap-description ol li {
+      padding-left: 24px;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-description ul li::before {
+      width: 6px;
+      height: 6px;
+      top: 0.4em;
+    }
+  }
+
+  /* Roadmap Button Styling */
+  .roadmap-button-container {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+  }
+
+  .roadmap-cta-button {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    
+    
+      /* Use Global Button Styling */
+      padding: var(--global-button-padding-y, 12px) 24px;
+      font-size: var(--global-button-font-size, 16px);
+      font-weight: var(--global-button-font-weight, 600);
+      font-family: var(--global-button-font-family, var(--font-body-family, sans-serif));
+      text-transform: var(--global-button-text-transform, uppercase);
+      letter-spacing: var(--global-button-letter-spacing, 1px);
+      border-radius: var(--global-button-radius, 8px);
+      
+        background: linear-gradient(var(--button-gradient-direction, to bottom), var(--button-gradient-start, #EF4A65), var(--button-gradient-end, #D63953));
+      
+      color: var(--global-button-text-color, #ffffff);
+      border-left: var(--global-button-border-width, 2px) solid var(--global-button-border-color, #EF4A65);
+      border-right: var(--global-button-border-width, 2px) solid var(--global-button-border-color, #EF4A65);
+      border-top: var(--global-button-border-width, 2px) solid var(--global-button-border-color, #EF4A65);
+      border-bottom: var(--global-button-bottom-border-width, 4px) solid var(--global-button-bottom-border-color, #000000);
+    
+  }
+
+  .roadmap-cta-button:hover {
+    
+      /* Global Button Hover State */
+      
+        background: linear-gradient(var(--button-gradient-direction, to bottom), var(--button-gradient-hover-start, #D63953), var(--button-gradient-hover-end, #B8314A));
+      
+      color: var(--global-button-hover-text-color, #ffffff);
+      border-left-color: var(--global-button-border-color, #EF4A65);
+      border-right-color: var(--global-button-border-color, #EF4A65);
+      border-top-color: var(--global-button-border-color, #EF4A65);
+      border-bottom-color: var(--global-button-bottom-border-color, #000000);
+    
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Desktop: Show button inside timeline, hide mobile button */
+  @media screen and (min-width: 750px) {
+    .roadmap-button-desktop {
+      display: block;
+    }
+    
+    .roadmap-button-mobile {
+      display: none;
+    }
+  }
+
+  /* Mobile: Hide desktop button, show mobile button */
+  @media screen and (max-width: 749px) {
+    .roadmap-button-desktop {
+      display: none;
+    }
+    
+    .roadmap-button-mobile {
+      display: block;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      padding-top: 0px;
+    }
+
+    
+  }</style><div class="roadmap-section roadmap-section-{{ section.id }}  scroll-trigger animate--fade-up" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="section-{{ section.id }}-padding">
+      <div class="roadmap-container">
+        <div class="roadmap-content">
+          
+            <div class="roadmap-header">
+              
+                <h2 class="heading">
+                  Su Viaje Hacia un Usted Mejor 
+                </h2>
+              
+              
+                <div class="subheading rte"><p>Los cambios reales ocurren gradualmente. Así es como suele desarrollarse.</p></div>
+              
+            </div>
+          
+          
+          
+          
+          <div class="roadmap-timeline">
+            <div class="timeline-fill"></div>
+            
+              
+              <div class="roadmap-item roadmap-item-roadmap_step_gQfY4F" >
+                <div class="roadmap-circle">
+                  
+                    <svg
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"/>
+                    </svg>
+                  
+                </div>
+
+                
+                  <div class="roadmap-badge">Semana 1</div>
+                
+
+                
+                  <h3 class="roadmap-title">Duerme toda la noche</h3>
+                
+
+                
+                  <div class="roadmap-description rte"><p>Nada dramático. Pero el lunes no golpea como solía hacerlo. La mañana siguiente es más fácil. Usted no hizo nada diferente — su hígado lo hizo.</p></div>
+                
+              </div>
+            
+              
+              <div class="roadmap-item roadmap-item-roadmap_step_pjGrc6" >
+                <div class="roadmap-circle">
+                  
+                    <svg
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"/>
+                    </svg>
+                  
+                </div>
+
+                
+                  <div class="roadmap-badge">Semanas 2–4</div>
+                
+
+                
+                  <h3 class="roadmap-title"> Llegan las 3pm y sigue agudo </h3>
+                
+
+                
+                  <div class="roadmap-description rte"><p>El muro de la tarde comienza a moverse. Termina las cosas a la primera. La niebla mental no desaparece — simplemente deja de dominar el día.</p></div>
+                
+              </div>
+            
+              
+              <div class="roadmap-item roadmap-item-roadmap_step_Er3xkH" >
+                <div class="roadmap-circle">
+                  
+                    <svg
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"/>
+                    </svg>
+                  
+                </div>
+
+                
+                  <div class="roadmap-badge">Mes 2</div>
+                
+
+                
+                  <h3 class="roadmap-title">Olvida que lo está tomando </h3>
+                
+
+                
+                  <div class="roadmap-description rte"><p>Ahí es cuando sabe que está funcionando. Ya no está rastreando su energía. Simplemente está funcionando. Algunos chicos se hacen análisis de sangre en esta etapa. Las enzimas se ven diferentes.</p></div>
+                
+              </div>
+            
+              
+              <div class="roadmap-item roadmap-item-roadmap_step_bpMjK6" >
+                <div class="roadmap-circle">
+                  
+                    <svg
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"/>
+                    </svg>
+                  
+                </div>
+
+                
+                  <div class="roadmap-badge">Mes 3+</div>
+                
+
+                
+                  <h3 class="roadmap-title">Esta es su línea base ahora </h3>
+                
+
+                
+                  <div class="roadmap-description rte"><p>No un nuevo usted. Solo el que existía antes de que lo alcanzaran 20 años de desgaste. Siga bebiendo los fines de semana. Simplemente no pague por ello de lunes a viernes.</p></div>
+                
+              </div>
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+      </div>
+
+      
+      
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const roadmapSection = document.querySelector('.roadmap-section-{{ section.id }}');
+  if (!roadmapSection) return;
+
+  // Handle roadmap button functionality
+  const roadmapButtons = roadmapSection.querySelectorAll('.roadmap-cta-button');
+  roadmapButtons.forEach(button => {
+    // Prevent default behavior for buttons with href="#" that are not scroll buttons
+    if (button.getAttribute('href') === '#' && !button.hasAttribute('data-scroll-to-top')) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.warn('⚠️ Roadmap button clicked but no valid redirect URL is set. Please configure the product or URL in the section settings.');
+      });
+    }
+
+    // Handle scroll-to-top functionality
+    if (button.hasAttribute('data-scroll-to-top')) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+  
+  const timeline = roadmapSection.querySelector('.roadmap-timeline');
+  const timelineFill = roadmapSection.querySelector('.timeline-fill');
+  const roadmapItems = roadmapSection.querySelectorAll('.roadmap-item');
+  
+  if (!timeline || !timelineFill || roadmapItems.length === 0) return;
+  
+  function updateTimelineFill() {
+    const sectionRect = roadmapSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    
+    // Calculate how much of the section is visible
+    const sectionTop = sectionRect.top;
+    const sectionBottom = sectionRect.bottom;
+    
+    // Start filling when section enters viewport
+    if (sectionBottom < 0 || sectionTop > viewportHeight) {
+      timelineFill.style.height = '0%';
+      return;
+    }
+    
+    // Calculate progress based on roadmap items, not the entire timeline container
+    let progress = 0;
+    
+    if (roadmapItems.length > 0) {
+      // Get the position of the last roadmap item
+      const lastItem = roadmapItems[roadmapItems.length - 1];
+      const lastItemRect = lastItem.getBoundingClientRect();
+      const lastItemBottom = lastItemRect.bottom;
+      
+      // Calculate progress based on scroll position relative to roadmap items
+      if (sectionTop <= viewportHeight && sectionBottom >= 0) {
+        // Calculate how much we've scrolled through the roadmap items area
+        const visibleTop = Math.max(0, -sectionTop);
+        
+        // Use the distance from section top to last item bottom as the reference height
+        const itemsHeight = lastItemBottom - sectionRect.top;
+        
+        // Calculate progress, but cap it so it doesn't go beyond the last item
+        progress = Math.min(1, visibleTop / (itemsHeight * 0.8));
+      }
+    }
+    
+    // Ensure progress is between 0 and 1
+    progress = Math.max(0, Math.min(1, progress));
+    
+    // Apply the fill height directly to the element
+    const fillHeight = progress * 100;
+    timelineFill.style.height = fillHeight + '%';
+    
+    // Debug logging (remove in production)
+    console.log('Roadmap fill progress:', progress, 'height:', fillHeight + '%', 'items:', roadmapItems.length);
+  }
+  
+  // Throttle scroll events for better performance
+  let ticking = false;
+  function handleScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        updateTimelineFill();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  
+  // Initial calculation
+  updateTimelineFill();
+  
+  // Listen for scroll events
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', updateTimelineFill);
+  
+  // Debug logging
+  console.log('Roadmap script initialized');
+  console.log('Timeline fill element:', timelineFill);
+  console.log('Timeline element:', timeline);
+  console.log('Roadmap section:', roadmapSection);
+
+  // Animate roadmap items on scroll
+  const roadmapItemsToAnimate = roadmapSection.querySelectorAll('.roadmap-item');
+  
+  if (roadmapItemsToAnimate.length > 0) {
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const itemObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Item is coming into view - animate in
+            entry.target.classList.remove('fade-out');
+            entry.target.classList.add('animate-in');
+          } else {
+            // Item is going out of view - animate out
+            entry.target.classList.remove('animate-in');
+            entry.target.classList.add('fade-out');
+          }
+        });
+      }, observerOptions);
+
+      // Start observing each roadmap item with staggered delays
+      roadmapItemsToAnimate.forEach((item, index) => {
+        // Initially set items to fade-out state
+        item.classList.add('fade-out');
+        // Add a small delay for staggered animation effect
+        item.style.transitionDelay = `${index * 0.1}s`;
+        itemObserver.observe(item);
+      });
+    } else {
+      // Fallback for browsers without Intersection Observer support
+      // Use scroll event listener
+      let ticking = false;
+      
+      function checkItemsVisibility() {
+        const viewportHeight = window.innerHeight;
+        
+        roadmapItemsToAnimate.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          const isVisible = rect.top < viewportHeight * 0.8 && rect.bottom > viewportHeight * 0.2;
+          
+          if (isVisible) {
+            item.classList.remove('fade-out');
+            item.classList.add('animate-in');
+          } else {
+            item.classList.remove('animate-in');
+            item.classList.add('fade-out');
+          }
+        });
+        
+        ticking = false;
+      }
+      
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(checkItemsVisibility);
+          ticking = true;
+        }
+      }
+      
+      // Initial check
+      roadmapItemsToAnimate.forEach((item, index) => {
+        item.classList.add('fade-out');
+        item.style.transitionDelay = `${index * 0.1}s`;
+      });
+      
+      checkItemsVisibility();
+      window.addEventListener('scroll', onScroll);
+    }
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Roadmap",
+  "settings": []
+}
+{% endschema %}
