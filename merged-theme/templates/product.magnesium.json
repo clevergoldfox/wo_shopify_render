@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "mag-main": {
+      "type": "mag-main"
+    },
+    "mag-image-with-text": {
+      "type": "mag-image-with-text"
+    },
+    "mag-testimonials": {
+      "type": "mag-testimonials"
+    },
+    "mag-collapsible": {
+      "type": "mag-collapsible"
+    }
+  },
+  "order": [
+    "mag-main",
+    "mag-image-with-text",
+    "mag-testimonials",
+    "mag-collapsible"
+  ]
+}

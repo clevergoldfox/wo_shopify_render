@@ -82,3 +82,55 @@ magnesium), block title `ÚLTIMAS UNIDADES CON DESCUENTO`.
 
 Copy and imagery on both pages belong to vernu.shop and thestandardlab.com. Replace before
 these go public.
+
+---
+
+# Magnesium Complex (added later)
+
+Captured from `byzani.store/products/magnesium-complex-for-women` — a **Shrine 1.2.4**
+store with no page builder, so the sections are native Shrine markup rather than
+GemPages. That made it the cleanest of the three to port into this theme.
+
+| | |
+|---|---|
+| `templates/product.magnesium.json` | the landing page, 4 sections |
+| `sections/mag-main.liquid` | gallery, price, bundle mount, accordions |
+| `sections/mag-image-with-text.liquid` | the 800mg feature block |
+| `sections/mag-testimonials.liquid` | "Real Ingredients, Real Results" |
+| `sections/mag-collapsible.liquid` | collapsible content |
+
+## Notes specific to this build
+
+- **Prices are dynamic.** The capture had `$30.00` / `$40.00` hardcoded in the Shrine
+  price markup, the variant `<option>` label and the product structured data. All now read
+  from the product, so the page shows this store's €36,95 / €46,95 and cannot drift.
+- **Product and variant ids are dynamic** too (`{{ product.id }}`,
+  `{{ product.selected_or_first_available_variant.id }}`) rather than the source store's.
+- **Colliding assets are namespaced.** 40 filenames clashed with this theme's own
+  (`base.css`, `component-price.css`, and other Shrine components at a different version).
+  Those were copied as `mag-<name>` and the section references rewritten, so the source's
+  1.2.4 assets can never override this theme's 1.3.0 ones.
+- **Three empty sections dropped.** The source rendered `177010137860770d8d`,
+  `17701026347de6fc7e` and `1770101380c7a7530d` as empty divs; they carry no content.
+- **The source store's support email** (`contact@byzani.store`) appeared in the returns
+  copy and now renders `{{ shop.email }}`.
+- **Kaching is not vendored** — the store's own app embed drives the bundle block, and it
+  already renders (COMPRA 1 / COMPRA 1 Y LLÉVATE 1 GRATIS / COMPRA 2 Y LLÉVATE 2 GRATIS).
+
+## This product already had a landing page
+
+`Complejo de Magnesio` (`10234669760841`) is on a GemPages template with 6 sections. That
+is untouched and still what the product serves. The new page is a **separate template**, so
+you can compare before switching:
+
+```
+https://nuviralab.com/products/complejo-de-magnesio-descanso-relajacion-y-recuperacion-diaria?view=magnesium
+```
+
+To switch: **Products → Complejo de Magnesio → Theme template → `magnesium`**.
+
+## Content
+
+The photography is Byzani's, and the bottle shown is branded **microingredients** — a
+third party. The testimonials (Michelle R., Rachel T., Lily M.) are theirs too. Same
+caveat as the other two pages: replace before this is used commercially.
