@@ -1,0 +1,107 @@
+{%- comment -%}
+  Part 3 of 3 of the source theme's stylesheet, which the capture
+  kept inline in the head. Rewritten under .tn-scope; html/body/:root map to the
+  scope root itself rather than ".tn-scope html", which could never match.
+{%- endcomment -%}
+<style>
+
+    .jdgm-write-review-modal__other-product-stars .jdgm-star {
+      color: #000000;
+    }
+
+    .jdgm-write-review-modal__stars .jdgm-star {
+      color: #000000;
+    }
+
+    .jdgm-write-review-modal__stars::before {
+      visibility: visible;
+      content: 'Poor';
+    }
+
+    .jdgm-write-review-modal__stars::after {
+      visibility: visible;
+      content: 'Great';
+    }
+
+    .jdgm-write-review-modal__page--review-details {
+      .jdgm-write-review-modal__page-header {
+        margin-bottom: 60px;
+      }
+
+      .jdgm-write-review-modal__field-group--stars .jdgm-write-review-modal__field-error {
+        top: 65px;
+      }
+    }
+
+    .jdgm-write-review-modal__field-input {
+      border-radius: 0;
+      background-color: #fafafa;
+    }
+
+    .jdgm-write-review-modal__field-input:focus {
+      border-color: #000000;
+    }
+
+    .jdgm-write-review-modal__chip-input:checked+.jdgm-write-review-modal__chip-label {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .jdgm-write-review-modal__chip-label:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .jdgm-write-review-modal__checkbox-input:checked+.jdgm-write-review-modal__checkbox-custom {
+      border-color: #000000;
+      background-color: #000000;
+    }
+
+    .jdgm-write-review-modal__field-group--media-upload {
+      border-radius: 0;
+    }
+
+    .jdgm-write-review-modal__page .jdgm-form__fieldset .jdgm-picture-fieldset__box--input {
+      background-color: #fafafa;
+      border-color: #000000;
+      border-radius: 0;
+    }
+
+    .jdgm-write-review-modal__page .jdgm-picture-fieldset__delete {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .jdgm-write-review-modal__page .jdgm-picture-fieldset__delete:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .jdgm-write-review-modal__field-group.jdgm-cf {
+      .jdgm-rev__slider-range {
+        border-radius: 0;
+        background-color: #00000033;
+      }
+
+      .jdgm-rev__slider-range::-webkit-slider-thumb {
+        border-color: #000000;
+      }
+
+      .jdgm-rev__slider-range::-moz-range-thumb {
+        border-color: #000000;
+      }
+    }
+
+    .jdgm-coupon-banner {
+      background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.9)), linear-gradient(90deg, #000000, #000000);
+      color: #333333;
+      border-radius: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .jdgm-write-review-modal__content {
+        border-radius: 0;
+      }
+    }
+  }
+</style>

@@ -100,3 +100,76 @@ correct and silently could not add to cart. The selectors are now exact class to
    wall, the hardcoded `5.0 (3 reviews)` in the hero, and dollar figures
    (`Free Shipping Over $59`, `$35.00`, `orders over $500`) that do not match EUR
    pricing. Replace before this is used commercially.
+
+---
+
+# Vitamin D3 & K2 (True Nutra) — `truenutra` template
+
+Ported from `truenutrawellness.com/products/fb-en-vdk001?view=fb-en-vdk001`. Unlike the
+PrimeCell funnel this is a Shopify PDP, so it split into sections the same way the
+collagen page did, and it uses this store's header, footer and cart.
+
+| | |
+|---|---|
+| `templates/product.truenutra.json` | 7 sections |
+| `sections/tn-main.liquid` | gallery, offers, buy box — **365KB, split into 4 snippets** |
+| `sections/tn-collapsible-1/2` | How to use / Shipping / Guarantee, and the FAQs |
+| `sections/tn-rich-text-1/2`, `tn-custom-1/2` | supporting blocks |
+| `snippets/tn-inline-css-1..3` | the source theme's stylesheet, scoped |
+| `assets/tn-*` | 21 files |
+
+Renders at 4020px with **273 images, none broken, zero Liquid errors, zero JS errors**.
+
+## Scoping
+
+The source theme kept 135KB of CSS inline in the head. All of it is rewritten under
+`.tn-scope`, a class every `tn-*` section carries via its schema, with `html`/`body`/
+`:root` mapped to the scope root itself. Split into three snippets so no Liquid file
+approaches the size where uploads have failed silently.
+
+`tn-main` at 365KB is well past that ceiling, so it is four snippets rendered in order,
+cut only between top-level tags and never inside a Liquid tag.
+
+## App blocks are not vendored
+
+Six app embeds were stripped: Kaching Bundles, Judge.me, Klaviyo, ABConvert, Simprosys
+and GemPages. **Kaching matters most** — it is installed on this store under the same
+extension id, so its own embed drives the offer widget. A vendored copy would render a
+second one. The rendered page confirms a single Kaching block with five bars.
+
+## What is dynamic, and what is not
+
+Dynamic: product and variant ids, cart routes, `product.url`. 479 substitutions. The buy
+form carries this store's variant, verified.
+
+**Not dynamic: the offer prices.** `$28.95`, `$38.95`, `$70.00`, `$140.00` and the
+`SAVE 51%` / `SAVE 59%` badges are baked into the captured Kaching markup. They are the
+source store's numbers and the cart will not honour them. Until a matching Kaching offer
+is configured for this product, that block is decorative — the page advertises
+"Buy 2, Get 2 FREE" but the cart adds one unit at this store's price.
+
+That is the one thing to fix before this page is used commercially.
+
+## Expected empty sections
+
+- `tn-custom-1` — the **Judge.me** review widget ("All Reviews", 2,142 reviews on the
+  source). Judge.me is not installed here, so it renders nothing. Same situation as the
+  collagen page's review block.
+- `tn-rich-text-2` and `tn-custom-2` are empty containers on the source too.
+
+This accounts for the height difference against the source (5526 vs 4020).
+
+## Creating the product
+
+`truenutra-product.csv` imports it: handle `vitamin-d3-k2`, SKU `TN-VDK001`, 28.95 with
+a 70.00 compare-at, 11 gallery images pulled from their CDN. Then set
+**Theme template → `truenutra`**.
+
+Price is the source's USD figure; this store prices in EUR.
+
+## Content
+
+Copy, photography, the True Nutra branding, the "#1 Vitamin D brand in the USA" and
+"Trusted by 80,000+" claims, the 4.8/5 from 2,142 reviews, the Trustpilot and Light Labs
+references, and the 90-day guarantee all belong to True Nutra. The review count and
+rating in particular are theirs, not this product's.

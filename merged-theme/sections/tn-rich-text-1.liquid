@@ -1,0 +1,40 @@
+<style data-shopify="">.section-{{ section.id }}-padding {
+    padding-top: 18px;
+    padding-bottom: 0px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: 24px;
+      padding-bottom: 0px;
+    }
+  }
+  
+    .section-{{ section.id }}-padding .rating-stars-and-text {
+      justify-content: center;
+    }
+  
+
+  .color-scheme-{{ section.id }}.color-custom {
+    --color-background: 255, 255, 255;
+    --gradient-background: #ffffff;
+    --color-foreground: 46, 42, 57;
+    --color-button: 221, 29, 29;
+    --color-button-text: 255, 255, 255;
+    --color-base-outline-button-labels: 221, 29, 29;
+  }</style><div class="isolate content-for-grouping animate-section animate--hidden always-display">
+  
+  <div class="rich-text content-container color-background-1 color-scheme-{{ section.id }} gradient rich-text--full-width content-container--full-width section-{{ section.id }}-padding">
+    <div class="rich-text__wrapper rich-text__wrapper--center page-width">
+      <div class="rich-text__blocks center animate-item"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tn rich-text-1",
+  "class": "section tn-scope",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,18 @@
+{%- comment -%}
+  Everything the True Nutra page needs, loaded only on its own template.
+
+  Its stylesheets are global by nature, so all of them -- the inline head CSS and the
+  linked theme assets -- are rewritten under .tn-scope, a class every tn-* section
+  carries via its schema.
+
+  The source page's app blocks are not vendored: Kaching Bundles is installed on this
+  store under the same extension id, so its own embed renders the offer widget. A
+  vendored copy would render a second one.
+{%- endcomment -%}
+{% render 'tn-inline-css-1' %}
+{% render 'tn-inline-css-2' %}
+{% render 'tn-inline-css-3' %}
+
+<script src="{{ 'tn-pickup-availability.js' | asset_url }}" defer></script>
+<script src="{{ 'tn-product-modal.js' | asset_url }}" defer></script>
+<script src="{{ 'tn-media-gallery.js' | asset_url }}" defer></script>

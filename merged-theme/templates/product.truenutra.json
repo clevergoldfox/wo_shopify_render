@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "tn-main": {
+      "type": "tn-main"
+    },
+    "tn-collapsible-1": {
+      "type": "tn-collapsible-1"
+    },
+    "tn-rich-text-1": {
+      "type": "tn-rich-text-1"
+    },
+    "tn-rich-text-2": {
+      "type": "tn-rich-text-2"
+    },
+    "tn-custom-1": {
+      "type": "tn-custom-1"
+    },
+    "tn-collapsible-2": {
+      "type": "tn-collapsible-2"
+    },
+    "tn-custom-2": {
+      "type": "tn-custom-2"
+    }
+  },
+  "order": [
+    "tn-main",
+    "tn-collapsible-1",
+    "tn-rich-text-1",
+    "tn-rich-text-2",
+    "tn-custom-1",
+    "tn-collapsible-2",
+    "tn-custom-2"
+  ]
+}
