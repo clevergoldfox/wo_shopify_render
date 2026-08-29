@@ -1,0 +1,504 @@
+@charset "UTF-8";@keyframes move{0%{background-position:0 0}to{background-position:50px 50px}}
+@keyframes animatetop{0%{top:-300px;opacity:0}to{top:0;opacity:1}}
+.pc-scope .two-step-form, .pc-scope.two-step-form{width:100%;display:flex;justify-content:center}
+.pc-scope .two-step-form .tsf-inner, .pc-scope.two-step-form .tsf-inner{width:100%;background:#fff;border:2px solid #449cf4;box-shadow:0 2px 2px RGB(211 214 215/20%),0 4px 4px RGB(211 214 215/20%),0 16px 16px RGB(211 214 215/20%),0 32px 32px RGB(211 214 215/20%),0 64px 64px RGB(211 214 215/20%);border-radius:16px;padding:15px;margin:0 auto}
+.pc-scope .two-step-form .form_body, .pc-scope.two-step-form .form_body{background:inherit}
+.pc-scope .two-step-form .tsf-header, .pc-scope.two-step-form .tsf-header{display:flex;align-items:center;justify-content:space-evenly;margin-bottom:10px;flex-wrap:nowrap}
+.pc-scope .two-step-form .tsf-header .tsf-item, .pc-scope.two-step-form .tsf-header .tsf-item{display:flex;align-items:center;width:50%;margin:0 3px}
+.pc-scope .two-step-form .tsf-header .tsf-item .right, .pc-scope.two-step-form .tsf-header .tsf-item .right{text-align:left}
+.pc-scope .two-step-form .tsf-header .tsf-item .right h3, .pc-scope.two-step-form .tsf-header .tsf-item .right h3{font-weight:500;font-size:18px;line-height:150%;letter-spacing:.02em;color:#252a32;cursor:text}
+.pc-scope .two-step-form .tsf-header .tsf-item .right span, .pc-scope.two-step-form .tsf-header .tsf-item .right span{font-weight:400;font-size:13px;line-height:150%;letter-spacing:.02em;color:#c5c7d2}
+.pc-scope .two-step-form .tsf-header .tsf-item .tsf-number, .pc-scope.two-step-form .tsf-header .tsf-item .tsf-number{min-width:40px;min-height:40px;font-weight:700;font-size:22px;line-height:150%;letter-spacing:.02em;color:#fff;margin-right:10px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:.3s all ease-in-out;cursor:pointer}
+.pc-scope .two-step-form .tsf-header .tsf-item .tsf-number:hover, .pc-scope.two-step-form .tsf-header .tsf-item .tsf-number:hover{opacity:.7}
+.pc-scope .two-step-form .tsf-step_1, .pc-scope.two-step-form .tsf-step_1, .pc-scope .two-step-form .tsf-step_2, .pc-scope.two-step-form .tsf-step_2{width:100%;padding:0 10px;background:inherit}
+.pc-scope .two-step-form .tsf-back, .pc-scope.two-step-form .tsf-back{margin-top:20px;display:none;align-items:center;width:fit-content;font-size:12px;color:#adafb5;cursor:pointer}
+.pc-scope .two-step-form .tsf-back:hover, .pc-scope.two-step-form .tsf-back:hover{color:#7d7f85}
+.pc-scope .two-step-form .tsf-back span, .pc-scope.two-step-form .tsf-back span{margin-left:5px}
+.pc-scope .two-step-form .icon-back, .pc-scope.two-step-form .icon-back, .pc-scope .two-step-form .icon-check, .pc-scope.two-step-form .icon-check{background-repeat:no-repeat;background-position:center}
+.pc-scope .two-step-form .icon-check, .pc-scope.two-step-form .icon-check{background-image:url(~/public/img/success-check.svg);width:21px;height:21px;display:none}
+.pc-scope .two-step-form .icon-back, .pc-scope.two-step-form .icon-back{background-image:url(~/public/img/back.svg);width:15px;height:15px}
+.pc-scope .two-step-form.step-1 .tsf-step_1, .pc-scope.two-step-form.step-1 .tsf-step_1{display:block}
+.pc-scope .two-step-form.step-1 .tsf-step_2, .pc-scope.two-step-form.step-1 .tsf-step_2{display:none}
+.pc-scope .two-step-form.step-1 .tsf-header .tsf-item:first-child .tsf-number, .pc-scope.two-step-form.step-1 .tsf-header .tsf-item:first-child .tsf-number{background:#4368e0}
+.pc-scope .two-step-form.step-1 .tsf-header .tsf-item:last-child .tsf-number, .pc-scope.two-step-form.step-1 .tsf-header .tsf-item:last-child .tsf-number{background:#e4e6f1;color:#97aacd}
+.pc-scope .two-step-form.step-2 .tsf-back, .pc-scope.two-step-form.step-2 .tsf-back{display:flex}
+.pc-scope .two-step-form.step-2 .tsf-step_1, .pc-scope.two-step-form.step-2 .tsf-step_1{display:none}
+.pc-scope .two-step-form.step-2 .tsf-step_2, .pc-scope.two-step-form.step-2 .tsf-step_2{display:block}
+.pc-scope .two-step-form.step-2 .tsf-header .tsf-item:first-child .tsf-number, .pc-scope.two-step-form.step-2 .tsf-header .tsf-item:first-child .tsf-number{background:#15d7ae}
+.pc-scope .two-step-form.step-2 .tsf-header .tsf-item:first-child .tsf-number .icon-check, .pc-scope.two-step-form.step-2 .tsf-header .tsf-item:first-child .tsf-number .icon-check{display:block}
+.pc-scope .two-step-form.step-2 .tsf-header .tsf-item:first-child .tsf-number .step_number, .pc-scope.two-step-form.step-2 .tsf-header .tsf-item:first-child .tsf-number .step_number{display:none}
+.pc-scope .two-step-form.step-2 .tsf-header .tsf-item:last-child .tsf-number, .pc-scope.two-step-form.step-2 .tsf-header .tsf-item:last-child .tsf-number{background:#4368e0}
+.pc-scope select{width:100%;padding:11px 13px;font-size:inherit;font-family:inherit;font-weight:inherit;border:1px solid #57585d;border-radius:6px}
+.pc-scope .form-element .fe-select select::-ms-expand, .pc-scope.form-element .fe-select select::-ms-expand, .pc-scope select::-ms-expand{display:none}
+.pc-scope .form-element .fe-select.loading, .pc-scope.form-element .fe-select.loading{pointer-events:none;opacity:.4}
+.pc-scope .form-element .fe-select.loading .spinner, .pc-scope.form-element .fe-select.loading .spinner{position:absolute;left:calc(50% - 14px);top:calc(50% - 14px)}
+.pc-scope .paragraph, .pc-scope.paragraph{width:100%;font-size:18px;word-break:break-word;white-space:break-spaces}
+.pc-scope .headline .headline-inner, .pc-scope.headline .headline-inner, .pc-scope .paragraph .paragraph-inner, .pc-scope.paragraph .paragraph-inner{width:100%}
+.pc-scope .paragraph a *, .pc-scope.paragraph a *, .pc-scope .paragraph a[href*="#no-link"] *, .pc-scope.paragraph a[href*="#no-link"] *, .pc-scope .paragraph a[href*="#yes-link"] *, .pc-scope.paragraph a[href*="#yes-link"] *{pointer-events:none}
+.pc-scope .paragraph a, .pc-scope.paragraph a{color:inherit;font-weight:inherit;font-size:inherit;font-style:inherit}
+.pc-scope blockquote, .pc-scope h6, .pc-scope ol, .pc-scope p, .pc-scope pre{margin:0;padding:0}
+.pc-scope blockquote, .pc-scope h1, .pc-scope h2, .pc-scope h3, .pc-scope h4, .pc-scope h5, .pc-scope h6, .pc-scope ol, .pc-scope p, .pc-scope pre, .pc-scope ul{counter-reset:list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9}
+.pc-scope ol, .pc-scope ul{padding-left:0!important}
+.pc-scope .headline *, .pc-scope.headline *, .pc-scope .order-bump *, .pc-scope.order-bump *, .pc-scope .paragraph *, .pc-scope.paragraph *{line-height:inherit;letter-spacing:inherit;font-size:inherit;font-family:inherit}
+.pc-scope .headline li::before, .pc-scope.headline li::before, .pc-scope .order-bump li::before, .pc-scope.order-bump li::before, .pc-scope .paragraph li::before, .pc-scope.paragraph li::before{margin-left:0;margin-right:5px;text-align:right;display:inline-block;white-space:nowrap}
+.pc-scope .headline ul>li::before, .pc-scope.headline ul>li::before, .pc-scope .order-bump ul>li::before, .pc-scope.order-bump ul>li::before, .pc-scope .paragraph ul>li::before, .pc-scope.paragraph ul>li::before{content:"•"}
+.pc-scope .headline ol li, .pc-scope.headline ol li, .pc-scope .headline ul li, .pc-scope.headline ul li, .pc-scope .order-bump ol li, .pc-scope.order-bump ol li, .pc-scope .order-bump ul li, .pc-scope.order-bump ul li, .pc-scope .paragraph ol li, .pc-scope.paragraph ol li, .pc-scope .paragraph ul li, .pc-scope.paragraph ul li{padding-left:0}
+.pc-scope .headline ol li, .pc-scope.headline ol li, .pc-scope .order-bump ol li, .pc-scope.order-bump ol li, .pc-scope .paragraph ol li, .pc-scope.paragraph ol li{counter-increment:list-0}
+.pc-scope .headline ol>li, .pc-scope.headline ol>li, .pc-scope .headline ul>li, .pc-scope.headline ul>li, .pc-scope .order-bump ol>li, .pc-scope.order-bump ol>li, .pc-scope .order-bump ul>li, .pc-scope.order-bump ul>li, .pc-scope .paragraph ol>li, .pc-scope.paragraph ol>li, .pc-scope .paragraph ul>li, .pc-scope.paragraph ul>li{list-style-type:none}
+.pc-scope .headline ol li:before, .pc-scope.headline ol li:before, .pc-scope .order-bump ol li:before, .pc-scope.order-bump ol li:before, .pc-scope .paragraph ol li:before, .pc-scope.paragraph ol li:before{content:counter(list-0,decimal)". "}
+.pc-scope .dir-rtl .headline li::before, .pc-scope.dir-rtl .headline li::before, .pc-scope .dir-rtl .order-bump li::before, .pc-scope.dir-rtl .order-bump li::before, .pc-scope .dir-rtl .paragraph li::before, .pc-scope.dir-rtl .paragraph li::before{text-align:left;margin-right:0;margin-left:5px}
+.pc-scope .headline, .pc-scope.headline{width:100%;font-size:25px;word-break:break-word;white-space:break-spaces}
+.pc-scope .menu, .pc-scope.menu{text-align:center;display:flex;flex-direction:row}
+.pc-scope .menu li, .pc-scope.menu li{margin:5px;display:inline-block;text-decoration:inherit}
+.pc-scope .menu li, .pc-scope.menu li, .pc-scope .menu li a, .pc-scope.menu li a, .pc-scope .menu li a *, .pc-scope.menu li a *{color:inherit}
+.pc-scope .menu li a *, .pc-scope.menu li a *{pointer-events:none}
+.pc-scope .btn, .pc-scope.btn, .pc-scope .menu-container, .pc-scope.menu-container{display:flex;flex-direction:column}
+.pc-scope .menu-container, .pc-scope.menu-container{width:100%;align-items:center}
+.pc-scope .btn, .pc-scope.btn{cursor:pointer;border:0;outline:0;font-weight:500;font-size:14px;line-height:1.2;letter-spacing:.02em;color:#f6f9fe;background:#4368e0;border-radius:4px;padding:10px 30px;transition:.15s all ease-in-out;transition-property:all;transition-duration:.2s;transition-timing-function:ease-in-out;position:relative;box-shadow:RGB(37 42 50/32%)0 1px 4px 1px}
+.pc-scope .btn.btn-v2 p, .pc-scope.btn.btn-v2 p, .pc-scope .btn.btn-v2 span, .pc-scope.btn.btn-v2 span{white-space:normal}
+.pc-scope .btn.btn-v2 span, .pc-scope.btn.btn-v2 span{vertical-align:middle;display:inline-flex}
+.pc-scope .btn.btn-v2 span[data-type=icon].left, .pc-scope.btn.btn-v2 span[data-type=icon].left{float:left}
+.pc-scope .btn.btn-v2 span[data-type=icon].right, .pc-scope.btn.btn-v2 span[data-type=icon].right{float:right}
+.pc-scope .btn.btn-v2 span[data-type=icon] svg, .pc-scope.btn.btn-v2 span[data-type=icon] svg{height:1em;width:1em;fill:currentColor}
+.pc-scope .btn.btn-v2 p:empty::before, .pc-scope.btn.btn-v2 p:empty::before{content:"";display:inline-block}
+.pc-scope .btn.brdr_btn, .pc-scope.btn.brdr_btn{color:#4368e0;background:#fff;border:1px solid #4368e0;padding:9px 30px}
+.pc-scope .btn .btn-headline, .pc-scope.btn .btn-headline{pointer-events:none;word-break:break-word}
+.pc-scope .btn .btn-sub-headline, .pc-scope.btn .btn-sub-headline{display:block;font-size:12px;pointer-events:none;margin-top:10px}
+.pc-scope .btn.loading, .pc-scope.btn.loading, .pc-scope .img a img, .pc-scope.img a img{pointer-events:none}
+.pc-scope .btn.loading .btn-headline:not(.spinner), .pc-scope.btn.loading .btn-headline:not(.spinner), .pc-scope .btn.loading .btn-sub-headline, .pc-scope.btn.loading .btn-sub-headline{opacity:.4}
+.pc-scope .btn.loading .spinner, .pc-scope.btn.loading .spinner{position:absolute;left:calc(50% - 14px);top:calc(50% - 14px)}
+.pc-scope .btn.block, .pc-scope.btn.block{width:100%}
+.pc-scope .btn-container, .pc-scope.btn-container{width:100%;align-items:center}
+.pc-scope .btn-container, .pc-scope.btn-container, .pc-scope .link-wrapper, .pc-scope.link-wrapper, .pc-scope .spacer, .pc-scope.spacer{display:flex;flex-direction:column}
+.pc-scope .spacer, .pc-scope.spacer{flex:1}
+.pc-scope .spacer .inner-spacer, .pc-scope.spacer .inner-spacer{box-sizing:border-box;border-top:2px solid #57585d;width:100%;display:block}
+.pc-scope .spacer .sp-label, .pc-scope.spacer .sp-label{font-weight:500;font-size:13px;line-height:150%;letter-spacing:.02em;color:#252a32;display:block;width:fit-content;margin-bottom:0;max-width:100%}
+.pc-scope .link-wrapper, .pc-scope.link-wrapper{width:100%}
+.pc-scope .link, .pc-scope.link{background:0 0;display:block;transition-property:all;transition-duration:.2s;transition-timing-function:ease-in-out}
+.pc-scope #render-table, .pc-scope#render-table, .pc-scope .link, .pc-scope.link, .pc-scope .social, .pc-scope.social{text-align:center}
+.pc-scope .social li, .pc-scope.social li{display:inline-block;margin:0 15px}
+.pc-scope .social li a, .pc-scope.social li a{transition:.15s;color:#4368e0}
+.pc-scope .social li a:hover, .pc-scope.social li a:hover{color:#116dff}
+.pc-scope .social li a img, .pc-scope.social li a img{width:30px;height:30px;min-width:30px;min-height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pc-scope .social-container, .pc-scope.social-container{flex-direction:column;display:flex;width:100%}
+.pc-scope .custom, .pc-scope.custom{width:100%}
+.pc-scope .custom .custom_render_block, .pc-scope.custom .custom_render_block{width:100%;min-height:30px}
+.pc-scope .custom_render_block, .pc-scope.custom_render_block{width:100%;text-align:left}
+.pc-scope .progress-bar-wrpr, .pc-scope.progress-bar-wrpr{position:relative;width:100%;display:flex;justify-content:center}
+.pc-scope .progress-bar, .pc-scope.progress-bar{box-sizing:content-box;position:relative;background:#555;border-radius:25px;padding:10px;box-shadow:inset 0-1px 1px rgba(255,255,255,.3);flex:1;display:flex;overflow:hidden}
+.pc-scope .progress-bar .pb-inner, .pc-scope.progress-bar .pb-inner{flex:1;position:relative;text-decoration:inherit;font-weight:inherit;font-family:inherit;font-size:inherit}
+.pc-scope .progress-bar .pb-fill, .pc-scope.progress-bar .pb-fill{display:block;height:100%;border-top-right-radius:8px;border-bottom-right-radius:8px;border-top-left-radius:20px;border-bottom-left-radius:20px;background-color:RGB(43,194,83);background-image:linear-gradient(RGB(43,194,83) 37%,RGB(84,240,84) 69%);box-shadow:inset 0 2px 9px rgba(255,255,255,.3),inset 0-2px 6px rgba(0,0,0,.4);position:relative;overflow:hidden}
+.pc-scope .progress-bar:not(.pb-simple) .pb-fill:after, .pc-scope.progress-bar:not(.pb-simple) .pb-fill:after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;background-image:linear-gradient(-45deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent);z-index:1;background-size:50px 50px;border-top-right-radius:8px;border-bottom-right-radius:8px;border-top-left-radius:20px;border-bottom-left-radius:20px;overflow:hidden}
+.pc-scope .progress-bar:not(.pb-static) .pb-fill:after, .pc-scope.progress-bar:not(.pb-static) .pb-fill:after{animation:move 2s linear infinite}
+.pc-scope .progress-bar .pb-number, .pc-scope.progress-bar .pb-number{position:absolute;z-index:2;line-height:100%;text-decoration:inherit;font-weight:inherit;font-family:inherit;font-size:inherit}
+.pc-scope .progress-bar.pb-center .pb-number, .pc-scope.progress-bar.pb-center .pb-number{left:50%;top:50%;transform:translate(-50%,-50%);text-decoration:inherit}
+.pc-scope .progress-bar.pb-left .pb-number, .pc-scope.progress-bar.pb-left .pb-number{left:10px;top:50%;transform:translateY(-50%)}
+.pc-scope .progress-bar.pb-right .pb-number, .pc-scope.progress-bar.pb-right .pb-number{right:10px;top:50%;transform:translateY(-50%)}
+.pc-scope .product-list, .pc-scope.product-list{width:100%}
+.pc-scope .product-list, .pc-scope.product-list, .pc-scope .product-list .pl-items, .pc-scope.product-list .pl-items{background:inherit}
+.pc-scope .product-list .pl-header, .pc-scope.product-list .pl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;border-bottom:1px solid #eef1ff;padding:0 10px 5px}
+.pc-scope .product-list .pl-items, .pc-scope.product-list .pl-items{width:100%;flex:1;display:flex;flex-direction:column}
+.pc-scope .product-list .pl-variants, .pc-scope.product-list .pl-variants{display:none;flex-direction:column;width:100%;background:inherit;font-size:14px;font-weight:400;font-style:normal;text-decoration:none;color:#708090;padding-top:5px}
+.pc-scope .product-list .pl-variants .pl-variant, .pc-scope.product-list .pl-variants .pl-variant{display:flex;flex-direction:column;background:inherit}
+.pc-scope .product-list .pl-variants .pl-variant-name, .pc-scope.product-list .pl-variants .pl-variant-name{position:relative;width:100%;display:flex;background:inherit;height:20px;flex-direction:row;align-items:center}
+.pc-scope .product-list .pl-variants .pl-variant-name>span, .pc-scope.product-list .pl-variants .pl-variant-name>span{background:inherit;z-index:1;padding:2px 8px;left:50%;position:absolute;transform:translateX(-50%);white-space:nowrap}
+.pc-scope .product-list .pl-variants .pl-variant-name .select-a, .pc-scope.product-list .pl-variants .pl-variant-name .select-a{color:#a9acac;pointer-events:auto;margin-right:3px}
+.pc-scope .product-list .pl-variants .pl-variant-name:after, .pc-scope.product-list .pl-variants .pl-variant-name:after{content:"";border-bottom:1px solid RGB(232,232,234);width:100%;left:0;right:0;position:absolute;bottom:50%}
+.pc-scope .product-list .pl-variants .pl-variant-options, .pc-scope.product-list .pl-variants .pl-variant-options{display:flex;flex-direction:row;flex-wrap:wrap;padding:5px}
+.pc-scope .product-list .pl-variants .pl-variant-option, .pc-scope.product-list .pl-variants .pl-variant-option{border:1px solid gray;border-radius:5px;padding:5px;margin:3px 5px;min-width:50px;box-shadow:0 1px 3px rgba(0,0,0,.14);transition:.2s all ease-in-out;cursor:pointer;background:rgba(255,255,255,.72);text-align:center}
+.pc-scope .product-list .pl-variants .pl-variant-option input, .pc-scope.product-list .pl-variants .pl-variant-option input{display:none;visibility:hidden}
+.pc-scope .product-list .pl-variants .pl-variant-option.selected, .pc-scope.product-list .pl-variants .pl-variant-option.selected{color:#fff;border:1px solid #343434;background:gray;box-shadow:-2px -2px 3px RGB(0 0 0/22%) inset}
+.pc-scope .product-list .pl-variants .pl-variant-option:not(.selected):hover, .pc-scope.product-list .pl-variants .pl-variant-option:not(.selected):hover{color:#fff;border:1px solid #343434;background:gray;box-shadow:0 1px 3px rgba(0,0,0,.14)}
+.pc-scope .product-list .pl-item, .pc-scope.product-list .pl-item{width:100%;display:flex;flex:1;align-items:center;border-radius:3px;border:1px solid RGB(232,232,234);margin-bottom:5px;position:relative;overflow:hidden;flex-direction:column;background:inherit}
+.pc-scope .product-list .pl-item.selected .pl-variants, .pc-scope.product-list .pl-item.selected .pl-variants{display:flex}
+.pc-scope .product-list .pl-item input, .pc-scope.product-list .pl-item input{margin:0}
+.pc-scope .product-list .pl-item input.pl-radio, .pc-scope.product-list .pl-item input.pl-radio{width:20px;height:20px;min-width:20px}
+.pc-scope .product-list .pl-item .pl-image, .pc-scope.product-list .pl-item .pl-image{border:1px solid #e1e1e1;padding:0;margin:0 10px 0 5px;border-radius:2px;background:#fff;width:60px;height:60px;pointer-events:none;min-width:60px}
+.pc-scope .product-list .pl-item .pl-image img, .pc-scope.product-list .pl-item .pl-image img{width:100%;height:100%;object-fit:scale-down}
+.pc-scope .product-list .pl-item .pl-name, .pc-scope.product-list .pl-item .pl-name{text-align:start;display:flex;flex-direction:row;width:100%;flex:1;align-items:center;gap:5px}
+.pc-scope .product-list .pl-item .pl-name select, .pc-scope.product-list .pl-item .pl-name select{width:auto;max-width:80px;padding:2px 10px;height:auto}
+.pc-scope .product-list .pl-item .pl-name .pl-nvalue, .pc-scope.product-list .pl-item .pl-name .pl-nvalue{position:relative}
+.pc-scope .product-list .pl-item .pl-price, .pc-scope.product-list .pl-item .pl-price{flex:0;display:flex;align-items:center;text-align:end;white-space:break-spaces;min-width:80px}
+.pc-scope .payment-form .fields-container>label, .pc-scope.payment-form .fields-container>label, .pc-scope .product-list .pl-item .pl-price .pl-pvalue, .pc-scope.product-list .pl-item .pl-price .pl-pvalue{flex:1}
+.pc-scope .product-list .pl-item .pl-inner, .pc-scope.product-list .pl-item .pl-inner{display:flex;flex-direction:row;flex:1;padding:10px;border-radius:4px;width:100%;cursor:pointer;gap:8px}
+.pc-scope .product-list .pl-item .pl-inner:hover, .pc-scope.product-list .pl-item .pl-inner:hover{background:rgba(206,206,206,.34)}
+.pc-scope .product-list .pl-item.small .side-tag, .pc-scope.product-list .pl-item.small .side-tag, .pc-scope .product-list .pl-item.small .top-tag, .pc-scope.product-list .pl-item.small .top-tag{font-size:10px}
+.pc-scope .product-list .pl-item.highlight, .pc-scope.product-list .pl-item.highlight{background:#ff0;box-shadow:0 2px 5px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.11);border:0;width:calc(100% + 12px);left:-6px;margin-top:6px;margin-bottom:10px}
+.pc-scope .product-list .pl-item.highlight .pl-inner, .pc-scope.product-list .pl-item.highlight .pl-inner{padding:15px 10px;min-height:60px}
+.pc-scope .product-list .pl-item.highlight .pl-variants .pl-variant-name .select-a, .pc-scope.product-list .pl-item.highlight .pl-variants .pl-variant-name .select-a{color:gray}
+.pc-scope .product-list .pl-item .side-tag, .pc-scope.product-list .pl-item .side-tag, .pc-scope .product-list .pl-item .top-tag, .pc-scope.product-list .pl-item .top-tag{font-size:12px;color:#fff;font-weight:600;pointer-events:none;position:absolute}
+.pc-scope .product-list .pl-item .side-tag, .pc-scope.product-list .pl-item .side-tag{right:-25px;top:7px;transform:rotateZ(45deg);padding:2px;width:80px;text-align:center}
+.pc-scope .product-list .pl-item .top-tag, .pc-scope.product-list .pl-item .top-tag{padding:1px 10px;left:0;top:-26px;white-space:nowrap}
+.pc-scope .product-list .pl-item.top_tag .pl-inner, .pc-scope.product-list .pl-item.top_tag .pl-inner{padding:30px 10px 20px}
+.pc-scope .product_list_element, .pc-scope.product_list_element{text-align:left;margin:-5px;width:100%;display:flex;flex-wrap:wrap}
+.pc-scope .product_list_element li, .pc-scope.product_list_element li{margin:5px;display:block;padding:5px;border:1px solid #d7d7d7;border-radius:6px;width:calc(33.33% - 10px)}
+.pc-scope .product_list_element li .product_item_inner, .pc-scope.product_list_element li .product_item_inner{height:100%;flex-direction:column;display:flex;width:100%}
+.pc-scope .product_list_element.product_row_amount_1 li, .pc-scope.product_list_element.product_row_amount_1 li{width:calc(100% - 10px)}
+.pc-scope .product_list_element.product_row_amount_2 li, .pc-scope.product_list_element.product_row_amount_2 li{width:calc(50% - 10px)}
+.pc-scope .product_list_element.product_row_amount_3 li, .pc-scope.product_list_element.product_row_amount_3 li{width:calc(33.33% - 10px)}
+.pc-scope .product_list_element.product_row_amount_4 li, .pc-scope.product_list_element.product_row_amount_4 li{width:calc(25% - 10px)}
+.pc-scope .product_list_element li .img_wrpr, .pc-scope.product_list_element li .img_wrpr{display:block;max-width:100%;width:100%;flex:1}
+.pc-scope .product_list_element li .img_wrpr img, .pc-scope.product_list_element li .img_wrpr img{width:100%;height:100%;object-fit:cover}
+.pc-scope .product_list_element li .product_title, .pc-scope.product_list_element li .product_title{text-align:center;margin:7px 0;font-weight:500}
+.pc-scope .product_list_element li .btn, .pc-scope.product_list_element li .btn{padding:10px;display:block;text-align:center;font-size:12px}
+.pc-scope .order-summary, .pc-scope.order-summary{display:flex;flex-direction:column;flex:1;overflow:visible}
+.pc-scope .order-summary .os-header, .pc-scope.order-summary .os-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.pc-scope .order-summary .os-header span, .pc-scope.order-summary .os-header span{font-weight:inherit;font-size:inherit;color:inherit}
+.pc-scope .order-summary .os-items, .pc-scope.order-summary .os-items{padding:8px 5px}
+.pc-scope .order-summary .os-items .os-row, .pc-scope.order-summary .os-items .os-row{margin:8px 0;gap:10px}
+.pc-scope .order-summary .os-discount-box, .pc-scope.order-summary .os-discount-box{display:flex;flex-direction:column;border-top:1px solid rgba(175,175,175,.34);padding-top:15px;font-size:15px}
+.pc-scope .order-summary .os-discount-box .os-row, .pc-scope.order-summary .os-discount-box .os-row{gap:10px}
+.pc-scope .order-summary .os-discount-box .__discount-error, .pc-scope.order-summary .os-discount-box .__discount-error{display:flex;color:red;font-size:inherit;background:#ffcdcd;padding:5px 10px;border-radius:4px;margin-top:5px}
+.pc-scope .order-summary .os-discount-box .__input, .pc-scope.order-summary .os-discount-box .__input{color:#333;flex:1;border-radius:5px;border:1px solid #d5d5d5;padding:0 10px;font-size:inherit;height:44px;transition:all .2s ease-in-out;background:rgba(255,255,255,.48);outline:0;min-width:0}
+.pc-scope .order-summary .os-discount-box .__input:hover, .pc-scope.order-summary .os-discount-box .__input:hover{border:1px solid #006eff}
+.pc-scope .order-summary .os-discount-box .__input:focus, .pc-scope.order-summary .os-discount-box .__input:focus{border:1px solid #006eff;box-shadow:0 0 0 2px rgba(0,110,255,.7098039216)}
+.pc-scope .order-summary .os-discount-box .btn-container, .pc-scope.order-summary .os-discount-box .btn-container{width:fit-content}
+.pc-scope .order-summary .os-discount-box .__apply, .pc-scope.order-summary .os-discount-box .__apply{box-shadow:none;background:#006eff;border-radius:5px;border:0;color:#fff;font-size:inherit;font-weight:500;height:44px;cursor:pointer;padding:0 22px;display:flex;flex-direction:column;white-space:nowrap}
+.pc-scope .order-summary .os-discount-box .__apply .btn-headline, .pc-scope.order-summary .os-discount-box .__apply .btn-headline{margin:auto}
+.pc-scope .order-summary .os-discount-box .__apply:hover, .pc-scope.order-summary .os-discount-box .__apply:hover{background:#0058cc}
+.pc-scope .order-summary .os-discount-box .os-applied-discounts, .pc-scope.order-summary .os-discount-box .os-applied-discounts{display:flex;flex-direction:row;margin-top:10px}
+.pc-scope .order-summary .os-discount-box .os-applied-discounts .__current-discount, .pc-scope.order-summary .os-discount-box .os-applied-discounts .__current-discount{display:flex;flex-direction:row;align-items:center;background:rgba(113,113,113,.11);color:#717171;padding:8px 20px;border-radius:5px;gap:6px}
+.pc-scope .order-summary .os-discount-box .os-applied-discounts .__current-discount .__icon, .pc-scope.order-summary .os-discount-box .os-applied-discounts .__current-discount .__icon{width:22px;height:22px;transform:rotateY(180deg);color:#717171}
+.pc-scope .order-summary .os-discount-box .os-applied-discounts .__current-discount .__remove, .pc-scope.order-summary .os-discount-box .os-applied-discounts .__current-discount .__remove{margin-left:10px;cursor:pointer}
+.pc-scope .order-summary .os-discount-box .os-applied-discounts .__current-discount .__remove:hover, .pc-scope.order-summary .os-discount-box .os-applied-discounts .__current-discount .__remove:hover{color:#000}
+.pc-scope .order-summary .os-subtotal, .pc-scope.order-summary .os-subtotal{display:flex;flex-direction:column;border-top:1px solid rgba(175,175,175,.34);padding-top:15px;margin-top:15px;font-size:15px}
+.pc-scope .order-summary .os-subtotal .os-row:not(:first-child), .pc-scope.order-summary .os-subtotal .os-row:not(:first-child){margin-top:5px;align-items:center}
+.pc-scope .order-summary .os-subtotal .os-row:not(:first-child) .os-name, .pc-scope.order-summary .os-subtotal .os-row:not(:first-child) .os-name{align-items:center}
+.pc-scope .order-summary .os-subtotal .os-row .os-name, .pc-scope.order-summary .os-subtotal .os-row .os-name{display:flex}
+.pc-scope .order-summary .os-subtotal .__applied-discount, .pc-scope.order-summary .os-subtotal .__applied-discount, .pc-scope .order-summary .os-subtotal .__applied-tax, .pc-scope.order-summary .os-subtotal .__applied-tax{display:flex;flex-direction:row;align-items:center;color:#717171;padding:4px 10px;gap:6px}
+.pc-scope .order-summary .os-subtotal .__applied-discount .__icon, .pc-scope.order-summary .os-subtotal .__applied-discount .__icon, .pc-scope .order-summary .os-subtotal .__applied-tax .__icon, .pc-scope.order-summary .os-subtotal .__applied-tax .__icon{width:22px;height:22px;transform:rotateY(180deg);color:#717171}
+.pc-scope .order-summary.__collapsable .os-header, .pc-scope.order-summary.__collapsable .os-header{margin-top:10px}
+.pc-scope .order-summary.__collapsable:not(.__open) .os-inner-container, .pc-scope.order-summary.__collapsable:not(.__open) .os-inner-container{overflow:hidden}
+.pc-scope .order-summary.__collapsable:not(.__open) .os-collapse-header, .pc-scope.order-summary.__collapsable:not(.__open) .os-collapse-header{border-bottom:none}
+.pc-scope .order-summary .os-collapse-header, .pc-scope.order-summary .os-collapse-header{display:flex;flex-direction:row;align-items:center;min-height:40px;background:#fafafa;padding:15px 6px;z-index:3;border-bottom:1px solid rgba(175,175,175,.34)}
+.pc-scope .order-summary .os-collapse-header:hover, .pc-scope.order-summary .os-collapse-header:hover{cursor:pointer}
+.pc-scope .order-summary .os-collapse-header .__show-summary, .pc-scope.order-summary .os-collapse-header .__show-summary{display:flex}
+.pc-scope .order-summary .os-collapse-header .__hide-summary, .pc-scope.order-summary .os-collapse-header .__hide-summary, .pc-scope .order-summary.__open .os-collapse-header .__show-summary, .pc-scope.order-summary.__open .os-collapse-header .__show-summary{display:none}
+.pc-scope .order-summary .os-collapse-header .__icon, .pc-scope.order-summary .os-collapse-header .__icon{width:20px;height:20px;margin-left:4px;margin-right:4px}
+.pc-scope .order-summary .os-collapse-header .__title, .pc-scope.order-summary .os-collapse-header .__title{flex:1;display:flex;flex-direction:row;align-items:center;gap:10px}
+.pc-scope .order-summary .os-collapse-header .__arrow, .pc-scope.order-summary .os-collapse-header .__arrow{cursor:pointer}
+.pc-scope .order-summary .os-collapse-header .__total, .pc-scope.order-summary .os-collapse-header .__total{font-size:larger;font-weight:500}
+.pc-scope .order-summary .os-content, .pc-scope.order-summary .os-content{overflow:visible;flex:1;height:fit-content;display:flex;flex-direction:column}
+.pc-scope .order-summary .os-inner-container, .pc-scope.order-summary .os-inner-container{display:flex;flex-direction:row;transition:height .3s ease-in-out}
+.pc-scope .order-summary.__open .os-collapse-header .__hide-summary, .pc-scope.order-summary.__open .os-collapse-header .__hide-summary{display:flex}
+.pc-scope .order-summary.__open .os-collapse-header .__arrow, .pc-scope.order-summary.__open .os-collapse-header .__arrow{transform:rotate(180deg)}
+.pc-scope .order-summary.__images .os-row .os-name.__has-image, .pc-scope.order-summary.__images .os-row .os-name.__has-image{display:flex;flex-direction:column;align-items:flex-start}
+.pc-scope .order-summary.__images .os-row .os-name.__has-image .os-voption, .pc-scope.order-summary.__images .os-row .os-name.__has-image .os-voption{margin-top:3px}
+.pc-scope .order-summary .os-row, .pc-scope.order-summary .os-row{width:100%;display:flex;align-items:center;position:relative}
+.pc-scope .order-summary .os-row .os-image, .pc-scope.order-summary .os-row .os-image{position:relative;min-width:50px}
+.pc-scope .order-summary .os-row .os-image .product-icon, .pc-scope.order-summary .os-row .os-image .product-icon{background:#fff;width:50px;height:50px;border-radius:8px;border:1px rgba(0,0,0,.1) solid;z-index:2;object-fit:cover}
+.pc-scope .order-summary .os-row .os-image .qty, .pc-scope.order-summary .os-row .os-image .qty{position:absolute;top:-12px;right:-12px;min-width:1.75em;height:1.75em;padding:0 8px;font-weight:500;line-height:1.75em;font-size:12px;white-space:nowrap;text-align:center;border-radius:1.75em;background:rgba(114,114,114,.9);color:#fff;z-index:4}
+.pc-scope .order-summary .os-row .os-name, .pc-scope.order-summary .os-row .os-name, .pc-scope .order-summary .os-row .os-price, .pc-scope.order-summary .os-row .os-price{font-size:inherit;line-height:inherit;font-style:inherit;font-family:inherit;text-decoration:inherit;color:inherit}
+.pc-scope .order-summary .os-row .os-name, .pc-scope.order-summary .os-row .os-name{font-weight:inherit}
+.pc-scope .order-summary .os-row .os-price, .pc-scope.order-summary .os-row .os-price{display:block;flex-direction:column}
+.pc-scope .order-summary .os-row .os-name .os-x, .pc-scope.order-summary .os-row .os-name .os-x, .pc-scope .order-summary .os-row .os-price .os-x, .pc-scope.order-summary .os-row .os-price .os-x{font-size:smaller;margin:auto 0;opacity:.8}
+.pc-scope .order-summary .os-row .os-name .os-qty, .pc-scope.order-summary .os-row .os-name .os-qty, .pc-scope .order-summary .os-row .os-price .os-qty, .pc-scope.order-summary .os-row .os-price .os-qty{font-style:italic;font-weight:lighter;opacity:.8}
+.pc-scope .order-summary .os-row .os-name, .pc-scope.order-summary .os-row .os-name{text-align:start;display:block;flex-direction:row;flex:1;align-items:center}
+.pc-scope .order-summary .os-row .os-price, .pc-scope.order-summary .os-row .os-price{text-align:end;width:fit-content;max-width:101px;word-break:break-word;display:flex;position:relative;min-width:70px;align-items:flex-end;font-weight:500}
+.pc-scope .order-summary .os-row .os-price p, .pc-scope.order-summary .os-row .os-price p{text-align:right!important}
+.pc-scope .order-summary .os-voption, .pc-scope.order-summary .os-voption{opacity:.8;font-size:smaller}
+.pc-scope .order-summary .os-total, .pc-scope.order-summary .os-total{border-top:1px solid rgba(175,175,175,.34);margin-top:10px;padding-top:15px;padding-bottom:6px}
+.pc-scope .order-summary .os-total .spinner svg, .pc-scope.order-summary .os-total .spinner svg, .pc-scope .order-summary .taxjar-entry .spinner svg, .pc-scope.order-summary .taxjar-entry .spinner svg{height:15px;width:15px}
+.pc-scope .order-summary .taxjar-entry, .pc-scope.order-summary .taxjar-entry{align-items:center}
+.pc-scope .dir-rtl .order-summary .__applied-discount .__icon, .pc-scope.dir-rtl .order-summary .__applied-discount .__icon, .pc-scope .dir-rtl .order-summary .__current-discount .__icon, .pc-scope.dir-rtl .order-summary .__current-discount .__icon{transform:unset}
+.pc-scope .order-bump, .pc-scope.order-bump, .pc-scope .payment-form, .pc-scope.payment-form{display:flex;flex-direction:column;flex:1;width:100%;border-radius:6px;position:relative}
+.pc-scope .order-bump, .pc-scope.order-bump{border:2px solid #fdcc5e;padding:15px;cursor:pointer}
+.pc-scope .order-bump .ob-header, .pc-scope.order-bump .ob-header{line-height:normal;margin-bottom:10px;display:flex;flex-direction:row;align-items:center}
+.pc-scope .order-bump .ob-header input[type=checkbox], .pc-scope.order-bump .ob-header input[type=checkbox]{height:20px;width:20px;min-width:20px}
+.pc-scope .order-bump .ob-header .ob-headline, .pc-scope.order-bump .ob-header .ob-headline{font-size:inherit;margin-left:10px;font-style:inherit}
+.pc-scope .order-bump .ob-content p, .pc-scope.order-bump .ob-content p{font-weight:400;font-size:14px;line-height:170%;color:#636a7b;margin:0;text-align:left}
+.pc-scope .order-bump .ob-content p img, .pc-scope.order-bump .ob-content p img{max-width:100%}
+.pc-scope .order-bump .ob-content p b, .pc-scope.order-bump .ob-content p b{font-weight:700;font-size:14px;line-height:150%;color:#fb595b}
+.pc-scope .payment-form, .pc-scope.payment-form{box-shadow:0 0 0 1px #d9d9d9;background:#fafafa;color:#737373;min-height:150px;overflow:visible}
+.pc-scope .payment-form.loading .spinner, .pc-scope.payment-form.loading .spinner{position:absolute;z-index:1;width:100%;height:100%;display:flex;background:rgba(0,0,0,.29)}
+.pc-scope .payment-form:not(.loading) .spinner, .pc-scope.payment-form:not(.loading) .spinner{display:none}
+.pc-scope .payment-form .pf-options, .pc-scope.payment-form .pf-options{display:flex;flex-direction:column;position:relative}
+.pc-scope .payment-form .pf-option .pf-content.klarna, .pc-scope.payment-form .pf-option .pf-content.klarna{padding:15px}
+.pc-scope .payment-form .pf-option:not(:first-child), .pc-scope.payment-form .pf-option:not(:first-child){border-top:1px solid #d9d9d9}
+.pc-scope .payment-form .pf-option:last-child:not(.active) .pf-header, .pc-scope.payment-form .pf-option:last-child:not(.active) .pf-header{border-radius:0 0 6px 6px;border-bottom:1px solid #d9d9d9}
+.pc-scope .payment-form .pf-option.active .pf-content, .pc-scope.payment-form .pf-option.active .pf-content{display:block;border-radius:0 0 6px 6px}
+.pc-scope .payment-form .pf-option.active .pf-header, .pc-scope.payment-form .pf-option.active .pf-header{border-radius:0;border-color:#d9d9d9;border-bottom:1px solid #d9d9d9}
+.pc-scope .payment-form .pf-option .pf-header, .pc-scope.payment-form .pf-option .pf-header{position:relative;cursor:pointer;display:flex;background-color:#fff;color:inherit;padding:10px;font-size:14px;font-weight:600;font-family:inherit;min-height:44px;align-items:center;text-align:start}
+.pc-scope .payment-form .pf-option .pf-header:hover, .pc-scope.payment-form .pf-option .pf-header:hover{background-color:#fbfbfb}
+.pc-scope .payment-form .pf-option .pf-header.ideal, .pc-scope.payment-form .pf-option .pf-header.ideal, .pc-scope .payment-form .pf-option .pf-header.p24, .pc-scope.payment-form .pf-option .pf-header.p24, .pc-scope .payment-form .pf-option .pf-header.sepa, .pc-scope.payment-form .pf-option .pf-header.sepa{padding:3px 10px}
+.pc-scope .payment-form .pf-option .pf-header.ideal img, .pc-scope.payment-form .pf-option .pf-header.ideal img, .pc-scope .payment-form .pf-option .pf-header.p24 img, .pc-scope.payment-form .pf-option .pf-header.p24 img, .pc-scope .payment-form .pf-option .pf-header.sepa img, .pc-scope.payment-form .pf-option .pf-header.sepa img{height:38px}
+.pc-scope .payment-form .pf-option .pf-header.eps img, .pc-scope.payment-form .pf-option .pf-header.eps img{border-radius:6px;height:32px}
+.pc-scope .payment-form .pf-option .pf-header.klarna img.pf-klarna-logo, .pc-scope.payment-form .pf-option .pf-header.klarna img.pf-klarna-logo{height:20px;margin-right:5px}
+.pc-scope .payment-form .pf-option .pf-header.bancontact img.pf-bancontact-logo, .pc-scope.payment-form .pf-option .pf-header.bancontact img.pf-bancontact-logo{height:36px;position:absolute;right:6px;border:1px solid #eee;border-radius:2px}
+.pc-scope .payment-form .pf-option .pf-header.sofort img.pf-sofort-logo, .pc-scope.payment-form .pf-option .pf-header.sofort img.pf-sofort-logo{height:32px;position:absolute;right:6px}
+.pc-scope .payment-form .pf-option .pf-header span, .pc-scope.payment-form .pf-option .pf-header span{margin:auto 0 auto 5px;flex:1}
+.pc-scope .payment-form .pf-option .pf-header .small-cards, .pc-scope.payment-form .pf-option .pf-header .small-cards{height:20px;position:absolute;right:5px}
+.pc-scope .payment-form .pf-option .pf-header img, .pc-scope.payment-form .pf-option .pf-header img{height:20px;display:block}
+.pc-scope .payment-form .pf-option .pf-header input, .pc-scope.payment-form .pf-option .pf-header input{width:18px;height:18px;transition:all .2s ease-in-out;position:relative;cursor:pointer;padding:0;margin:0 10px;box-shadow:0 0 0 0#f4743c inset;outline:0;border-radius:50%;color:inherit;font:inherit;-webkit-appearance:none;-webkit-font-smoothing:inherit;background:0 0;line-height:normal;border:1px solid #d9d9d9}
+.pc-scope .payment-form .pf-option .pf-header input:checked, .pc-scope.payment-form .pf-option .pf-header input:checked{border:0;box-shadow:0 0 0 10px #f4743c inset}
+.pc-scope .payment-form .pf-option .pf-header .card-icons, .pc-scope.payment-form .pf-option .pf-header .card-icons{display:flex;flex-direction:row;width:100px;position:relative}
+.pc-scope .payment-form .pf-option .pf-header .card-icons svg, .pc-scope.payment-form .pf-option .pf-header .card-icons svg{height:30px;margin-right:5px}
+.pc-scope .payment-form .pf-option:first-child .pf-header, .pc-scope.payment-form .pf-option:first-child .pf-header{border-radius:6px 6px 0 0}
+.pc-scope .payment-form .pf-option:last-child .pf-header.open, .pc-scope.payment-form .pf-option:last-child .pf-header.open{border-radius:0}
+.pc-scope .payment-form .pf-option .pf-content, .pc-scope.payment-form .pf-option .pf-content{display:none}
+.pc-scope .payment-form .pf-option .pf-content .icon-offsite, .pc-scope.payment-form .pf-option .pf-content .icon-offsite{width:70px;height:40px;margin:10px 0}
+.pc-scope .payment-form .pf-option .pf-content.p24 ._tos, .pc-scope.payment-form .pf-option .pf-content.p24 ._tos{margin:20px 30px;position:relative;display:block;line-height:1.5;font-size:small}
+.pc-scope .payment-form .pf-option .pf-content .ideal select, .pc-scope.payment-form .pf-option .pf-content .ideal select{border:0;background:0 0;cursor:pointer}
+.pc-scope .payment-form .pf-option .pf-pp-content, .pc-scope.payment-form .pf-option .pf-pp-content{padding:10px}
+.pc-scope .payment-form .pf-option .pf-content, .pc-scope.payment-form .pf-option .pf-content{text-align:center;box-sizing:border-box;width:100%;zoom:1;position:relative;background-color:#fafafa;font-size:14px;font-weight:500;font-family:inherit;min-height:100px;padding:5px}
+.pc-scope .payment-form .pf-option .pf-content p, .pc-scope.payment-form .pf-option .pf-content p{margin:0 10px 15px;line-height:1.8;font-size:14px}
+.pc-scope .payment-form .pf-option .pf-content img, .pc-scope.payment-form .pf-option .pf-content img{pointer-events:none;width:100%}
+.pc-scope .payment-form .pf-option .pf-content .pf-iban, .pc-scope.payment-form .pf-option .pf-content .pf-iban, .pc-scope .payment-form .pf-option .pf-content .select-bank, .pc-scope.payment-form .pf-option .pf-content .select-bank{margin-top:10px;display:block}
+.pc-scope .payment-form .card-error, .pc-scope.payment-form .card-error{display:none;background:#c60000;padding:8px 10px;margin:0;font-size:14px;color:#fff}
+.pc-scope .payment-form.invalid, .pc-scope.payment-form.invalid{border:2px solid #c60000}
+.pc-scope .payment-form.invalid .card-error, .pc-scope.payment-form.invalid .card-error{display:flex}
+.pc-scope .payment-form .gateway_18 .field__input--iframe-container, .pc-scope.payment-form .gateway_18 .field__input--iframe-container{border:1px solid #a1a1a1;border-radius:4px;overflow:hidden;margin-top:4px;height:40px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2);background:#fff}
+.pc-scope .payment-form .gateway_18 .field__input--iframe-container.braintree-hosted-fields-focused, .pc-scope.payment-form .gateway_18 .field__input--iframe-container.braintree-hosted-fields-focused{border:1px solid #626262}
+.pc-scope .payment-form .gateway_18 .field__input--iframe-container.braintree-hosted-fields-invalid, .pc-scope.payment-form .gateway_18 .field__input--iframe-container.braintree-hosted-fields-invalid{border:2px solid #c60000}
+.pc-scope .payment-form.dark, .pc-scope.payment-form.dark{background:#444;color:#e2e2e2}
+.pc-scope .payment-form.dark .pf-option:not(:first-child), .pc-scope.payment-form.dark .pf-option:not(:first-child){border-top:1px solid #444}
+.pc-scope .payment-form.dark .pf-option:last-child:not(.active) .pf-header, .pc-scope.payment-form.dark .pf-option:last-child:not(.active) .pf-header{border-radius:0 0 6px 6px;border-bottom:1px solid #444}
+.pc-scope .payment-form.dark .pf-header, .pc-scope.payment-form.dark .pf-header{background:#525252;border-color:#444!important}
+.pc-scope .payment-form.dark .pf-header input, .pc-scope.payment-form.dark .pf-header input{border-color:#3c3c3c}
+.pc-scope .payment-form.dark .pf-header:hover, .pc-scope.payment-form.dark .pf-header:hover{background-color:#5b5c5c}
+.pc-scope .payment-form.dark .pf-header.bancontact img.pf-bancontact-logo, .pc-scope.payment-form.dark .pf-header.bancontact img.pf-bancontact-logo{border:0;border-radius:0}
+.pc-scope .payment-form.dark .pf-content, .pc-scope.payment-form.dark .pf-content{background:#444}
+.pc-scope .payment-form.dark .mollie-component, .pc-scope.payment-form.dark .mollie-component{background:#525252;border:0}
+.pc-scope .payment-form.dark iframe#cardNumber, .pc-scope.payment-form.dark iframe#cardNumber, .pc-scope .payment-form.dark iframe#cvv, .pc-scope.payment-form.dark iframe#cvv, .pc-scope .payment-form.dark iframe#expiryDate, .pc-scope.payment-form.dark iframe#expiryDate{background:#525252;box-shadow:none;border:0}
+.pc-scope .payment-form.dark .gateway_18 .field__input--iframe-container, .pc-scope.payment-form.dark .gateway_18 .field__input--iframe-container{border:1px solid #3c3c3c;box-shadow:none;background:#525252}
+.pc-scope .payment-form.dark .gateway_18 .field__input--iframe-container.braintree-hosted-fields-focused, .pc-scope.payment-form.dark .gateway_18 .field__input--iframe-container.braintree-hosted-fields-focused{border:1px solid #8a8a8a}
+.pc-scope .payment-form.dark .gateway_18 .field__input--iframe-container.braintree-hosted-fields-invalid, .pc-scope.payment-form.dark .gateway_18 .field__input--iframe-container.braintree-hosted-fields-invalid{border:2px solid #c60000}
+.pc-scope .payment-form .test-mode, .pc-scope.payment-form .test-mode{display:block;position:absolute;z-index:2;border-radius:20px;background:#f1efa9;color:#444;padding:2px 10px;top:10px;right:10px;font-size:12px;font-weight:600;text-transform:uppercase;pointer-events:none}
+.pc-scope .payment-form .fields-container, .pc-scope.payment-form .fields-container{text-align:start;margin:5px 12px;display:flex;flex:1}
+.pc-scope .payment-form .mollie-component, .pc-scope.payment-form .mollie-component{box-sizing:border-box;padding:8px 12px;border:1px solid transparent;border-radius:3px;-webkit-transition:box-shadow 150ms ease;transition:box-shadow 150ms ease;box-shadow:0 0 0 1px #8b8b8b,0 0 2px 1px rgba(56,54,54,.4),inset 0 0 1px 0#fff;margin-top:6px;margin-bottom:6px}
+.pc-scope .payment-form .mollie-component.is-invalid, .pc-scope.payment-form .mollie-component.is-invalid{box-shadow:0 0 0 1px #d72829,0 0 2px 1px #771b1c}
+.pc-scope .payment-form .mollie-component.is-valid, .pc-scope.payment-form .mollie-component.is-valid{box-shadow:0 0 0 1px #28d731,0 0 2px 1px #1b7015}
+.pc-scope .payment-form .mollie-component.has-focus:not(.is-valid), .pc-scope.payment-form .mollie-component.has-focus:not(.is-valid){box-shadow:0 0 0 1px #111,0 0 2px 1px rgba(56,54,54,.9),inset 0 0 1px 0#fff}
+.pc-scope .payment-form iframe#cardNumber, .pc-scope.payment-form iframe#cardNumber, .pc-scope .payment-form iframe#cvv, .pc-scope.payment-form iframe#cvv, .pc-scope .payment-form iframe#expiryDate, .pc-scope.payment-form iframe#expiryDate{height:40px!important;border-radius:3px}
+.pc-scope .payment-form .StripeElement.eps, .pc-scope.payment-form .StripeElement.eps, .pc-scope .payment-form .StripeElement.ideal, .pc-scope.payment-form .StripeElement.ideal, .pc-scope .payment-form .StripeElement.p24, .pc-scope.payment-form .StripeElement.p24{height:auto;padding:0;margin:15px}
+.pc-scope .payment-form .StripeElement.sepa, .pc-scope.payment-form .StripeElement.sepa{height:auto;padding:8px;margin:15px}
+.pc-scope .payment-form .CollectJSInlineIframe, .pc-scope.payment-form .CollectJSInlineIframe{height:49px!important}
+.pc-scope .payment-form .gateway_9 .field__input--iframe-container, .pc-scope.payment-form .gateway_9 .field__input--iframe-container{padding:0;border:0!important;box-shadow:none!important}
+.pc-scope .payment-form .field__input--iframe-container, .pc-scope.payment-form .field__input--iframe-container{box-sizing:border-box;height:40px;padding:0 12px;border:1px solid transparent;border-radius:3px;-webkit-transition:box-shadow 150ms ease;transition:box-shadow 150ms ease;box-shadow:0 0 0 1px #383636,0 0 2px 1px rgba(56,54,54,.6),inset 0 0 1px 0#fff;margin-top:6px;margin-bottom:6px;font-family:monospace;direction:ltr;min-height:40px;display:flex;flex-direction:column;justify-content:center;align-items:stretch}
+.pc-scope .payment-form .field__input--iframe-container.complete:not(.error), .pc-scope.payment-form .field__input--iframe-container.complete:not(.error), .pc-scope .payment-form .field__input--iframe-container.frame--valid, .pc-scope.payment-form .field__input--iframe-container.frame--valid{box-shadow:0 0 0 2px #28d731,0 0 2px 1px #1b7015}
+.pc-scope .payment-form .field__input--iframe-container.error, .pc-scope.payment-form .field__input--iframe-container.error, .pc-scope .payment-form .field__input--iframe-container.frame--invalid, .pc-scope.payment-form .field__input--iframe-container.frame--invalid, .pc-scope .payment-form .field__input--iframe-container.invalid, .pc-scope.payment-form .field__input--iframe-container.invalid{box-shadow:0 0 0 2px #d72829,0 0 2px 1px #771b1c}
+.pc-scope .payment-form .field__input--iframe-container.active, .pc-scope.payment-form .field__input--iframe-container.active, .pc-scope .payment-form .field__input--iframe-container.focused, .pc-scope.payment-form .field__input--iframe-container.focused, .pc-scope .payment-form .field__input--iframe-container.frame--focus, .pc-scope.payment-form .field__input--iframe-container.frame--focus{box-shadow:0 0 0 2px #3c6deb,0 0 2px 1px #5286f9,inset 0 0 1px 0#fff;outline:1px inset rgba(0,0,0,.2392156863)}
+.pc-scope .payment-form .field__input--iframe-container:hover:not(.focused):not(.active):not(.invalid):not(.error):not(.complete):not(.frame--focus):not(.frame--invalid), .pc-scope.payment-form .field__input--iframe-container:hover:not(.focused):not(.active):not(.invalid):not(.error):not(.complete):not(.frame--focus):not(.frame--invalid){box-shadow:0 0 0 1px #3c6deb,0 0 2px 1px #5286f9,inset 0 0 1px 0#fff}
+.pc-scope .timer, .pc-scope.timer{display:flex;justify-content:center}
+.pc-scope .timer li, .pc-scope.timer li, .pc-scope .timer-container, .pc-scope.timer-container{flex-direction:column;display:flex;align-items:center}
+.pc-scope .timer li, .pc-scope.timer li{margin:0 10px;font-size:inherit;letter-spacing:.02em;color:inherit}
+.pc-scope .timer li .timer_label, .pc-scope.timer li .timer_label{font-size:16px;font-weight:300;line-height:150%;color:#b1b2b4;display:block;width:100%}
+.pc-scope .timer li .timer_number, .pc-scope.timer li .timer_number{display:block;position:relative;padding:10px}
+.pc-scope .timer-container, .pc-scope.timer-container{width:100%;overflow:hidden}
+.pc-scope .form-element, .pc-scope.form-element{width:100%;padding:5px;position:relative}
+.pc-scope .form-element .fe-double, .pc-scope.form-element .fe-double{display:flex;align-items:flex-end;width:100%;gap:30px}
+.pc-scope .form-element .fe-double .fe-input-wrpr, .pc-scope.form-element .fe-double .fe-input-wrpr{width:50%;display:flex;flex-direction:column}
+.pc-scope .form-element input:not([type=radio]):not([type=checkbox]), .pc-scope.form-element input:not([type=radio]):not([type=checkbox]), .pc-scope .form-element input[type=number], .pc-scope.form-element input[type=number], .pc-scope .form-element textarea, .pc-scope.form-element textarea{transition-property:box-shadow;transition-duration:.2s;transition-timing-function:ease-in;background:#fff;border:1px solid #c5c7d2;border-radius:6px;width:100%;display:block;padding:11px 15px;letter-spacing:.02em;color:#252a32;min-height:22px;height:auto;font-size:14px}
+.pc-scope .form-element .fe-select, .pc-scope.form-element .fe-select, .pc-scope .img, .pc-scope.img{width:100%;height:auto;display:flex}
+.pc-scope .form-element .fe-select, .pc-scope.form-element .fe-select{position:relative;color:#252a32;transition-property:box-shadow;transition-duration:.2s;transition-timing-function:ease-in;background:#fff;border:1px solid #c5c7d2;border-radius:6px;padding:0;letter-spacing:.02em;font-size:14px;min-height:22px;cursor:pointer}
+.pc-scope .form-element .fe-select:after, .pc-scope.form-element .fe-select:after{pointer-events:none;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid gray;position:absolute;top:40%;right:10px;content:"";z-index:2}
+.pc-scope .form-element .fe-select select, .pc-scope.form-element .fe-select select{flex:1;border:0;background:0 0;outline:0;line-height:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;text-decoration:inherit;appearance:none;height:auto;padding:11px 15px;margin:0;cursor:pointer}
+.pc-scope .form-element textarea, .pc-scope.form-element textarea{resize:vertical;min-height:100px}
+.pc-scope .form-element.required .fe-label::after, .pc-scope.form-element.required .fe-label::after{content:"*";color:#fb595b;text-decoration:none}
+.pc-scope .form-element .fe-select.invalid, .pc-scope.form-element .fe-select.invalid, .pc-scope .form-element input.invalid, .pc-scope.form-element input.invalid, .pc-scope .form-element label.invalid, .pc-scope.form-element label.invalid{border:2px solid red!important}
+.pc-scope .form-element .checkbox_radio_text .star, .pc-scope.form-element .checkbox_radio_text .star, .pc-scope .form-element .fe-label, .pc-scope.form-element .fe-label, .pc-scope .form-element.required .fe-label::after, .pc-scope.form-element.required .fe-label::after{font-weight:500;font-size:13px;line-height:150%;letter-spacing:.02em}
+.pc-scope .form-element .fe-label, .pc-scope.form-element .fe-label{color:#252a32;display:block;width:fit-content;margin-bottom:0;max-width:100%}
+.pc-scope .form-element .checkbox_radio_text .star, .pc-scope.form-element .checkbox_radio_text .star{color:#fb595b}
+.pc-scope .form-element.checkbox .fe-label, .pc-scope.form-element.checkbox .fe-label, .pc-scope .form-element.checkbox label, .pc-scope.form-element.checkbox label, .pc-scope .form-element.radio .fe-label, .pc-scope.form-element.radio .fe-label, .pc-scope .form-element.radio label, .pc-scope.form-element.radio label{cursor:pointer}
+.pc-scope .dir-rtl .fe-select::after, .pc-scope.dir-rtl .fe-select::after{left:10px;right:unset}
+.pc-scope .img, .pc-scope.img{flex-direction:column;align-items:center}
+.pc-scope .video, .pc-scope.video{margin:0;background-color:#000;overflow:hidden;position:relative}
+.pc-scope .video .play-button, .pc-scope.video .play-button, .pc-scope .video .play-button:before, .pc-scope.video .play-button:before{position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}
+.pc-scope .video .play-button, .pc-scope.video .play-button{width:90px;height:60px;background-color:#333;box-shadow:0 0 30px rgba(0,0,0,.6);z-index:1;opacity:.8;border-radius:6px}
+.pc-scope .video .play-button:before, .pc-scope.video .play-button:before{content:"";border-style:solid;border-width:15px 0 15px 26px;border-color:transparent transparent transparent #fff}
+.pc-scope .video img, .pc-scope.video img, .pc-scope .video-native img, .pc-scope.video-native img{pointer-events:none;height:100%;width:100%;object-fit:cover;left:0;opacity:.7}
+.pc-scope .video .video-inner, .pc-scope.video .video-inner, .pc-scope .video iframe, .pc-scope.video iframe{width:100%;height:100%;position:absolute;top:0;left:0}
+.pc-scope .video:not(.editing), .pc-scope.video:not(.editing), .pc-scope .video:not(.editing) .play-button, .pc-scope.video:not(.editing) .play-button{cursor:pointer}
+.pc-scope .video:not(.editing) .play-button:hover, .pc-scope.video:not(.editing) .play-button:hover{background-color:red}
+.pc-scope .image-slider, .pc-scope.image-slider{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+.pc-scope .image-slider .is-image-wrapper, .pc-scope.image-slider .is-image-wrapper{position:relative;width:100%;height:100%}
+.pc-scope .image-slider .is-image-wrapper .next, .pc-scope.image-slider .is-image-wrapper .next, .pc-scope .image-slider .is-image-wrapper .prev, .pc-scope.image-slider .is-image-wrapper .prev{cursor:pointer;position:absolute;top:50%;left:0;width:auto;margin-top:-22px;padding:16px;color:#fff;font-weight:700;font-size:18px;transition:.6s ease;border-radius:0 3px 3px 0;user-select:none}
+.pc-scope .image-slider .is-image-wrapper .next, .pc-scope.image-slider .is-image-wrapper .next{left:auto;right:0;border-radius:3px 0 0 3px}
+.pc-scope .image-slider .is-image-wrapper .next:hover, .pc-scope.image-slider .is-image-wrapper .next:hover, .pc-scope .image-slider .is-image-wrapper .prev:hover, .pc-scope.image-slider .is-image-wrapper .prev:hover{background-color:rgba(0,0,0,.8)}
+.pc-scope .image-slider .is-thumbs-wrapper, .pc-scope.image-slider .is-thumbs-wrapper{display:block;overflow-y:scroll;width:100%;position:relative}
+.pc-scope .image-slider .is-thumbnails, .pc-scope.image-slider .is-thumbnails{width:fit-content;display:flex;flex-direction:row;overflow:hidden}
+.pc-scope .image-slider .is-thumbnails .is-thumbnail, .pc-scope.image-slider .is-thumbnails .is-thumbnail{margin:10px 5px;border-radius:2px;box-shadow:0 0 0 1px #b3b3b3;cursor:pointer!important;overflow:hidden}
+.pc-scope .image-slider .is-thumbnails .is-thumbnail img, .pc-scope.image-slider .is-thumbnails .is-thumbnail img{object-fit:scale-down;height:100%;width:100%;opacity:.7}
+.pc-scope .image-slider .is-thumbnails .is-thumbnail.selected, .pc-scope.image-slider .is-thumbnails .is-thumbnail.selected{box-shadow:0 0 0 3px #708090}
+.pc-scope .image-slider .is-thumbnails .is-thumbnail.selected img, .pc-scope.image-slider .is-thumbnails .is-thumbnail.selected img{opacity:1}
+.pc-scope .image-slider .is-thumbnails .is-thumbnail:hover:not(.selected), .pc-scope.image-slider .is-thumbnails .is-thumbnail:hover:not(.selected){box-shadow:0 0 0 2px #708090}
+.pc-scope .image-slider .is-thumbnails .is-thumbnail:hover:not(.selected) img, .pc-scope.image-slider .is-thumbnails .is-thumbnail:hover:not(.selected) img{opacity:1}
+.pc-scope .scraped-container-wrapper, .pc-scope.scraped-container-wrapper{width:100%;display:flex;flex-direction:column}
+.pc-scope .scraped-container, .pc-scope.scraped-container{border:0;outline:0;display:flex;flex-wrap:wrap}
+.pc-scope .scraped-container, .pc-scope.scraped-container, .pc-scope .scraped-container.row, .pc-scope.scraped-container.row{flex-direction:row}
+.pc-scope .scraped-container.column, .pc-scope.scraped-container.column{flex-direction:column}
+.pc-scope .scraped-container .scraped-container-box, .pc-scope.scraped-container .scraped-container-box{width:100%;overflow:visible;display:flex;flex:1;flex-direction:column}
+.pc-scope .scraped-container .scraped-container-inner, .pc-scope.scraped-container .scraped-container-inner{width:100%;display:flex;align-items:start;flex-direction:row}
+.pc-scope .popup, .pc-scope.popup{display:none;position:fixed;z-index:300;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:RGB(0,0,0);background-color:rgba(0,0,0,.4)}
+.pc-scope .popup .close, .pc-scope.popup .close{color:#aaa;float:right;font-size:28px;font-weight:700}
+.pc-scope .popup .close:focus, .pc-scope.popup .close:focus, .pc-scope .popup .close:hover, .pc-scope.popup .close:hover{color:#000;text-decoration:none;cursor:pointer}
+.pc-scope .popup .popup-content, .pc-scope.popup .popup-content{border-radius:6px;background-color:#fefefe;margin:15%auto;padding:20px;border:1px solid #888;width:80%}
+.pc-scope .popup svg.close-popup, .pc-scope.popup svg.close-popup{position:absolute;top:-20px;right:-20px;width:40px;height:40px;cursor:pointer;z-index:20}
+.pc-scope .popup .popup-content.small, .pc-scope.popup .popup-content.small{margin:15%auto;width:600px}
+.pc-scope .popup .popup-content.medium, .pc-scope.popup .popup-content.medium{margin:15%auto;width:650px}
+.pc-scope .popup .popup-content.large, .pc-scope.popup .popup-content.large{margin:15%auto;width:950px}
+.pc-scope .popup .popup-content.fullscreen, .pc-scope.popup .popup-content.fullscreen{margin:0;width:100%;height:100%}
+@media only screen and (max-width:600px){
+.pc-scope .popup svg.close-popup, .pc-scope.popup svg.close-popup{top:-40px;right:0}
+.pc-scope .popup .popup-content.large, .pc-scope.popup .popup-content.large, .pc-scope .popup .popup-content.medium, .pc-scope.popup .popup-content.medium, .pc-scope .popup .popup-content.small, .pc-scope.popup .popup-content.small{width:100%}
+}
+@media only screen and (max-width:850px){
+.pc-scope .popup .popup-content.large, .pc-scope.popup .popup-content.large, .pc-scope .popup .popup-content.medium, .pc-scope.popup .popup-content.medium{width:100%}
+}
+.pc-scope .popup.open, .pc-scope.popup.open{display:block}
+.pc-scope .popup-header, .pc-scope.popup-header{background-color:#5cb85c;color:#fff}
+.pc-scope .popup-body, .pc-scope.popup-body, .pc-scope .popup-footer, .pc-scope.popup-footer, .pc-scope .popup-header, .pc-scope.popup-header{padding:2px 16px}
+.pc-scope .popup-footer, .pc-scope.popup-footer{background-color:#5cb85c;color:#fff}
+.pc-scope .popup-content, .pc-scope.popup-content{position:relative;background-color:#fefefe;margin:auto;padding:0;border:1px solid #888;width:80%;box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);animation-name:animatetop;animation-duration:.4s}
+.pc-scope .faq .faq-header, .pc-scope.faq .faq-header, .pc-scope .faq-wrapper, .pc-scope.faq-wrapper{width:100%}
+.pc-scope .faq, .pc-scope.faq, .pc-scope .faq .faq-header, .pc-scope.faq .faq-header, .pc-scope .faq .faq-header .faq-title, .pc-scope.faq .faq-header .faq-title, .pc-scope .faq-wrapper, .pc-scope.faq-wrapper{display:flex;flex-direction:column}
+.pc-scope .faq .faq-header, .pc-scope.faq .faq-header{flex-direction:row;flex:0;min-height:10px;padding:10px 5px;cursor:pointer;border-radius:5px}
+.pc-scope .faq .faq-header .faq-title, .pc-scope.faq .faq-header .faq-title{font-size:inherit;font-weight:inherit;width:fit-content;max-width:calc(100% - 30px);text-decoration:inherit;font-style:inherit;font-family:inherit;text-align:inherit;flex:1;overflow-wrap:anywhere}
+.pc-scope .faq .faq-header .faq-icon, .pc-scope.faq .faq-header .faq-icon{min-width:10px;margin:auto 5px;transition:transform .2s ease-out}
+.pc-scope .faq .faq-header:hover, .pc-scope.faq .faq-header:hover{background:#f5f5f5}
+.pc-scope .faq:not(.active) .faq-content-wrapper, .pc-scope.faq:not(.active) .faq-content-wrapper{max-height:0;overflow:hidden}
+.pc-scope .faq.active>.faq-header, .pc-scope.faq.active>.faq-header{background:#f5f5f5;border-bottom:1px solid silver}
+.pc-scope .faq.active>.faq-header .faq-icon, .pc-scope.faq.active>.faq-header .faq-icon{transform:rotate(180deg)}
+.pc-scope .faq.active>.faq-content-wrapper, .pc-scope.faq.active>.faq-content-wrapper{max-height:5000px}
+.pc-scope .faq .faq-content-wrapper, .pc-scope.faq .faq-content-wrapper{display:flex;flex-direction:column;flex:1;transition:max-height .2s ease-in-out}
+.pc-scope .faq .faq-content, .pc-scope.faq .faq-content{display:flex;flex:1;position:relative;flex-direction:column}
+.pc-scope .dir-rtl, .pc-scope.dir-rtl, .pc-scope .dir-rtl .block_element_wrpr_paragraph h1, .pc-scope.dir-rtl .block_element_wrpr_paragraph h1, .pc-scope .dir-rtl .block_element_wrpr_paragraph h2, .pc-scope.dir-rtl .block_element_wrpr_paragraph h2, .pc-scope .dir-rtl .block_element_wrpr_paragraph h3, .pc-scope.dir-rtl .block_element_wrpr_paragraph h3, .pc-scope .dir-rtl .block_element_wrpr_paragraph h4, .pc-scope.dir-rtl .block_element_wrpr_paragraph h4, .pc-scope .dir-rtl .block_element_wrpr_paragraph h5, .pc-scope.dir-rtl .block_element_wrpr_paragraph h5, .pc-scope .dir-rtl .block_element_wrpr_paragraph h6, .pc-scope.dir-rtl .block_element_wrpr_paragraph h6, .pc-scope .dir-rtl .block_element_wrpr_paragraph p, .pc-scope.dir-rtl .block_element_wrpr_paragraph p, .pc-scope .dir-rtl .btn, .pc-scope.dir-rtl .btn, .pc-scope .dir-rtl .btn .btn-headline, .pc-scope.dir-rtl .btn .btn-headline, .pc-scope .dir-rtl .btn .btn-sub-headline, .pc-scope.dir-rtl .btn .btn-sub-headline, .pc-scope .dir-rtl .headline h1, .pc-scope.dir-rtl .headline h1, .pc-scope .dir-rtl .headline h2, .pc-scope.dir-rtl .headline h2, .pc-scope .dir-rtl .headline h3, .pc-scope.dir-rtl .headline h3, .pc-scope .dir-rtl .headline h4, .pc-scope.dir-rtl .headline h4, .pc-scope .dir-rtl .headline h5, .pc-scope.dir-rtl .headline h5, .pc-scope .dir-rtl .headline h6, .pc-scope.dir-rtl .headline h6, .pc-scope .dir-rtl .headline p, .pc-scope.dir-rtl .headline p, .pc-scope .dir-rtl .menu a, .pc-scope.dir-rtl .menu a, .pc-scope .dir-rtl .order-bump .ob-content p, .pc-scope.dir-rtl .order-bump .ob-content p, .pc-scope .dir-rtl .order-bump .ob-header, .pc-scope.dir-rtl .order-bump .ob-header, .pc-scope .dir-rtl .paragraph h1, .pc-scope.dir-rtl .paragraph h1, .pc-scope .dir-rtl .paragraph h2, .pc-scope.dir-rtl .paragraph h2, .pc-scope .dir-rtl .paragraph h3, .pc-scope.dir-rtl .paragraph h3, .pc-scope .dir-rtl .paragraph h4, .pc-scope.dir-rtl .paragraph h4, .pc-scope .dir-rtl .paragraph h5, .pc-scope.dir-rtl .paragraph h5, .pc-scope .dir-rtl .paragraph h6, .pc-scope.dir-rtl .paragraph h6, .pc-scope .dir-rtl .paragraph p, .pc-scope.dir-rtl .paragraph p, .pc-scope .dir-rtl a.link, .pc-scope.dir-rtl a.link{direction:rtl}
+.pc-scope .dir-rtl .order-bump .ob-headline, .pc-scope.dir-rtl .order-bump .ob-headline{margin-left:0;margin-right:10px}
+.pc-scope .dir-rtl .block_element_wrpr_faq .faq-title, .pc-scope.dir-rtl .block_element_wrpr_faq .faq-title, .pc-scope .dir-rtl .faq .faq-title, .pc-scope.dir-rtl .faq .faq-title, .pc-scope .dir-rtl .form-element .fe-label, .pc-scope.dir-rtl .form-element .fe-label, .pc-scope .dir-rtl .form-element input, .pc-scope.dir-rtl .form-element input, .pc-scope .dir-rtl .two-step-form .tsf-header, .pc-scope.dir-rtl .two-step-form .tsf-header{direction:rtl}
+.pc-scope .dir-rtl .two-step-form .tsf-header .tsf-item .tsf-number, .pc-scope.dir-rtl .two-step-form .tsf-header .tsf-item .tsf-number{margin-right:0;margin-left:10px}
+.pc-scope .before-after-slider, .pc-scope.before-after-slider, .pc-scope .before-after-slider .bas-wrapper, .pc-scope.before-after-slider .bas-wrapper{width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.pc-scope .before-after-slider, .pc-scope.before-after-slider{pointer-events:all;height:auto;min-height:30px;align-items:center;max-height:5000px;user-select:none}
+.pc-scope .before-after-slider .bas-wrapper, .pc-scope.before-after-slider .bas-wrapper{height:fit-content}
+.pc-scope .before-after-slider .bas-after, .pc-scope.before-after-slider .bas-after, .pc-scope .before-after-slider .bas-before, .pc-scope.before-after-slider .bas-before{width:100%;height:100%;pointer-events:none;overflow:hidden}
+.pc-scope .before-after-slider .bas-after .bas-label, .pc-scope.before-after-slider .bas-after .bas-label, .pc-scope .before-after-slider .bas-before .bas-label, .pc-scope.before-after-slider .bas-before .bas-label{padding:4px 10px;border-radius:6px;position:absolute;background:rgba(255,255,255,.8);color:#a0a0a0;top:10px;z-index:1;font-size:13px}
+.pc-scope .before-after-slider .bas-after, .pc-scope.before-after-slider .bas-after{position:absolute;top:0;left:0}
+.pc-scope .before-after-slider .bas-after .bas-label, .pc-scope.before-after-slider .bas-after .bas-label{left:10px}
+.pc-scope .before-after-slider .bas-after .content-image, .pc-scope.before-after-slider .bas-after .content-image{background:#fff;width:100%!important;position:absolute;top:0;left:0;overflow:hidden;clip-path:inset(0 50%0 0)}
+.pc-scope .before-after-slider .bas-before, .pc-scope.before-after-slider .bas-before, .pc-scope .video-native, .pc-scope.video-native{position:relative}
+.pc-scope .before-after-slider .bas-before .bas-label, .pc-scope.before-after-slider .bas-before .bas-label{right:10px}
+.pc-scope .before-after-slider .content-image, .pc-scope.before-after-slider .content-image{width:100%;height:100%;object-fit:cover;object-position:left center;position:relative;display:flex}
+.pc-scope .before-after-slider .bas-scroller, .pc-scope.before-after-slider .bas-scroller{width:50px;position:absolute;left:calc(50% - 25px);top:50%;transform:translateY(-50%);border-radius:50%;background-color:transparent;opacity:.9;pointer-events:auto;cursor:grab}
+.pc-scope .before-after-slider .bas-scroller:hover, .pc-scope.before-after-slider .bas-scroller:hover, .pc-scope .before-after-slider .scrolling .bas-scroller, .pc-scope.before-after-slider .scrolling .bas-scroller{opacity:1}
+.pc-scope .before-after-slider .bas-scroller *, .pc-scope.before-after-slider .bas-scroller *{pointer-events:none}
+.pc-scope .before-after-slider .scrolling, .pc-scope.before-after-slider .scrolling{cursor:grabbing}
+.pc-scope .before-after-slider .scroller__thumb, .pc-scope.before-after-slider .scroller__thumb{position:absolute;top:calc(50% - 20px);left:4px;width:40px;height:40px;padding:5px;border:5px solid #fff;color:#fff;border-radius:100%}
+.pc-scope .before-after-slider .bas-scroller:after, .pc-scope.before-after-slider .bas-scroller:after, .pc-scope .before-after-slider .bas-scroller:before, .pc-scope.before-after-slider .bas-scroller:before{content:" ";display:block;width:6px;height:calc(50% - 20px + 2px);position:absolute;left:50%;margin-left:-3px;z-index:3;transition:.1s}
+.pc-scope .before-after-slider .bas-scroller:before, .pc-scope.before-after-slider .bas-scroller:before{top:0}
+.pc-scope .before-after-slider .bas-scroller:after, .pc-scope.before-after-slider .bas-scroller:after{top:calc(50% + 20px - 2px)}
+.pc-scope .before-after-slider .bas-scroller, .pc-scope.before-after-slider .bas-scroller{height:100%}
+.pc-scope .before-after-slider .bas-scroller:after, .pc-scope.before-after-slider .bas-scroller:after, .pc-scope .before-after-slider .bas-scroller:before, .pc-scope.before-after-slider .bas-scroller:before{background:#fff}
+.pc-scope .video-native, .pc-scope.video-native{margin:0;background-color:#000;overflow:hidden;display:flex}
+.pc-scope .video-native .__video-overlay, .pc-scope.video-native .__video-overlay{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+.pc-scope .video-native.playing .play-button, .pc-scope.video-native.playing .play-button{display:none;visibility:hidden}
+.pc-scope .video-native.playing:hover .pause-button, .pc-scope.video-native.playing:hover .pause-button{display:flex;visibility:visible}
+.pc-scope .video-native .pause-button, .pc-scope.video-native .pause-button, .pc-scope .video-native .play-button, .pc-scope.video-native .play-button{width:90px;height:60px;font-size:70px;z-index:1;opacity:.9;position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0);pointer-events:none}
+.pc-scope .video-native .pause-button svg, .pc-scope.video-native .pause-button svg, .pc-scope .video-native .play-button svg, .pc-scope.video-native .play-button svg{width:inherit;height:inherit}
+.pc-scope .video-native .pause-button:not(.custom-icon):before, .pc-scope.video-native .pause-button:not(.custom-icon):before, .pc-scope .video-native .play-button:not(.custom-icon):before, .pc-scope.video-native .play-button:not(.custom-icon):before{position:absolute;content:"";border-style:solid;border-width:15px 0 15px 26px;border-color:transparent transparent transparent #fff;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}
+.pc-scope .video-native .pause-button, .pc-scope.video-native .pause-button{display:none;visibility:hidden}
+.pc-scope .video-native video, .pc-scope.video-native video{object-fit:cover;max-width:100%;height:100%;width:100%}
+.pc-scope .video-native .vid-inner, .pc-scope.video-native .vid-inner, .pc-scope .video-native iframe, .pc-scope.video-native iframe{width:100%;height:100%;position:absolute;top:0;left:0}
+.pc-scope .video-native:not(.editing), .pc-scope.video-native:not(.editing), .pc-scope .video-native:not(.editing) .play-button, .pc-scope.video-native:not(.editing) .play-button{cursor:pointer}
+.pc-scope .express-checkout, .pc-scope.express-checkout, .pc-scope .express-checkout-container, .pc-scope.express-checkout-container{display:flex;flex-direction:column;flex:1;width:100%}
+.pc-scope .express-checkout, .pc-scope.express-checkout{border:1px solid #d9d9d9;border-radius:6px;background:#fafafa;color:#737373;position:relative;min-height:0;overflow:visible;flex-wrap:wrap}
+.pc-scope .checkbox_item input, .pc-scope.checkbox_item input, .pc-scope .express-checkout.loading, .pc-scope.express-checkout.loading, .pc-scope .radio_brdr_box_triger>input, .pc-scope.radio_brdr_box_triger>input, .pc-scope .radiobutton_item input, .pc-scope.radiobutton_item input, .pc-scope .simple_checkbox_input input, .pc-scope.simple_checkbox_input input{display:none}
+.pc-scope .express-checkout .card-error, .pc-scope.express-checkout .card-error{display:none;background:#c60000;padding:8px 10px;margin:0;font-size:14px;color:#fff}
+.pc-scope .express-checkout.invalid, .pc-scope.express-checkout.invalid{border:2px solid #c60000}
+.pc-scope .express-checkout.invalid .card-error, .pc-scope.express-checkout.invalid .card-error{display:flex}
+.pc-scope .express-checkout.dark, .pc-scope.express-checkout.dark{background:#444;color:#e2e2e2}
+.pc-scope .express-checkout .test-mode, .pc-scope.express-checkout .test-mode{display:block;position:absolute;z-index:2;border-radius:20px;background:#f1efa9;color:#444;padding:2px 10px;top:10px;right:10px;font-size:12px;font-weight:600;text-transform:uppercase;pointer-events:none}
+.pc-scope *{box-sizing:border-box}
+.pc-scope{margin:0;padding:0;font-family:sans-serif;font-weight:400;color:#636a7b;font-size:13px}
+.pc-scope input, .pc-scope select, .pc-scope textarea{appearance:auto}
+.pc-scope a, .pc-scope a:active, .pc-scope a:focus, .pc-scope a:hover, .pc-scope a:visited{text-decoration:none}
+.pc-scope p{margin-block-start:0;margin-block-end:0;margin-inline-start:0;margin-inline-end:0}
+.pc-scope ul{list-style:none}
+.pc-scope h1, .pc-scope h2{font-weight:500;line-height:1.5}
+.pc-scope h1, .pc-scope h2, .pc-scope h3, .pc-scope h4, .pc-scope h5, .pc-scope ul{margin:0;padding:0}
+.pc-scope a, .pc-scope svg path{transition:.15s all ease-in-out}
+.pc-scope select:focus{outline:0}
+.pc-scope .hidden, .pc-scope.hidden{display:none!important}
+.pc-scope .layout-row, .pc-scope.layout-row{display:flex;flex-direction:row}
+.pc-scope .layout-column, .pc-scope.layout-column{display:flex;flex-direction:column}
+.pc-scope .layout-stretch, .pc-scope.layout-stretch{align-items:stretch}
+.pc-scope .flex, .pc-scope.flex{flex:1}
+.pc-scope .flex-none, .pc-scope.flex-none{flex:0}
+.pc-scope .flex-center, .pc-scope.flex-center{align-items:center}
+.pc-scope .spinner svg, .pc-scope.spinner svg{margin:auto;background:0 0;display:block;shape-rendering:auto}
+.pc-scope .main-wrapper, .pc-scope.main-wrapper{width:100%;flex-direction:column;min-height:100vh;text-decoration:inherit;overflow:unset}
+.pc-scope .element-wrapper, .pc-scope.element-wrapper, .pc-scope .main-wrapper, .pc-scope.main-wrapper, .pc-scope .section, .pc-scope.section{align-items:center;display:flex}
+.pc-scope .element-wrapper, .pc-scope.element-wrapper{justify-content:center;text-decoration:inherit;min-height:0}
+.pc-scope .section, .pc-scope.section{background-position:center;background-size:cover;background-repeat:no-repeat;justify-items:center;flex-direction:column}
+.pc-scope .section, .pc-scope.section, .pc-scope .section.full, .pc-scope.section.full{width:100%}
+.pc-scope .section.full .section_row, .pc-scope.section.full .section_row{max-width:1170px}
+.pc-scope .section.wide, .pc-scope.section.wide{width:75%}
+.pc-scope .section.wide .section_row, .pc-scope.section.wide .section_row{max-width:850px}
+.pc-scope .section.half, .pc-scope.section.half{width:50%}
+.pc-scope .section.half .section_row, .pc-scope.section.half .section_row{max-width:600px}
+.pc-scope .section .section_row, .pc-scope.section .section_row{width:100%;display:flex;flex-direction:row;background-position:center;background-size:cover;background-repeat:no-repeat}
+@media only screen and (min-width:851px){
+.pc-scope .no-desktop, .pc-scope.no-desktop{display:none!important}
+}
+@media only screen and (max-width:850px) and (min-width:601px){
+.pc-scope .no-tablet, .pc-scope.no-tablet{display:none!important}
+.pc-scope .section.wide, .pc-scope.section.wide{width:100%}
+.pc-scope .section.half, .pc-scope.section.half{width:75%}
+}
+@media only screen and (max-width:600px){
+.pc-scope .no-mobile, .pc-scope.no-mobile{display:none!important}
+.pc-scope .section.half, .pc-scope.section.half, .pc-scope .section.wide, .pc-scope.section.wide{width:100%}
+.pc-scope .section .section_row, .pc-scope.section .section_row{flex-direction:column}
+.pc-scope .section .section_row .row-column, .pc-scope.section .section_row .row-column{width:100%!important}
+}
+.pc-scope .row-column, .pc-scope.row-column{padding:0;display:inline-block;vertical-align:top;text-decoration:inherit}
+.pc-scope .btn.m_size, .pc-scope.btn.m_size{font-size:18px;line-height:145%;padding:15px 30px}
+.pc-scope .form_groups_sprtr, .pc-scope.form_groups_sprtr{font-weight:400;font-size:13px;line-height:150%;letter-spacing:.02em;text-transform:uppercase;color:#97aacd;padding-bottom:3px;border-bottom:1px solid #d5e5ff;width:100%}
+.pc-scope .radio_brdr_box .radio_brdr_box_radiobtn.checkbox_view, .pc-scope.radio_brdr_box .radio_brdr_box_radiobtn.checkbox_view{border-radius:2px}
+.pc-scope .radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn.checkbox_view, .pc-scope.radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn.checkbox_view{border-color:#449cf4;background:#449cf4 url("https://assets.checkoutchamp.com/Funnel/assets/images/685dc02f-ad1b-4b94-9dd2-e66cffd8a679/adc833e4-9b9c-4e36-a8a6-db8a9e0c5b42/check_input.svg")no-repeat center;background-size:contain}
+.pc-scope .radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn.checkbox_view:after, .pc-scope.radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn.checkbox_view:after{display:none}
+.pc-scope .mb_30, .pc-scope.mb_30{margin-bottom:30px}
+.pc-scope .back_to_funnel_btn svg, .pc-scope.back_to_funnel_btn svg{margin-right:11px}
+.pc-scope .radio_btn_payment_method, .pc-scope.radio_btn_payment_method{display:flex;align-items:center;font-weight:500;font-size:13px;line-height:150%;letter-spacing:.02em;color:#252a32;margin-left:10px}
+.pc-scope .radio_btn_payment_method .img_wrpr, .pc-scope.radio_btn_payment_method .img_wrpr{display:flex;align-items:center;justify-content:center;min-width:30px;width:30px;height:30px;margin-right:15px}
+.pc-scope .blue_300_text_box, .pc-scope.blue_300_text_box{display:block;text-align:center;padding:5px 10px;background:#eef4ff;border-radius:4px;margin-top:10px;font-weight:400;font-size:11px;line-height:150%;letter-spacing:.02em;color:#636a7b}
+.pc-scope .radio_brdr_box.w_bottom_text, .pc-scope.radio_brdr_box.w_bottom_text{align-items:flex-start;flex-direction:column}
+.pc-scope .radio_brdr_box.mb_0, .pc-scope.radio_brdr_box.mb_0{margin-bottom:0}
+.pc-scope .simple_checkbox_input, .pc-scope.simple_checkbox_input{display:flex;align-items:center;cursor:pointer}
+.pc-scope .simple_checkbox_input_check, .pc-scope.simple_checkbox_input_check{min-width:17px;min-height:17px;width:17px;height:17px;border:1px solid #c5c7d2;border-radius:2px;margin-right:11px}
+.pc-scope .simple_checkbox_input input:checked~.simple_checkbox_input_check, .pc-scope.simple_checkbox_input input:checked~.simple_checkbox_input_check{border-color:#449cf4;background:#449cf4 url("https://assets.checkoutchamp.com/Funnel/assets/images/685dc02f-ad1b-4b94-9dd2-e66cffd8a679/adc833e4-9b9c-4e36-a8a6-db8a9e0c5b42/check_input.svg")no-repeat center;background-size:12px}
+.pc-scope .form_bottom_subtext, .pc-scope.form_bottom_subtext, .pc-scope .simple_checkbox_input.bold_text, .pc-scope.simple_checkbox_input.bold_text{font-weight:700;font-size:14px;line-height:150%;letter-spacing:.02em;color:#252a32}
+.pc-scope .form_bottom_subtext, .pc-scope.form_bottom_subtext{text-align:center;margin-top:20px;font-weight:400;font-size:12px;color:#97aacd}
+.pc-scope .brdr_box_w_checkbox, .pc-scope.brdr_box_w_checkbox, .pc-scope .radio_brdr_box, .pc-scope.radio_brdr_box{display:flex;align-items:flex-start;justify-content:flex-start;border:1px solid #e4e6f1;border-radius:8px;padding:10px;margin-bottom:5px}
+.pc-scope .radio_brdr_box, .pc-scope.radio_brdr_box{align-items:center;justify-content:space-between;border:1px solid #d5e5ff;border-radius:4px;cursor:pointer;font-weight:400;font-size:12px;line-height:150%;letter-spacing:.02em;color:#252a32}
+.pc-scope .radio_brdr_box .field, .pc-scope.radio_brdr_box .field{margin:0 25px 0 0}
+.pc-scope .radio_brdr_box_triger, .pc-scope.radio_brdr_box_triger{display:block}
+.pc-scope .radio_brdr_box .radio_brdr_box_radiobtn, .pc-scope.radio_brdr_box .radio_brdr_box_radiobtn{display:block;border:1px solid #e4e6f1;min-width:13px;min-height:13px;width:13px;height:13px;background:#fff;margin-right:10px;border-radius:50%}
+.pc-scope .radio_brdr_box .left, .pc-scope.radio_brdr_box .left, .pc-scope .radio_brdr_box .right, .pc-scope.radio_brdr_box .right{display:flex;align-items:center}
+.pc-scope .radio_brdr_box .left, .pc-scope.radio_brdr_box .left{padding-right:10px;text-align:left}
+.pc-scope .radio_brdr_box_triger>input:checked~.radio_brdr_box, .pc-scope.radio_brdr_box_triger>input:checked~.radio_brdr_box{border:1px solid #449cf4}
+.pc-scope .radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn, .pc-scope.radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn, .pc-scope .radiobutton_item input:checked~.radiobutton_item_square, .pc-scope.radiobutton_item input:checked~.radiobutton_item_square{border-color:#449cf4;position:relative}
+.pc-scope .radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn:after, .pc-scope.radio_brdr_box_triger>input:checked~.radio_brdr_box .radio_brdr_box_radiobtn:after, .pc-scope .radiobutton_item input:checked~.radiobutton_item_square:after, .pc-scope.radiobutton_item input:checked~.radiobutton_item_square:after{content:"";display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:7px;height:7px;background:#449cf4;border-radius:50%}
+.pc-scope .radio_brdr_box .price, .pc-scope.radio_brdr_box .price{font-weight:500;font-size:12px;line-height:150%;letter-spacing:.02em;color:inherit;white-space:nowrap}
+.pc-scope .form_item_sides_header, .pc-scope.form_item_sides_header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.pc-scope .form_item_sides_header span, .pc-scope.form_item_sides_header span, .pc-scope .input_types_wrpr .input_type_item span, .pc-scope.input_types_wrpr .input_type_item span{font-weight:400;font-size:12px;line-height:150%;letter-spacing:.02em;color:#97aacd}
+.pc-scope .input_with_left_icon, .pc-scope.input_with_left_icon{position:relative}
+.pc-scope .input_with_left_icon .left_icon, .pc-scope.input_with_left_icon .left_icon{position:absolute;top:27px;left:9px;width:32px;height:32px;min-width:32px;min-height:32px;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none}
+.pc-scope .video_element_wrpr, .pc-scope.video_element_wrpr{border-radius:4px;overflow:hidden;display:flex;align-items:flex-start}
+.pc-scope .input_types_wrpr, .pc-scope.input_types_wrpr{display:flex;flex-wrap:wrap;margin:-7.5px}
+.pc-scope .input_types_wrpr .input_type_item, .pc-scope.input_types_wrpr .input_type_item{width:calc(33.33% - 15px);margin:7.5px;border:1px solid #e4e6f1;border-radius:3px;padding:10px;min-height:66px;display:flex;flex-direction:column;text-align:center;cursor:pointer;transition:.15s all ease-in-out}
+.pc-scope .input_types_wrpr .input_type_item:hover, .pc-scope.input_types_wrpr .input_type_item:hover{background:#f6f9fe}
+.pc-scope .input_types_wrpr .input_type_item.active, .pc-scope.input_types_wrpr .input_type_item.active{background:#f6f9fe;border:1px solid #449cf4}
+.pc-scope .input_types_wrpr .input_type_item span, .pc-scope.input_types_wrpr .input_type_item span{margin-top:auto;font-size:10px;color:#636a7b}
+.pc-scope .checkbox_item, .pc-scope.checkbox_item, .pc-scope .radiobutton_item, .pc-scope.radiobutton_item{display:flex;align-items:center;justify-items:flex-start;cursor:pointer;border:0!important}
+.pc-scope .checkbox_item_square, .pc-scope.checkbox_item_square, .pc-scope .radiobutton_item_square, .pc-scope.radiobutton_item_square{display:block;border:1px solid #e4e6f1;min-width:13px;min-height:13px;width:13px;height:13px;background:#fff;margin-right:10px}
+.pc-scope .checkbox_item_square, .pc-scope.checkbox_item_square{border-radius:2px}
+.pc-scope .radiobutton_item_square, .pc-scope.radiobutton_item_square{border-radius:50%}
+.pc-scope .checkbox_item input:checked~.checkbox_item_square, .pc-scope.checkbox_item input:checked~.checkbox_item_square{border-color:#449cf4;background:#449cf4 url("https://assets.checkoutchamp.com/Funnel/assets/images/685dc02f-ad1b-4b94-9dd2-e66cffd8a679/adc833e4-9b9c-4e36-a8a6-db8a9e0c5b42/check_input.svg")no-repeat center;background-size:contain}
+.pc-scope .editor__content .iframe .iframe__embed, .pc-scope.editor__content .iframe .iframe__embed{pointer-events:none}
+.pc-scope .editor__content .iframe, .pc-scope.editor__content .iframe{position:relative;margin-bottom:10px}
+.pc-scope .editor__content .iframe .iframe_input_wrpr, .pc-scope.editor__content .iframe .iframe_input_wrpr{position:absolute;bottom:0;left:0;width:100%;opacity:0;visibility:hidden;background:#fff;z-index:2}
+.pc-scope .editor__content .iframe:hover .iframe_input_wrpr, .pc-scope.editor__content .iframe:hover .iframe_input_wrpr{opacity:1;visibility:visible}
+.pc-scope .sticky_show_after, .pc-scope.sticky_show_after{display:none;visibility:hidden}
+.pc-scope .sticky_show_after.visible, .pc-scope.sticky_show_after.visible{display:flex;visibility:visible}
+.pc-scope .transition-all, .pc-scope.transition-all{overflow:hidden;transition:all .3s cubic-bezier(.3,0,0,1)}
+.pc-scope .full_page_spinner.overlay, .pc-scope.full_page_spinner.overlay{z-index:300;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.1215686275);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pc-scope .full_page_spinner .spinner svg, .pc-scope.full_page_spinner .spinner svg{height:80px;width:80px}

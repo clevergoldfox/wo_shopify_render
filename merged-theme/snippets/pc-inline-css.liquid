@@ -1,0 +1,10 @@
+{%- comment -%}
+  The funnel's own stylesheet, which the capture had inline in the page head
+  (210,688 bytes). Every rule is rewritten under .pc-scope, the same
+  treatment as its Bootstrap copy, so it cannot reach the rest of the store. It stays
+  Liquid rather than a .css asset because the asset rewrite left {{ ... | asset_url }}
+  calls inside it; those are parked behind placeholders while the scoper runs.
+{%- endcomment -%}
+{% render 'pc-inline-css-1' %}
+{% render 'pc-inline-css-2' %}
+{% render 'pc-inline-css-3' %}

@@ -1,0 +1,416 @@
+{%- comment -%}
+  The funnel's inline scripts, in page order: three Swiper initialisations (the
+  announcement bar, the gallery thumbnails, the review slider), the video controls,
+  the FAQ accordion, the sticky bar and the offer toggle. They must run after the
+  markup exists, so this is the last section in the template rather than part of
+  pc-bootstrap.
+
+  Checkout Champ's index.js is deliberately absent -- pc-cart.js replaces the order
+  handling it used to do.
+{%- endcomment -%}
+<script>
+var swiper = new Swiper(".announcement_bar", {
+	slidesPerView: 1,
+	spaceBetween: 0,
+	loop: true,
+	autoplay: {
+	  delay: 2800,
+	  disableOnInteraction: false,
+	}
+	,
+  }
+						 );
+</script>
+<script>
+var swiper = new Swiper(".thumbImage", {
+	spaceBetween: 10,
+	slidesPerView: 6,
+	freeMode: true,
+	watchSlidesProgress: true,
+	breakpoints: {
+	  1200: {
+		slidesPerView: 6,
+	  }
+	  ,
+	}
+	,
+  }
+						 );
+  var swiper2 = new Swiper(".mainImage", {
+	spaceBetween: 10,
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	}
+	,
+	thumbs: {
+	  swiper: swiper,
+	}
+	,
+  }
+						  );
+</script>
+<script>
+var swiper = new Swiper(".revVidSlider", {
+	spaceBetween: 25,
+	slidesPerView: 1,
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	}
+	,
+	breakpoints: {
+	  601: {
+		slidesPerView: 2,
+	  }
+	  ,
+	  1200: {
+		slidesPerView: 4,
+	  }
+	  ,
+	}
+	,
+  }
+						 );
+</script>
+<script>
+let khVideos = document.querySelectorAll('.revVideo');
+let playBtns = document.querySelectorAll('.play_btn');
+let playIcons = document.querySelectorAll('.play_icon');
+playBtns[0].addEventListener('click', () => {
+playBtns[0].style.display = 'none';
+playIcons[0].classList.add('playActive');
+khVideos[0].play();
+}
+);
+khVideos[0].addEventListener('click', () => {
+playBtns[0].style.display = 'flex';
+playIcons[0].classList.remove('playActive');
+khVideos[0].pause();
+}
+);
+playBtns[1].addEventListener('click', () => {
+playBtns[1].style.display = 'none';
+playIcons[1].classList.add('playActive');
+khVideos[1].play();
+}
+);
+khVideos[1].addEventListener('click', () => {
+playBtns[1].style.display = 'flex';
+playIcons[1].classList.remove('playActive');
+khVideos[1].pause();
+}
+);
+playBtns[2].addEventListener('click', () => {
+playBtns[2].style.display = 'none';
+playIcons[2].classList.add('playActive');
+khVideos[2].play();
+}
+);
+khVideos[2].addEventListener('click', () => {
+playBtns[2].style.display = 'flex';
+playIcons[2].classList.remove('playActive');
+khVideos[2].pause();
+}
+);
+playBtns[3].addEventListener('click', () => {
+playBtns[3].style.display = 'none';
+playIcons[3].classList.add('playActive');
+khVideos[3].play();
+}
+);
+khVideos[3].addEventListener('click', () => {
+playBtns[3].style.display = 'flex';
+playIcons[3].classList.remove('playActive');
+khVideos[3].pause();
+}
+);
+</script>
+<script>
+function formatDate(date) {
+	return date.toLocaleDateString('en-US', {
+	  weekday: 'short',
+	  month: 'short',
+	  day: 'numeric'
+	}
+								  );
+  }
+  const today = new Date();
+  const twoDaysLater = new Date();
+  twoDaysLater.setDate(today.getDate() + 2);
+  document.querySelector('.twoDayDateP em').textContent = formatDate(twoDaysLater);
+</script>
+<script>
+try {
+	document
+	  .querySelectorAll(".faq .faq-header")
+	  .forEach (function (h) {
+	  var f = h.parentElement;
+	  h.addEventListener("click", function() {
+		f.classList.contains("active")
+		  ? f.classList.remove("active")
+		: f.classList.add("active");
+	  }
+						);
+	}
+			   );
+  }
+  catch (e) {
+	console.warn(e);
+  }
+</script>
+<script>
+const stickSection = document.querySelector('.stickSection');
+  window.addEventListener('scroll', () => {
+	if (window.scrollY >= 1400) {
+	  stickSection.style.position='sticky';
+	}
+	else {
+	  stickSection.style.position='static';
+	}
+  }
+						 );
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	const p = document.getElementById("i74qoqp");
+	if (!p) return;
+	if (window.innerWidth > 600) return;
+	const fullText = p.textContent.trim();
+	// Split at "Two decades."
+	const splitPoint = "two decades.";
+	const index = fullText.toLowerCase().indexOf(splitPoint);
+	if (index === -1) return;
+	const shortText = fullText.substring(0, index + splitPoint.length);
+	// Create the Read More button
+	const btn = document.createElement("span");
+	btn.textContent = " … Read More";
+	btn.style.cursor = "pointer";
+	btn.style.color = "#1F2B33";
+	btn.style.fontWeight = "600";
+	// Insert shortened version
+	p.textContent = shortText;
+	p.appendChild(btn);
+	// Click → show full text
+	btn.addEventListener("click", function () {
+	  p.textContent = fullText;
+	}
+						);
+  }
+						   );
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	// One time and sub button toggle
+	const oneOfferButton = document.querySelector(".oneOfferButton");
+	const subOfferButton = document.querySelector(".subOfferButton");
+	const oneOfferWrap = document.querySelector(".khOneOffer");
+	const subOfferWrap = document.querySelector(".khSubOffer");
+	const subDetailsBox = document.querySelector(".subDetailsBox");
+	const subDetails = document.querySelectorAll(".subDetails");
+	if (!oneOfferButton || !subOfferButton || !oneOfferWrap || !subOfferWrap) return;
+	let selectedOfferIndex = 1;
+	// Default: page load e 2nd offer selected thakbe, jodi sessionStorage e valid data na thake
+	function setActiveOfferButton(clickedButton) {
+	  oneOfferButton.classList.remove("activeOfferType");
+	  subOfferButton.classList.remove("activeOfferType");
+	  clickedButton.classList.add("activeOfferType");
+	}
+	function getOfferValueByIndex(index) {
+	  const offerValues = ["b1g1", "b2g2", "b3g3"];
+	  return offerValues[index] || "b2g2";
+	}
+	function getIndexByOfferValue(offerValue) {
+	  const offerValues = ["b1g1", "b2g2", "b3g3"];
+	  const index = offerValues.indexOf(offerValue);
+	  return index !== -1 ? index : 1;
+	}
+	function getStoredOfferState() {
+	  const storedOffer = sessionStorage.getItem("khOffer");
+	  if (!storedOffer) {
+		return {
+		  type: "sub",
+		  index: 1
+		};
+	  }
+	  const offerParts = storedOffer.split("_");
+	  const offerValue = offerParts[0];
+	  const offerType = offerParts[1];
+	  return {
+		type: offerType === "ot" ? "one" : "sub",
+		index: getIndexByOfferValue(offerValue)
+	  };
+	}
+	function updateSessionStorage(offerType) {
+	  const offerValue = getOfferValueByIndex(selectedOfferIndex);
+	  sessionStorage.setItem("khOffer", offerValue + "_" + offerType);
+	}
+	function setActiveBoxByIndex(selectedIndex) {
+	  const allGroups = [subOfferWrap, oneOfferWrap];
+	  allGroups.forEach((offerWrap) => {
+		const boxes = offerWrap.querySelectorAll(".khOfferBox");
+		boxes.forEach((box, index) => {
+		  box.classList.remove("of_selected_box");
+		  if (index === selectedIndex) {
+			box.classList.add("of_selected_box");
+		  }
+		}
+					 );
+	  }
+					   );
+	}
+	function updateSubDetails(isSubActive) {
+	  if (!subDetailsBox) return;
+	  if (!isSubActive) {
+		subDetailsBox.style.display = "none";
+		return;
+	  }
+	  subDetailsBox.style.display = "block";
+	  subDetails.forEach((detail, index) => {
+		detail.style.display = index === selectedOfferIndex ? "block" : "none";
+	  }
+						);
+	}
+	function showOfferType(type) {
+	  if (type === "sub") {
+		subOfferWrap.style.display = "flex";
+		oneOfferWrap.style.display = "none";
+		setActiveOfferButton(subOfferButton);
+		setActiveBoxByIndex(selectedOfferIndex);
+		updateSubDetails(true);
+		updateSessionStorage("sub");
+	  }
+	  if (type === "one") {
+		subOfferWrap.style.display = "none";
+		oneOfferWrap.style.display = "flex";
+		setActiveOfferButton(oneOfferButton);
+		setActiveBoxByIndex(selectedOfferIndex);
+		updateSubDetails(false);
+		updateSessionStorage("ot");
+	  }
+	}
+	function restoreOfferFromSessionStorage() {
+	  const storedState = getStoredOfferState();
+	  selectedOfferIndex = storedState.index;
+	  showOfferType(storedState.type);
+	}
+	// On page load / restore selected offer
+	restoreOfferFromSessionStorage();
+	// Browser back/forward cache restore support
+	window.addEventListener("pageshow", function () {
+	  restoreOfferFromSessionStorage();
+	}
+						   );
+	// Offer type click handlers
+	oneOfferButton.addEventListener("click", function () {
+	  showOfferType("one");
+	}
+								   );
+	subOfferButton.addEventListener("click", function () {
+	  showOfferType("sub");
+	}
+								   );
+	// Offer box active code
+	[subOfferWrap, oneOfferWrap].forEach((offerWrap) => {
+	  const boxes = offerWrap.querySelectorAll(".khOfferBox");
+	  boxes.forEach((box, index) => {
+		box.addEventListener("click", function () {
+		  selectedOfferIndex = index;
+		  setActiveBoxByIndex(selectedOfferIndex);
+		  if (subOfferButton.classList.contains("activeOfferType")) {
+			updateSubDetails(true);
+			updateSessionStorage("sub");
+		  }
+		  else {
+			updateSessionStorage("ot");
+		  }
+		}
+							);
+	  }
+				   );
+	}
+										);
+  }
+						   );
+</script>
+<script>
+(() => {
+	const target = document.querySelector('.shipDa .em');
+	if (!target) return;
+	const date = new Date();
+	date.setDate(date.getDate() + 3);
+	const month = date.toLocaleString('en-US', {
+	  month: 'long' }
+									 );
+	const day = date.getDate();
+	const getSuffix = (d) => {
+	  if (d >= 11 && d <= 13) return 'th';
+	  switch (d % 10) {
+		case 1: return 'st';
+		case 2: return 'nd';
+		case 3: return 'rd';
+		default: return 'th';
+	  }
+	};
+	target.textContent = `${month}
+${day}
+${getSuffix(day)}
+`;
+  }
+  )();
+</script>
+<script>
+window.addEventListener('load', (function(){
+                $("#loading").hide();
+                $("body").removeClass("dom-pending");
+
+                var lazyLoadThrottleTimeout;
+                function recursiveOffsetParentTop(img) {
+                    if (img.offsetParent) {
+                        return img.offsetParent.offsetTop + recursiveOffsetParentTop(img.offsetParent);
+                    } else {
+                        return 0;
+                    }
+                }
+                function lazyLoad() {
+                    if (lazyLoadThrottleTimeout) {
+                        clearTimeout(lazyLoadThrottleTimeout);
+                    }
+                    lazyLoadThrottleTimeout = setTimeout(function () {
+                        const scrollTop = window.pageYOffset;
+                        const buffer = 500;
+                        var loaded = true;
+                        //Lazy loading the images
+                        var lazyLoad = [].slice.call(document.querySelectorAll(".fk-lazy"));
+                        lazyLoad.forEach(function (element) {
+                            if ($(element).is(':visible') && element.offsetTop + recursiveOffsetParentTop(element) < ((window.innerHeight + scrollTop) + buffer)) {
+								if(element.dataset.src) {
+                                    element.src = element.dataset.src;
+                                }
+								element.classList.remove("fk-lazy");
+                            } else {
+                                loaded = false;
+                            }
+                        });
+                        if (loaded) {
+                            document.removeEventListener("scroll", lazyLoad);
+                            window.removeEventListener("resize", lazyLoad);
+                            window.removeEventListener("orientationChange", lazyLoad);
+                        }
+                    }, 20);
+                }
+
+                document.addEventListener("scroll", lazyLoad);
+                window.addEventListener("resize", lazyLoad);
+                window.addEventListener("orientationChange", lazyLoad);
+                lazyLoad();
+            }), false);
+</script>
+
+{% schema %}
+{
+  "name": "Pc Runtime",
+  "class": "pc-scope",
+  "settings": []
+}
+{% endschema %}
