@@ -1,0 +1,1182 @@
+{%- comment -%}
+  "Frequently Bought Together", ported from the reference store's own theme section.
+  Self-contained: its CSS and JS are inline, no external assets.
+
+  The reference hardcodes four of its own products. Here the row is this product
+  followed by up to three more from the same collection, so every link, image,
+  price and variant id is real and "Add Selected To Bag" adds to this cart.
+{%- endcomment -%}
+{%- assign fbt_source = product.collections.first -%}
+{%- unless fbt_source -%}
+  {%- assign fbt_source = collections.all -%}
+{%- endunless -%}
+{%- assign fbt_count = fbt_source.products.size -%}
+{%- if fbt_count > 4 -%}{%- assign fbt_count = 4 -%}{%- endif -%}
+{%- if fbt_source.products.size > 1 -%}
+
+
+
+  <section
+    id="smart-fbt-{{ section.id }}"
+    class="smart-fbt-section"
+    data-money-format="{{ shop.money_format | escape }}"
+    data-discount-percent="0"
+    data-discount-code=""
+    data-cart-sections="cart-drawer,cart-icon-bubble"
+    style="
+      --fbt-bg: #ffffff;
+      --fbt-text: #004b16;
+      --fbt-heading-color: #004b16;
+      --fbt-plus-color: #000000;
+      --fbt-accent: #0f4f2a;
+      --fbt-button-text-color: #ffffff;
+      --fbt-discount-note-color: #314a5f;
+      --fbt-status-color: #314a5f;
+      --fbt-status-error-color: #b42318;
+      --fbt-soldout-color: #777777;
+
+      --fbt-card-bg: #f7f7f7;
+      --fbt-border: #f7f9fc;
+
+      --fbt-heading-font: inherit;
+      --fbt-body-font: inherit;
+
+      --fbt-heading-size-desktop: 40px;
+      --fbt-heading-size-mobile: 28px;
+      --fbt-heading-max-width: 760px;
+
+      --fbt-card-width-desktop: 130px;
+      --fbt-card-height-desktop: 130px;
+      --fbt-card-width-mobile: 100px;
+      --fbt-card-height-mobile: 112px;
+
+      --fbt-title-color: #666666;
+      --fbt-title-size-desktop: 15px;
+      --fbt-title-size-mobile: 12px;
+
+      --fbt-price-color: #666666;
+      --fbt-price-size-desktop: 18px;
+      --fbt-price-size-mobile: 12px;
+
+      --fbt-save-badge-bg: #0f4f2a;
+      --fbt-save-badge-color: #ffffff;
+      --fbt-save-text-color: #0f4f2a;
+      --fbt-save-badge-font-desktop: 13px;
+      --fbt-save-badge-font-mobile: 13px;
+      --fbt-save-text-font-desktop: 14px;
+      --fbt-save-text-font-mobile: 14px;
+      --fbt-save-badge-py: 6px;
+      --fbt-save-badge-px: 12px;
+      --fbt-save-badge-radius: 40px;
+      --fbt-save-line-gap: 0px;
+
+      --fbt-button-width-desktop: 320px;
+      --fbt-button-width-mobile: 260px;
+      --fbt-button-height-desktop: 54px;
+      --fbt-button-height-mobile: 48px;
+      --fbt-button-text-scale-desktop: 0.34;
+      --fbt-button-text-scale-mobile: 0.3;
+      --fbt-button-radius: 60px;
+
+      --fbt-image-zoom: 1.1;
+      --fbt-padding-top: 20px;
+      --fbt-padding-bottom: 60px;
+    "
+  >
+    <div class="page-width smart-fbt-inner">
+      
+        <h2 class="smart-fbt-heading">
+          Frequently Bought Together
+        </h2>
+      
+
+      <div class="smart-fbt-showcase smart-fbt-count-{{ fbt_count }}">
+        <div class="smart-fbt-products" data-fbt-products>
+          
+          
+
+                    <div
+            class="smart-fbt-product-item"
+            data-fbt-image-item
+            data-fbt-image-variant-id="{{ product.selected_or_first_available_variant.id }}"
+          >
+            <div class="smart-fbt-card">
+              <a href="{{ product.url }}" class="smart-fbt-image-link">
+                {%- if product.featured_image -%}
+                  <img src="{{ product.featured_image | image_url: width: 700 }}" alt="{{ product.title | escape }}" srcset="{{ product.featured_image | image_url: width: 352 }} 352w, {{ product.featured_image | image_url: width: 700 }} 700w" width="700" height="700" loading="lazy" class="smart-fbt-image">
+                {%- endif -%}
+              </a>
+            </div>
+          </div>
+{%- assign fbt_shown = 0 -%}
+{%- for p in fbt_source.products -%}
+{%- if p.id == product.id -%}{%- continue -%}{%- endif -%}
+{%- unless p.featured_image -%}{%- continue -%}{%- endunless -%}
+{%- if p.handle contains 'example-product' -%}{%- continue -%}{%- endif -%}
+{%- if fbt_shown >= 3 -%}{%- break -%}{%- endif -%}
+{%- assign fbt_shown = fbt_shown | plus: 1 -%}
+          <div
+            class="smart-fbt-product-item"
+            data-fbt-image-item
+            data-fbt-image-variant-id="{{ p.selected_or_first_available_variant.id }}"
+          >
+            <div class="smart-fbt-card">
+              <a href="{{ p.url }}" class="smart-fbt-image-link">
+                {%- if p.featured_image -%}
+                  <img src="{{ p.featured_image | image_url: width: 700 }}" alt="{{ p.title | escape }}" srcset="{{ p.featured_image | image_url: width: 352 }} 352w, {{ p.featured_image | image_url: width: 700 }} 700w" width="700" height="700" loading="lazy" class="smart-fbt-image">
+                {%- endif -%}
+              </a>
+            </div>
+          </div>
+{%- endfor -%}
+              
+            
+          
+        </div>
+
+        <div class="smart-fbt-summary">
+          <div class="smart-fbt-saving-line" data-fbt-save-row>
+            <span class="smart-fbt-save-badge" data-fbt-save-badge>
+              SAVE 0%
+            </span>
+
+            
+              <span class="smart-fbt-save-money">
+                You save
+                <strong data-fbt-save>$0.00</strong>
+              </span>
+            
+          </div>
+
+          <button
+            type="button"
+            class="smart-fbt-button"
+            data-fbt-add
+          >
+            <span class="smart-fbt-button-text">
+              ADD SELECTED TO BAG
+            </span>
+          </button>
+
+          
+
+          
+
+          <div class="smart-fbt-status" data-fbt-status aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="smart-fbt-options">
+        
+        
+
+                <label class="smart-fbt-option">
+          <span class="smart-fbt-option-left">
+            <input
+              class="smart-fbt-checkbox"
+              type="checkbox"
+              data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+              data-price="{{ product.price }}"
+              checked
+            >
+            <span class="smart-fbt-checkmark"></span>
+
+            <span class="smart-fbt-title">
+              <a href="{{ product.url }}">
+                {{ product.title }}
+              </a>
+            </span>
+          </span>
+
+          <span class="smart-fbt-price">
+            {{ product.price | money }}
+          </span>
+        </label>
+{%- assign fbt_shown = 0 -%}
+{%- for p in fbt_source.products -%}
+{%- if p.id == product.id -%}{%- continue -%}{%- endif -%}
+{%- unless p.featured_image -%}{%- continue -%}{%- endunless -%}
+{%- if p.handle contains 'example-product' -%}{%- continue -%}{%- endif -%}
+{%- if fbt_shown >= 3 -%}{%- break -%}{%- endif -%}
+{%- assign fbt_shown = fbt_shown | plus: 1 -%}
+        <label class="smart-fbt-option">
+          <span class="smart-fbt-option-left">
+            <input
+              class="smart-fbt-checkbox"
+              type="checkbox"
+              data-variant-id="{{ p.selected_or_first_available_variant.id }}"
+              data-price="{{ p.price }}"
+              checked
+            >
+            <span class="smart-fbt-checkmark"></span>
+
+            <span class="smart-fbt-title">
+              <a href="{{ p.url }}">
+                {{ p.title }}
+              </a>
+            </span>
+          </span>
+
+          <span class="smart-fbt-price">
+            {{ p.price | money }}
+          </span>
+        </label>
+{%- endfor -%}
+            
+          
+        
+      </div>
+    </div>
+
+    <style>
+      #smart-fbt-{{ section.id }} {
+        background: var(--fbt-bg);
+        color: var(--fbt-text);
+        padding-top: var(--fbt-padding-top);
+        padding-bottom: var(--fbt-padding-bottom);
+        overflow: hidden;
+        font-family: var(--fbt-body-font);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-inner {
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-heading {
+        max-width: var(--fbt-heading-max-width);
+        margin: 0 auto 34px;
+        text-align: center;
+        color: var(--fbt-heading-color);
+        font-family: var(--fbt-heading-font);
+        font-size: var(--fbt-heading-size-desktop);
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        white-space: normal;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-showcase {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 44px;
+        width: 100%;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-products {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 52px;
+        width: auto;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        flex: 0 0 auto;
+        transition: gap 0.2s ease;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-product-item {
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-product-item.is-hidden {
+        display: none;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-product-item.has-plus::before {
+        content: "+";
+        position: absolute;
+        left: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--fbt-plus-color);
+        font-size: 32px;
+        line-height: 1;
+        font-weight: 600;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-card {
+        width: var(--fbt-card-width-desktop);
+        height: var(--fbt-card-height-desktop);
+        border-radius: 18px;
+        border: 1.8px solid var(--fbt-border);
+        background: var(--fbt-card-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-image-link {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        transform: scale(var(--fbt-image-zoom));
+        transform-origin: center;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-summary {
+        width: auto;
+        max-width: none;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-saving-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--fbt-save-line-gap);
+        flex-wrap: wrap;
+        width: var(--fbt-button-width-desktop);
+        max-width: 100%;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-save-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--fbt-save-badge-py) var(--fbt-save-badge-px);
+        border-radius: var(--fbt-save-badge-radius);
+        background: var(--fbt-save-badge-bg);
+        color: var(--fbt-save-badge-color);
+        font-size: var(--fbt-save-badge-font-desktop);
+        line-height: 1;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-save-money {
+        color: var(--fbt-save-text-color);
+        font-size: var(--fbt-save-text-font-desktop);
+        line-height: 1.2;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-save-money strong {
+        font-weight: 800;
+        color: var(--fbt-save-text-color);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-button {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        width: var(--fbt-button-width-desktop) !important;
+        max-width: 100% !important;
+        height: var(--fbt-button-height-desktop) !important;
+        min-height: 0 !important;
+        border: 0 !important;
+        border-radius: var(--fbt-button-radius) !important;
+        background: var(--fbt-accent) !important;
+        color: var(--fbt-button-text-color) !important;
+        cursor: pointer;
+        padding: 0 22px !important;
+        font-size: clamp(10px, calc(var(--fbt-button-height-desktop) * var(--fbt-button-text-scale-desktop)), 32px) !important;
+        line-height: 1.1 !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+        font-family: var(--fbt-body-font) !important;
+        white-space: nowrap;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-button-text {
+        display: inline-block !important;
+        color: var(--fbt-button-text-color) !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+        font-weight: inherit !important;
+        font-family: inherit !important;
+        letter-spacing: inherit !important;
+        text-transform: inherit !important;
+        white-space: nowrap !important;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-button:hover {
+        transform: translateY(-1px);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-discount-note {
+        color: var(--fbt-discount-note-color);
+        font-size: 13px;
+        line-height: 1.35;
+        text-align: center;
+        opacity: 0.85;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-discount-note strong {
+        color: var(--fbt-discount-note-color);
+        font-weight: 700;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-editor-warning {
+        max-width: 420px;
+        font-size: 12px;
+        line-height: 1.35;
+        color: var(--fbt-status-error-color);
+        text-align: center;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-status {
+        min-height: 18px;
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--fbt-status-color);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-options {
+        margin: 28px auto 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 17px;
+        max-width: 880px;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-option {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        color: var(--fbt-text);
+        cursor: pointer;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-option-left {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        min-width: 0;
+        flex: 1;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkmark {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        border-radius: 7px;
+        background: var(--fbt-accent);
+        position: relative;
+        margin-top: 2px;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkmark::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 6px;
+        height: 11px;
+        border: solid #ffffff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkbox:not(:checked) + .smart-fbt-checkmark {
+        background: transparent;
+        border: 2px solid rgba(49, 74, 95, 0.35);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkbox:not(:checked) + .smart-fbt-checkmark::after {
+        opacity: 0;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkbox:disabled + .smart-fbt-checkmark {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-checkbox:disabled ~ .smart-fbt-title,
+      #smart-fbt-{{ section.id }} .smart-fbt-checkbox:disabled ~ .smart-fbt-title a {
+        opacity: 0.45;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-title {
+        min-width: 0;
+        font-size: var(--fbt-title-size-desktop);
+        line-height: 1.35;
+        color: var(--fbt-title-color);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-title a {
+        color: var(--fbt-title-color);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1.3px;
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-price {
+        white-space: nowrap;
+        font-size: var(--fbt-price-size-desktop);
+        line-height: 1.35;
+        color: var(--fbt-price-color);
+      }
+
+      #smart-fbt-{{ section.id }} .smart-fbt-soldout {
+        display: inline-block;
+        margin-left: 8px;
+        font-size: 13px;
+        opacity: 0.75;
+        text-decoration: none;
+        color: var(--fbt-soldout-color);
+      }
+
+      @media screen and (min-width: 990px) {
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} {
+          gap: 34px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-products {
+          gap: 38px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-product-item.has-plus::before {
+          left: -26px;
+          font-size: 28px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-card {
+          width: calc(var(--fbt-card-width-desktop) * 0.9);
+          height: calc(var(--fbt-card-height-desktop) * 0.9);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} {
+          gap: 28px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-products {
+          gap: 30px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-product-item.has-plus::before {
+          left: -22px;
+          font-size: 24px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-card {
+          width: calc(var(--fbt-card-width-desktop) * 0.78);
+          height: calc(var(--fbt-card-height-desktop) * 0.78);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-button,
+        #smart-fbt-{{ section.id }} .smart-fbt-count-{{ fbt_count }} .smart-fbt-saving-line {
+          width: calc(var(--fbt-button-width-desktop) * 0.92) !important;
+        }
+      }
+
+      @media screen and (max-width: 1180px) and (min-width: 990px) {
+        #smart-fbt-{{ section.id }} .smart-fbt-showcase {
+          gap: 30px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-products {
+          gap: 34px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item.has-plus::before {
+          left: -25px;
+          font-size: 26px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-card {
+          width: calc(var(--fbt-card-width-desktop) * 0.88);
+          height: calc(var(--fbt-card-height-desktop) * 0.88);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-button,
+        #smart-fbt-{{ section.id }} .smart-fbt-saving-line {
+          width: calc(var(--fbt-button-width-desktop) * 0.92) !important;
+        }
+      }
+
+      @media screen and (max-width: 989px) {
+        #smart-fbt-{{ section.id }} .smart-fbt-showcase {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-heading {
+          max-width: 620px;
+          margin-bottom: 30px;
+          font-size: var(--fbt-heading-size-mobile);
+          line-height: 1;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-products {
+          width: 100%;
+          max-width: none;
+          justify-content: flex-start;
+          gap: 44px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding: 2px 12px 8px;
+          scroll-snap-type: x proximity;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-products::-webkit-scrollbar {
+          height: 4px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item {
+          scroll-snap-align: start;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-card {
+          width: var(--fbt-card-width-mobile);
+          height: var(--fbt-card-height-mobile);
+          border-radius: 18px;
+          padding: 9px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item.has-plus::before {
+          left: -29px;
+          font-size: 28px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-summary {
+          width: 100%;
+          max-width: 100%;
+          flex: none;
+          gap: 14px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-button {
+          width: var(--fbt-button-width-mobile) !important;
+          max-width: 100% !important;
+          height: var(--fbt-button-height-mobile) !important;
+          min-height: 0 !important;
+          font-size: clamp(10px, calc(var(--fbt-button-height-mobile) * var(--fbt-button-text-scale-mobile)), 30px) !important;
+          color: var(--fbt-button-text-color) !important;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-saving-line {
+          width: var(--fbt-button-width-mobile);
+          max-width: 100%;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-save-badge {
+          font-size: var(--fbt-save-badge-font-mobile);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-save-money {
+          font-size: var(--fbt-save-text-font-mobile);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-options {
+          margin-top: 24px;
+          max-width: none;
+          gap: 16px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-title {
+          font-size: var(--fbt-title-size-mobile);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-price {
+          font-size: var(--fbt-price-size-mobile);
+        }
+      }
+
+      @media screen and (max-width: 749px) {
+        #smart-fbt-{{ section.id }} .page-width {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-heading {
+          max-width: 520px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-products {
+          justify-content: flex-start;
+          gap: 34px;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item {
+          flex: 0 0 auto;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item.has-plus::before {
+          left: -24px;
+          font-size: 25px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-option {
+          gap: 10px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-checkmark {
+          width: 26px;
+          height: 26px;
+          min-width: 26px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-checkmark::after {
+          left: 9px;
+          top: 5px;
+        }
+      }
+
+      @media screen and (max-width: 520px) {
+        #smart-fbt-{{ section.id }} {
+          padding-top: calc(var(--fbt-padding-top) * 0.75);
+          padding-bottom: calc(var(--fbt-padding-bottom) * 0.75);
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-heading {
+          margin-bottom: 26px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-products {
+          gap: 30px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item.has-plus::before {
+          left: -22px;
+          font-size: 23px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-button {
+          width: var(--fbt-button-width-mobile) !important;
+          max-width: 100%;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-saving-line {
+          width: var(--fbt-button-width-mobile);
+          max-width: 100%;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-options {
+          gap: 15px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-option {
+          align-items: flex-start;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-price {
+          padding-top: 1px;
+        }
+      }
+
+      @media screen and (max-width: 390px) {
+        #smart-fbt-{{ section.id }} .smart-fbt-products {
+          gap: 25px;
+        }
+
+        #smart-fbt-{{ section.id }} .smart-fbt-product-item.has-plus::before {
+          left: -20px;
+          font-size: 22px;
+        }
+      }
+    </style>
+
+    <script>
+      (() => {
+        const section = document.getElementById('smart-fbt-{{ section.id }}');
+        if (!section) return;
+
+        const checkboxes = Array.from(section.querySelectorAll('.smart-fbt-checkbox'));
+        const imageItems = Array.from(section.querySelectorAll('[data-fbt-image-item]'));
+        const saveEl = section.querySelector('[data-fbt-save]');
+        const saveRow = section.querySelector('[data-fbt-save-row]');
+        const saveBadge = section.querySelector('[data-fbt-save-badge]');
+        const addBtn = section.querySelector('[data-fbt-add]');
+        const statusEl = section.querySelector('[data-fbt-status]');
+
+        const moneyFormat = section.dataset.moneyFormat || '$';
+        const discountPercent = Math.max(0, Math.min(100, Number(section.dataset.discountPercent || 0)));
+        const matchingDiscountCode = (section.dataset.discountCode || '').trim();
+        const currencyCode = 'USD';
+
+        const root =
+          window.Shopify && window.Shopify.routes && window.Shopify.routes.root
+            ? window.Shopify.routes.root
+            : '/';
+
+        let isAdding = false;
+
+        const formatMoney = (cents) => {
+          if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
+            return window.Shopify.formatMoney(cents, moneyFormat);
+          }
+
+          try {
+            return new Intl.NumberFormat('en', {
+              style: 'currency',
+              currency: currencyCode
+            }).format(cents / 100);
+          } catch (error) {
+            return '$' + (cents / 100).toFixed(2);
+          }
+        };
+
+        const getSelectedItems = () => {
+          return checkboxes
+            .filter((input) => input.checked && !input.disabled)
+            .map((input) => ({
+              id: Number(input.dataset.variantId),
+              quantity: 1,
+              price: Number(input.dataset.price || 0)
+            }))
+            .filter((item) => item.id);
+        };
+
+        const syncProductImages = () => {
+          const checkedVariantIds = new Set(
+            checkboxes
+              .filter((input) => input.checked && !input.disabled)
+              .map((input) => String(input.dataset.variantId))
+          );
+
+          const visibleItems = [];
+
+          imageItems.forEach((item) => {
+            const variantId = String(item.dataset.fbtImageVariantId);
+            const isVisible = checkedVariantIds.has(variantId);
+
+            item.classList.toggle('is-hidden', !isVisible);
+            item.classList.remove('has-plus');
+
+            if (isVisible) {
+              visibleItems.push(item);
+            }
+          });
+
+          visibleItems.forEach((item, index) => {
+            item.classList.toggle('has-plus', index > 0);
+          });
+        };
+
+        const calculateDiscountedTotal = (originalTotal) => {
+          if (!discountPercent) return originalTotal;
+          return Math.round((originalTotal * (100 - discountPercent)) / 100);
+        };
+
+        const getCssVar = (name) => {
+          return getComputedStyle(section).getPropertyValue(name).trim();
+        };
+
+        const updateTotal = () => {
+          syncProductImages();
+
+          const selectedItems = getSelectedItems();
+          const originalTotal = selectedItems.reduce((sum, item) => sum + item.price, 0);
+          const discountedTotal = calculateDiscountedTotal(originalTotal);
+          const savings = Math.max(0, originalTotal - discountedTotal);
+          const hasDiscount = discountPercent > 0 && originalTotal > 0;
+
+          if (saveEl) {
+            saveEl.textContent = formatMoney(savings);
+          }
+
+          if (saveBadge) {
+            saveBadge.textContent = 'SAVE ' + discountPercent + '%';
+          }
+
+          if (saveRow) {
+            saveRow.style.display = hasDiscount && savings > 0 ? 'flex' : 'none';
+          }
+
+          if (addBtn) {
+            addBtn.disabled = selectedItems.length === 0 || isAdding;
+          }
+        };
+
+        const setStatus = (message, isError = false) => {
+          if (!statusEl) return;
+
+          statusEl.textContent = message;
+          statusEl.style.color = isError
+            ? getCssVar('--fbt-status-error-color')
+            : getCssVar('--fbt-status-color');
+        };
+
+        const getSectionsToBundle = () => {
+          const sections = [];
+
+          /*
+            Mobile fix:
+            Do not broadcast cart:grouped-sections here.
+            On this theme, mobile can register extra listeners and Shopify can reject
+            the bundled section request. We only need the drawer section + cart icon.
+          */
+          const drawer = document.getElementById('CartDrawer') || document.querySelector('cart-drawer');
+
+          if (drawer && drawer.dataset && drawer.dataset.sectionId) {
+            sections.push(drawer.dataset.sectionId);
+          }
+
+          sections.push('cart-icon-bubble');
+
+          return Array.from(new Set(sections.filter(Boolean))).slice(0, 5);
+        };
+
+        const getCartDrawer = () => {
+          return document.getElementById('CartDrawer') || document.querySelector('cart-drawer');
+        };
+
+        const openThemeCartDrawer = () => {
+          const drawer = getCartDrawer();
+
+          if (drawer && typeof drawer.show === 'function') {
+            drawer.show();
+            return true;
+          }
+
+          document.dispatchEvent(
+            new CustomEvent('cart:refresh', {
+              bubbles: true,
+              detail: { open: true }
+            })
+          );
+
+          return false;
+        };
+
+        const updateThemeCartAndOpen = async (payload) => {
+          let cart = null;
+
+          try {
+            const cartResponse = await fetch(root + 'cart.js', {
+              method: 'GET',
+              headers: { Accept: 'application/json' }
+            });
+            cart = await cartResponse.json();
+          } catch (error) {
+            console.warn('FBT could not fetch cart.js:', error);
+          }
+
+          if (cart && payload && payload.sections) {
+            cart.sections = payload.sections;
+          }
+
+          if (
+            cart &&
+            payload &&
+            payload.sections &&
+            window.FoxTheme &&
+            window.FoxTheme.pubsub &&
+            window.FoxTheme.pubsub.PUB_SUB_EVENTS &&
+            window.FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate
+          ) {
+            window.FoxTheme.pubsub.publish(window.FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
+              cart: cart
+            });
+          }
+
+          if (cart) {
+            document.dispatchEvent(
+              new CustomEvent('cart:updated', {
+                bubbles: true,
+                detail: { cart: cart }
+              })
+            );
+
+            document.dispatchEvent(
+              new CustomEvent('cart:change', {
+                bubbles: true,
+                detail: { cart: cart }
+              })
+            );
+          }
+
+          setTimeout(openThemeCartDrawer, 80);
+          setTimeout(openThemeCartDrawer, 260);
+        };
+
+        const applyMatchingDiscountCode = async (sectionsToBundle) => {
+          if (!matchingDiscountCode) return null;
+
+          const response = await fetch(root + 'cart/update.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+            },
+            body: JSON.stringify({
+              discount: matchingDiscountCode,
+              sections: sectionsToBundle,
+              sections_url: window.location.pathname
+            })
+          });
+
+          if (!response.ok) {
+            throw new Error('Discount apply failed');
+          }
+
+          return await response.json();
+        };
+
+        const addSelectedToCart = async (event) => {
+          if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+
+          if (isAdding) return;
+
+          const selectedItems = getSelectedItems();
+
+          if (!selectedItems.length) {
+            setStatus('Please select at least one product.', true);
+            return;
+          }
+
+          isAdding = true;
+          updateTotal();
+
+          if (discountPercent > 0 && matchingDiscountCode) {
+            setStatus('Adding to bag and applying discount...');
+          } else {
+            setStatus('Adding to bag...');
+          }
+
+          const sectionsToBundle = getSectionsToBundle();
+
+          try {
+            const addResponse = await fetch(root + 'cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+              },
+              body: JSON.stringify({
+                items: selectedItems.map((item) => ({
+                  id: item.id,
+                  quantity: item.quantity
+                })),
+                sections: sectionsToBundle,
+                sections_url: window.location.pathname
+              })
+            });
+
+            if (!addResponse.ok) {
+              const errorPayload = await addResponse.json().catch(() => null);
+              throw new Error(
+                (errorPayload && (errorPayload.description || errorPayload.message)) ||
+                  'Add to cart failed'
+              );
+            }
+
+            let payload = await addResponse.json();
+
+            if (discountPercent > 0 && matchingDiscountCode) {
+              try {
+                const discountedPayload = await applyMatchingDiscountCode(sectionsToBundle);
+                if (discountedPayload) {
+                  payload = discountedPayload;
+                }
+                setStatus('Added to bag. Discount applied.');
+              } catch (discountError) {
+                console.error(discountError);
+                setStatus('Added to bag, but discount could not be applied.', true);
+              }
+            } else if (discountPercent > 0 && !matchingDiscountCode) {
+              setStatus('Added to bag. Add a matching Shopify discount code to make cart price match.', true);
+            } else {
+              setStatus('Added to bag.');
+            }
+
+            await updateThemeCartAndOpen(payload);
+          } catch (error) {
+            console.error(error);
+            setStatus(error && error.message ? error.message : 'Sorry, something went wrong. Please try again.', true);
+          } finally {
+            isAdding = false;
+            updateTotal();
+          }
+        };
+
+        const stopFbtFormSubmit = (event) => {
+          const submitter = event.submitter;
+          if (submitter && submitter.closest && submitter.closest('#smart-fbt-{{ section.id }} [data-fbt-add]')) {
+            event.preventDefault();
+            event.stopPropagation();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+            addSelectedToCart(event);
+          }
+        };
+
+        checkboxes.forEach((input) => {
+          input.addEventListener('change', updateTotal);
+        });
+
+        if (addBtn) {
+          addBtn.addEventListener('click', addSelectedToCart, true);
+
+          const parentForm = addBtn.closest('form');
+          if (parentForm) {
+            parentForm.addEventListener('submit', stopFbtFormSubmit, true);
+          }
+        }
+
+        updateTotal();
+      })();
+    </script>
+  </section>
+
+
+
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Col Fbt",
+  "class": "section-smart-fbt col-scope",
+  "settings": []
+}
+{% endschema %}

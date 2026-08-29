@@ -1,13 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "gp_section_631706233078219704": { "type": "gp-section-631706233078219704" },
-    "gp_section_631706233078088632": { "type": "gp-section-631706233078088632" },
-    "gp_section_631706233077760952": { "type": "gp-section-631706233077760952" },
-    "gp_section_631706233077892024": { "type": "gp-section-631706233077892024" },
-    "gp_section_631706233078154168": { "type": "gp-section-631706233078154168" },
-    "gp_section_631706233077957560": { "type": "gp-section-631706233077957560" },
-    "gp_section_631706233078023096": { "type": "gp-section-631706233078023096" },
-    "gp_section_631706233077826488": { "type": "gp-section-631706233077826488" }
+    "gp_section_631706233078219704": {
+      "type": "gp-section-631706233078219704",
+      "settings": {}
+    },
+    "gp_section_631706233078088632": {
+      "type": "gp-section-631706233078088632",
+      "settings": {}
+    },
+    "gp_section_631706233077760952": {
+      "type": "gp-section-631706233077760952",
+      "settings": {}
+    },
+    "gp_section_631706233077892024": {
+      "type": "gp-section-631706233077892024",
+      "settings": {}
+    },
+    "gp_section_631706233078154168": {
+      "type": "gp-section-631706233078154168",
+      "settings": {}
+    },
+    "gp_section_631706233077957560": {
+      "type": "gp-section-631706233077957560",
+      "settings": {}
+    },
+    "gp_section_631706233078023096": {
+      "type": "gp-section-631706233078023096",
+      "settings": {}
+    },
+    "gp_section_631706233077826488": {
+      "type": "gp-section-631706233077826488",
+      "settings": {}
+    }
   },
   "order": [
     "gp_section_631706233078219704",

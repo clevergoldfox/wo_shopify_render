@@ -1,0 +1,87 @@
+{%- comment -%}
+  Frequently bought together.
+  Pulls products from a collection picked in the theme editor.
+  The current product is always the first, always checked.
+{%- endcomment -%}
+
+{%- liquid
+  assign picks = section.settings.collection.products
+  assign limit = section.settings.count | default: 3
+-%}
+
+<section class="section section--tight">
+  <div class="wrap">
+    {%- if section.settings.heading != blank -%}
+      <div class="section-head" style="margin-bottom:22px">
+        <h2>{{ section.settings.heading }}</h2>
+        {%- if section.settings.subheading != blank -%}<p>{{ section.settings.subheading }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="fbt" data-fbt>
+      <div class="fbt__grid">
+        <div class="fbt__items">
+
+          {%- comment -%} anchor product {%- endcomment -%}
+          {%- assign v = product.selected_or_first_available_variant -%}
+          <div class="fbt__card" data-fbt-item
+               data-price="{{ v.price }}"
+               data-compare="{{ v.compare_at_price | default: v.price }}"
+               data-id="{{ v.id }}">
+            <input class="fbt__check" type="checkbox" checked aria-label="Include {{ product.title | escape }}">
+            {%- if product.featured_image -%}
+              <img src="{{ product.featured_image | image_url: width: 400 }}" alt="" width="400" height="400" loading="lazy">
+            {%- endif -%}
+            <h4>{{ product.title | truncate: 46 }}</h4>
+            <p class="p">{{ v.price | money }}</p>
+          </div>
+
+          {%- assign shown = 0 -%}
+          {%- for item in picks -%}
+            {%- if item.id == product.id or item.available == false -%}{%- continue -%}{%- endif -%}
+            {%- if shown >= limit -%}{%- break -%}{%- endif -%}
+            {%- assign iv = item.selected_or_first_available_variant -%}
+            <span class="fbt__plus" aria-hidden="true">+</span>
+            <div class="fbt__card" data-fbt-item
+                 data-price="{{ iv.price }}"
+                 data-compare="{{ iv.compare_at_price | default: iv.price }}"
+                 data-id="{{ iv.id }}">
+              <input class="fbt__check" type="checkbox" {% if shown < 2 %}checked{% endif %}
+                     aria-label="Include {{ item.title | escape }}">
+              {%- if item.featured_image -%}
+                <img src="{{ item.featured_image | image_url: width: 400 }}" alt="" width="400" height="400" loading="lazy">
+              {%- endif -%}
+              <h4>{{ item.title | truncate: 46 }}</h4>
+              <p class="p">{{ iv.price | money }}</p>
+            </div>
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="fbt__side">
+          <p class="fbt__total">Total for <span data-fbt-count>0</span> items <b data-fbt-total></b></p>
+          <p class="fbt__save" data-fbt-save hidden></p>
+          <button class="btn btn--primary btn--block" type="button"
+                  data-fbt-add data-add-to-cart="Selected items">
+            {{ section.settings.button_label }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bought together",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently bought together" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Customers who bought this product often pair it with these." },
+    { "type": "collection", "id": "collection", "label": "Companion products" },
+    { "type": "range", "id": "count", "label": "Companion products to show", "min": 1, "max": 4, "step": 1, "default": 3 },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Add selected to bag" }
+  ],
+  "presets": [{ "name": "Bought together" }]
+}
+{% endschema %}

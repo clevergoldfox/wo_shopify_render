@@ -1,0 +1,2350 @@
+{% render 'col-bootstrap' %}
+<style>
+  /*
+    WK version 17 - keep native Shop Pay terms and linked shipping text even when Price block is hidden
+    Reference order: badge -> brand/title -> reviews -> variant buttons -> subscription module.
+    Main fix:
+    1. Hide only the top price number, not the whole price block.
+    2. Keep the original Shopify shipping + Shop Pay installment component and move it below the purple Shop Pay button.
+    3. Hide the variant label line, e.g. "Size: 120 Softgels".
+    4. Only control spacing around title / review / variant / subscription.
+    5. Do not use broad div/span hiding, so the product page will not disappear.
+  */
+
+  product-info {
+    --wk-title-review-gap: 10px;
+    --wk-review-variant-gap: 14px;
+    --wk-variant-subscription-gap: 26px;
+  }
+
+  /*
+    Hide only the top price number, NOT the whole price block.
+    Important: shipping text and Shop Pay installment text often live inside the same price block.
+    If we hide the whole block, those lines disappear too.
+  */
+  product-info .wk-hide-top-price-block {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+  }
+
+  product-info .wk-hide-top-price-block .price,
+  product-info .wk-hide-top-price-block .product__price,
+  product-info .wk-hide-top-price-block [data-price],
+  product-info .wk-hide-top-price-block [class*="product-price"],
+  product-info .wk-hide-top-price-block .price__container,
+  product-info .wk-hide-top-price-block .price-item,
+  product-info .wk-hide-top-price-block .money {
+    display: none !important;
+  }
+
+  product-info .wk-hide-top-price-block .product__tax,
+  product-info .wk-hide-top-price-block .product__policies,
+  product-info .wk-hide-top-price-block shopify-payment-terms,
+  product-info .wk-hide-top-price-block .shopify-payment-terms {
+    display: block !important;
+  }
+
+  /* Title block: keep normal title layout, only set the gap below it. */
+  product-info .wk-title-block-clean {
+    margin-bottom: var(--wk-title-review-gap) !important;
+    padding-bottom: 0 !important;
+  }
+
+  product-info .wk-title-block-clean > *:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Review block: set only the gap below reviews. */
+  product-info .wk-review-block-clean {
+    margin-top: 0 !important;
+    margin-bottom: var(--wk-review-variant-gap) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  product-info .wk-review-block-clean .jdgm-widget,
+  product-info .wk-review-block-clean .jdgm-prev-badge,
+  product-info .wk-review-block-clean .product__rating,
+  product-info .wk-review-block-clean .rating,
+  product-info .wk-review-block-clean [class*="rating"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Keep only the review area's vertical spacing controlled, without touching other blocks. */
+  product-info .wk-title-block-clean + .wk-review-block-clean {
+    margin-top: 0 !important;
+  }
+
+  product-info .wk-review-block-clean + .wk-variant-block-clean {
+    margin-top: 0 !important;
+  }
+
+  product-info .wk-review-block-clean > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Variant block: remove label, keep a clean gap below before subscription. */
+  product-info .wk-variant-block-clean {
+    margin-top: 0 !important;
+    margin-bottom: var(--wk-variant-subscription-gap) !important;
+    padding-top: 0 !important;
+  }
+
+  product-info .wk-variant-block-clean > *,
+  product-info .wk-variant-block-clean .product-form__input,
+  product-info .wk-variant-block-clean variant-radios,
+  product-info .wk-variant-block-clean variant-selects,
+  product-info .wk-variant-block-clean .variant-picker,
+  product-info .wk-variant-block-clean .product__variant-picker {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Hide "Size: 120 Softgels" / variant heading line. */
+  product-info .wk-variant-block-clean .product-form__input > legend,
+  product-info .wk-variant-block-clean .product-form__input > .form__label,
+  product-info .wk-variant-block-clean .product-form__input .form__label,
+  product-info .wk-variant-block-clean variant-radios legend,
+  product-info .wk-variant-block-clean variant-selects .form__label,
+  product-info .wk-variant-block-clean .variant-picker__label,
+  product-info .wk-variant-block-clean .product__variant-label {
+    display: none !important;
+  }
+
+  /* The app subscription block often adds its own top margin. Remove only that top margin. */
+  product-info .wk-subscription-block-clean {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    product-info {
+      --wk-title-review-gap: 8px;
+      --wk-review-variant-gap: 12px;
+      --wk-variant-subscription-gap: 22px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    function wkGetDirectInfoBlock(el, infoWrapper) {
+      if (!el || !infoWrapper) return el;
+      while (el.parentElement && el.parentElement !== infoWrapper) {
+        el = el.parentElement;
+      }
+      return el;
+    }
+
+    function wkAddClass(el, className) {
+      if (el && !el.classList.contains(className)) {
+        el.classList.add(className);
+      }
+    }
+
+    function wkTextIncludes(el, text) {
+      return el && (el.textContent || '').toLowerCase().indexOf(text.toLowerCase()) !== -1;
+    }
+
+    function wkMatchReferenceLayout() {
+      var mainProduct = document.querySelector('product-info[id^="MainProduct-"]');
+      if (!mainProduct) return;
+
+      var infoWrapper = mainProduct.querySelector('.product__info-wrapper') || mainProduct;
+
+      var titleEl = infoWrapper.querySelector(
+        '[class*="display-title"], [class*="display_title"], .product__title, h1'
+      );
+      var ratingEl = infoWrapper.querySelector(
+        '.jdgm-widget, .jdgm-prev-badge, .product__rating, .rating, [class*="rating"]'
+      );
+      var variantEl = infoWrapper.querySelector(
+        'variant-radios, variant-selects, .product__variant-picker, .variant-picker, .product-form__input'
+      );
+      var priceEl = infoWrapper.querySelector(
+        '.price, .product__price, [data-price], [class*="product-price"]'
+      );
+
+      var titleBlock = wkGetDirectInfoBlock(titleEl, infoWrapper);
+      var ratingBlock = wkGetDirectInfoBlock(ratingEl, infoWrapper);
+      var variantBlock = wkGetDirectInfoBlock(variantEl, infoWrapper);
+      var priceBlock = wkGetDirectInfoBlock(priceEl, infoWrapper);
+
+      wkAddClass(titleBlock, 'wk-title-block-clean');
+      wkAddClass(ratingBlock, 'wk-review-block-clean');
+      wkAddClass(variantBlock, 'wk-variant-block-clean');
+
+      /*
+        Mark the direct top price block, but CSS hides only the price number inside it.
+        Do NOT hide the whole block, because shipping + Shop Pay terms may be rendered inside it.
+      */
+      if (priceBlock && priceBlock !== titleBlock && priceBlock !== ratingBlock && priceBlock !== variantBlock) {
+        wkAddClass(priceBlock, 'wk-hide-top-price-block');
+      }
+
+      /* Detect the subscription module direct block so variant -> subscription spacing is controlled. */
+      var candidates = Array.prototype.slice.call(infoWrapper.children || []);
+      candidates.forEach(function (block) {
+        if (block === titleBlock || block === ratingBlock || block === variantBlock || block === priceBlock) return;
+        if (wkTextIncludes(block, 'Subscribe & Save') || wkTextIncludes(block, 'One-Time') || wkTextIncludes(block, 'Deliver Every')) {
+          wkAddClass(block, 'wk-subscription-block-clean');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      wkMatchReferenceLayout();
+      setTimeout(wkMatchReferenceLayout, 500);
+      setTimeout(wkMatchReferenceLayout, 1500);
+      setTimeout(wkMatchReferenceLayout, 3000);
+    });
+
+    document.addEventListener('shopify:section:load', function () {
+      wkMatchReferenceLayout();
+      setTimeout(wkMatchReferenceLayout, 500);
+      setTimeout(wkMatchReferenceLayout, 1500);
+    });
+  })();
+</script>
+
+<style>
+  /*
+    WK Product payment info cleanup - safe version V3
+
+    Goal:
+    1. Hide the visible top price numbers only.
+    2. Move the ORIGINAL Shopify shipping + Shop Pay installment component below the purple Shop Pay button.
+    3. Keep the original Shopify Learn more behavior / popup.
+    4. Hide "More payment options".
+    5. Hide only the long Shopify Subscription legal text below the payment button.
+
+    Important:
+    Do NOT hide the Price block with the eye icon in the theme editor.
+    Keep Price block visible; this code hides only the price number.
+    This version also renders a separate native payment terms source, so the Shop Pay Learn more behavior can still work even if the Price block is hidden in the editor.
+  */
+
+  /* Hidden source for native Shopify payment terms. Do not display this source directly. */
+  .wk-payment-info-source {
+    position: absolute !important;
+    left: -9999px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .wk-payment-info-source form {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .wk-moved-payment-info {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* Shipping calculated at checkout. - light green, underline only under the shipping text */
+  .wk-moved-payment-info .product__tax,
+  .wk-moved-payment-info .product__policies {
+    display: block !important;
+    margin: 0 0 4px 0 !important;
+    color: #6ba43a !important;
+    font-weight: 500;
+    text-decoration: none !important;
+  }
+
+  .wk-moved-payment-info .product__tax a,
+  .wk-moved-payment-info .product__policies a {
+    display: inline !important;
+    width: auto !important;
+    max-width: none !important;
+    color: #6ba43a !important;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+    line-height: inherit !important;
+  }
+
+  .wk-moved-payment-info .wk-shipping-word-link {
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+    text-decoration-thickness: 1px !important;
+  }
+
+  /* Shop Pay installment line - dark green */
+  .wk-moved-payment-info .shopify-payment-terms,
+  .wk-moved-payment-info shopify-payment-terms {
+    display: block !important;
+    margin: 0 !important;
+    color: #0b4f2b !important;
+    font-weight: 600;
+  }
+
+  .wk-moved-payment-info .shopify-payment-terms *,
+  .wk-moved-payment-info shopify-payment-terms * {
+    color: #0b4f2b !important;
+  }
+
+  .wk-moved-payment-info .shopify-payment-terms a,
+  .wk-moved-payment-info shopify-payment-terms a {
+    color: #0b4f2b !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+
+  .wk-moved-payment-info .wk-shop-pay-pill {
+    display: inline-block;
+    margin-left: 2px;
+    padding: 0 4px;
+    border-radius: 3px;
+    background: #5a31f4;
+    color: #ffffff !important;
+    font-size: 10px;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+
+  /* Hide More payment options under the purple Shop Pay button */
+  .shopify-payment-button__more-options,
+  .shopify-payment-button__more-options[aria-hidden="false"],
+  .shopify-payment-button__more-options[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  .wk-hide-subscription-policy {
+    display: none !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function wkMovePaymentInfoSafe() {
+      var mainProduct = document.querySelector('product-info[id^="MainProduct-"]');
+
+      if (!mainProduct) {
+        return;
+      }
+
+      var productForm =
+        mainProduct.querySelector('product-form') ||
+        mainProduct.querySelector('.product-form') ||
+        mainProduct.querySelector('form[action*="/cart/add"]');
+
+      if (!productForm) {
+        return;
+      }
+
+      var paymentButton =
+        productForm.querySelector('.shopify-payment-button') ||
+        mainProduct.querySelector('.shopify-payment-button');
+
+      if (!paymentButton) {
+        return;
+      }
+
+      var movedBox = mainProduct.querySelector('.wk-moved-payment-info');
+
+      if (!movedBox) {
+        movedBox = document.createElement('div');
+        movedBox.className = 'wk-moved-payment-info';
+        paymentButton.insertAdjacentElement('afterend', movedBox);
+      }
+
+      /*
+        Use native Shopify-rendered elements.
+        Priority 1: original elements from the visible Price block.
+        Priority 2: backup native source rendered by this section.
+        This keeps the real Shop Pay Learn more behavior instead of fake text.
+      */
+      var sourceBox = mainProduct.querySelector('.wk-payment-info-source');
+
+      function wkFindOutsideSource(selector) {
+        var items = Array.prototype.slice.call(mainProduct.querySelectorAll(selector));
+        for (var i = 0; i < items.length; i++) {
+          if (movedBox.contains(items[i])) continue;
+          if (sourceBox && sourceBox.contains(items[i])) continue;
+          return items[i];
+        }
+        return null;
+      }
+
+      function wkFindInsideSource(selector) {
+        if (!sourceBox) return null;
+        return sourceBox.querySelector(selector);
+      }
+
+      var shippingText =
+        wkFindOutsideSource('.product__tax, .product__policies') ||
+        wkFindInsideSource('.product__tax, .product__policies');
+
+      var shopPayTerms =
+        wkFindOutsideSource('shopify-payment-terms, .shopify-payment-terms') ||
+        wkFindInsideSource('shopify-payment-terms, .shopify-payment-terms');
+
+      if (shippingText && !movedBox.contains(shippingText)) {
+        movedBox.appendChild(shippingText);
+      }
+
+      if (shopPayTerms && !movedBox.contains(shopPayTerms)) {
+        movedBox.appendChild(shopPayTerms);
+      }
+
+      /*
+        Safe hide:
+        Only hide small paragraph-like elements.
+        Do NOT hide div/span containers, otherwise the whole product page may disappear.
+      */
+      var possiblePolicyTexts = mainProduct.querySelectorAll(
+        'p, small, .shopify_subscriptions_app_policy'
+      );
+
+      possiblePolicyTexts.forEach(function (el) {
+        var text = (el.textContent || '').trim();
+
+        if (
+          text.indexOf('This item is a deferred, subscription, or recurring purchase') !== -1 ||
+          text.indexOf('By continuing, I agree to the cancellation policy') !== -1
+        ) {
+          el.classList.add('wk-hide-subscription-policy');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      wkMovePaymentInfoSafe();
+
+      setTimeout(wkMovePaymentInfoSafe, 500);
+      setTimeout(wkMovePaymentInfoSafe, 1500);
+      setTimeout(wkMovePaymentInfoSafe, 3000);
+    });
+
+    document.addEventListener('shopify:section:load', function () {
+      wkMovePaymentInfoSafe();
+
+      setTimeout(wkMovePaymentInfoSafe, 500);
+      setTimeout(wkMovePaymentInfoSafe, 1500);
+    });
+  })();
+</script><style data-shopify>.section-{{ section.id }}{
+    --section-padding-top: 0px;
+    --section-padding-bottom: 60px;
+  }</style><product-info
+  id="MainProduct-{{ section.id }}"
+  data-section="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-update-url="true"
+  data-url="{{ product.url }}"
+  class="section block section-{{ section.id }} section-main-product page-width section--padding color-scheme-1"
+>
+  <link href="{{ 'col-section-main-product.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{{ 'col-component-deferred-media.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+  
+<link
+      id="Photoswipe"
+      rel="stylesheet"
+      href="{{ 'photoswipe-component.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+  
+  <div class="product flex flex-wrap product--mobile-thumbs-show product--large product--vertical-carousel product--media-has-6 product--media-has-many"><div class="product__media-wrapper block w-full relative">
+        <div class="product__media-container sticky-element">
+          
+<media-gallery
+  id="MediaGallery-{{ section.id }}"
+  role="region"
+  class="product__media-gallery block relative"
+  aria-label="Gallery Viewer"
+  data-media-layout="vertical-carousel"
+  data-only-image="false"
+  data-enable-image-zoom="true"
+  data-enable-desktop-slider="true"
+  data-enable-mobile-thumbnails="true"
+  data-media-item-gap="8"
+  data-media-item-gap-mobile="12"
+  data-context="product"
+  style="--media-item-gap: 8px; --media-item-gap-mobile: 12px"
+>
+  <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
+  <div class="product__media-gallery-viewer-wrap relative swiper-show-nav-on-hover">
+    <div
+      id="GalleryViewer-{{ section.id }}"
+      class="product__media-gallery-viewer blocks-radius swiper"
+    >
+      <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+        Skip to product information
+      </a>
+      <div
+        id="Slider-Gallery-{{ section.id }}"
+        class="product__media-list flex swiper-wrapper"
+      >
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="38643239911651"
+  data-media-type="image"
+  data-media-index="0"
+  data-src="{{ 'Product-Shopify1_w1946.png' | asset_url }}"
+  data-pswp-width="3000"
+  data-pswp-height="3000"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'Product-Shopify1_w1946.png' | asset_url }}" alt="" srcset="{{ 'Product-Shopify1_w400.png' | asset_url }} 400w, {{ 'Product-Shopify1_w620.png' | asset_url }} 620w, {{ 'Product-Shopify1_w690.png' | asset_url }} 690w, {{ 'Product-Shopify1_w810.png' | asset_url }} 810w, {{ 'Product-Shopify1_w980.png' | asset_url }} 980w, {{ 'Product-Shopify1_w1240.png' | asset_url }} 1240w, {{ 'Product-Shopify1_w1380.png' | asset_url }} 1380w, {{ 'Product-Shopify1_w1620.png' | asset_url }} 1620w" width="1946" height="1946" loading="eager" is="image-lazy" fetchpriority="high" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * 0.585) - 4.5rem) / 1)">
+        </motion-element><div
+            class="product__media-icon btn btn--white btn--small btn--icon btn--icon-circle"
+            aria-hidden="true"
+          >
+            <span class="btn__text flex items-center"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-zoom icon--medium"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/><path d="M16.4434 16.4453L20.9997 21.0016"/>
+</svg>
+</span>
+          </div>
+          <button
+            class="product__media-zoom btn--inherit js-photoswipe--zoom"
+            type="button"
+            aria-haspopup="dialog"
+            data-media-id="38643239911651"
+            data-media-type="image"
+            data-media-index="0"
+          >
+            <span class="visually-hidden">
+              Open media 0 in modal
+            </span>
+          </button></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="37809300668643"
+  data-media-type="image"
+  data-media-index="1"
+  data-src="{{ 'MultiCollagenComplex_2copy_w1946.jpg' | asset_url }}"
+  data-pswp-width="2083"
+  data-pswp-height="2083"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'MultiCollagenComplex_2copy_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'MultiCollagenComplex_2copy_w400.jpg' | asset_url }} 400w, {{ 'MultiCollagenComplex_2copy_w620.jpg' | asset_url }} 620w, {{ 'MultiCollagenComplex_2copy_w690.jpg' | asset_url }} 690w, {{ 'MultiCollagenComplex_2copy_w810.jpg' | asset_url }} 810w, {{ 'MultiCollagenComplex_2copy_w980.jpg' | asset_url }} 980w, {{ 'MultiCollagenComplex_2copy_w1240.jpg' | asset_url }} 1240w, {{ 'MultiCollagenComplex_2copy_w1380.jpg' | asset_url }} 1380w, {{ 'MultiCollagenComplex_2copy_w1620.jpg' | asset_url }} 1620w" width="1946" height="1946" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * 0.585) - 4.5rem) / 1)">
+        </motion-element><div
+            class="product__media-icon btn btn--white btn--small btn--icon btn--icon-circle"
+            aria-hidden="true"
+          >
+            <span class="btn__text flex items-center"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-zoom icon--medium"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/><path d="M16.4434 16.4453L20.9997 21.0016"/>
+</svg>
+</span>
+          </div>
+          <button
+            class="product__media-zoom btn--inherit js-photoswipe--zoom"
+            type="button"
+            aria-haspopup="dialog"
+            data-media-id="37809300668643"
+            data-media-type="image"
+            data-media-index="1"
+          >
+            <span class="visually-hidden">
+              Open media 1 in modal
+            </span>
+          </button></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="38308279910627"
+  data-media-type="image"
+  data-media-index="2"
+  data-src="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1946.jpg' | asset_url }}"
+  data-pswp-width="2481"
+  data-pswp-height="2482"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 0.999597099113618;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w400.jpg' | asset_url }} 400w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w620.jpg' | asset_url }} 620w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w690.jpg' | asset_url }} 690w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w810.jpg' | asset_url }} 810w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w980.jpg' | asset_url }} 980w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1240.jpg' | asset_url }} 1240w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1380.jpg' | asset_url }} 1380w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1620.jpg' | asset_url }} 1620w" width="1946" height="1947" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * 0.585) - 4.5rem) / 1)">
+        </motion-element><div
+            class="product__media-icon btn btn--white btn--small btn--icon btn--icon-circle"
+            aria-hidden="true"
+          >
+            <span class="btn__text flex items-center"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-zoom icon--medium"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/><path d="M16.4434 16.4453L20.9997 21.0016"/>
+</svg>
+</span>
+          </div>
+          <button
+            class="product__media-zoom btn--inherit js-photoswipe--zoom"
+            type="button"
+            aria-haspopup="dialog"
+            data-media-id="38308279910627"
+            data-media-type="image"
+            data-media-index="2"
+          >
+            <span class="visually-hidden">
+              Open media 2 in modal
+            </span>
+          </button></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="37809309155555"
+  data-media-type="image"
+  data-media-index="3"
+  data-src="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1946.jpg' | asset_url }}"
+  data-pswp-width="2094"
+  data-pswp-height="2094"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w400.jpg' | asset_url }} 400w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w620.jpg' | asset_url }} 620w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w690.jpg' | asset_url }} 690w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w810.jpg' | asset_url }} 810w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w980.jpg' | asset_url }} 980w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1240.jpg' | asset_url }} 1240w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1380.jpg' | asset_url }} 1380w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1620.jpg' | asset_url }} 1620w" width="1946" height="1946" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * 0.585) - 4.5rem) / 1)">
+        </motion-element><div
+            class="product__media-icon btn btn--white btn--small btn--icon btn--icon-circle"
+            aria-hidden="true"
+          >
+            <span class="btn__text flex items-center"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-zoom icon--medium"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/><path d="M16.4434 16.4453L20.9997 21.0016"/>
+</svg>
+</span>
+          </div>
+          <button
+            class="product__media-zoom btn--inherit js-photoswipe--zoom"
+            type="button"
+            aria-haspopup="dialog"
+            data-media-id="37809309155555"
+            data-media-type="image"
+            data-media-index="3"
+          >
+            <span class="visually-hidden">
+              Open media 3 in modal
+            </span>
+          </button></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="34940620996835"
+  data-media-type="image"
+  data-media-index="4"
+  data-src="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1946.jpg' | asset_url }}"
+  data-pswp-width="2084"
+  data-pswp-height="2085"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 0.9995203836930455;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1946.jpg' | asset_url }}" alt="" srcset="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w400.jpg' | asset_url }} 400w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w620.jpg' | asset_url }} 620w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w690.jpg' | asset_url }} 690w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w810.jpg' | asset_url }} 810w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w980.jpg' | asset_url }} 980w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1240.jpg' | asset_url }} 1240w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1380.jpg' | asset_url }} 1380w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1620.jpg' | asset_url }} 1620w" width="1946" height="1947" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * 0.585) - 4.5rem) / 1)">
+        </motion-element><div
+            class="product__media-icon btn btn--white btn--small btn--icon btn--icon-circle"
+            aria-hidden="true"
+          >
+            <span class="btn__text flex items-center"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-zoom icon--medium"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/><path d="M16.4434 16.4453L20.9997 21.0016"/>
+</svg>
+</span>
+          </div>
+          <button
+            class="product__media-zoom btn--inherit js-photoswipe--zoom"
+            type="button"
+            aria-haspopup="dialog"
+            data-media-id="34940620996835"
+            data-media-type="image"
+            data-media-index="4"
+          >
+            <span class="visually-hidden">
+              Open media 4 in modal
+            </span>
+          </button></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="34940635152611"
+  data-media-type="image"
+  data-media-index="5"
+  data-src="{{ 'Multi_Collagen_Complex_6_w1946.jpg' | asset_url }}"
+  data-pswp-width="2083"
+  data-pswp-height="2083"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'Multi_Collagen_Complex_6_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'Multi_Collagen_Complex_6_w400.jpg' | asset_url }} 400w, {{ 'Multi_Collagen_Complex_6_w620.jpg' | asset_url }} 620w, {{ 'Multi_Collagen_Complex_6_w690.jpg' | asset_url }} 690w, {{ 'Multi_Collagen_Complex_6_w810.jpg' | asset_url }} 810w, {{ 'Multi_Collagen_Complex_6_w980.jpg' | asset_url }} 980w, {{ 'Multi_Collagen_Complex_6_w1240.jpg' | asset_url }} 1240w, {{ 'Multi_Collagen_Complex_6_w1380.jpg' | asset_url }} 1380w, {{ 'Multi_Collagen_Complex_6_w1620.jpg' | asset_url }} 1620w" width="1946" height="1946" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * 0.585) - 4.5rem) / 1)">
+        </motion-element><div
+            class="product__media-icon btn btn--white btn--small btn--icon btn--icon-circle"
+            aria-hidden="true"
+          >
+            <span class="btn__text flex items-center"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-zoom icon--medium"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/><path d="M16.4434 16.4453L20.9997 21.0016"/>
+</svg>
+</span>
+          </div>
+          <button
+            class="product__media-zoom btn--inherit js-photoswipe--zoom"
+            type="button"
+            aria-haspopup="dialog"
+            data-media-id="34940635152611"
+            data-media-type="image"
+            data-media-index="5"
+          >
+            <span class="visually-hidden">
+              Open media 5 in modal
+            </span>
+          </button></div>
+</div>
+
+</div>
+    </div><div class="swiper-controls swiper-controls--nav-floating swiper-controls--grouped-mobile swiper-controls--pagination-fraction justify-center hidden md:flex">
+        <button
+          type="button"
+          class="btn swiper-button swiper-button--drop-shadow swiper-button--blank-mobile swiper-button-prev"
+          name="previous"
+          aria-label="Slide left"
+        >
+          <span class="btn__text"><svg
+  class="icon icon-slider-prev rtl-flip-x icon--medium icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12.75 16.2505L6.5 10.0005L12.75 3.75049" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+        </button><button
+          type="button"
+          class="btn swiper-button swiper-button--drop-shadow swiper-button--blank-mobile swiper-button-next"
+          name="next"
+          aria-label="Slide right"
+        >
+          <span class="btn__text"><svg
+  class="icon icon-slider-next rtl-flip-x icon--medium icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7.5 3.74121L13.75 9.99121L7.5 16.2412" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+        </button>
+      </div></div><div
+      id="GalleryThumbnails-{{ section.id }}"
+      class="product__media-gallery-thumbails swiper"
+    >
+      <div
+        id="Slider-Thumbnails-{{ section.id }}"
+        class="thumbnail-list swiper-wrapper"
+      ><div
+            class="product__thumbs-item swiper-slide"
+            data-target="38643239911651"
+            data-media-position="1"
+          >
+            <div class="product__thumbs-container relative blocks-radius-md media-wrapper cursor-pointer">
+              <div class="product__thumbs-inner" style="--aspect-ratio: 1">
+                <img src="{{ 'Product-Shopify1_w3000.png' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'Product-Shopify1_w70.png' | asset_url }} 70w, {{ 'Product-Shopify1_w84.png' | asset_url }} 84w, {{ 'Product-Shopify1_w100.png' | asset_url }} 100w, {{ 'Product-Shopify1_w140.png' | asset_url }} 140w, {{ 'Product-Shopify1_w168.png' | asset_url }} 168w, {{ 'Product-Shopify1_w200.png' | asset_url }} 200w, {{ 'Product-Shopify1_w300.png' | asset_url }} 300w, {{ 'Product-Shopify1_w400.png' | asset_url }} 400w" width="3000" height="3000" loading="lazy" sizes="(max-width: 460px) calc((100vw - 30px) / 4), (max-width: 767px) calc((100vw - 30px) / 5),(max-width: 1023px) 70px, 84px" is="image-lazy">
+              </div></div>
+          </div><div
+            class="product__thumbs-item swiper-slide"
+            data-target="37809300668643"
+            data-media-position="2"
+          >
+            <div class="product__thumbs-container relative blocks-radius-md media-wrapper cursor-pointer">
+              <div class="product__thumbs-inner" style="--aspect-ratio: 1">
+                <img src="{{ 'MultiCollagenComplex_2copy_w2083.jpg' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'MultiCollagenComplex_2copy_w70.jpg' | asset_url }} 70w, {{ 'MultiCollagenComplex_2copy_w84.jpg' | asset_url }} 84w, {{ 'MultiCollagenComplex_2copy_w100.jpg' | asset_url }} 100w, {{ 'MultiCollagenComplex_2copy_w140.jpg' | asset_url }} 140w, {{ 'MultiCollagenComplex_2copy_w168.jpg' | asset_url }} 168w, {{ 'MultiCollagenComplex_2copy_w200.jpg' | asset_url }} 200w, {{ 'MultiCollagenComplex_2copy_w300.jpg' | asset_url }} 300w, {{ 'MultiCollagenComplex_2copy_w400.jpg' | asset_url }} 400w" width="2083" height="2083" loading="lazy" sizes="(max-width: 460px) calc((100vw - 30px) / 4), (max-width: 767px) calc((100vw - 30px) / 5),(max-width: 1023px) 70px, 84px" is="image-lazy">
+              </div></div>
+          </div><div
+            class="product__thumbs-item swiper-slide"
+            data-target="38308279910627"
+            data-media-position="3"
+          >
+            <div class="product__thumbs-container relative blocks-radius-md media-wrapper cursor-pointer">
+              <div class="product__thumbs-inner" style="--aspect-ratio: 1">
+                <img src="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w2481.jpg' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w70.jpg' | asset_url }} 70w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w84.jpg' | asset_url }} 84w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w100.jpg' | asset_url }} 100w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w140.jpg' | asset_url }} 140w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w168.jpg' | asset_url }} 168w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w200.jpg' | asset_url }} 200w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w300.jpg' | asset_url }} 300w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w400.jpg' | asset_url }} 400w" width="2481" height="2482" loading="lazy" sizes="(max-width: 460px) calc((100vw - 30px) / 4), (max-width: 767px) calc((100vw - 30px) / 5),(max-width: 1023px) 70px, 84px" is="image-lazy">
+              </div></div>
+          </div><div
+            class="product__thumbs-item swiper-slide"
+            data-target="37809309155555"
+            data-media-position="4"
+          >
+            <div class="product__thumbs-container relative blocks-radius-md media-wrapper cursor-pointer">
+              <div class="product__thumbs-inner" style="--aspect-ratio: 1">
+                <img src="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w2094.jpg' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w70.jpg' | asset_url }} 70w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w84.jpg' | asset_url }} 84w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w100.jpg' | asset_url }} 100w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w140.jpg' | asset_url }} 140w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w168.jpg' | asset_url }} 168w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w200.jpg' | asset_url }} 200w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w300.jpg' | asset_url }} 300w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w400.jpg' | asset_url }} 400w" width="2094" height="2094" loading="lazy" sizes="(max-width: 460px) calc((100vw - 30px) / 4), (max-width: 767px) calc((100vw - 30px) / 5),(max-width: 1023px) 70px, 84px" is="image-lazy">
+              </div></div>
+          </div><div
+            class="product__thumbs-item swiper-slide"
+            data-target="34940620996835"
+            data-media-position="5"
+          >
+            <div class="product__thumbs-container relative blocks-radius-md media-wrapper cursor-pointer">
+              <div class="product__thumbs-inner" style="--aspect-ratio: 1">
+                <img src="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w2084.jpg' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w70.jpg' | asset_url }} 70w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w84.jpg' | asset_url }} 84w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w100.jpg' | asset_url }} 100w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w140.jpg' | asset_url }} 140w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w168.jpg' | asset_url }} 168w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w200.jpg' | asset_url }} 200w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w300.jpg' | asset_url }} 300w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w400.jpg' | asset_url }} 400w" width="2084" height="2085" loading="lazy" sizes="(max-width: 460px) calc((100vw - 30px) / 4), (max-width: 767px) calc((100vw - 30px) / 5),(max-width: 1023px) 70px, 84px" is="image-lazy">
+              </div></div>
+          </div><div
+            class="product__thumbs-item swiper-slide"
+            data-target="34940635152611"
+            data-media-position="6"
+          >
+            <div class="product__thumbs-container relative blocks-radius-md media-wrapper cursor-pointer">
+              <div class="product__thumbs-inner" style="--aspect-ratio: 1">
+                <img src="{{ 'Multi_Collagen_Complex_6_w2083.jpg' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'Multi_Collagen_Complex_6_w70.jpg' | asset_url }} 70w, {{ 'Multi_Collagen_Complex_6_w84.jpg' | asset_url }} 84w, {{ 'Multi_Collagen_Complex_6_w100.jpg' | asset_url }} 100w, {{ 'Multi_Collagen_Complex_6_w140.jpg' | asset_url }} 140w, {{ 'Multi_Collagen_Complex_6_w168.jpg' | asset_url }} 168w, {{ 'Multi_Collagen_Complex_6_w200.jpg' | asset_url }} 200w, {{ 'Multi_Collagen_Complex_6_w300.jpg' | asset_url }} 300w, {{ 'Multi_Collagen_Complex_6_w400.jpg' | asset_url }} 400w" width="2083" height="2083" loading="lazy" sizes="(max-width: 460px) calc((100vw - 30px) / 4), (max-width: 767px) calc((100vw - 30px) / 5),(max-width: 1023px) 70px, 84px" is="image-lazy">
+              </div></div>
+          </div></div>
+    </div></media-gallery>
+
+          <div class="product__blocks-below-media hidden md:block product__blocks accordion-parent"></div>
+
+        </div>
+      </div><div class="product__info-wrapper block w-full">
+      <div
+  id="ProductInfo-{{ section.id }}"
+  data-section="{{ section.id }}"
+  data-url="{{ product.url }}"
+  class="product__info-container sticky-element"
+>
+  <div class="product__blocks accordion-parent"><div
+            class="product__block product__block--badges product__badges flex flex-wrap items-center"
+            id="Badges-{{ section.id }}"
+            
+          ><span class="f-badge f-badge--sale">Save <span data-sale-value>16%</span></span></div><div
+            class="product__block product__block--display_title mi-display-title-block mi-display-title-block-display_title_VNfM4P"
+            
+          ><h1 class="mi-display-title-block__title">
+              Micro Ingredients Multi Collagen Complex, 240 Capsules
+            </h1>
+          </div>
+
+          <style>
+            .mi-display-title-block-display_title_VNfM4P {
+              margin-top: 8px;
+              margin-bottom: 18px;
+              text-align: left;
+            }
+
+            .mi-display-title-block-display_title_VNfM4P .mi-display-title-block__brand {
+              margin-bottom: 6px;
+              font-size: 18px;
+              line-height: 1.2;
+              font-weight: 700;
+              letter-spacing: 0.0em;
+              color: #6ba43a;
+            }
+
+            .mi-display-title-block-display_title_VNfM4P .mi-display-title-block__title {
+              margin: 0;
+              max-width: 680px;
+              font-size: 30px;
+              line-height: 1.1;
+              font-weight: 900;
+              letter-spacing: -0.03em;
+              color: #064b24;
+            }
+
+            
+
+            
+
+            @media screen and (max-width: 749px) {
+              .mi-display-title-block-display_title_VNfM4P {
+                margin-top: 6px;
+                margin-bottom: 16px;
+              }
+
+              .mi-display-title-block-display_title_VNfM4P .mi-display-title-block__brand {
+                font-size: 15px;
+              }
+
+              .mi-display-title-block-display_title_VNfM4P .mi-display-title-block__title {
+                font-size: 25px;
+              }
+            }
+          </style><div class="product__block product__block--@app">
+            <div id="shopify-block-AeHZaZUE0VStSUFF5Z__areviews_reviews_importer_areviews_title_rating_LikRgy" class="shopify-block shopify-app-block">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function () {
+        var href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css";
+        var links = document.getElementsByTagName("link");
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].href === href) {
+                return;
+            }
+        }
+
+        var css = document.createElement("link");
+        css.href = href;
+        css.rel = "stylesheet";
+        css.type = "text/css";
+        (document.head || document.getElementsByTagName("head")[0]).appendChild(css);
+    })();
+</script>
+
+<div
+    class="areviews_header_stars"
+    data-areviews-has-metafield="1"
+    data-areviews-has-design-metafield="1"
+    data-areviews-show-top-title-rating="0"
+    data-areviews-has-rating-breakdown="1"
+    data-areviews-average="5.0"
+    data-areviews-count="3"
+    data-areviews-product-page-no-reviews="0"
+    data-areviews-custom-title="1"
+>
+    
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+        
+
+        <div class="areviews_main_header_container areviews_from_metafield" data-test="0">
+            <span
+                class="areviews_header_rating"
+                style="color:#212020;"
+            >
+                
+                    
+                    
+                    
+                    <span class="areviews_stars" aria-label="5.0 out of 5 stars">
+                    
+                        
+                            
+                                <i style="color:#f3c621" class="fas fa-star" aria-hidden="true"></i>
+                            
+                        
+                    
+                        
+                            
+                                <i style="color:#f3c621" class="fas fa-star" aria-hidden="true"></i>
+                            
+                        
+                    
+                        
+                            
+                                <i style="color:#f3c621" class="fas fa-star" aria-hidden="true"></i>
+                            
+                        
+                    
+                        
+                            
+                                <i style="color:#f3c621" class="fas fa-star" aria-hidden="true"></i>
+                            
+                        
+                    
+                        
+                            
+                                <i style="color:#f3c621" class="fas fa-star" aria-hidden="true"></i>
+                            
+                        
+                    
+                </span> <span class="areviews_rating_text">5.0</span> (<span class="AreviewsTotalNumber">3</span> reviews)
+                
+
+                
+            </span>
+        </div>
+    
+</div>
+
+<script>
+    (function () {
+        "use strict";
+
+        // The merchant can add this app block to the product page more than once
+        // (or the theme may call it from several sections). Every instance renders
+        // the same metafield rating, so only the FIRST one may stay visible.
+        // Each block instance runs its own copy of this script while the page is
+        // still parsing, so at this point the DOM contains this instance and every
+        // instance before it — hide everything after the first.
+        var all = document.querySelectorAll(".areviews_header_stars");
+        for (var i = 1; i < all.length; i++) {
+            all[i].style.display = "none";
+        }
+
+        // ------------------------------------------------------------------
+        // Rating dedupe. Two renders of the product-title rating can land on
+        // the page at once: this block (and the fresh areviews_app.js) render or
+        // rebuild it INSIDE <div class="areviews_header_stars">, while an OLD
+        // cached areviews_app.js on the same shop inserts a second
+        // .areviews_main_header_container as a sibling just BELOW it (and, in
+        // some older versions, ABOVE it — right after the product title).
+        //
+        // Strategy: keep the container that lives INSIDE .areviews_header_stars —
+        // the canonical, styled one this block controls — and remove every other
+        // .areviews_main_header_container, wherever the old code placed it (below
+        // or above). Pinning the keeper this way (instead of "keep the first in
+        // the DOM") is what makes the below-AND-above cases both safe. When there
+        // is no .areviews_header_stars on the page at all, fall back to the first.
+        //
+        // The hidden rating inside the reviews section (#az_reviews) — the copy we
+        // render there on purpose so the app can read the numbers without a second
+        // AJAX call — is a DATA SOURCE, not a visible duplicate, so it (and any
+        // .Products_reviews source markup) is always excluded.
+        // ------------------------------------------------------------------
+        function dedupeTitleRating() {
+            var az = document.getElementById('az_reviews');
+
+            var containers = document.querySelectorAll('.areviews_main_header_container');
+            var visible = [];
+            for (var i = 0; i < containers.length; i++) {
+                if (az && az.contains(containers[i])) continue;
+                if (containers[i].closest && containers[i].closest('.Products_reviews')) continue;
+                visible.push(containers[i]);
+            }
+
+            // The keeper is the container inside the first .areviews_header_stars,
+            // so a stale duplicate is removed whether it was inserted below or above.
+            var headerStars = document.querySelector('.areviews_header_stars');
+            var keeper = null;
+            if (headerStars) {
+                for (var k = 0; k < visible.length; k++) {
+                    if (headerStars.contains(visible[k])) { keeper = visible[k]; break; }
+                }
+            }
+            if (!keeper) keeper = visible[0];
+
+            for (var j = 0; j < visible.length; j++) {
+                var node = visible[j];
+                if (!keeper || node === keeper) continue;
+                // Never remove the keeper's own wrapper/ancestor or a child of it.
+                if (node.contains(keeper) || keeper.contains(node)) continue;
+                // Take an old <a href="#"> wrapper along with the duplicate.
+                var wrapper = node.closest ? node.closest('a[href="#"]') : null;
+                if (wrapper && !wrapper.contains(keeper)) node = wrapper;
+                if (node.parentNode) node.parentNode.removeChild(node);
+            }
+        }
+
+        // Register once even when this block is placed on the page multiple
+        // times (each instance runs its own copy of this script). Old code
+        // injects its duplicate only after its AJAX finishes, so watch the DOM.
+        if (!window.__areviewsRatingDedupe) {
+            window.__areviewsRatingDedupe = true;
+            if (window.MutationObserver) {
+                new MutationObserver(dedupeTitleRating).observe(document.body || document.documentElement, { childList: true, subtree: true });
+            }
+            dedupeTitleRating();
+        }
+    })();
+</script>
+
+<style>
+    /* Pure-CSS safety net: when duplicated blocks share the same parent,
+       every instance after the first is hidden instantly, no JS needed.
+       (Instances in different sections are handled by the script above.) */
+    .areviews_header_stars ~ .areviews_header_stars {
+        display: none !important;
+    }
+</style>
+
+<style>
+    .areviews_header_stars {
+        margin: 5px 0;
+    }
+
+    .areviews_main_header_container {
+        text-decoration: none !important;
+    }
+
+    .areviews_header_rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .areviews_stars {
+        display: inline-flex;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .areviews_header_stars .fa,
+    .areviews_header_stars .fas,
+    .areviews_header_stars .far,
+    .areviews_header_stars .fab {
+        display: inline-block !important;
+        font-size: 17px !important;
+        line-height: 1;
+    }
+
+    .areviews_header_stars .fas,
+    .areviews_header_stars .far {
+        font-family: "Font Awesome 5 Free" !important;
+    }
+
+    .areviews_header_stars .fas {
+        font-weight: 900 !important;
+    }
+
+    .areviews_header_stars .far {
+        font-weight: 400 !important;
+    }
+
+    .areviews_header_stars .fab {
+        font-family: "Font Awesome 5 Brands" !important;
+        font-weight: 400 !important;
+    }
+
+    .areviews_header_stars .fa {
+        font-family: FontAwesome, "Font Awesome 5 Free" !important;
+        font-weight: 900 !important;
+    }
+
+    .areviews_header_stars .full_icon {
+        color: #f3c621 !important;
+    }
+
+    .areviews_header_stars .no_icon {
+        color: #9e9e9e !important;
+    }
+
+    .areviews_header_stars .half_icon {
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        -o-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+        text-fill-color: transparent;
+        background: -webkit-linear-gradient(to right, #f3c621 50%, #9e9e9e 50%);
+        background: -o-linear-gradient(to right, #f3c621 50%, #9e9e9e 50%);
+        background: -moz-linear-gradient(to right, #f3c621 50%, #9e9e9e 50%);
+        background: -ms-linear-gradient(to right, #f3c621 50%, #9e9e9e 50%);
+        background: linear-gradient(to right, #f3c621 50%, #9e9e9e 50%);
+        color: transparent !important;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .areviews_rating_text,
+    .areviews_reviews_count {
+        color: inherit;
+    }
+
+    .areviews_header_stars .areviewstooltip {
+        position: relative;
+    }
+
+    .areviews_header_stars .areviewstooltiptext {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: 999999;
+        top: 100%;
+        left: 0;
+        min-width: 280px;
+        max-width: 360px;
+        margin-top: 8px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+        transition: opacity 0.15s ease;
+    }
+
+    .areviews_header_stars .areviewstooltip:hover .areviewstooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .areviews_header_stars .areviews_rating_breakdown_row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+
+    .areviews_header_stars .areviews_rating_breakdown_label {
+        width: 18%;
+        min-width: 44px;
+        font-size: 14px;
+    }
+
+    .areviews_header_stars .areviews_rating_breakdown_bar {
+        width: 68%;
+    }
+
+    .areviews_header_stars .areviews_rating_breakdown_count {
+        width: 14%;
+        min-width: 28px;
+        padding-left: 8px;
+        text-align: left;
+    }
+
+    .areviews_header_stars .w3-light-grey {
+        width: 100%;
+        height: 12px;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
+
+    .areviews_header_stars .w3-blue {
+        height: 12px;
+        background-color: #f3c621 !important;
+    }
+
+    .areviews_header_stars .w3-round-xlarge {
+        border-radius: 16px;
+    }
+
+    .areviews_header_stars .areviews_top_rating_button {
+        border: 0;
+        padding: 8px 12px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+
+    /* ---- Rating load animation (design setting "display_animation") ---- */
+    .areviews_header_stars.areviews_rating_animate .areviews_main_header_container {
+        opacity: 0;
+        transform: translateX(-16px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+        /* JS-off safety net: force the rating visible even if the script never runs */
+        animation: AreviewsForceVisible 0s linear 2.5s forwards;
+    }
+
+    /* "transform: none" (NOT translateX(0)) once visible: a kept transform
+       creates a stacking context, which traps the hover tooltip's z-index so
+       theme elements below (variant pickers, buy buttons) paint OVER it. The
+       slide-in still animates — transitions treat "none" as the identity. */
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_main_header_container {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    @keyframes AreviewsForceVisible {
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_stars i {
+        opacity: 0;
+        animation: AreviewsStarPop 0.35s ease forwards;
+    }
+
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_stars i:nth-child(1) { animation-delay: 0.05s; }
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_stars i:nth-child(2) { animation-delay: 0.12s; }
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_stars i:nth-child(3) { animation-delay: 0.19s; }
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_stars i:nth-child(4) { animation-delay: 0.26s; }
+    .areviews_header_stars.areviews_rating_animate.areviews_rating_visible .areviews_stars i:nth-child(5) { animation-delay: 0.33s; }
+
+    @keyframes AreviewsStarPop {
+        0% {
+            transform: scale(0.4);
+            opacity: 0;
+        }
+        70% {
+            transform: scale(1.15);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .areviews_header_stars.areviews_rating_animate .areviews_main_header_container,
+        .areviews_header_stars.areviews_rating_animate .areviews_stars i {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+</style>
+
+<script>
+    (function () {
+        "use strict";
+
+        function qs(selector, root) {
+            return (root || document).querySelector(selector);
+        }
+
+        function injectProductRatingFallback() {
+            var anchor = qs(".areviews_header_stars");
+
+            if (!anchor) return;
+
+            var hasMetafieldRating = anchor.getAttribute("data-areviews-has-metafield") === "1";
+            var hasDesignMetafield = anchor.getAttribute("data-areviews-has-design-metafield") === "1";
+            var showTopTitleRating = anchor.getAttribute("data-areviews-show-top-title-rating") === "1";
+            var hasRatingBreakdown = anchor.getAttribute("data-areviews-has-rating-breakdown") === "1";
+            var needsHoverFallback = showTopTitleRating && !hasRatingBreakdown;
+
+            if (hasMetafieldRating && hasDesignMetafield && !needsHoverFallback && anchor.innerHTML.trim() !== "") {
+                return;
+            }
+
+            var productRatingEl = qs(".Products_reviews");
+            if (!productRatingEl) return;
+
+            var productRatingHtml = productRatingEl.innerHTML || "";
+            if (!productRatingHtml.trim()) return;
+
+            var html =
+                '<div style="text-decoration: none!important;" class="areviews_main_header_container areviews_from_app">' +
+                productRatingHtml +
+                "</div>";
+
+            anchor.innerHTML = html;
+
+            var average = productRatingEl.getAttribute("data-areviews-average");
+            var count = productRatingEl.getAttribute("data-areviews-count");
+            if (average !== null) anchor.setAttribute("data-areviews-average", average);
+            if (count !== null) anchor.setAttribute("data-areviews-count", count);
+            anchor.setAttribute("data-areviews-render-source", "app");
+        }
+
+        injectProductRatingFallback();
+    })();
+</script>
+
+
+
+
+<style>
+    .areviews_tooltip_portal {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        z-index: 2147483647 !important;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+        pointer-events: none;
+        display: block;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        max-width: calc(100vw - 16px);
+    }
+
+    .areviews_tooltip_portal.areviews_tooltip_open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Inside the portal the tooltip is laid out by the wrapper, so every
+       original offset/visibility rule is neutralised. */
+    .areviews_tooltip_portal .areviewstooltiptext {
+        position: static !important;
+        display: block !important;
+        visibility: inherit !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 280px;
+        max-width: calc(100vw - 16px);
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+        border-radius: 2px;
+    }
+
+    /* Keep the little arrow (added by the app stylesheet) centred on the
+       stars even when the box is clamped to the viewport edge. */
+    .areviews_tooltip_portal .areviewstooltiptext::after {
+        left: var(--areviews-arrow-x, 50%) !important;
+        margin-left: -5px !important;
+    }
+
+    .areviews_tooltip_portal.areviews_tooltip_above .areviewstooltiptext::after {
+        bottom: auto !important;
+        top: 100% !important;
+        border-color: #000 transparent transparent transparent !important;
+    }
+</style>
+
+<script>
+    (function () {
+        "use strict";
+
+        // Global guard: the block can be placed on the page more than once —
+        // only the first copy of this snippet runs.
+        if (window.__areviewsTooltipPortal) return;
+        window.__areviewsTooltipPortal = true;
+
+        var OPEN_CLASS = "areviews_tooltip_open";
+        var ABOVE_CLASS = "areviews_tooltip_above";
+        var portal = null;
+        var currentHost = null;
+        var hideTimer = null;
+
+        function ensurePortal() {
+            if (portal && portal.parentNode) return portal;
+            portal = document.createElement("div");
+            portal.className = "areviews_tooltip_portal areviewstooltip";
+            portal.addEventListener("mouseenter", cancelHide);
+            portal.addEventListener("mouseleave", scheduleHide);
+            (document.body || document.documentElement).appendChild(portal);
+            return portal;
+        }
+
+        function cancelHide() {
+            if (hideTimer) {
+                clearTimeout(hideTimer);
+                hideTimer = null;
+            }
+        }
+
+        // Grace delay so the pointer can travel from the stars into the
+        // tooltip (they are separate DOM branches once portaled).
+        function scheduleHide() {
+            cancelHide();
+            hideTimer = setTimeout(closeTooltip, 200);
+        }
+
+        function closeTooltip() {
+            cancelHide();
+            if (portal) portal.classList.remove(OPEN_CLASS);
+            currentHost = null;
+        }
+
+        function positionPortal(host) {
+            if (!portal) return;
+            // Theme re-rendered the product info (variant change) — bail out.
+            if (!document.documentElement.contains(host)) {
+                closeTooltip();
+                return;
+            }
+
+            var rect = host.getBoundingClientRect();
+            var vw = window.innerWidth || document.documentElement.clientWidth;
+            var vh = window.innerHeight || document.documentElement.clientHeight;
+            var pw = portal.offsetWidth;
+            var ph = portal.offsetHeight;
+
+            var left = Math.round(rect.left + rect.width / 2 - pw / 2);
+            left = Math.max(8, Math.min(left, vw - pw - 8));
+
+            var top = Math.round(rect.bottom + 10);
+            var above = false;
+            if (top + ph > vh - 8 && rect.top - ph - 10 >= 8) {
+                top = Math.round(rect.top - ph - 10);
+                above = true;
+            }
+
+            var arrowX = Math.round(rect.left + rect.width / 2 - left);
+            arrowX = Math.max(14, Math.min(arrowX, pw - 14));
+
+            portal.style.top = top + "px";
+            portal.style.left = left + "px";
+            portal.style.setProperty("--areviews-arrow-x", arrowX + "px");
+            portal.classList.toggle(ABOVE_CLASS, above);
+        }
+
+        function openTooltip(host) {
+            cancelHide();
+            if (currentHost === host && portal && portal.classList.contains(OPEN_CLASS)) {
+                positionPortal(host);
+                return;
+            }
+
+            // The tip may already live in the portal from a previous hover of
+            // the same host — host.__areviewsTipNode remembers it.
+            var tip = host.__areviewsTipNode && portal && portal.contains(host.__areviewsTipNode)
+                ? host.__areviewsTipNode
+                : host.querySelector(".areviewstooltiptext");
+            if (!tip) return;
+
+            var p = ensurePortal();
+            if (tip.parentNode !== p) {
+                while (p.firstChild) p.removeChild(p.firstChild);
+                p.appendChild(tip);
+            }
+            host.__areviewsTipNode = tip;
+            currentHost = host;
+            p.classList.add(OPEN_CLASS);
+            positionPortal(host);
+            positionPortal(host); // second pass once the final size is known
+        }
+
+        document.addEventListener("mouseover", function (e) {
+            if (!e.target || !e.target.closest) return;
+            // Hovering the portal itself keeps it open (checked FIRST — the
+            // portal carries the areviewstooltip class too).
+            if (portal && portal.contains(e.target)) {
+                cancelHide();
+                return;
+            }
+            var host = e.target.closest(".areviewstooltip");
+            if (host) {
+                openTooltip(host);
+                return;
+            }
+            if (currentHost) scheduleHide();
+        }, true);
+
+        // Pointer left the window entirely.
+        document.addEventListener("mouseout", function (e) {
+            if (!e.relatedTarget && currentHost) scheduleHide();
+        }, true);
+
+        // Capture-phase scroll so scrollable theme containers reposition the
+        // tooltip too, not just the window.
+        window.addEventListener("scroll", function () {
+            if (currentHost) positionPortal(currentHost);
+        }, true);
+
+        window.addEventListener("resize", function () {
+            if (currentHost) positionPortal(currentHost);
+        });
+    })();
+</script>
+
+
+
+
+
+    <style>
+        .areviews_title_rating_skeleton {
+            display: none !important;
+        }
+    </style>
+
+
+</div>
+          </div><div class="product__block product__block--variant_picker" >
+            
+
+          </div><div class="product__block product__block--@app">
+            <div id="shopify-block-ANGhpMmp4d3h3TVV6U__recharge_subscriptions_subscription_widget_v2_nmxWP7" class="shopify-block shopify-app-block recharge-subscription-widget">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="SubscriptionWidgetConfig__shopify_settings">
+    (function () {
+      window.SubscriptionWidgetConfig || (window.SubscriptionWidgetConfig = {});
+      window.SubscriptionWidgetConfig.shop = {
+        
+        currency: "USD",
+        identifier: "{{ shop.permanent_domain }}",
+        
+        template: ["product", null].filter(Boolean).join('/'),
+        
+        market_id: 361627875,
+        
+        show_powered_by_recharge:false};
+      
+      window.SubscriptionWidgetConfig.formattedPrices = {
+      
+        
+        
+        [{{ product.selected_or_first_available_variant.id }}]: {
+          unit:"$24.95",
+          discounted:"$22.46",
+          sellingPlans: {
+              
+              [4596400355]: {
+                  
+                  price:"$22.46",
+                  discountType: "percentage",
+                  discountValue: 10,
+                  discountAmount: "$2.49",
+                  discountAmountValue: 249,
+                  
+              },
+              
+          }
+        },
+      
+      };
+
+      
+      window.SubscriptionWidgetConfig.shopifyPlans = [
+        
+            
+                
+                { id: 4596400355, name: "3 month subscription with 10% discount" },
+            
+        
+      ]
+  })();
+  </script>
+  <script id="SubscriptionWidgetConfig__preview_config">
+    (function () {
+      window.SubscriptionWidgetConfig || (window.SubscriptionWidgetConfig = {});
+      
+      window.SubscriptionWidgetConfig.preview_config ={};
+    })();
+  </script>
+  <script id="SubscriptionWidgetConfig__configs">
+    (function () {
+      window.SubscriptionWidgetConfig || (window.SubscriptionWidgetConfig = {});
+      
+      window.SubscriptionWidgetConfig.configs ={"subscription_widget_v2":{"widget_configs":[],"quantity_upsell_widget_config":null,"default_widget_config":{"trigger_type":null,"trigger_values":null,"product_template_ids":null,"widget_flow_id":203928,"widget_flow_name":"Subscription widget","ab_splits":[{"ab_split_id":null,"ab_split_name":null,"percentage":100,"display_configs":[{"config_information":{"benefits":"<ul><li> Lock in automatic savings </li><li> Stay stocked on everyday favorites </li><li> Easily manage your subscription </li></ul>","badgeText":"Save up to {maxDiscount}","config_id":203928967,"customCSS":".css-5q2h6u {\n    max-width: 100%;\n    width: 100%;\n    margin: var(--chakra-space-6);\n}","text_color":"#00491E","brand_color":"#6BA539","displayMode":"normal","onetimeLabel":"One-Time","benefitsImage":"","border_radius":"soft","learnMoreText":"Learn more","badge_bg_color":"#77A247","frequencyLabel":"Deliver Every:","badge_text_color":"#FFFFFF","defaultSelection":"subscription","learnMoreContent":"<style>rc-learn-more-modal h1 { font-size: 40px; line-height: 48px; font-weight: 600; text-align: center; padding-bottom: 32px; margin: 0;}rc-learn-more-modal h2 { padding: 0; margin: 0; font-size: 20px; line-height: 28px; font-weight: 600;}rc-learn-more-modal p { margin: 0; padding: 0; font-size: 16px; line-height: 24px;}rc-learn-more-modal .learn-more-content { padding: 0 20px 20px;}rc-learn-more-modal .learn-more-footer button { background-color: var(--rc-widget-brand-color); color: var(--rc-widget-brand-contrast-color); border: none; border-radius: var(--rc-widget-button-radius); padding: 12px; min-width: 335px; font-size: 16px; font-weight: 600; line-height: 24px; cursor: pointer; transition: background-color 0.1s ease;}rc-learn-more-modal .learn-more-footer button:hover { background-color: var(--rc-widget-brand-color-80);}rc-learn-more-modal .learn-more-footer { display: flex; justify-content: center;}rc-learn-more-modal .learn-more-group { display: flex; flex-direction: column; gap: 24px; margin-bottom: 24px;}rc-learn-more-modal .learn-more-group-item { display: flex; gap: 32px; align-items: center;}rc-learn-more-modal .learn-more-group-icon-container { display: flex; padding: 32px; background-color: #f6f8f9; border-radius: var(--rc-widget-card-radius);}rc-learn-more-modal svg, rc-learn-more-modal img { height: 40px; width: 40px;}@media (max-width: 560px) { rc-learn-more-modal h1 { font-size: 26px; line-height: 32px; padding-bottom: 16px; }rc-learn-more-modal h2 { font-size: 16px; line-height: 24px;}rc-learn-more-modal p { font-size: 14px; line-height: 20px;}rc-learn-more-modal .learn-more-content { padding: 0;}rc-learn-more-modal svg, rc-learn-more-modal img { height: 32px; width: 32px;}rc-learn-more-modal .learn-more-group-item { gap: 16px;}rc-learn-more-modal .learn-more-group-icon-container { padding: 20px;} }</style><div class='learn-more-content'><h1 class='learn-more-header'>Great reasons to subscribe</h1> <div class='learn-more-group'> <div class='learn-more-group-item'> <div class='learn-more-group-icon-container'><span rc-calendar-icon></span></div> <div> <h2 style='margin:0;'>Flexible frequency</h2> <p style='margin:0;'> Not sure how much of something you need, or how often? Adjust quantities and frequencies any time. </p> </div> </div> <div class='learn-more-group-item'> <div class='learn-more-group-icon-container'> <span rc-bell-icon></span> </div> <div> <h2>Order reminders</h2> <p> We'll let you know before each shipment. Delay, reschedule or cancel if you need to - we’ll only bill you when your order ships. </p> </div> </div> <div class='learn-more-group-item'> <div class='learn-more-group-icon-container'> <span rc-phone-icon></span> </div> <div> <h2>You're in control</h2> <p> Add or remove subscriptions, cancel orders, and edit frequencies and quantities through our user-friendly customer portal. </p> </div> </div> </div></div><div class='learn-more-footer'><button data-dismiss-modal>Got it</button></div></div>","onetimeDrawbacks":"","use_theme_styles":false,"selected_bg_color":"#00491E","staticPricingText":"{discountPrice}","selected_text_color":"#FFFFFF","brand_contrast_color":"#FFFFFF","firstSelectionOption":"subscription","frequencyDisplayType":"buttonGroup","showStrikethroughPrice":true,"frequencyDisplayContent":"interval","frequencyIntervalTranslation":{"day":"{interval} day","days":"{interval} days","save":"Save {discount}","week":"{interval} week","month":"{interval} month","weeks":"{interval} weeks","months":"{interval} months","prepaidUnit":"{unitPrice}/ea","chargeInterval":"Pay every {chargeInterval}"},"onlyDisplayBenefitsOnSelected":true,"subscriptionWithDiscountLabel":"Subscribe & Save","subscriptionWithoutDiscountLabel":"Subscribe"},"external_market_id":null}],"plan_configs":null}]}}};
+    })();
+  </script>
+  
+  <recharge-subscription-widget 
+    product-id="{{ product.id }}" 
+    default-variant-id="{{ product.selected_or_first_available_variant.id }}">
+  </recharge-subscription-widget>
+  <style>
+    .shopify-block.recharge-subscription-widget {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+<script>
+  
+  window.Recharge = {};
+</script>
+
+
+</div>
+          </div><div class="product__block product__block--buy_buttons" >
+<div
+    class="product-form"
+    data-hide-errors="false"
+    data-section-id="{{ section.id }}"
+  >
+    <div class="product-form__error-message-wrapper" role="alert" hidden>
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="icon icon-error"
+        viewBox="0 0 13 13"
+      >
+        <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+        <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+        <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+        <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+      </svg>
+      <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div>
+    </div><form method="post" action="{{ routes.cart_add_url }}" id="product-form-{{ section.id }}" accept-charset="UTF-8" class="main-product-form grid gap-4" enctype="multipart/form-data" data-type="add-to-cart-form" is="product-form" data-hide-errors="false"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><input
+        type="hidden"
+        name="id"
+        value="{{ product.selected_or_first_available_variant.id }}"
+        
+        class="product-variant-id"
+      ><div class="product-form__buttons flex flex-wrap items-end gap-x-2 gap-y-4" id="QuantityForm-{{ section.id }}"><div class="product-form__quantity">
+            <label class="quantity__label form__label visually-hidden" for="Quantity-{{ section.id }}">
+              <span class="font-body-bolder">Quantity</span>
+            </label>
+            <quantity-input
+              class="quantity"
+              data-section-id="{{ section.id }}"
+              data-product-id="{{ product.id }}"
+            >
+              <button class="quantity__button" name="minus" type="button">
+                <span class="visually-hidden">Decrease quantity for Micro Ingredients Multi Collagen Complex, 240 Capsules</span>
+                <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-minus icon--medium icon--thick"
+  fill="none"
+  viewBox="0 0 20 20"
+>
+  <path d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              </button>
+              <input
+                class="quantity__input"
+                type="number"
+                name="quantity"
+                id="Quantity-{{ section.id }}"
+                data-cart-quantity="0"
+                step="1"
+                value="1"
+                data-quantity-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                data-min="1"
+                min="1"
+                
+                inputmode="numeric"
+                autocomplete="off"
+                form="product-form-{{ section.id }}"
+              >
+              <button class="quantity__button" name="plus" type="button">
+                <span class="visually-hidden">Increase quantity for Micro Ingredients Multi Collagen Complex, 240 Capsules</span>
+                <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-plus icon--medium icon--thick"
+  fill="none"
+  viewBox="0 0 20 20"
+>
+  <path d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 3.125V16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              </button>
+            </quantity-input>
+          </div><button
+          id="ProductSubmitButton-{{ section.id }}"
+          type="submit"
+          name="add"
+          class="product-form__submit btn btn--secondary"
+          
+        >
+          <span class="btn__text">Add to cart
+</span>
+
+<div class="loading__spinner hidden">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+</button><div data-shopify="payment-button" class="shopify-payment-button"> <shopify-accelerated-checkout recommended="{&quot;supports_subs&quot;:true,&quot;supports_def_opts&quot;:false,&quot;name&quot;:&quot;shop_pay&quot;,&quot;wallet_params&quot;:{&quot;shopId&quot;:18661287,&quot;merchantName&quot;:&quot;Micro Ingredients&quot;,&quot;personalized&quot;:true}}" fallback="{&quot;supports_subs&quot;:true,&quot;supports_def_opts&quot;:true,&quot;name&quot;:&quot;buy_it_now&quot;,&quot;wallet_params&quot;:{}}" access-token="fe1f22797b979c6ebdde36a7d96939a2" buyer-country="US" buyer-locale="en" buyer-currency="USD" variant-params="[{&quot;id&quot;:{{ product.selected_or_first_available_variant.id }},&quot;requiresShipping&quot;:true}]" shop-id="18661287" enabled-flags="[&quot;a1d1f9a1&quot;]" > <div class="shopify-payment-button__button" role="button" disabled aria-hidden="true" style="background-color: transparent; border: none"> <div class="shopify-payment-button__skeleton">&nbsp;</div> </div> <div class="shopify-payment-button__more-options shopify-payment-button__skeleton" role="button" disabled aria-hidden="true">&nbsp;</div> </shopify-accelerated-checkout> <small id="shopify-buyer-consent" class="hidden" aria-hidden="true" data-consent-type="subscription"> This item is a deferred, subscription, or recurring purchase. By continuing, I agree to the <span id="shopify-subscription-policy-button">cancellation policy</span> and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted. </small> </div>
+</div>
+      <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div><input type="hidden" name="product-id" value="{{ product.id }}" /><input type="hidden" name="section-id" value="{{ section.id }}" /></form></div></div><div class="product__block product__block--mi_product_cab" >
+
+
+  <div
+    id="mi-product-cab-block-mi_product_cab_n8fgjn"
+    class="mi-product-cab-block"
+    
+    style="
+      --cab-title-color: #0f4f2a;
+      --cab-content-color: #666666;
+      --cab-border-color: #adadad;
+      --cab-icon-color: #0f4f2a;
+      --cab-bg-color: #ffffff;
+
+      --cab-title-size-desktop: 20px;
+      --cab-title-size-mobile: 20px;
+      --cab-title-line-height: 1.18;
+      --cab-content-size-desktop: 16px;
+      --cab-content-size-mobile: 14px;
+      --cab-content-line-height: 1.55;
+
+      --cab-title-weight: 800;
+      --cab-content-weight: 500;
+
+      --cab-row-padding-desktop: 18px;
+      --cab-row-padding-mobile: 18px;
+      --cab-content-padding-bottom: 8px;
+
+      --cab-margin-top: 0px;
+      --cab-margin-bottom: 0px;
+
+      --cab-image-width-desktop: 100%;
+      --cab-image-width-mobile: 100%;
+      --cab-image-radius: 12px;
+      --cab-image-margin-top: 12px;
+      --cab-image-margin-bottom: 12px;
+
+      --cab-title-align: left;
+      --cab-content-align: left;
+    "
+  >
+    <div class="mi-product-cab-block__accordion">
+      
+        
+
+        
+          <details
+            class="mi-product-cab-block__item"
+            
+          >
+            <summary class="mi-product-cab-block__summary">
+              <span>
+                
+                  Description
+                
+              </span>
+
+              <svg class="mi-product-cab-block__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+
+            <div class="mi-product-cab-block__content">
+              
+
+              
+                <div class="mi-product-cab-block__text mi-product-cab-block__text--plain">
+                  Micro Ingredients offers a multi collagen peptides complex with each bottle providing extra strength capsules and a full-spectrum collagen blend with five essential types.<br />
+<br />
+Features collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula.<br />
+<br />
+Extra Strength Formula: Includes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for optimal absorption, utilization, and strength of collagen.<br />
+<br />
+
+                </div>
+              
+
+              
+            </div>
+          </details>
+        
+      
+        
+
+        
+          <details
+            class="mi-product-cab-block__item"
+            
+          >
+            <summary class="mi-product-cab-block__summary">
+              <span>
+                
+                  Suggested Use
+                
+              </span>
+
+              <svg class="mi-product-cab-block__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+
+            <div class="mi-product-cab-block__content">
+              
+
+              
+                <div class="mi-product-cab-block__text mi-product-cab-block__text--plain">
+                  Adults take 3 capsules daily with food, or as recommended by a qualified healthcare professional. 
+                </div>
+              
+
+              
+            </div>
+          </details>
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+        
+
+        
+      
+    </div>
+
+    <style>
+      #mi-product-cab-block-mi_product_cab_n8fgjn {
+        width: 100%;
+        margin-top: var(--cab-margin-top);
+        margin-bottom: var(--cab-margin-bottom);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__accordion {
+        width: 100%;
+        background: var(--cab-bg-color);
+        border-top: 1px solid var(--cab-border-color);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__item {
+        border-bottom: 1px solid var(--cab-border-color);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: var(--cab-row-padding-desktop);
+        padding-bottom: var(--cab-row-padding-desktop);
+        color: var(--cab-title-color);
+        font-size: var(--cab-title-size-desktop);
+        line-height: var(--cab-title-line-height);
+        font-weight: var(--cab-title-weight);
+        letter-spacing: -0.01em;
+        text-align: var(--cab-title-align);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__summary span {
+        display: block;
+        flex: 1 1 auto;
+        color: var(--cab-title-color);
+        text-align: var(--cab-title-align);
+        overflow-wrap: anywhere;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__summary::-webkit-details-marker {
+        display: none;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__icon {
+        flex: 0 0 auto;
+        color: var(--cab-icon-color);
+        transition: transform 0.22s ease;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__item[open] .mi-product-cab-block__icon {
+        transform: rotate(180deg);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__content {
+        padding-bottom: var(--cab-content-padding-bottom);
+        color: var(--cab-content-color);
+        font-size: var(--cab-content-size-desktop);
+        line-height: var(--cab-content-line-height);
+        font-weight: var(--cab-content-weight);
+        text-align: var(--cab-content-align);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text *,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field * {
+        color: var(--cab-content-color);
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text {
+        overflow-wrap: anywhere;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text p,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field p {
+        margin: 0 0 12px;
+        font-weight: var(--cab-content-weight);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text p:last-child,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field p:last-child {
+        margin-bottom: 0;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text ul,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text ol,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field ul,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field ol {
+        margin: 0 0 14px;
+        padding-left: 22px;
+        text-align: left;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text li,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field li {
+        margin: 0 0 7px;
+        padding-left: 4px;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text li:last-child,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field li:last-child {
+        margin-bottom: 0;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text strong,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text b,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field strong,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field b {
+        font-weight: 800;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text em,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text i,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field em,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field i {
+        font-style: italic;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text a,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field a {
+        color: var(--cab-content-color);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h1,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h2,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h3,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h4,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h5,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h6,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h1,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h2,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h3,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h4,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h5,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h6 {
+        margin: 0 0 12px;
+        color: var(--cab-content-color);
+        font-size: calc(var(--cab-content-size-desktop) * 1.05);
+        line-height: 1.3;
+        font-weight: 800;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field > *:first-child,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text > *:first-child {
+        margin-top: 0;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field > *:last-child,
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text > *:last-child {
+        margin-bottom: 0;
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__image-wrap {
+        width: var(--cab-image-width-desktop);
+        margin-top: var(--cab-image-margin-top);
+        margin-bottom: var(--cab-image-margin-bottom);
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__image-wrap {
+        
+          margin-left: auto;
+          margin-right: auto;
+        
+      }
+
+      #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: var(--cab-image-radius);
+      }
+
+      @media screen and (max-width: 749px) {
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__summary {
+          padding-top: var(--cab-row-padding-mobile);
+          padding-bottom: var(--cab-row-padding-mobile);
+          font-size: var(--cab-title-size-mobile);
+        }
+
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__content {
+          font-size: var(--cab-content-size-mobile);
+          line-height: 1.5;
+        }
+
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h1,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h2,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h3,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h4,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h5,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__text h6,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h1,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h2,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h3,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h4,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h5,
+        #mi-product-cab-block-mi_product_cab_n8fgjn .metafield-rich_text_field h6 {
+          font-size: calc(var(--cab-content-size-mobile) * 1.05);
+        }
+
+        #mi-product-cab-block-mi_product_cab_n8fgjn .mi-product-cab-block__image-wrap {
+          width: var(--cab-image-width-mobile);
+        }
+      }
+    </style>
+  </div>
+
+</div><div class="product__block product__block--pickup_availability" >
+<link href="{{ 'col-component-pickup-availability.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+<pickup-availability
+  class="product__pickup-availabilities quick-add-hidden"
+  
+  data-root-url="/"
+  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+  data-has-only-default-variant="true"
+  data-product-page-color-scheme="color-scheme-1"
+>
+  <template>
+    <pickup-availability-preview class="pickup-availability-preview">
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-unavailable"
+  fill="none"
+  viewBox="0 0 20 20"
+>
+  <path fill="#DE3618" stroke="#fff" d="M13.94 3.94L10 7.878l-3.94-3.94A1.499 1.499 0 103.94 6.06L7.88 10l-3.94 3.94a1.499 1.499 0 102.12 2.12L10 12.12l3.94 3.94a1.497 1.497 0 002.12 0 1.499 1.499 0 000-2.12L12.122 10l3.94-3.94a1.499 1.499 0 10-2.121-2.12z"/>
+</svg>
+
+      <div class="pickup-availability-info">
+        <p>Couldn&#39;t load pickup availability</p>
+        <button class="pickup-availability-button link link--text underlined-link">
+          Refresh
+        </button>
+      </div>
+    </pickup-availability-preview>
+  </template>
+</pickup-availability>
+
+
+</div><div
+            class="product__block product__block--complementary product__block--complementary-inline has-heading"
+            
+          >
+<product-recommendations
+  class="complementary-products complementary-products--grid"
+  data-url="/recommendations/products?section_id={{ section.id }}&product_id={{ product.id }}&limit=6&intent=complementary"
+></product-recommendations>
+</div></div></div>
+
+    </div>
+  </div>
+  <product-recently-viewed data-product-id="{{ product.id }}" class="hidden"></product-recently-viewed><div class="wk-payment-info-source" aria-hidden="true"><p class="product__tax wk-source-shipping">
+      <a href="/policies/shipping-policy"><span class="wk-shipping-word-link">Shipping</span> calculated at checkout.</a>
+    </p><form method="post" action="{{ routes.cart_add_url }}" id="wk-payment-terms-form-{{ section.id }}" accept-charset="UTF-8" class="wk-payment-terms-form" enctype="multipart/form-data"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><shopify-payment-terms variant-id="{{ product.selected_or_first_available_variant.id }}" shopify-meta="{&quot;type&quot;:&quot;product&quot;,&quot;currency_code&quot;:&quot;USD&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;variants&quot;:[{&quot;id&quot;:{{ product.selected_or_first_available_variant.id }},&quot;price_per_term&quot;:&quot;$12.47&quot;,&quot;full_price&quot;:&quot;$24.95&quot;,&quot;eligible&quot;:false,&quot;available&quot;:true,&quot;number_of_payment_terms&quot;:2}],&quot;min_price&quot;:&quot;$35.00&quot;,&quot;max_price&quot;:&quot;$30,000.00&quot;,&quot;financing_plans&quot;:[{&quot;min_price&quot;:&quot;$35.00&quot;,&quot;max_price&quot;:&quot;$49.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:2}]},{&quot;min_price&quot;:&quot;$50.00&quot;,&quot;max_price&quot;:&quot;$999.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:4},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:6},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:12}]},{&quot;min_price&quot;:&quot;$1,000.00&quot;,&quot;max_price&quot;:&quot;$30,000.00&quot;,&quot;terms&quot;:[{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:6},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:12}]}],&quot;installments_buyer_prequalification_enabled&quot;:false,&quot;seller_id&quot;:5415235}"></shopify-payment-terms>
+<input type="hidden" name="product-id" value="{{ product.id }}" /><input type="hidden" name="section-id" value="{{ section.id }}" /></form></div>
+
+  <script type="application/ld+json">
+    {"@context":"http:\/\/schema.org\/","@id":"{{ product.url }}#product","@type":"Product","brand":{"@type":"Brand","name":"Micro Ingredients"},"category":"Multivitamin Supplements","description":"\nMicro Ingredients offers a multi collagen peptides complex with each bottle providing extra strength capsules and a full-spectrum collagen blend with five essential types. \n\n\nPackaging \u0026amp; Dosage Options \n\n\n\n\n240 Capsules – 80 Servings \n\n\n\n\n\n\n3 Capsules Daily – 1,100mg Multi Collagen Complex, 2,500mcg Biotin, 72mg Vitamin C, and 55mg Hyaluronic Acid Per Serving  \n\n\n\n\nHow it Works \n\n\n\n\n5 Collagen Types in Every Serving: Features collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula. \n\n\n\n\n\n\nComprehensive Extra Strength Formula: Includes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for optimal absorption, utilization, and strength of collagen. \n\n\n\n\nClean \u0026amp; Trusted \n\n\n\n\nManufactured in cGMP compliant facility \n\n\n\n\n\n\nNon-GMO and free of wheat, soy, dairy, gluten, \u0026amp; tree nuts \n\n\n\n\n\n\n3rd party lab tested for purity, safety, and potency \n\n\n","image":{{ product.featured_image | image_url: width: 1200 | prepend: "https:" | json }},"name":"Micro Ingredients Multi Collagen Complex, 240 Capsules","offers":{"@id":"{{ product.url }}?variant={{ product.selected_or_first_available_variant.id }}#offer","@type":"Offer","availability":"http:\/\/schema.org\/InStock","price":"{{ product.price | divided_by: 100.0 }}","priceCurrency":{{ cart.currency.iso_code | json }},"url":{{ canonical_url | json }}},"sku":"BA-MI-MCC0300","url":{{ canonical_url | json }}}
+  </script>
+</product-info><link rel="stylesheet" href="{{ 'section-sticky-atc-bar-minimalist.css' | asset_url }}">
+    
+    <sticky-atc-bar-minimalist
+      class="sticky-atc-bar blocks-radius items-center justify-between gap-2 flex"
+      data-product-id="{{ product.id }}"
+      data-section="{{ section.id }}"
+    >
+      <div class="sticky-atc-bar__product flex items-center gap-3 md:gap-4">
+        <div
+          class="sticky-atc-bar__product-image media-wrapper shrink-0 blocks-radius-md"
+          style="--aspect-ratio: 1"
+        ><img src="{{ 'Product-Shopify1_w180.png' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'Product-Shopify1_w70.png' | asset_url }} 70w, {{ 'Product-Shopify1_w140.png' | asset_url }} 140w" width="180" height="180" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="70px" is="image-lazy">
+</div>
+        <div class="sticky-atc-bar__product-info flex flex-col gap-0d5">
+          <h3 class="sticky-atc-bar__product-title text-pcard-title text-limit-2-lines">
+            Micro Ingredients Multi Collagen Complex, 240 Capsules
+          </h3><div
+  class="
+    f-price f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">{{ product.price | money_with_currency }}</span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">{{ product.price | money_with_currency }}</span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular"><s>{{ product.compare_at_price | money_with_currency }}</s></span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+</div>
+      </div>
+      <div class="product-form__buttons flex items-center">
+        <button
+          type="submit"
+          name="add"
+          form="product-form-{{ section.id }}"
+          class="product-form__submit btn btn--primary btn--small w-full"
+          
+        >
+          <span class="btn__text">
+            Add
+          </span>
+          
+
+<div class="loading__spinner hidden">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+
+        </button>
+      </div>
+    </sticky-atc-bar-minimalist>
+<style> @media (min-width: 1280px) {#shopify-section-{{ section.id }} .product {padding-inline: 5rem; }} </style>
+
+{% schema %}
+{
+  "name": "Col Main",
+  "class": "col-scope",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,34 @@
+<div
+    class="section-breadcrumb page-width page-width--fixed section--padding"
+    style="--section-padding-top: 16px;--section-padding-bottom: 20px;"
+  >
+    <nav
+      class="breadcrumbs flex items-center justify-start md:justify-start"
+      role="navigation"
+      aria-label="breadcrumbs"
+    >
+      <a href="{{ routes.root_url }}" title="Home" class="reversed-link">Home</a>
+      {%- comment -%}
+        The reference page's middle crumb is a hardcoded link to its own
+        /collections/best-sellers. Here it follows the visitor: the collection they
+        arrived from, or failing that the product's first collection. If the product
+        is in none, the crumb is skipped rather than pointing at a dead link.
+      {%- endcomment -%}
+      {%- assign crumb = collection -%}
+      {%- unless crumb -%}
+        {%- assign crumb = product.collections.first -%}
+      {%- endunless -%}
+      {%- if crumb -%}
+        <span aria-hidden="true" class="breadcrumbs--sep"></span><a href="{{ crumb.url }}" class="reversed-link">{{ crumb.title }}</a>
+      {%- endif -%}
+      <span aria-hidden="true" class="breadcrumbs--sep breadcrumbs--sep-last"></span>
+        <span class="breadcrumbs--last text-subtext">{{ product.title }}</span></nav>
+  </div>
+
+{% schema %}
+{
+  "name": "Col Breadcrumbs",
+  "class": "col-scope",
+  "settings": []
+}
+{% endschema %}

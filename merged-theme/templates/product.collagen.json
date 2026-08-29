@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "col-breadcrumbs": {
+      "type": "col-breadcrumbs",
+      "settings": {}
+    },
+    "col-main": {
+      "type": "col-main",
+      "settings": {}
+    },
+    "col-custom-1": {
+      "type": "col-custom-1",
+      "settings": {}
+    },
+    "col-scrolling-promotion": {
+      "type": "col-scrolling-promotion",
+      "settings": {}
+    },
+    "col-rich-text": {
+      "type": "col-rich-text",
+      "settings": {}
+    },
+    "col-image-with-text-1": {
+      "type": "col-image-with-text-1",
+      "settings": {}
+    },
+    "col-image-with-text-2": {
+      "type": "col-image-with-text-2",
+      "settings": {}
+    },
+    "col-multicolumn-1": {
+      "type": "col-multicolumn-1",
+      "settings": {}
+    },
+    "col-spacer-1": {
+      "type": "col-spacer-1",
+      "settings": {}
+    },
+    "col-custom-2": {
+      "type": "col-custom-2",
+      "settings": {}
+    },
+    "col-spacer-2": {
+      "type": "col-spacer-2",
+      "settings": {}
+    },
+    "col-custom-3": {
+      "type": "col-custom-3",
+      "settings": {}
+    },
+    "col-multicolumn-2": {
+      "type": "col-multicolumn-2",
+      "settings": {}
+    },
+    "col-custom-4": {
+      "type": "col-custom-4",
+      "settings": {}
+    },
+    "col-fbt": {
+      "type": "col-fbt",
+      "settings": {}
+    },
+    "col-related": {
+      "type": "col-related",
+      "settings": {}
+    }
+  },
+  "order": [
+    "col-breadcrumbs",
+    "col-main",
+    "col-fbt",
+    "col-custom-1",
+    "col-scrolling-promotion",
+    "col-rich-text",
+    "col-image-with-text-1",
+    "col-image-with-text-2",
+    "col-multicolumn-1",
+    "col-spacer-1",
+    "col-custom-2",
+    "col-spacer-2",
+    "col-related",
+    "col-custom-3",
+    "col-multicolumn-2",
+    "col-custom-4"
+  ]
+}

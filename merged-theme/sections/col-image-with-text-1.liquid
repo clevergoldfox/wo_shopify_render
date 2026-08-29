@@ -1,0 +1,58 @@
+<link href="{{ 'section-image-with-text.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+<style data-shopify></style><div
+  id="section-{{ section.id }}"
+  class="section section--padding image-with-text image-with-text--image-left color-scheme-0feefa37-f167-4043-b23c-c00fbc0d4747"
+  style="--section-padding-top: 20px; --section-padding-bottom: 20px;"
+>
+  <div class="section__container page-width page-width--fixed">
+    <div
+      class="image-with-text__wrapper flex flex-col md:flex-row gap-y-6"
+      style="--image-width: 50%;"
+    >
+      <div
+        class="image-with-text__media self-center relative order-first md:order-first"
+      >
+        <div class="hover-wrapper blocks-radius">
+          <motion-element
+            data-motion="zoom-out"
+            data-motion-delay="0"
+            class="block media-wrapper"
+            style="--aspect-ratio: 1.4997000599880024;"
+          ><img src="{{ 'Lab-Tested_w2000.jpg' | asset_url }}" alt="Micro Ingredients" srcset="{{ 'Lab-Tested_w300.jpg' | asset_url }} 300w, {{ 'Lab-Tested_w400.jpg' | asset_url }} 400w, {{ 'Lab-Tested_w500.jpg' | asset_url }} 500w, {{ 'Lab-Tested_w600.jpg' | asset_url }} 600w, {{ 'Lab-Tested_w700.jpg' | asset_url }} 700w, {{ 'Lab-Tested_w800.jpg' | asset_url }} 800w, {{ 'Lab-Tested_w900.jpg' | asset_url }} 900w, {{ 'Lab-Tested_w1000.jpg' | asset_url }} 1000w, {{ 'Lab-Tested_w1200.jpg' | asset_url }} 1200w, {{ 'Lab-Tested_w1400.jpg' | asset_url }} 1400w, {{ 'Lab-Tested_w1600.jpg' | asset_url }} 1600w, {{ 'Lab-Tested_w1800.jpg' | asset_url }} 1800w, {{ 'Lab-Tested_w2000.jpg' | asset_url }} 2000w" width="2500" height="1667" loading="lazy" fetchpriority="low" sizes="(min-width: 768px) calc(min(1600px, 100vw) * 50 / 100), calc(100vw - 3rem)" class="hover-scale-up" is="image-lazy"></motion-element></div></div>
+      <div class="image-with-text__inner flex-1 md:flex items-center">
+        <div class="image-with-text__content w-full rich-text md:text-left text-center"><motion-element
+                  class="rich-text__subheading text-subheading block"
+                  data-motion="fade-up"
+                  data-motion-delay="50"
+                  
+                >
+                  
+                </motion-element><h2
+                  class="rich-text__heading h4"
+                  
+                >
+                  <motion-element data-motion="fade-up" data-motion-delay="100" class="block">
+                    
+<strong>Lab Tested Trusted Ingredients</strong>
+                  </motion-element>
+                </h2><motion-element
+                  class="block rich-text__text rte text-subtext"
+                  data-motion="fade-up"
+                  data-motion-delay="150"
+                  
+                >
+                  <p><strong>NON GMO</strong><br/>We carefully evaluate every ingredient, <br/>ensuring they are non-GMO.</p><p></p><p><strong>DEVELOPED FOR EFFECTIVENESS</strong><br/>Our formulations are crafted to maximize potency and absorption.</p><p><br/><br/><br/><br/></p>
+                </motion-element></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Col Image With Text 1",
+  "class": "col-scope",
+  "settings": []
+}
+{% endschema %}

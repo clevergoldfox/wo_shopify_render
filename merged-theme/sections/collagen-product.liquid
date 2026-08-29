@@ -1,0 +1,470 @@
+{%- comment -%}
+  ===========================================================
+  Collagen PDP — main product section
+  Renders gallery + buy box from the real product object.
+  Requires: assets/collagen-pdp.css, assets/collagen-pdp.js
+  ===========================================================
+{%- endcomment -%}
+
+{{ 'collagen-pdp.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collagen-pdp.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign current = product.selected_or_first_available_variant
+  assign has_compare = false
+  if current.compare_at_price > current.price
+    assign has_compare = true
+  endif
+-%}
+
+{% render 'collagen-icons' %}
+
+{%- if section.settings.show_breadcrumb -%}
+  <div class="wrap breadcrumb">
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="{{ routes.root_url }}">Home</a></li>
+        {%- if collection -%}
+          <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+        {%- endif -%}
+        <li><span aria-current="page">{{ product.title }}</span></li>
+      </ol>
+    </nav>
+  </div>
+{%- endif -%}
+
+<div class="wrap product" data-sticky-anchor>
+
+  {%- comment -%} ---------------- GALLERY ---------------- {%- endcomment -%}
+  <div class="gallery" data-gallery tabindex="0" aria-roledescription="carousel" aria-label="Product images">
+    <div class="gallery__stage">
+
+      <div class="gallery__flags">
+        {%- if has_compare -%}
+          {%- assign pct = current.compare_at_price | minus: current.price | times: 100.0 | divided_by: current.compare_at_price | round -%}
+          <span class="flag flag--sale">Save {{ pct }}%</span>
+        {%- endif -%}
+        {%- if section.settings.badge_text != blank -%}
+          <span class="flag flag--best">{{ section.settings.badge_text }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- for media in product.media -%}
+        <img
+          data-gallery-slide
+          {% unless forloop.first %}class="is-hidden"{% endunless %}
+          src="{{ media | image_url: width: 1200 }}"
+          srcset="{{ media | image_url: width: 600 }} 600w, {{ media | image_url: width: 900 }} 900w, {{ media | image_url: width: 1200 }} 1200w"
+          sizes="(min-width: 1100px) 50vw, 100vw"
+          alt="{{ media.alt | escape }}"
+          width="{{ media.width }}" height="{{ media.height }}"
+          {% unless forloop.first %}loading="lazy"{% else %}fetchpriority="high"{% endunless %}>
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'gallery__placeholder' }}
+      {%- endfor -%}
+
+      {%- if product.media.size > 1 -%}
+        <button class="gallery__arrow gallery__arrow--prev" data-gallery-arrow="prev" aria-label="Previous image" type="button">
+          <svg width="20" height="20"><use href="#i-chev-left"/></svg>
+        </button>
+        <button class="gallery__arrow gallery__arrow--next" data-gallery-arrow="next" aria-label="Next image" type="button">
+          <svg width="20" height="20"><use href="#i-chev-right"/></svg>
+        </button>
+      {%- endif -%}
+
+      <button class="gallery__zoom" data-zoom aria-label="Open image viewer" type="button">
+        <svg width="19" height="19"><use href="#i-zoom"/></svg>
+      </button>
+    </div>
+
+    {%- if product.media.size > 1 -%}
+      <div class="gallery__thumbs" role="tablist" aria-label="Product image thumbnails">
+        {%- for media in product.media -%}
+          <button
+            class="gallery__thumb{% if forloop.first %} is-active{% endif %}"
+            data-gallery-thumb role="tab" type="button"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-label="Image {{ forloop.index }}">
+            <img src="{{ media | image_url: width: 200 }}" alt="" width="200" height="200" loading="lazy">
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} ---------------- BUY BOX ---------------- {%- endcomment -%}
+  {%- form 'product', product, class: 'pinfo', data-product-form: '', id: 'collagen-product-form' -%}
+
+    {%- if section.settings.show_vendor and product.vendor != blank -%}
+      <p class="pinfo__vendor">{{ product.vendor }}</p>
+    {%- endif -%}
+
+    <h1 class="pinfo__title">{{ product.title }}</h1>
+
+    <div class="rating">
+      {%- assign rating = product.metafields.reviews.rating.value -%}
+      {%- assign rating_count = product.metafields.reviews.rating_count.value | default: 0 -%}
+      {%- if rating -%}
+        {%- assign rounded = rating.rating | round -%}
+        <span class="stars" aria-hidden="true">
+          {%- for i in (1..5) -%}
+            <svg{% if i > rounded %} style="opacity:.3"{% endif %}><use href="#i-star"/></svg>
+          {%- endfor -%}
+        </span>
+        <span class="sr-only">Rated {{ rating.rating }} out of {{ rating.scale_max }}</span>
+        <a href="#reviews">{{ rating.rating }} · {{ rating_count }} reviews</a>
+      {%- else -%}
+        <span class="stars" aria-hidden="true">
+          {%- for i in (1..5) -%}<svg><use href="#i-star"/></svg>{%- endfor -%}
+        </span>
+        <a href="#reviews">Read reviews</a>
+      {%- endif -%}
+      {%- if current.sku != blank -%}
+        <span>·</span><span>SKU {{ current.sku }}</span>
+      {%- endif -%}
+    </div>
+
+    <div class="price">
+      <span class="price__now" data-price-now>{{ current.price | money }}</span>
+      <s class="price__was" data-price-was {% unless has_compare %}hidden{% endunless %}>
+        {%- if has_compare %}{{ current.compare_at_price | money }}{% endif -%}
+      </s>
+      <span class="price__save" data-price-save {% unless has_compare %}hidden{% endunless %}>
+        {%- if has_compare -%}
+          {%- assign pct = current.compare_at_price | minus: current.price | times: 100.0 | divided_by: current.compare_at_price | round -%}
+          Save {{ pct }}%
+        {%- endif -%}
+      </span>
+      {%- if current.unit_price_measurement -%}
+        <span class="price__unit" data-price-unit>
+          {{ current.unit_price | money }} / {{ current.unit_price_measurement.reference_value }}{{ current.unit_price_measurement.reference_unit }}
+        </span>
+      {%- else -%}
+        <span class="price__unit" data-price-unit></span>
+      {%- endif -%}
+    </div>
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+
+        {%- when 'blurb' -%}
+          <div class="pinfo__blurb" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+        {%- when 'keypoints' -%}
+          <ul class="keypoints" {{ block.shopify_attributes }}>
+            {%- assign points = block.settings.points | newline_to_br | split: '<br />' -%}
+            {%- for point in points -%}
+              {%- assign trimmed = point | strip -%}
+              {%- if trimmed != blank -%}
+                <li><svg><use href="#i-check"/></svg><span>{{ trimmed }}</span></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+
+        {%- when 'variant_picker' -%}
+          {%- unless product.has_only_default_variant -%}
+            <div class="opt" {{ block.shopify_attributes }}>
+              <p class="opt__label">
+                {{ product.options_with_values.first.name }}:
+                <span>{{ block.settings.helper }}</span>
+              </p>
+              <div class="opt__row">
+                {%- for variant in product.variants -%}
+                  {%- assign count = variant.metafields.custom.capsule_count.value | default: 0 -%}
+                  <label>
+                    <input
+                      type="radio"
+                      data-variant-input
+                      name="id"
+                      value="{{ variant.id }}"
+                      data-price="{{ variant.price }}"
+                      data-compare="{{ variant.compare_at_price | default: 0 }}"
+                      data-count="{{ count }}"
+                      {% if variant.id == current.id %}checked{% endif %}
+                      {% unless variant.available %}disabled{% endunless %}>
+                    <span class="opt__chip">
+                      {{ variant.title }}
+                      {%- if variant.available == false %}<small>Sold out</small>
+                      {%- elsif count > 0 %}<small>{{ count | divided_by: 3 }}-day supply</small>
+                      {%- endif -%}
+                    </span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- else -%}
+            <input type="hidden" name="id" value="{{ current.id }}"
+                   data-variant-input checked
+                   data-price="{{ current.price }}"
+                   data-compare="{{ current.compare_at_price | default: 0 }}">
+          {%- endunless -%}
+
+        {%- when 'purchase_options' -%}
+          {%- if product.selling_plan_groups.size > 0 -%}
+            {%- assign group = product.selling_plan_groups.first -%}
+            {%- assign plan = group.selling_plans.first -%}
+            {%- assign rate = 0 -%}
+            {%- if plan.price_adjustments.first.value_type == 'percentage' -%}
+              {%- assign rate = plan.price_adjustments.first.value | divided_by: 100.0 -%}
+            {%- endif -%}
+
+            <div class="purchase" {{ block.shopify_attributes }}>
+              <label class="purchase__opt">
+                <input type="radio" data-purchase-input name="selling_plan" value="" data-discount="0" checked>
+                <span class="purchase__top">
+                  <span class="purchase__radio" aria-hidden="true"></span>
+                  {{ block.settings.onetime_label }}
+                  <span class="purchase__price" data-onetime-price>{{ current.price | money }}</span>
+                </span>
+                <span class="purchase__note">{{ block.settings.onetime_note }}</span>
+              </label>
+
+              <label class="purchase__opt">
+                <input type="radio" data-purchase-input data-subscribe
+                       name="selling_plan" value="{{ plan.id }}" data-discount="{{ rate }}">
+                <span class="purchase__top">
+                  <span class="purchase__radio" aria-hidden="true"></span>
+                  {{ block.settings.subscribe_label }}
+                  {%- if rate > 0 -%}
+                    <span class="purchase__tag">{{ plan.price_adjustments.first.value }}% off</span>
+                  {%- endif -%}
+                  <span class="purchase__price" data-subscribe-price></span>
+                </span>
+                <span class="purchase__note">{{ block.settings.subscribe_note }}</span>
+                {%- if group.selling_plans.size > 1 -%}
+                  <select class="purchase__freq" data-subscribe-freq hidden
+                          aria-label="Delivery frequency"
+                          onchange="this.closest('label').querySelector('[data-purchase-input]').value = this.value">
+                    {%- for p in group.selling_plans -%}
+                      <option value="{{ p.id }}">{{ p.name }}</option>
+                    {%- endfor -%}
+                  </select>
+                {%- endif -%}
+              </label>
+            </div>
+          {%- endif -%}
+
+        {%- when 'stock' -%}
+          {%- if current.available -%}
+            <p class="stock" {{ block.shopify_attributes }}>
+              <span class="stock__dot" aria-hidden="true"></span> {{ block.settings.in_stock_text }}
+            </p>
+          {%- endif -%}
+
+        {%- when 'buy_buttons' -%}
+          <div class="buyrow" {{ block.shopify_attributes }}>
+            <div class="qty" data-qty>
+              <button type="button" data-qty-step="-1" aria-label="Decrease quantity">&minus;</button>
+              <label class="sr-only" for="Quantity-{{ section.id }}">Quantity</label>
+              <input id="Quantity-{{ section.id }}" name="quantity" type="number" value="1" min="1" max="20" inputmode="numeric">
+              <button type="button" data-qty-step="1" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="btn btn--primary btn--lg" type="submit" name="add"
+                    {% unless current.available %}disabled{% endunless %}>
+              {%- if current.available -%}{{ block.settings.add_label }}{%- else -%}Sold out{%- endif -%}
+            </button>
+          </div>
+          {%- if block.settings.show_dynamic_checkout -%}
+            {{ form | payment_button }}
+          {%- endif -%}
+
+        {%- when 'reassurance' -%}
+          <p class="reassure" {{ block.shopify_attributes }}>
+            <svg><use href="#i-lock"/></svg> {{ block.settings.text }}
+          </p>
+
+        {%- when 'usage' -%}
+          <div class="usebox" {{ block.shopify_attributes }}>
+            <h3>{{ block.settings.heading }}</h3>
+            {{ block.settings.text }}
+          </div>
+
+        {%- when 'payment_icons' -%}
+          <div class="paylist" aria-label="Accepted payment methods" {{ block.shopify_attributes }}>
+            {%- for type in shop.enabled_payment_types -%}
+              {{ type | payment_type_svg_tag: class: 'paylist__svg' }}
+            {%- endfor -%}
+          </div>
+
+        {%- when '@app' -%}
+          {% render block %}
+
+      {%- endcase -%}
+    {%- endfor -%}
+  {%- endform -%}
+</div>
+
+{%- comment -%} ---------------- TRUST STRIP ---------------- {%- endcomment -%}
+{%- if section.settings.show_trust -%}
+  <section class="trust">
+    <div class="wrap trust__grid">
+      <div class="trust__item">
+        <span class="trust__icon"><svg width="22" height="22"><use href="#i-return"/></svg></span>
+        <div><h4>{{ section.settings.trust_1_title }}</h4><p>{{ section.settings.trust_1_text }}</p></div>
+      </div>
+      <div class="trust__item">
+        <span class="trust__icon"><svg width="22" height="22"><use href="#i-truck"/></svg></span>
+        <div><h4>{{ section.settings.trust_2_title }}</h4><p>{{ section.settings.trust_2_text }}</p></div>
+      </div>
+      <div class="trust__item">
+        <span class="trust__icon"><svg width="22" height="22"><use href="#i-ship"/></svg></span>
+        <div><h4>{{ section.settings.trust_3_title }}</h4><p>{{ section.settings.trust_3_text }}</p></div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{%- comment -%} ---------------- STICKY BAR + LIGHTBOX ---------------- {%- endcomment -%}
+{%- if section.settings.show_sticky -%}
+  <div class="stickybar" id="stickybar">
+    <div class="wrap stickybar__inner">
+      <div class="stickybar__media">
+        {%- if product.featured_image -%}
+          <img src="{{ product.featured_image | image_url: width: 120 }}" alt="" width="52" height="52" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div class="stickybar__text">
+        <h4>{{ product.title }}</h4>
+        <span data-sticky-price>{{ current.price | money }}</span>
+      </div>
+      <div class="stickybar__actions">
+        <button class="btn btn--primary" type="submit" form="collagen-product-form" name="add"
+                {% unless current.available %}disabled{% endunless %}>Add to cart</button>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image viewer">
+  <button class="lightbox__close" data-lightbox-close aria-label="Close viewer" type="button">
+    <svg width="22" height="22"><use href="#i-close"/></svg>
+  </button>
+  <img alt="" width="1200" height="1200">
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg width="18" height="18"><use href="#i-check"/></svg>
+  <span class="toast__text"></span>
+</div>
+
+{%- comment -%} ---------------- SEO ---------------- {%- endcomment -%}
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "Collagen product",
+  "tag": "section",
+  "class": "collagen-pdp",
+  "settings": [
+    { "type": "header", "content": "Layout" },
+    { "type": "checkbox", "id": "show_breadcrumb", "label": "Show breadcrumb", "default": true },
+    { "type": "checkbox", "id": "show_vendor", "label": "Show vendor", "default": true },
+    { "type": "checkbox", "id": "show_sticky", "label": "Show sticky add-to-cart bar", "default": true },
+    { "type": "text", "id": "badge_text", "label": "Badge text", "default": "Best seller" },
+
+    { "type": "header", "content": "Trust strip" },
+    { "type": "checkbox", "id": "show_trust", "label": "Show trust strip", "default": true },
+    { "type": "text", "id": "trust_1_title", "label": "Item 1 title", "default": "30-day free returns" },
+    { "type": "text", "id": "trust_1_text",  "label": "Item 1 text",  "default": "Opened bottles included" },
+    { "type": "text", "id": "trust_2_title", "label": "Item 2 title", "default": "Fast delivery" },
+    { "type": "text", "id": "trust_2_text",  "label": "Item 2 text",  "default": "2-5 business days in the US" },
+    { "type": "text", "id": "trust_3_title", "label": "Item 3 title", "default": "Free shipping over $59" },
+    { "type": "text", "id": "trust_3_text",  "label": "Item 3 text",  "default": "Always free on subscriptions" }
+  ],
+  "blocks": [
+    {
+      "type": "blurb",
+      "name": "Short description",
+      "limit": 1,
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Text",
+          "default": "<p>Five collagen types drawn from four whole-food sources, paired with the cofactors your body uses to put them to work.</p>" }
+      ]
+    },
+    {
+      "type": "keypoints",
+      "name": "Key points",
+      "limit": 1,
+      "settings": [
+        { "type": "textarea", "id": "points", "label": "One point per line",
+          "default": "Types I, II, III, V & X from four sources\nBiotin, hyaluronic acid and vitamin C included\nNo fillers, binders or artificial colour\nThird-party tested for heavy metals" }
+      ]
+    },
+    {
+      "type": "variant_picker",
+      "name": "Variant picker",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "helper", "label": "Helper text", "default": "choose your supply" }
+      ]
+    },
+    {
+      "type": "purchase_options",
+      "name": "Purchase options",
+      "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "Only renders when the product has a selling plan group attached." },
+        { "type": "text", "id": "onetime_label", "label": "One-time label", "default": "One-time purchase" },
+        { "type": "text", "id": "onetime_note",  "label": "One-time note",  "default": "Ships once. No commitment." },
+        { "type": "text", "id": "subscribe_label", "label": "Subscribe label", "default": "Subscribe & save" },
+        { "type": "text", "id": "subscribe_note",  "label": "Subscribe note",  "default": "Free shipping on every refill. Skip, pause or cancel any time." }
+      ]
+    },
+    {
+      "type": "stock",
+      "name": "Stock status",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "in_stock_text", "label": "In-stock text", "default": "In stock - ships within 24 hours" }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "add_label", "label": "Add to cart label", "default": "Add to cart" },
+        { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Show dynamic checkout button", "default": true }
+      ]
+    },
+    {
+      "type": "reassurance",
+      "name": "Reassurance line",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Secure checkout - 30-day money-back guarantee" }
+      ]
+    },
+    {
+      "type": "usage",
+      "name": "Suggested use",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Suggested use" },
+        { "type": "richtext", "id": "text", "label": "Text",
+          "default": "<p>Take three capsules daily with water, ideally alongside a meal.</p>" }
+      ]
+    },
+    { "type": "payment_icons", "name": "Payment icons", "limit": 1, "settings": [] },
+    { "type": "@app" }
+  ],
+  "presets": [
+    {
+      "name": "Collagen product",
+      "blocks": [
+        { "type": "blurb" },
+        { "type": "keypoints" },
+        { "type": "variant_picker" },
+        { "type": "purchase_options" },
+        { "type": "stock" },
+        { "type": "buy_buttons" },
+        { "type": "reassurance" },
+        { "type": "usage" },
+        { "type": "payment_icons" }
+      ]
+    }
+  ]
+}
+{% endschema %}

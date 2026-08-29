@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "col-breadcrumbs": {
+      "type": "col-breadcrumbs"
+    },
+    "col-main": {
+      "type": "col-main"
+    },
+    "col-fbt": {
+      "type": "col-fbt"
+    },
+    "col-custom-1": {
+      "type": "col-custom-1"
+    },
+    "col-scrolling-promotion": {
+      "type": "col-scrolling-promotion"
+    },
+    "col-rich-text": {
+      "type": "col-rich-text"
+    },
+    "col-image-with-text-1": {
+      "type": "col-image-with-text-1"
+    },
+    "col-image-with-text-2": {
+      "type": "col-image-with-text-2"
+    },
+    "col-multicolumn-1": {
+      "type": "col-multicolumn-1"
+    },
+    "col-spacer-1": {
+      "type": "col-spacer-1"
+    },
+    "col-custom-2": {
+      "type": "col-custom-2"
+    },
+    "col-spacer-2": {
+      "type": "col-spacer-2"
+    },
+    "col-related": {
+      "type": "col-related"
+    },
+    "col-custom-3": {
+      "type": "col-custom-3"
+    },
+    "col-multicolumn-2": {
+      "type": "col-multicolumn-2"
+    },
+    "col-reviews": {
+      "type": "col-reviews"
+    }
+  },
+  "order": [
+    "col-breadcrumbs",
+    "col-main",
+    "col-fbt",
+    "col-custom-1",
+    "col-scrolling-promotion",
+    "col-rich-text",
+    "col-image-with-text-1",
+    "col-image-with-text-2",
+    "col-multicolumn-1",
+    "col-spacer-1",
+    "col-custom-2",
+    "col-spacer-2",
+    "col-related",
+    "col-custom-3",
+    "col-multicolumn-2",
+    "col-reviews"
+  ]
+}

@@ -1,0 +1,11 @@
+{%- comment -%}
+  This theme serves one page: the collagen product replica. The other templates are
+  deliberate stubs so it uploads and previews cleanly. Do not publish it as the
+  storefront -- it has no real home page, collection or cart design.
+{%- endcomment -%}
+<div class="page-width" style="padding:8rem 0;text-align:center">
+  <h1>{{ shop.name }}</h1>
+  <p>This theme previews a single product page.</p>
+  {%- assign p = collections.all.products.first -%}
+  {%- if p -%}<p><a href="{{ p.url }}">{{ p.title }}</a></p>{%- endif -%}
+</div>

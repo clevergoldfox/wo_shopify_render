@@ -1,0 +1,117 @@
+{%- comment -%}
+  Brand story: alternating image/text rows plus a three-icon pillar row.
+{%- endcomment -%}
+
+<section class="section{% if section.settings.cream %} section--cream{% endif %}">
+  <div class="wrap">
+
+    {%- if section.settings.heading != blank -%}
+      <div class="section-head">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+
+        {%- when 'row' -%}
+          {%- assign row_parity = forloop.index0 | modulo: 2 -%}
+          <div class="story{% if row_parity == 1 %} story--flip{% endif %}"
+               data-reveal {{ block.shopify_attributes }}>
+            <div class="story__media">
+              {%- if block.settings.image -%}
+                <img src="{{ block.settings.image | image_url: width: 1200 }}"
+                     srcset="{{ block.settings.image | image_url: width: 600 }} 600w,
+                             {{ block.settings.image | image_url: width: 1200 }} 1200w"
+                     sizes="(min-width: 900px) 50vw, 100vw"
+                     alt="{{ block.settings.image.alt | escape }}"
+                     width="{{ block.settings.image.width }}"
+                     height="{{ block.settings.image.height }}" loading="lazy">
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag }}
+              {%- endif -%}
+            </div>
+            <div class="story__body">
+              <h3>{{ block.settings.heading }}</h3>
+              {{ block.settings.text }}
+            </div>
+          </div>
+
+      {%- endcase -%}
+    {%- endfor -%}
+
+    {%- assign has_pillars = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'pillar' -%}{%- assign has_pillars = true -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_pillars -%}
+      <div class="pillars" style="margin-top:36px">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'pillar' -%}
+            <div class="pillar" {{ block.shopify_attributes }}>
+              <span class="pillar__icon">
+                <svg width="26" height="26"><use href="#i-{{ block.settings.icon }}"/></svg>
+              </span>
+              <h4>{{ block.settings.heading }}</h4>
+              <p>{{ block.settings.text }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand story",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our standards" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Sourcing you can actually trace" },
+    { "type": "checkbox", "id": "cream", "label": "Cream background", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Image + text row",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Straight from single-origin suppliers" },
+        { "type": "richtext", "id": "text", "label": "Text",
+          "default": "<p>We buy directly from the farms and fisheries that produce our raw material.</p>" }
+      ]
+    },
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "leaf",
+          "options": [
+            { "value": "leaf",  "label": "Leaf" },
+            { "value": "tag",   "label": "Tag" },
+            { "value": "flask", "label": "Flask" },
+            { "value": "ship",  "label": "Package" },
+            { "value": "lock",  "label": "Lock" }
+          ]
+        },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Direct sourcing" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Named suppliers for every raw material we use." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand story",
+      "blocks": [
+        { "type": "row" }, { "type": "row" }, { "type": "row" },
+        { "type": "pillar" }, { "type": "pillar" }, { "type": "pillar" }
+      ]
+    }
+  ]
+}
+{% endschema %}

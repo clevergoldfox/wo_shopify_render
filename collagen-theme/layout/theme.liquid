@@ -1,0 +1,2671 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ", " }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+  {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+  {{ content_for_header }}
+
+    
+
+
+
+<script type="text/javascript">
+  ;(function() {
+    const designMode = false;
+    if (designMode) {
+      console.debug("shogun: Design mode is enabled, skipping optimizer initialization");
+      return;
+    }
+
+    // If the referrer url is the Shopify admin url or other known merchant domains, then set a local storage shg_is_merchant flag to true
+    // This is used to remove the preview bar from the page for shoppers
+    const referrer = document.referrer
+    const merchantDomains = ['admin.shopify.com', 'ab.shgapi.com', 'abc.shogun.dev']
+    if (!localStorage.getItem('_shg_is_merchant') && merchantDomains.some(domain => referrer.includes(domain))) {
+      console.debug('shogun: Setting shg_is_merchant to true')
+      localStorage.setItem('_shg_is_merchant', 'true')
+    }
+
+    // Check for optimization disable flags
+    const urlParams = new URLSearchParams(window.location.search);
+    const optimizationDisabled = urlParams.get('shg') === "false" || window.location.hostname.includes('shopifypreview');
+
+    if (optimizationDisabled) {
+      console.debug("shogun: Optimization is disabled, skipping optimizer initialization");
+      return;
+    }
+
+    // Load shop metafield configuration
+    
+    const shopMetafieldConfig = {"default_theme_id":150706159843,"method":"greedy","optimizations":[],"expires_at":1787876103000,"env":"production"};
+    
+    if (!shopMetafieldConfig) {
+      console.debug("shogun: Shop metafield configuration for optimizations is missing. Skipping optimizer initialization.");
+      return;
+    }
+
+    const optimizationsData = shopMetafieldConfig.expires_at > Date.now() ? (shopMetafieldConfig.optimizations || []) : [];
+
+    // These ID should match. It is possible for them to be different if a theme is copied from a different shop.
+    const intendedShopifyId = "18661287"; // The hard coded shopify ID when this snippet was pushed to the theme.
+    const currentShopifyId = "18661287"; // The current shopify ID that this theme is rendered in.
+    if (intendedShopifyId !== currentShopifyId) {
+      console.debug(`shogun: Shopify ID mismatch: intendedShopifyId=${intendedShopifyId} currentShopifyId=${currentShopifyId}. This may indicate the theme was copied from another shop and not properly set up. Skipping optimizer initialization to avoid potential issues.`);
+      return;
+    } else {
+      console.debug(`shogun: Shopify ID verified: ${intendedShopifyId}`);
+    }
+
+    
+      if (typeof ShogunDispatcher === 'undefined') {
+        console.error("shogun: Dispatcher is not defined. Please ensure the shogun optimizer script is properly loaded.");
+        return;
+      }
+
+      const dispatcherConfig = {
+        shop: {
+          shopId: "bb8488b3-ed0d-4b16-a3b9-aea8031a8878",
+          shopDomain: "{{ shop.permanent_domain }}",
+          analyticsUrl: "https://shogun-abc-production.global.ssl.fastly.net",
+          geoLocationApi: "https://ipinfo.io/json?token=f2ae3a557d807b",
+          storefrontAccessToken: "1f38730dcfc56a4a2434ed73d0c3053e",
+          defaultThemeId: shopMetafieldConfig.default_theme_id ? shopMetafieldConfig.default_theme_id.toString() : null,
+          storewideEventCollection: true,
+        },
+        page: {
+          pageId: "{{ product.id }}",
+          pageType: "product",
+          templateName: "product",
+          templateSuffix: "",
+          templateDirectory: "",
+          themeId: "150706159843",
+          languageRootUrl: "/",
+          path: window.location.pathname,
+          currentCartVariantId: null,
+        },
+        session: {
+          sessionId: urlParams.get('shgSessionId'),
+          customerId: "",
+          isB2B: false,
+        },
+        assignmentStrategy: shopMetafieldConfig.method,
+        publishedOptimizations: optimizationsData
+      }
+
+      console.debug("shogun: Initializing ShogunOptimizer v2");
+      const dispatcher = new ShogunDispatcher(dispatcherConfig);
+      dispatcher.run();
+    
+  })();
+
+</script>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    
+    <link rel="icon" type="image/png" href="{{ 'Micro-Ingredients_Primary-Logo_Digital_Icon_407adc26-c515-45e4-89c2-d409d4687f2c_w32_h32.png' | asset_url }}">
+
+    
+      <meta name="description" content="Micro Ingredients offers a multi collagen peptides complex with each bottle providing extra strength capsules and a full-spectrum collagen blend with five essential types.  Packaging &amp;amp; Dosage Options  240 Capsules – 80 Servings  3 Capsules Daily – 1,100mg Multi Collagen Complex, 2,500mcg Biotin, 72mg Vitamin C, and">
+    
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+<style data-shopify>
+  @font-face {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n5.ad5b4b72b59a00358afc706450c864c3c8323842.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n5.33757fdf985af2d24b32fcd84c9a09224d4b2c39.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("{{ 'poppins_i5.6acfce842c096080e34792078ef3cb7c3aad24d4.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_i5.a49113e4fe0ad7fd7716bd237f1602cbec299b3c.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n7.f34f55d9b3d3205d2cd6f64955ff4b36f0cfd8da.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("{{ 'poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_i7.ec8499dbd7616004e21155106d13837fff4cf556.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n7.f34f55d9b3d3205d2cd6f64955ff4b36f0cfd8da.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("{{ 'poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_i7.ec8499dbd7616004e21155106d13837fff4cf556.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n7.f34f55d9b3d3205d2cd6f64955ff4b36f0cfd8da.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("{{ 'poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_i7.ec8499dbd7616004e21155106d13837fff4cf556.woff' | asset_url }}") format("woff");
+}
+
+  @font-face {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n5.ad5b4b72b59a00358afc706450c864c3c8323842.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n5.33757fdf985af2d24b32fcd84c9a09224d4b2c39.woff' | asset_url }}") format("woff");
+}
+@font-face {
+  font-family: Poppins;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n6.aa29d4918bc243723d56b59572e18228ed0786f6.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n6.5f815d845fe073750885d5b7e619ee00e8111208.woff' | asset_url }}") format("woff");
+}
+@font-face {
+  font-family: Poppins;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("{{ 'poppins_n6.aa29d4918bc243723d56b59572e18228ed0786f6.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'poppins_n6.5f815d845fe073750885d5b7e619ee00e8111208.woff' | asset_url }}") format("woff");
+}
+
+
+  
+    :root,
+.color-scheme-1 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 119,162,71;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 119,162,71;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 119,162,71;
+      --color-secondary-button-border: 119,162,71;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,75,22;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 0,75,22;
+      --color-progress-bar: 119,162,71;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-1 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 119,162,71;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 119,162,71;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 119,162,71;
+      --color-secondary-button-border: 119,162,71;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,75,22;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 0,75,22;
+      --color-progress-bar: 119,162,71;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-1 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 119,162,71;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 119,162,71;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 119,162,71;
+      --color-secondary-button-border: 119,162,71;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,75,22;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 0,75,22;
+      --color-progress-bar: 119,162,71;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-inverse {
+      --color-background: 2,95,29;
+      --color-secondary-background: 0,0,0;
+      --color-primary: 179,213,124;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 230,230,230;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #9abfa5;
+      --color-foreground-lighten-40: #679f77;
+      --color-foreground-lighten-19: #327d48;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-inverse {
+        --color-background: 2,95,29;
+      --color-secondary-background: 0,0,0;
+      --color-primary: 179,213,124;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 230,230,230;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #9abfa5;
+      --color-foreground-lighten-40: #679f77;
+      --color-foreground-lighten-19: #327d48;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-inverse {
+        --color-background: 2,95,29;
+      --color-secondary-background: 0,0,0;
+      --color-primary: 179,213,124;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 230,230,230;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #9abfa5;
+      --color-foreground-lighten-40: #679f77;
+      --color-foreground-lighten-19: #327d48;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-info {
+      --color-background: 0,73,30;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 179,213,124;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 179,213,124;
+      --color-subtext-alpha: 1.0;
+      --color-border: 0,73,30;
+      --color-border-alpha: 1.0;
+      --color-button: 179,213,124;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 13,135,86;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #99b6a5;
+      --color-foreground-lighten-40: #669278;
+      --color-foreground-lighten-19: #306c49;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-info {
+        --color-background: 0,73,30;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 179,213,124;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 179,213,124;
+      --color-subtext-alpha: 1.0;
+      --color-border: 0,73,30;
+      --color-border-alpha: 1.0;
+      --color-button: 179,213,124;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 13,135,86;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #99b6a5;
+      --color-foreground-lighten-40: #669278;
+      --color-foreground-lighten-19: #306c49;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-info {
+        --color-background: 0,73,30;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 179,213,124;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 179,213,124;
+      --color-subtext-alpha: 1.0;
+      --color-border: 0,73,30;
+      --color-border-alpha: 1.0;
+      --color-button: 179,213,124;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 13,135,86;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #99b6a5;
+      --color-foreground-lighten-40: #669278;
+      --color-foreground-lighten-19: #306c49;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-2 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-2 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-2 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-3 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 255,255,255;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 173,173,173;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 2,4,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 255,255,255;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-3 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 255,255,255;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 173,173,173;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 2,4,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 255,255,255;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-3 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 255,255,255;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 173,173,173;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 2,4,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 255,255,255;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-4 {
+      --color-background: 0,0,0;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 196,48,28;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 233,233,233;
+      --color-secondary-button-border: 233,233,233;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #999999;
+      --color-foreground-lighten-40: #666666;
+      --color-foreground-lighten-19: #303030;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-4 {
+        --color-background: 0,0,0;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 196,48,28;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 233,233,233;
+      --color-secondary-button-border: 233,233,233;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #999999;
+      --color-foreground-lighten-40: #666666;
+      --color-foreground-lighten-19: #303030;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-4 {
+        --color-background: 0,0,0;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 196,48,28;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 255,255,255;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 233,233,233;
+      --color-secondary-button-border: 233,233,233;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #999999;
+      --color-foreground-lighten-40: #666666;
+      --color-foreground-lighten-19: #303030;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-6 {
+      --color-background: 207,222,182;
+      --color-secondary-background: 243,238,234;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 0,0,0;
+      --color-subtext-alpha: 1.0;
+      --color-border: 198,191,177;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 230,230,230;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #53855b;
+      --color-foreground-lighten-40: #7ca279;
+      --color-foreground-lighten-19: #a8c299;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-6 {
+        --color-background: 207,222,182;
+      --color-secondary-background: 243,238,234;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 0,0,0;
+      --color-subtext-alpha: 1.0;
+      --color-border: 198,191,177;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 230,230,230;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #53855b;
+      --color-foreground-lighten-40: #7ca279;
+      --color-foreground-lighten-19: #a8c299;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-6 {
+        --color-background: 207,222,182;
+      --color-secondary-background: 243,238,234;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 0,0,0;
+      --color-subtext-alpha: 1.0;
+      --color-border: 198,191,177;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 230,230,230;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #53855b;
+      --color-foreground-lighten-40: #7ca279;
+      --color-foreground-lighten-19: #a8c299;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-7 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 233,233,233;
+      --color-secondary-button-border: 233,233,233;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-7 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 233,233,233;
+      --color-secondary-button-border: 233,233,233;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-7 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 233,233,233;
+      --color-secondary-button-border: 233,233,233;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-8 {
+      --color-background: 179,213,124;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 107,165,57;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 0,75,22;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 0,0,0;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 13,135,86;
+      --color-progress-bar: 170,213,112;
+      --color-foreground-lighten-60: #48823f;
+      --color-foreground-lighten-40: #6b9e53;
+      --color-foreground-lighten-19: #91bb69;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-8 {
+        --color-background: 179,213,124;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 107,165,57;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 0,75,22;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 0,0,0;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 13,135,86;
+      --color-progress-bar: 170,213,112;
+      --color-foreground-lighten-60: #48823f;
+      --color-foreground-lighten-40: #6b9e53;
+      --color-foreground-lighten-19: #91bb69;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-8 {
+        --color-background: 179,213,124;
+      --color-secondary-background: 247,247,247;
+      --color-primary: 107,165,57;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 0,75,22;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,230,230;
+      --color-border-alpha: 1.0;
+      --color-button: 255,255,255;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 0,0,0;
+      --color-secondary-button-border: 255,255,255;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 245,245,245;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 13,135,86;
+      --color-progress-bar: 170,213,112;
+      --color-foreground-lighten-60: #48823f;
+      --color-foreground-lighten-40: #6b9e53;
+      --color-foreground-lighten-19: #91bb69;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-9 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 0,73,30;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 13,135,86;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 0,0,0;
+      --color-foreground-lighten-60: #669278;
+      --color-foreground-lighten-40: #99b6a5;
+      --color-foreground-lighten-19: #cfdcd4;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-9 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 0,73,30;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 13,135,86;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 0,0,0;
+      --color-foreground-lighten-60: #669278;
+      --color-foreground-lighten-40: #99b6a5;
+      --color-foreground-lighten-19: #cfdcd4;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-9 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 0,73,30;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 13,135,86;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 0,0,0;
+      --color-foreground-lighten-60: #669278;
+      --color-foreground-lighten-40: #99b6a5;
+      --color-foreground-lighten-19: #cfdcd4;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-10 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-10 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-10 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 102,102,102;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 0,0,0;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-11 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 237,237,237;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 81,105,113;
+      --color-border-alpha: 1.0;
+      --color-button: 7,40,53;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #6a7e86;
+      --color-foreground-lighten-40: #9ca9ae;
+      --color-foreground-lighten-19: #d0d6d9;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-11 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 237,237,237;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 81,105,113;
+      --color-border-alpha: 1.0;
+      --color-button: 7,40,53;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #6a7e86;
+      --color-foreground-lighten-40: #9ca9ae;
+      --color-foreground-lighten-19: #d0d6d9;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-11 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 237,237,237;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 81,105,113;
+      --color-border-alpha: 1.0;
+      --color-button: 7,40,53;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #6a7e86;
+      --color-foreground-lighten-40: #9ca9ae;
+      --color-foreground-lighten-19: #d0d6d9;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-12 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 81,105,113;
+      --color-border-alpha: 1.0;
+      --color-button: 196,48,28;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #6a7e86;
+      --color-foreground-lighten-40: #9ca9ae;
+      --color-foreground-lighten-19: #d0d6d9;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-12 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 81,105,113;
+      --color-border-alpha: 1.0;
+      --color-button: 196,48,28;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #6a7e86;
+      --color-foreground-lighten-40: #9ca9ae;
+      --color-foreground-lighten-19: #d0d6d9;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-12 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 81,105,113;
+      --color-border-alpha: 1.0;
+      --color-button: 196,48,28;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #6a7e86;
+      --color-foreground-lighten-40: #9ca9ae;
+      --color-foreground-lighten-19: #d0d6d9;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-13 {
+      --color-background: 249,242,223;
+      --color-secondary-background: 237,237,237;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,233,235;
+      --color-border-alpha: 1.0;
+      --color-button: 7,40,53;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #687979;
+      --color-foreground-lighten-40: #98a19b;
+      --color-foreground-lighten-19: #cbccbf;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-13 {
+        --color-background: 249,242,223;
+      --color-secondary-background: 237,237,237;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,233,235;
+      --color-border-alpha: 1.0;
+      --color-button: 7,40,53;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #687979;
+      --color-foreground-lighten-40: #98a19b;
+      --color-foreground-lighten-19: #cbccbf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-13 {
+        --color-background: 249,242,223;
+      --color-secondary-background: 237,237,237;
+      --color-primary: 196,48,28;
+      --color-text-heading: 7,40,53;
+      --color-foreground: 7,40,53;
+      --color-subtext: 81,105,113;
+      --color-subtext-alpha: 1.0;
+      --color-border: 230,233,235;
+      --color-border-alpha: 1.0;
+      --color-button: 7,40,53;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 7,40,53;
+      --color-button-before: ;
+      --color-field: 237,237,237;
+      --color-field-alpha: 1.0;
+      --color-field-text: 7,40,53;
+      --color-link: 7,40,53;
+      --color-link-hover: 7,40,53;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #687979;
+      --color-foreground-lighten-40: #98a19b;
+      --color-foreground-lighten-19: #cbccbf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-14 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 77,77,77;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 255,224,147;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-14 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 77,77,77;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 255,224,147;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-14 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,0,0;
+      --color-foreground: 0,0,0;
+      --color-subtext: 77,77,77;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 255,224,147;
+      --color-button-text: 0,0,0;
+      --color-secondary-button: 237,237,237;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 0,0,0;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,0,0;
+      --color-link: 0,0,0;
+      --color-link-hover: 0,0,0;
+      --color-product-price-sale: 196,48,28;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #666666;
+      --color-foreground-lighten-40: #999999;
+      --color-foreground-lighten-19: #cfcfcf;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-0feefa37-f167-4043-b23c-c00fbc0d4747 {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 0,75,22;
+      --color-subtext-alpha: 1.0;
+      --color-border: 13,135,86;
+      --color-border-alpha: 1.0;
+      --color-button: 2,95,29;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 173,173,173;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 1,1,1;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 214,58,47;
+      --color-progress-bar: 107,165,57;
+      --color-foreground-lighten-60: #669278;
+      --color-foreground-lighten-40: #99b6a5;
+      --color-foreground-lighten-19: #cfdcd4;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-0feefa37-f167-4043-b23c-c00fbc0d4747 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 0,75,22;
+      --color-subtext-alpha: 1.0;
+      --color-border: 13,135,86;
+      --color-border-alpha: 1.0;
+      --color-button: 2,95,29;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 173,173,173;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 1,1,1;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 214,58,47;
+      --color-progress-bar: 107,165,57;
+      --color-foreground-lighten-60: #669278;
+      --color-foreground-lighten-40: #99b6a5;
+      --color-foreground-lighten-19: #cfdcd4;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-0feefa37-f167-4043-b23c-c00fbc0d4747 {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 196,48,28;
+      --color-text-heading: 0,73,30;
+      --color-foreground: 0,73,30;
+      --color-subtext: 0,75,22;
+      --color-subtext-alpha: 1.0;
+      --color-border: 13,135,86;
+      --color-border-alpha: 1.0;
+      --color-button: 2,95,29;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 173,173,173;
+      --color-secondary-button-border: 237,237,237;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 1,1,1;
+      --color-link: 0,73,30;
+      --color-link-hover: 0,73,30;
+      --color-product-price-sale: 214,58,47;
+      --color-progress-bar: 107,165,57;
+      --color-foreground-lighten-60: #669278;
+      --color-foreground-lighten-40: #99b6a5;
+      --color-foreground-lighten-19: #cfdcd4;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-e2e456bc-6cd9-4fb1-b37d-450f0d798ab2 {
+      --color-background: 12,51,37;
+      --color-secondary-background: 229,229,229;
+      --color-primary: 12,51,37;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 248,247,246;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 12,51,37;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 12,51,37;
+      --color-secondary-button-text: 12,51,37;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 12,51,37;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 119,162,71;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #9eada8;
+      --color-foreground-lighten-40: #6d857c;
+      --color-foreground-lighten-19: #3a5a4e;
+--inputs-border-width: 0px;
+        --inputs-search-border-width: 0px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-e2e456bc-6cd9-4fb1-b37d-450f0d798ab2 {
+        --color-background: 12,51,37;
+      --color-secondary-background: 229,229,229;
+      --color-primary: 12,51,37;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 248,247,246;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 12,51,37;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 12,51,37;
+      --color-secondary-button-text: 12,51,37;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 12,51,37;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 119,162,71;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #9eada8;
+      --color-foreground-lighten-40: #6d857c;
+      --color-foreground-lighten-19: #3a5a4e;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-e2e456bc-6cd9-4fb1-b37d-450f0d798ab2 {
+        --color-background: 12,51,37;
+      --color-secondary-background: 229,229,229;
+      --color-primary: 12,51,37;
+      --color-text-heading: 255,255,255;
+      --color-foreground: 255,255,255;
+      --color-subtext: 248,247,246;
+      --color-subtext-alpha: 1.0;
+      --color-border: 229,229,229;
+      --color-border-alpha: 1.0;
+      --color-button: 12,51,37;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 255,255,255;
+      --color-secondary-button-border: 12,51,37;
+      --color-secondary-button-text: 12,51,37;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 12,51,37;
+      --color-link: 255,255,255;
+      --color-link-hover: 255,255,255;
+      --color-product-price-sale: 119,162,71;
+      --color-progress-bar: 13,135,86;
+      --color-foreground-lighten-60: #9eada8;
+      --color-foreground-lighten-40: #6d857c;
+      --color-foreground-lighten-19: #3a5a4e;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+    
+.color-scheme-d34a2719-596b-4bd7-990a-7fc2b983d69a {
+      --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 119,162,71;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 119,162,71;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 119,162,71;
+      --color-secondary-button-border: 119,162,71;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,75,22;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 0,75,22;
+      --color-progress-bar: 119,162,71;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+--inputs-border-width: 1px;
+        --inputs-search-border-width: 2px;}
+    @media (min-width: 768px) {
+      body .desktop-color-scheme-d34a2719-596b-4bd7-990a-7fc2b983d69a {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 119,162,71;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 119,162,71;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 119,162,71;
+      --color-secondary-button-border: 119,162,71;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,75,22;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 0,75,22;
+      --color-progress-bar: 119,162,71;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+    @media (max-width: 767px) {
+      body .mobile-color-scheme-d34a2719-596b-4bd7-990a-7fc2b983d69a {
+        --color-background: 255,255,255;
+      --color-secondary-background: 255,255,255;
+      --color-primary: 119,162,71;
+      --color-text-heading: 0,75,22;
+      --color-foreground: 0,75,22;
+      --color-subtext: 119,162,71;
+      --color-subtext-alpha: 1.0;
+      --color-border: 255,255,255;
+      --color-border-alpha: 1.0;
+      --color-button: 0,75,22;
+      --color-button-text: 255,255,255;
+      --color-secondary-button: 119,162,71;
+      --color-secondary-button-border: 119,162,71;
+      --color-secondary-button-text: 255,255,255;
+      --color-button-before: ;
+      --color-field: 255,255,255;
+      --color-field-alpha: 1.0;
+      --color-field-text: 0,75,22;
+      --color-link: 0,75,22;
+      --color-link-hover: 0,75,22;
+      --color-product-price-sale: 0,75,22;
+      --color-progress-bar: 119,162,71;
+      --color-foreground-lighten-60: #669373;
+      --color-foreground-lighten-40: #99b7a2;
+      --color-foreground-lighten-19: #cfddd3;
+        color: rgb(var(--color-foreground));
+        background-color: rgb(var(--color-background));
+      }
+    }
+  
+
+  body, .color-scheme-1, .color-scheme-inverse, .color-scheme-info, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-6, .color-scheme-7, .color-scheme-8, .color-scheme-9, .color-scheme-10, .color-scheme-11, .color-scheme-12, .color-scheme-13, .color-scheme-14, .color-scheme-0feefa37-f167-4043-b23c-c00fbc0d4747, .color-scheme-e2e456bc-6cd9-4fb1-b37d-450f0d798ab2, .color-scheme-d34a2719-596b-4bd7-990a-7fc2b983d69a {
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  :root {
+    /* Animation variable */
+    --animation-long: .7s cubic-bezier(.3, 1, .3, 1);
+    --animation-nav: .5s cubic-bezier(.6, 0, .4, 1);
+    --animation-default: .5s cubic-bezier(.3, 1, .3, 1);
+    --animation-fast: .3s cubic-bezier(.7, 0, .3, 1);
+    --animation-button: .4s ease;
+    --transform-origin-start: left;
+    --transform-origin-end: right;
+    --duration-default: 200ms;
+    --duration-image: 1000ms;
+
+    --font-body-family: Poppins, sans-serif;
+    --font-body-style: normal;
+    --font-body-weight: 500;
+    --font-body-weight-bolder: 700;
+    --font-body-weight-bold: 700;
+    --font-body-size: 1.6rem;
+    --font-body-line-height: 1.625;
+
+    --font-heading-family: Poppins, sans-serif;
+    --font-heading-style: normal;
+    --font-heading-weight: 700;
+    --font-heading-letter-spacing: 0.0em;
+    --font-heading-transform: none;
+    --font-heading-scale: 1.0;
+    --font-heading-mobile-scale: 0.7;
+
+    --font-hd1-transform:none;
+
+    --font-subheading-family: Poppins, sans-serif;
+    --font-subheading-weight: 700;
+    --font-subheading-scale: 1.0;
+    --font-subheading-transform: none;
+    --font-subheading-letter-spacing: 0.0em;
+
+    --font-navigation-family: Poppins, sans-serif;
+    --font-navigation-weight: 600;
+    --navigation-transform: none;
+
+    --font-button-family: Poppins, sans-serif;
+    --font-button-weight: 700;
+    --buttons-letter-spacing: 0.1em;
+    --buttons-transform: uppercase;
+    --buttons-height: 5.0rem;
+    --buttons-border-width: 1px;
+
+    --font-pcard-title-family: Poppins, sans-serif;
+    --font-pcard-title-style: normal;
+    --font-pcard-title-weight: 500;
+    --font-pcard-title-scale: 0.9;
+    --font-pcard-title-transform: none;
+    --font-pcard-title-size: 1.44rem;
+    --font-pcard-title-line-height: 1.585;
+    --font-pcard-price-family: Poppins, sans-serif;
+    --font-pcard-price-style: normal;
+    --font-pcard-price-weight: 700;
+    --font-pcard-badge-family: Poppins, sans-serif;
+    --font-pcard-badge-style: normal;
+    --font-pcard-badge-weight: 600;
+
+    --font-hd1-size: 5.714288rem;
+    --font-hd2-size: 4.0rem;
+    --font-h1-size: calc(var(--font-heading-scale) * 4rem);
+    --font-h2-size: calc(var(--font-heading-scale) * 3.2rem);
+    --font-h3-size: calc(var(--font-heading-scale) * 2.8rem);
+    --font-h4-size: calc(var(--font-heading-scale) * 2.2rem);
+    --font-h5-size: calc(var(--font-heading-scale) * 1.8rem);
+    --font-h6-size: calc(var(--font-heading-scale) * 1.6rem);
+    --font-subheading-size: calc(var(--font-subheading-scale) * var(--font-body-size));
+
+    --color-badge-sale: #77A247;
+    --color-badge-sale-text: #FFFFFF;
+    --color-badge-soldout: #ADADAD;
+    --color-badge-soldout-text: #FFFFFF;
+    --color-badge-hot: #F07839;
+    --color-badge-hot-text: #FFFFFF;
+    --color-badge-new: #0C3325;
+    --color-badge-new-text: #FFFFFF;
+    --color-badge-coming-soon: #77A247;
+    --color-badge-coming-soon-text: #FFFFFF;
+    --color-cart-bubble: #77A247;
+    --color-keyboard-focus: 119 162 71;
+
+    --buttons-radius: 1.0rem;
+    --inputs-radius: 1.0rem;
+    --textareas-radius: 1.0rem;
+    --blocks-radius: 1.0rem;
+    --blocks-radius-mobile: 0.8rem;
+    --small-blocks-radius: 0.5rem;
+    --medium-blocks-radius: 0.6rem;
+    --pcard-radius: 1.0rem;
+    --pcard-inner-radius: 0.6rem;
+    --badges-radius: 4.0rem;
+
+    --page-width: 1600px;
+    --page-width-margin: 0rem;
+    --header-padding-bottom: 3.2rem;
+    --header-padding-bottom-mobile: 2.4rem;
+    --header-padding-bottom-large: 6rem;
+    --header-padding-bottom-large-lg: 3.2rem;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    font-size: var(--font-body-size);
+    line-height: var(--font-body-line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: normal;
+  }
+  @media (min-width: 1675px) {
+    .swiper-controls--outside {
+      --swiper-navigation-offset-x: calc((var(--swiper-navigation-size) + 2.7rem) * -1);
+    }
+  }
+</style>
+
+  
+  
+
+  
+  
+<link href="{{ 'vendor.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" /><link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" /><link href="{{ 'compare.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+  <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta name="google-site-verification" content="UzCvSZoysCKMxhxPWMFbrrsd4KYHLWOGk_uFSl13GQI">
+<meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/18661287/digital_wallets/dialog">
+<meta name="shopify-checkout-api-token" content="fe1f22797b979c6ebdde36a7d96939a2">
+<meta id="in-context-paypal-metadata" data-shop-id="18661287" data-venmo-supported="false" data-environment="production" data-locale="en_US" data-paypal-v4="true" data-currency="USD">
+
+
+
+
+
+
+
+<script type="module">!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);</script>
+<script>!function(o){function n(){var o=[];function n(){o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);</script>
+<script>
+  window.ShopifyPay = window.ShopifyPay || {};
+  window.ShopifyPay.apiHost = "shop.app\/pay";
+  window.ShopifyPay.redirectState = null;
+</script>
+<script>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.SignInWithShop = window.Shopify.SignInWithShop || {};
+  window.Shopify.SignInWithShop.assetMetrics = { sampleRate: 0.25 };
+  window.Shopify.SignInWithShop.eligible = true;
+</script>
+
+
+
+
+
+
+<script>(function() {
+  var isLoaded = false;
+  function asyncLoad() {
+    if (isLoaded) return;
+    isLoaded = true;
+    var urls = ["https:\/\/cdn.shopify.com\/s\/files\/1\/1866\/1287\/t\/14\/assets\/clever-adwords-remarketing.js?shop={{ shop.permanent_domain }}","https:\/\/cdn.shopify.com\/s\/files\/1\/1866\/1287\/t\/14\/assets\/clever_adwords_global_tag.js?shop={{ shop.permanent_domain }}","https:\/\/shopify-fast-tags.deliverr.com\/main.js?shop={{ shop.permanent_domain }}","https:\/\/static.shareasale.com\/json\/shopify\/deduplication.js?shop={{ shop.permanent_domain }}","https:\/\/static.shareasale.com\/json\/shopify\/shareasale-tracking.js?sasmid=121416\u0026ssmtid=19038\u0026shop={{ shop.permanent_domain }}","https:\/\/widgets.automizely.com\/loyalty\/v1\/main.js?connection_id=b270c749a019480e98de8ec2aab98501\u0026mapped_org_id=0cc0ed0ebd65472c2df8470d6afed5b0_v1\u0026shop={{ shop.permanent_domain }}","https:\/\/jsappcdn.hikeorders.com\/main\/assets\/js\/hko-accessibility.min.js?widgetId={{ shop.permanent_domain }}\u0026shop={{ shop.permanent_domain }}","\/\/cdn.shopify.com\/proxy\/12eeea5170449ba5a240c2bebb86669011bcd34e2453672f525e8d054197e686\/d1639lhkj5l89m.cloudfront.net\/js\/storefront\/uppromote.js?shop={{ shop.permanent_domain }}\u0026sp-cache-control=cHVibGljLCBtYXgtYWdlPTkwMA","https:\/\/services.nofraud.com\/js\/device.js?shop={{ shop.permanent_domain }}","https:\/\/na.shgcdn3.com\/pixel-collector.js?shop={{ shop.permanent_domain }}","https:\/\/maps.bestfreecdn.com\/storage\/js\/maps-18661287.js?ver=2\u0026storeCreatedAt=2026-05-27-02-26\u0026shop={{ shop.permanent_domain }}","https:\/\/maps.bestfreecdn.com\/storage\/js\/maps-18661287.js?ver=2\u0026storeCreatedAt=2026-05-27-02-26\u0026shop={{ shop.permanent_domain }}"];
+    for (var i = 0; i < urls.length; i++) {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = urls[i];
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+  };
+  if(window.attachEvent) {
+    window.attachEvent('onload', asyncLoad);
+  } else {
+    window.addEventListener('load', asyncLoad, false);
+  }
+})();</script>
+
+<script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
+
+
+
+
+<script>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.MCP = window.Shopify.MCP || {};
+  window.Shopify.MCP.enabled = true;
+  window.Shopify.MCP.shop = "{{ shop.permanent_domain }}";
+  window.Shopify.MCP.mcpEndpoint = "https:\/\/{{ shop.permanent_domain }}\/api\/mcp";
+  window.Shopify.MCP.tools = [{"name":"search_shop_policies_and_faqs","description":"Used to get facts about the stores policies, products, or services.\nSome examples of questions you can ask are:\n  - What is your return policy?\n  - What is your shipping policy?\n  - What is your phone number?\n  - What are your hours of operation?\"\n","inputSchema":{"$schema":"https:\/\/json-schema.org\/draft\/2020-12\/schema","type":"object","properties":{"query":{"type":"string","description":"A natural language query."},"context":{"type":"string","description":"Additional information about the request such as user demographics, mood, location, or other relevant details that could help in tailoring the response appropriately."}},"required":["query"]}}];
+</script>
+<script>(()=>{var d="shopify:webmcp_adapter_loaded",n=Symbol.for("shopify.webmcp_adapter_loading");function s(c,a,{win:r=window,doc:o=document}={}){function p(){try{return r.localStorage.getItem(d)==="true"}catch{return!1}}function l(){try{r.localStorage.setItem(d,"true")}catch{}}function u(){return typeof(o.modelContext||r.navigator?.modelContext)?.registerTool=="function"}function f(){if(r[n]||!u())return;let t=o.head||o.getElementsByTagName("head")[0];if(!t)return;let e=o.createElement("script");e.type="module",e.crossOrigin="anonymous",a&&(e.integrity=a),e.src=c,e.addEventListener("load",l,{once:!0}),e.addEventListener("error",()=>{r[n]=!1},{once:!0}),t.appendChild(e),r[n]=!0}function _(t){let e=o.getElementById("shopify-origin-trials");if(!e||r.__shopifyOriginTrialsDone){t();return}e.addEventListener("load",t,{once:!0}),e.addEventListener("error",t,{once:!0})}function i(){_(()=>r.setTimeout(f,0))}function m(){o.addEventListener("DOMContentLoaded",i,{once:!0})}p()?i():m()}s("https:\/\/cdn.shopify.com\/storefront\/webmcp\/webmcp-0.1.1.js","");})();
+</script>
+
+
+
+
+
+<script nomodule>
+  document.addEventListener("DOMContentLoaded", portableWalletsCleanup);
+</script>
+
+<link id="shopify-accelerated-checkout-styles" rel="stylesheet" media="screen" href="{{ 'col-accelerated-checkout-backwards-compat.css' | asset_url }}" crossorigin="anonymous">
+<style id="shopify-accelerated-checkout-cart">
+        #shopify-buyer-consent {
+  margin-top: 1em;
+  display: inline-block;
+  width: 100%;
+}
+
+#shopify-buyer-consent.hidden {
+  display: none;
+}
+
+#shopify-subscription-policy-button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#shopify-subscription-policy-button::before {
+  box-shadow: none;
+}
+
+      </style>
+
+<script id="shopify-cfh-end">window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    
+      window.__shgMoneyFormat = window.__shgMoneyFormat || {"USD":{"currency":"USD","currency_symbol":"$","currency_symbol_location":"left","decimal_places":2,"decimal_separator":".","thousands_separator":","}};
+    
+    window.__shgCurrentCurrencyCode = window.__shgCurrentCurrencyCode || {
+      currency: "USD",
+      currency_symbol: "$",
+      decimal_separator: ".",
+      thousands_separator: ",",
+      decimal_places: 2,
+      currency_symbol_location: "left"
+    };
+  </script>
+
+
+
+    <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+<script>
+  window.FoxTheme = window.FoxTheme || {};
+  document.documentElement.classList.replace('no-js', 'js');
+  window.shopUrl = 'https://{{ shop.permanent_domain }}';
+  window.FoxTheme.routes = {
+    cart_add_url: '/cart/add',
+    cart_change_url: '/cart/change',
+    cart_update_url: '/cart/update',
+    cart_url: '/cart',
+    shop_url: 'https://{{ shop.permanent_domain }}',
+    predictive_search_url: '/search/suggest',
+    root_url: '/',
+  };
+
+  FoxTheme.shippingCalculatorStrings = {
+    error: "One or more errors occurred while retrieving the shipping rates:",
+    notFound: "Sorry, we do not ship to your address.",
+    oneResult: "There is one shipping rate for your address:",
+    multipleResults: "There are multiple shipping rates for your address:",
+  };
+
+  FoxTheme.settings = {
+    cartType: "drawer",
+    moneyFormat: "${% raw %}{{amount}}{% endraw %} USD",
+    themeName: 'Hyper',
+    themeVersion: '1.3.0'
+  }
+
+  FoxTheme.compare = {
+    alertMessage: `You can only add a maximum of 5 products to compare.`,
+    maxProductsInCompare: 5
+  }
+
+  FoxTheme.variantStrings = {
+    addToCart: `Add to cart`,
+    addToCartShort: `Add`,
+    soldOut: `Sold out`,
+    unavailable: `Unavailable`,
+    unavailable_with_option: `[value] - Unavailable`,
+  };
+
+  FoxTheme.cartStrings = {
+    error: `There was an error while updating your cart. Please try again.`,
+    quantityError: `You can only add [quantity] of this item to your cart.`,
+    duplicateDiscountError: `The discount code has already been applied to your cart.`,
+    applyDiscountError: `The discount code cannot be applied to your cart.`,
+  };
+
+  FoxTheme.quickOrderListStrings = {
+    itemsAdded: "[quantity] items added",
+    itemAdded: "[quantity] item added",
+    itemsRemoved: "[quantity] items removed",
+    itemRemoved: "[quantity] item removed",
+    viewCart: "View cart",
+    each: "[money]\/ea",
+    minError: "This item has a minimum of [min]",
+    maxError: "This item has a maximum of [max]",
+    stepError: "You can only add this item in increments of [step]"
+  };
+
+  FoxTheme.accessibilityStrings = {
+    imageAvailable: `Image [index] is now available in gallery view`,
+    shareSuccess: `Copied`,
+    pauseSlideshow: `Pause slideshow`,
+    playSlideshow: `Play slideshow`,
+    recipientFormExpanded: `Gift card recipient form expanded`,
+    recipientFormCollapsed: `Gift card recipient form collapsed`,
+    countrySelectorSearchCount: `[count] countries/regions found`,
+  };
+</script>
+<script src="{{ 'f4130163a7.js' | asset_url }}" type="text/javascript" async></script>
+    
+    
+    
+  
+  
+
+<script type="text/javascript">
+  
+    window.SHG_CUSTOMER = null;
+  
+</script>
+
+
+
+
+
+
+
+<script src="{{ 'upsellkit.js' | asset_url }}" type="text/javascript" defer="defer"></script>
+
+<script>(function(){if ("sendBeacon" in navigator && "performance" in window) {try {var session_token_from_headers = performance.getEntriesByType('navigation')[0].serverTiming.find(x => x.name == '_s').description;} catch {var session_token_from_headers = undefined;}var session_cookie_matches = document.cookie.match(/_shopify_s=([^;]*)/);var session_token_from_cookie = session_cookie_matches && session_cookie_matches.length === 2 ? session_cookie_matches[1] : "";var session_token = session_token_from_headers || session_token_from_cookie || "";function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 18661287,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token,page_type: "product"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
+<script>
+  window.__TREKKIE_SHIM_QUEUE = window.__TREKKIE_SHIM_QUEUE || [];
+</script>
+
+
+  <script>
+  if (!window.ga || (window.ga && typeof window.ga !== 'function')) {
+    window.ga = function ga() {
+      (window.ga.q = window.ga.q || []).push(arguments);
+      if (window.Shopify && window.Shopify.analytics && typeof window.Shopify.analytics.publish === 'function') {
+        window.Shopify.analytics.publish("ga_stub_called", {}, {sendTo: "google_osp_migration"});
+      }
+      console.error("Shopify's Google Analytics stub called with:", Array.from(arguments), "\nSee https://help.shopify.com/manual/promoting-marketing/pixels/pixel-migration#google for more information.");
+    };
+    if (window.Shopify && window.Shopify.analytics && typeof window.Shopify.analytics.publish === 'function') {
+      window.Shopify.analytics.publish("ga_stub_initialized", {}, {sendTo: "google_osp_migration"});
+    }
+  }
+</script>
+
+<meta name="shopify-y" content="08c4e488-16c7-48ee-931f-8a58bc7f0861"><meta name="shopify-s" content="e7428bfe-ec75-438d-a446-0f653840aea0"><meta name="new-cookie-storage-activated" content="f">
+
+</head>
+<body
+    class="product-template  blocks-corner--slightly"
+    data-initializing
+  >
+
+    
+    
+    
+
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+      Skip to content
+    </a><page-transition class="loading-bar"> </page-transition>
+<div class="site-wrapper min-height-screen">
+      <!-- BEGIN sections: header-group -->
+
+{% section 'col-announcement' %}
+
+{% section 'col-header' %}
+
+<!-- END sections: header-group -->
+
+      <main id="MainContent" class="main-content content-for-layout focus-none" role="main" tabindex="-1">
+        
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+  {{ content_for_layout }}
+</main>
+
+      </main>
+
+      <!-- BEGIN sections: footer-group -->
+
+{% section 'col-footer-pre' %}
+
+{% section 'col-footer' %}
+
+{% section 'col-footer-post' %}
+
+<!-- END sections: footer-group -->
+    </div>
+
+    <!-- BEGIN sections: overlay-group -->
+
+{% section 'col-cart-drawer' %}
+
+{% section 'col-product-compare' %}
+
+{% section 'col-quick-view' %}
+
+<!-- END sections: overlay-group -->
+<ul hidden>
+      <li id="a11y-refresh-page-message">Choosing a selection results in a full page refresh.</li>
+      <li id="a11y-new-window-message">Opens in a new window.</li>
+    </ul>
+
+    
+      <script src="{{ 'quick-view.js' | asset_url }}" defer="defer"></script>
+    
+<script src="{{ 'compare.js' | asset_url }}" defer="defer"></script><style>  </style>
+<div id="shopify-block-Aenh1NWExaGprVXFIQ__16156609502398088594" class="shopify-block shopify-app-block"><!-- BEGIN app snippet: omega_multi_pixel --><div class='ot-multi-pixel'></div>
+
+    <meta
+        property='omega:tags'
+        content=''
+    >
+    <meta property='omega:product' content='{{ product.id }}'>
+    <meta property='omega:product_type' content=''>
+    <meta
+        property='omega:collections'
+        content='278640197795, 278825468067, 450923462883, 459247878371, 458400628963, 450739536099, 451361964259, 452810342627, 450572222691, 457053339875, 468217004259, 468217037027, 468217135331, 472949260515, 472257691875, 474640285923, '
+    >
+
+    <script>
+    (function () {
+      try {
+        const productData = {
+          id: "{{ product.id }}",
+          type: "",
+          tags: [],
+          variants: [{"id":{{ product.selected_or_first_available_variant.id }},"title":"Default Title","option1":"Default Title","option2":null,"option3":null,"sku":"BA-MI-MCC0300","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Micro Ingredients Multi Collagen Complex, 240 Capsules","public_title":null,"options":["Default Title"],"price":2495,"weight":113,"compare_at_price":2995,"inventory_quantity":22,"inventory_management":"shopify","inventory_policy":"continue","barcode":null,"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2246}],"price":2246,"compare_at_price":2495,"per_delivery_price":2246,"selling_plan_id":4596400355,"selling_plan_group_id":"8920d46708a916be221df9b1955d05547dbebe3a"}],"quantity_rule":{"min":1,"max":null,"increment":1}}],
+          collections: [
+            
+              "278640197795",
+            
+              "278825468067",
+            
+              "450923462883",
+            
+              "459247878371",
+            
+              "458400628963",
+            
+              "450739536099",
+            
+              "451361964259",
+            
+              "452810342627",
+            
+              "450572222691",
+            
+              "457053339875",
+            
+              "468217004259",
+            
+              "468217037027",
+            
+              "468217135331",
+            
+              "472949260515",
+            
+              "472257691875",
+            
+              "474640285923"
+            
+          ]
+        };
+
+        localStorage.setItem(
+          "omega_product_context_save_to_theme_app",
+          JSON.stringify(productData)
+        );
+      } catch (e) {
+        console.error("Omega: save product context failed", e);
+      }
+    })();
+  </script>
+
+
+
+
+
+
+        
+        
+
+        
+        
+            <script>
+                var omegaFBSettings = {"settings":{"shop_id":14580,"plan_configs":"","is_enable_trigger":false,"attributes_window":7,"enable":true,"content_type_event":"variant","capi_track_addtocart":true,"capi_track_addpaymentinfo":true,"capi_track_checkout":true,"capi_track_pageview":true,"capi_track_purchase":true,"capi_track_search":true,"capi_track_viewcontent":true,"pixel_track_addpaymentinfo":true,"pixel_track_addtocart":true,"pixel_track_checkout":true,"pixel_track_pageview":true,"pixel_track_purchase":true,"pixel_track_search":true,"pixel_track_viewcontent":true,"accept_permission_fb_ads":true,"is_enable_capi_pageview":false,"include_shipping_cost":true,"anti_spam_event":false,"plan_id":"","insights_enabled":true,"app_proxy_subpath":"/apps/otm"}};
+                (function () {
+                    try {
+                      localStorage.setItem(
+                        'omegaFBSettings',
+                        JSON.stringify(omegaFBSettings)
+                      );
+                    } catch (e) {
+                      console.error('Omega FB Settings parse error', e);
+                    }
+                })();
+            </script>
+        
+
+
+<script>
+  var localizationOmega = {
+    // ── country hiện tại ──
+    country: {
+      name:        "United States",
+      iso_code:    "US",
+      continent:   "North America",
+      unit_system: "imperial",
+      popular:     null,
+      currency: {
+        iso_code: "USD",
+        name:     "United States Dollar",
+        symbol:   "$"
+      }
+    },
+
+    // ── language hiện tại ──
+    language: {
+      name:         "English",
+      endonym_name: "English",
+      iso_code:     "en",
+      primary:      true,
+      root_url:     "\/"
+    },
+
+    // ── market hiện tại (market object bị cấm | json, lấy field con) ──
+    market: {
+      id:     361627875,
+      handle: "us"
+    },
+
+    // ── danh sách country khả dụng ──
+    availableCountries: [{
+        name:     "United States",
+        iso_code: "US",
+        currency: "USD"
+      }],
+
+    // ── danh sách language khả dụng ──
+    availableLanguages: [{
+        name:         "English",
+        endonym_name: "English",
+        iso_code:     "en",
+        primary:      true
+      }]
+  };
+
+  // Ghi market của phiên vào localStorage để web pixel đọc lại lúc register()
+  // (event xem hàng không có market — phải bắt ở storefront). Best-effort.
+  try {
+    localStorage.setItem(
+      "omega_market_context",
+      JSON.stringify({
+        handle: localizationOmega.market && localizationOmega.market.handle,
+        id: localizationOmega.market && localizationOmega.market.id,
+        country: localizationOmega.country && localizationOmega.country.iso_code
+      })
+    );
+  } catch (e) {
+    console.error("Omega: save market context failed", e);
+  }
+</script>
+
+
+
+<!-- END app snippet -->
+<script>
+  window.__OT_BUNDLE_ATC__ = {
+    enabled: true,
+    window_ms: 400,
+  };
+</script>
+<script>
+    window.__OTICS__ = {
+      enabled: true,
+      app: "SPF001",
+      proxy: "\/apps\/otm", // subpath first-party -> collector POST {proxy}/signal -> backend /cab/<app_code>/signal
+      shop: "{{ shop.permanent_domain }}"
+    };
+  </script>
+  
+</div><div id="shopify-block-AK25yTHNxKzJmSGU4e__6852929633348333696" class="shopify-block shopify-app-block"><script>
+  CKTools = {};
+  CKSettings = {"css":"","beforeJS":"","afterJS":"","quantitySelector":"","quantityWrapperSelector":"","atcSelector":"","mainSectionId":"","productInfoSectionId":"","shopifyPaymentButton":"","cartItemSelector":"","productCardSelector":"","variantPickerSelector":"","cartSelector":"","cartDrawerSelector":"","volumeDiscountsTargetSelector":"","volumeDiscountsInsert":"","productAddOnsTargetSelector":"","productAddOnsInsert":"","termsCheckoutSelectorCartPage":"","termsCheckoutParentSelectorCartPage":"","termsCheckoutSelectorCartDrawer":"","termsCheckoutParentSelectorCartDrawer":"","termsCheckoutSelectorProductPage":"","labelsStickersProductImgSelector":"","translateOption":"Option","translateQuantity":"Quantity","translateSubTotal":"Subtotal","translateShipping":"Shipping","translateTaxes":"Taxes","translateTotal":"Total","translateFree":"Free","translatePayNow":"Pay now","translateDeclineThisOffer":"Decline this offer","translateDay":"day","translateDays":"days","translateDaysMore":"","translateHour":"Hour","translateHours":"Hours","translateMinute":"Minute","translateMinutes":"Minutes","translateSecond":"Second","translateSeconds":"Seconds","translateSomeone":"","unknownLocation":"","randomizeSaleNotifications":"","customerNameInitialFormat":"","bogoTargetSelector":"","bogoInsert":"","comboProductsTargetSelector":"","comboProductsInsert":"","paymentLogosTargetSelector":"","paymentLogosInsert":"","trustBadgesTargetSelector":"","trustBadgesInsert":"","stockScarcityTargetSelector":"","stockScarcityInsert":"","countdownTimerTargetSelector":"","countdownTimerInsert":"","scdTargetSelector":"","scdInsert":"","cartUpsellPageTargetSelector":"","cartUpsellInsertPage":"","cartUpsellDrawerTargetSelector":"","cartUpsellInsertDrawer":"","labelsStickersProductCardTarget":"","moneyFormat":"","singleProductPage":"","ppdcs":"","cpdcs":"","lazyLoadProductCarts":"","atcAction":"","themeName":"","cartDrawerHook":"","themeCartDrawerButtonSelector":"","orderRewardsCalculate":"","bogoCartLoaderDelay":"","redirectUpsellToCheckout":"","redirectAddOnsToCheckout":"","featuredProduct":"","varinatInputSelector":"","saleNotificationTopDown":"","animateAddToCartDelay":"","cartDrawerDelay":"","cartDrawerClickSelector":"","saleNotificationsLocation":"","optionsEnabled":"","labelsStickersProductPageDelay":"","redirectToCheckout":"","tccProductPageDelay":"","stickyAtcTitleTruncate":"","showQuantityXBogoBuy":"","volumeDiscountShowTotalPrice":"","volumeDiscountReverseTotalPrice":"","volumeDiscountSelectedTierJS":"","afterGiftRemoveJS":"","disableCartUpsellRefresh":"","spCheckoutSelectorCartPage":"","spCheckoutParentSelectorCartPage":"","spCheckoutSelectorCartDrawer":"","spCheckoutParentSelectorCartDrawer":"","preorderTargetSelector":"","preorderInsert":"","priceSelector":"","pcsTargetSelector":"","pcsInsert":"","enableSCDPage":"","customFreeShippingIcon":"","customFreeGiftIcon":"","customFreeDiscountIcon":"","alwaysShowBOGOCartWidget":"","checkoutSelector":"","translateSoldOut":"","afterPreorderJS":"","overrideAtcBehaviour":"","toFixed":"","preorderErrorInsertAbsolute":"","disableLocaleBasedRoute":"","duplicateOrderRewardsWidget":"","mixMatchTargetSelector":"","mixMatchInsert":"","featuredMixMatchBundleId":"","featuredMixMatchBundleType":"","mixMatchProductsFetchCount":"","toolsReCheck":"","removeTypeFromCheckoutButton":"","SAT":{"satId":"114150015203","tokens":["9014458bb98abd5577e5457f1710c773"]}};
+  CKSelectedVariant = {"id":{{ product.selected_or_first_available_variant.id }},"title":"Default Title","option1":"Default Title","option2":null,"option3":null,"sku":"BA-MI-MCC0300","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Micro Ingredients Multi Collagen Complex, 240 Capsules","public_title":null,"options":["Default Title"],"price":2495,"weight":113,"compare_at_price":2995,"inventory_quantity":22,"inventory_management":"shopify","inventory_policy":"continue","barcode":null,"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2246}],"price":2246,"compare_at_price":2495,"per_delivery_price":2246,"selling_plan_id":4596400355,"selling_plan_group_id":"8920d46708a916be221df9b1955d05547dbebe3a"}],"quantity_rule":{"min":1,"max":null,"increment":1}};
+  CKVQ = {};
+  CKCurrentProduct = {"id":{{ product.id }},"title":"Micro Ingredients Multi Collagen Complex, 240 Capsules","handle":"multi-collagen-complex-for-women-240-capsules","description":"\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eMicro Ingredients offers a multi collagen peptides complex with each bottle providing \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eextra strength\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e capsules and a full-spectrum collagen blend with five essential types.\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan style=\"color: rgb(15, 113, 72);\"\u003e\u003cstrong\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"none\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003ePackaging \u0026amp; Dosage Options\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/strong\u003e\u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"0\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"27\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e240 Capsules – 80 Servings\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"27\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e3\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eCapsules\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Daily –\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e1,100mg\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Multi Collagen Complex, 2,500mcg Biotin, 72mg\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eVitamin C, and \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e55mg\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Hyaluronic Acid Per Serving \u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan style=\"color: rgb(15, 113, 72);\"\u003e\u003cstrong\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"none\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eHow it Works\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/strong\u003e\u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"1\" data-list-defn-props='{\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"Symbol\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"\",\"469777815\":\"multilevel\"}' data-listid=\"32\" data-font=\"Symbol\" data-leveltext=\"\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e5\u003c\/span\u003e\u003cspan class=\"NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW265340512 BCX0\"\u003e Collagen\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Types\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e in Every Serving\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e:\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eFeatures collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula.\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-list-defn-props='{\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"Symbol\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"\",\"469777815\":\"multilevel\"}' data-listid=\"32\" data-font=\"Symbol\" data-leveltext=\"\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eComprehensive Extra Strength Formula:\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eIncludes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eoptimal\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e absorption, \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eutilization\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e, and strength of collagen.\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan style=\"color: rgb(15, 113, 72);\"\u003e\u003cstrong\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"none\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eClean \u0026amp; Trusted\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/strong\u003e\u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"0\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"30\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eManufactured in cGMP compliant facility\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"1\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"30\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eNon-\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eGMO and free of\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e wheat,\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e soy, \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003edairy, \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003egluten, \u0026amp; tree nuts\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"30\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e3rd party lab tested for purity, safety, and potency\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e","published_at":"2024-08-14T10:57:29-07:00","created_at":"2024-08-14T10:57:29-07:00","vendor":"Micro Ingredients","type":"","tags":[],"price":2495,"price_min":2495,"price_max":2495,"available":true,"price_varies":false,"compare_at_price":2995,"compare_at_price_min":2995,"compare_at_price_max":2995,"compare_at_price_varies":false,"variants":[{"id":{{ product.selected_or_first_available_variant.id }},"title":"Default Title","option1":"Default Title","option2":null,"option3":null,"sku":"BA-MI-MCC0300","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Micro Ingredients Multi Collagen Complex, 240 Capsules","public_title":null,"options":["Default Title"],"price":2495,"weight":113,"compare_at_price":2995,"inventory_quantity":22,"inventory_management":"shopify","inventory_policy":"continue","barcode":null,"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2246}],"price":2246,"compare_at_price":2495,"per_delivery_price":2246,"selling_plan_id":4596400355,"selling_plan_group_id":"8920d46708a916be221df9b1955d05547dbebe3a"}],"quantity_rule":{"min":1,"max":null,"increment":1}}],"images":["{{ 'Product-Shopify1.png' | asset_url }}","\/\/www.microingredients.com\/cdn\/shop\/files\/MultiCollagenComplex_2copy.jpg?v=1776289277","\/\/www.microingredients.com\/cdn\/shop\/files\/new-old_2fc69714-b475-4a62-b367-65dced11e46a.jpg?v=1776289277","\/\/www.microingredients.com\/cdn\/shop\/files\/MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b.jpg?v=1776289277","\/\/www.microingredients.com\/cdn\/shop\/files\/4_f6184450-3d1d-4a0e-9c15-73b78b0dd003.jpg?v=1776289277","\/\/www.microingredients.com\/cdn\/shop\/files\/Multi_Collagen_Complex_6.jpg?v=1776289277"],"featured_image":"{{ 'Product-Shopify1.png' | asset_url }}","options":["Title"],"media":[{"alt":null,"id":38643239911651,"position":1,"preview_image":{"aspect_ratio":1.0,"height":3000,"width":3000,"src":"{{ 'Product-Shopify1.png' | asset_url }}"},"aspect_ratio":1.0,"height":3000,"media_type":"image","src":"{{ 'Product-Shopify1.png' | asset_url }}","width":3000},{"alt":null,"id":37809300668643,"position":2,"preview_image":{"aspect_ratio":1.0,"height":2083,"width":2083,"src":"\/\/www.microingredients.com\/cdn\/shop\/files\/MultiCollagenComplex_2copy.jpg?v=1776289277"},"aspect_ratio":1.0,"height":2083,"media_type":"image","src":"\/\/www.microingredients.com\/cdn\/shop\/files\/MultiCollagenComplex_2copy.jpg?v=1776289277","width":2083},{"alt":null,"id":38308279910627,"position":3,"preview_image":{"aspect_ratio":1.0,"height":2482,"width":2481,"src":"\/\/www.microingredients.com\/cdn\/shop\/files\/new-old_2fc69714-b475-4a62-b367-65dced11e46a.jpg?v=1776289277"},"aspect_ratio":1.0,"height":2482,"media_type":"image","src":"\/\/www.microingredients.com\/cdn\/shop\/files\/new-old_2fc69714-b475-4a62-b367-65dced11e46a.jpg?v=1776289277","width":2481},{"alt":null,"id":37809309155555,"position":4,"preview_image":{"aspect_ratio":1.0,"height":2094,"width":2094,"src":"\/\/www.microingredients.com\/cdn\/shop\/files\/MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b.jpg?v=1776289277"},"aspect_ratio":1.0,"height":2094,"media_type":"image","src":"\/\/www.microingredients.com\/cdn\/shop\/files\/MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b.jpg?v=1776289277","width":2094},{"alt":null,"id":34940620996835,"position":5,"preview_image":{"aspect_ratio":1.0,"height":2085,"width":2084,"src":"\/\/www.microingredients.com\/cdn\/shop\/files\/4_f6184450-3d1d-4a0e-9c15-73b78b0dd003.jpg?v=1776289277"},"aspect_ratio":1.0,"height":2085,"media_type":"image","src":"\/\/www.microingredients.com\/cdn\/shop\/files\/4_f6184450-3d1d-4a0e-9c15-73b78b0dd003.jpg?v=1776289277","width":2084},{"alt":null,"id":34940635152611,"position":6,"preview_image":{"aspect_ratio":1.0,"height":2083,"width":2083,"src":"\/\/www.microingredients.com\/cdn\/shop\/files\/Multi_Collagen_Complex_6.jpg?v=1776289277"},"aspect_ratio":1.0,"height":2083,"media_type":"image","src":"\/\/www.microingredients.com\/cdn\/shop\/files\/Multi_Collagen_Complex_6.jpg?v=1776289277","width":2083}],"requires_selling_plan":false,"selling_plan_groups":[{"id":"8920d46708a916be221df9b1955d05547dbebe3a","name":"3 month subscription with 10% discount","options":[{"name":"Recharge Plan ID","position":1,"values":["18911296"]},{"name":"Order Frequency and Unit","position":2,"values":["3-month"]}],"selling_plans":[{"id":4596400355,"name":"3 month subscription with 10% discount","description":null,"options":[{"name":"Recharge Plan ID","position":1,"value":"18911296"},{"name":"Order Frequency and Unit","position":2,"value":"3-month"}],"recurring_deliveries":true,"price_adjustments":[{"order_count":null,"position":1,"value_type":"percentage","value":10}],"checkout_charge":{"value_type":"percentage","value":100}}],"app_id":"294517"}],"content":"\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eMicro Ingredients offers a multi collagen peptides complex with each bottle providing \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eextra strength\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e capsules and a full-spectrum collagen blend with five essential types.\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan style=\"color: rgb(15, 113, 72);\"\u003e\u003cstrong\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"none\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003ePackaging \u0026amp; Dosage Options\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/strong\u003e\u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"0\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"27\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e240 Capsules – 80 Servings\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"27\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e3\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eCapsules\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Daily –\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e1,100mg\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Multi Collagen Complex, 2,500mcg Biotin, 72mg\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eVitamin C, and \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e55mg\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Hyaluronic Acid Per Serving \u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan style=\"color: rgb(15, 113, 72);\"\u003e\u003cstrong\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"none\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eHow it Works\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/strong\u003e\u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"1\" data-list-defn-props='{\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"Symbol\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"\",\"469777815\":\"multilevel\"}' data-listid=\"32\" data-font=\"Symbol\" data-leveltext=\"\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e5\u003c\/span\u003e\u003cspan class=\"NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW265340512 BCX0\"\u003e Collagen\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e Types\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e in Every Serving\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e:\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eFeatures collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula.\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-list-defn-props='{\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"Symbol\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"\",\"469777815\":\"multilevel\"}' data-listid=\"32\" data-font=\"Symbol\" data-leveltext=\"\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eComprehensive Extra Strength Formula:\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eIncludes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eoptimal\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e absorption, \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eutilization\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e, and strength of collagen.\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"OutlineElement Ltr SCXW265340512 BCX0\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan style=\"color: rgb(15, 113, 72);\"\u003e\u003cstrong\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"none\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eClean \u0026amp; Trusted\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/strong\u003e\u003c\/span\u003e\u003c\/p\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"0\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"30\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eManufactured in cGMP compliant facility\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"1\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"30\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eNon-\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003eGMO and free of\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e wheat,\u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e soy, \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003edairy, \u003c\/span\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003egluten, \u0026amp; tree nuts\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e\n\u003cdiv class=\"ListContainerWrapper SCXW265340512 BCX0\"\u003e\n\u003cul role=\"list\" class=\"BulletListStyle1 SCXW265340512 BCX0\"\u003e\n\u003cli class=\"OutlineElement Ltr SCXW265340512 BCX0\" role=\"listitem\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-list-defn-props='{\"335551671\":0,\"335552541\":1,\"335559685\":720,\"335559991\":360,\"469769226\":\"inherit\",\"469769242\":[8226],\"469777803\":\"left\",\"469777804\":\"•\",\"469777815\":\"hybridMultilevel\"}' data-listid=\"30\" data-font=\"inherit\" data-leveltext=\"•\" aria-setsize=\"-1\"\u003e\n\u003cp class=\"Paragraph SCXW265340512 BCX0\"\u003e\u003cspan class=\"TextRun SCXW265340512 BCX0\" lang=\"EN-US\" data-contrast=\"auto\"\u003e\u003cspan class=\"NormalTextRun SCXW265340512 BCX0\"\u003e3rd party lab tested for purity, safety, and potency\u003c\/span\u003e\u003c\/span\u003e\u003cspan data-ccp-props=\"{}\" class=\"EOP SCXW265340512 BCX0\"\u003e \u003c\/span\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e"};
+  CKCurrentProductCollections = [{"id":278640197795,"handle":"best-sellers","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2021-08-24T12:35:56-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Best Sellers","body_html":""},{"id":278825468067,"handle":"joint-and-bones-supplements","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2021-08-26T13:07:52-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Bone \u0026 Joint","body_html":"\u003cp\u003eJoint supplements and bone health supplements for daily mobility, flexibility, bone support, and active living routines. Related categories include \u003ca href=\"\/collections\/collagen\"\u003ecollagen peptides\u003c\/a\u003e, \u003ca href=\"\/collections\/vitamins\"\u003evitamin D3 K2\u003c\/a\u003e, and \u003ca href=\"\/collections\/omegas\"\u003eomega 3 supplements\u003c\/a\u003e.\u003c\/p\u003e","image":{"created_at":"2023-11-10T17:08:54-08:00","alt":null,"width":1522,"height":1500,"src":"\/\/www.microingredients.com\/cdn\/shop\/collections\/Joint.jpg?v=1699664934"}},{"id":450923462883,"handle":"daily-wellness","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-05-07T19:54:20-07:00","sort_order":"best-selling","template_suffix":"","published_scope":"web","title":"Daily Wellness","body_html":"\u003cp data-start=\"50\" data-end=\"199\" class=\"\"\u003eDiscover Microingredients’ Daily Wellness collection—clean, high-quality essentials crafted to support your everyday balance, energy, and well-being.\u003c\/p\u003e\n\u003cp data-start=\"206\" data-end=\"227\" class=\"\"\u003e \u003c\/p\u003e"},{"id":459247878371,"handle":"black-friday-pick","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-11-10T00:36:49-08:00","sort_order":"manual","template_suffix":"Default collection","published_scope":"web","title":"Father's Day Picks","body_html":""},{"id":458400628963,"handle":"halloween-pick","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-10-26T18:38:17-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Halloween Pick","body_html":""},{"id":450739536099,"handle":"collagen","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-05-01T11:06:55-07:00","sort_order":"best-selling","template_suffix":"","published_scope":"web","title":"Multi Collagen","body_html":"\u003cp\u003eCollagen peptides, collagen powder, and multi collagen formulas made for beauty-from-within routines, hair, skin, nails, and daily joint support. Explore related \u003ca href=\"\/collections\/multi-collagen\"\u003emulti collagen peptides\u003c\/a\u003e, \u003ca href=\"\/collections\/natural-beauty-care\"\u003ebeauty supplements\u003c\/a\u003e, and \u003ca href=\"\/collections\/joint-and-bones-supplements\"\u003ejoint support supplements\u003c\/a\u003e.\u003c\/p\u003e","image":{"created_at":"2025-05-01T11:51:01-07:00","alt":null,"width":2000,"height":2000,"src":"\/\/www.microingredients.com\/cdn\/shop\/collections\/Collagen_2_7d6fffaa-9133-42cf-bed1-153e4b3ce232.jpg?v=1746125461"}},{"id":451361964259,"handle":"multi-collagen","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-05-20T18:50:19-07:00","sort_order":"best-selling","template_suffix":"","published_scope":"web","title":"Multi Collagen","body_html":"\u003cp\u003eMulti collagen peptides in powder and capsule formats for daily beauty-from-within, hair, skin, nails, and joint support routines. Related pages include the \u003ca href=\"\/collections\/collagen\"\u003ecollagen collection\u003c\/a\u003e, \u003ca href=\"\/collections\/natural-beauty-care\"\u003ebeauty supplements\u003c\/a\u003e, and \u003ca href=\"\/collections\/joint-and-bones-supplements\"\u003ejoint supplements\u003c\/a\u003e.\u003c\/p\u003e","image":{"created_at":"2025-05-22T13:52:14-07:00","alt":null,"width":2000,"height":2000,"src":"\/\/www.microingredients.com\/cdn\/shop\/collections\/Collagen_2_7b44c6c6-2b6e-4dd7-8ada-fd6903f8fb2e.jpg?v=1747947134"}},{"id":452810342627,"handle":"prime-day-pick","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-07-02T01:35:03-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Prime Day Picks","body_html":""},{"id":450572222691,"handle":"all","title":"Shop All","updated_at":"2026-08-27T04:04:45-07:00","body_html":"","published_at":"2025-04-28T20:51:21-07:00","sort_order":"manual","template_suffix":"","disjunctive":false,"rules":[{"column":"variant_price","relation":"greater_than","condition":"1"},{"column":"vendor","relation":"not_equals","condition":"xcotton"}],"published_scope":"web"},{"id":457053339875,"handle":"shop-all-except-xcotton","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2025-09-29T22:49:21-07:00","sort_order":"best-selling","template_suffix":"","published_scope":"web","title":"Shop All（except xcotton）","body_html":""},{"id":468217004259,"handle":"spring-sale-stack-a","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2026-04-13T00:15:01-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Spring Sale - Stack A","body_html":""},{"id":468217037027,"handle":"spring-sale-stack-b","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2026-04-13T00:15:18-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Spring Sale - Stack B","body_html":""},{"id":468217135331,"handle":"spring-sale-stack-c","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2026-04-13T00:15:36-07:00","sort_order":"manual","template_suffix":"","published_scope":"web","title":"Spring Sale - Stack C","body_html":""},{"id":472949260515,"handle":"subscribe-save","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2026-07-05T19:23:23-07:00","sort_order":"best-selling","template_suffix":"","published_scope":"web","title":"Subscribe \u0026 Save","body_html":"\u003cp data-start=\"109\" data-end=\"199\" class=\"PDq2pG_selectionAnchorContainer\"\u003eSubscribe \u0026amp; save on essential supplements with automatic delivery and flexible management.\u003cspan aria-hidden=\"true\" class=\"PDq2pG_selectionAnchor\"\u003e\u003c\/span\u003e\u003c\/p\u003e"},{"id":472257691875,"handle":"summer-sale-pick","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2026-06-22T20:56:51-07:00","sort_order":"manual","template_suffix":"banner-left","published_scope":"web","title":"Summer Sale Pick","body_html":"\u003cp\u003e\u003cmeta charset=\"utf-8\"\u003e\u003cmeta charset=\"utf-8\"\u003eDiscover seasonal wellness essentials for your daily routine.\u003cbr\u003e\u003c\/p\u003e"},{"id":474640285923,"handle":"vip-48h-sale","updated_at":"2026-08-27T04:04:45-07:00","published_at":"2026-08-07T00:41:57-07:00","sort_order":"manual","template_suffix":"vip-48h-collection","published_scope":"web","title":"VIP 48H SALE","body_html":null}];
+  Shopify = Shopify || {};
+  Shopify.money_format = "${% raw %}{{amount}}{% endraw %}";
+  CKCartItemCollections = [];
+  CKCart = {"note":null,"attributes":{},"original_total_price":0,"total_price":0,"total_discount":0,"total_weight":0.0,"item_count":0,"items":[],"requires_shipping":false,"currency":"USD","items_subtotal_price":0,"cart_level_discount_applications":[],"checkout_charge_amount":0};
+  CKCurrentProductMetafields = {};
+  CKCurrentPage = {["id"]: "", ["url"]: "", ["metafield"]: "null"};
+  BundlePageIdInSettings = CKSettings?.mixMatchBundlePageId;
+  PageId = "";
+  CKMixMatchBundlePageSettings = null;
+  if (PageId && BundlePageIdInSettings && BundlePageIdInSettings.includes(PageId)) {
+    const pageTitle = document.querySelector(CKSettings?.pageTitleSelector || "h1",);
+    if (pageTitle) {
+      pageTitle.style.display = "none";
+    }
+    const parentElement = document.getElementById("ewck-mm-bp");
+    let tempParent = parentElement.parentElement;
+    const pWidth = tempParent.offsetWidth;
+    if (pWidth < 1000) {
+      while (true) {
+        if (tempParent.parentElement.offsetWidth < 1000) {
+          tempParent = tempParent.parentElement;
+        } else {
+          break;
+        }
+      }
+      tempParent.style.maxWidth = "1000px";
+    }
+
+    const bundleId = location.pathname.split("/").filter(Boolean)?.[2];
+    if (bundleId) {
+      const pageTitle = document.querySelector(CKSettings?.pageTitleSelector || "h1");
+      if (pageTitle) {
+        pageTitle.style.display = "none";
+      }
+    }
+  }
+  
+  
+    
+  
+  CKCurrentProductCollectionsMetafields = {};
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+</script>
+
+
+
+
+  <script>
+    CKVQ[{{ product.selected_or_first_available_variant.id }}] = 1492;
+  </script>
+
+
+
+</div>
+
+</body>
+</html>

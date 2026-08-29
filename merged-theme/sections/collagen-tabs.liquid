@@ -1,0 +1,63 @@
+{%- comment -%}
+  Tabbed product detail. The first tab falls back to product.description
+  when its block text is left empty.
+{%- endcomment -%}
+
+<section class="section">
+  <div class="wrap" data-tabs>
+    <div class="tabs__nav" role="tablist" aria-label="Product details">
+      {%- for block in section.blocks -%}
+        <button class="tabs__btn" role="tab" type="button"
+                data-tab-btn="{{ block.id }}"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                {{ block.shopify_attributes }}>
+          {{ block.settings.title }}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    {%- for block in section.blocks -%}
+      <div class="tabs__panel{% if forloop.first %} is-active{% endif %}"
+           role="tabpanel" data-tab-panel="{{ block.id }}">
+        <div class="prose">
+          {%- if block.settings.text != blank -%}
+            {{ block.settings.text }}
+          {%- elsif forloop.first -%}
+            {{ product.description }}
+          {%- endif -%}
+
+          {%- if block.settings.metafield_key != blank -%}
+            {%- assign mf = product.metafields.custom[block.settings.metafield_key] -%}
+            {%- if mf -%}{{ mf.value | metafield_tag }}{%- endif -%}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product tabs",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Tab title", "default": "Description" },
+        { "type": "richtext", "id": "text", "label": "Content",
+          "info": "Leave the first tab empty to fall back to the product description." },
+        { "type": "text", "id": "metafield_key", "label": "Custom metafield key (optional)",
+          "info": "Renders product.metafields.custom.<key> below the text." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product tabs",
+      "blocks": [{ "type": "tab" }, { "type": "tab" }, { "type": "tab" }, { "type": "tab" }]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+{%- comment -%}
+  Hyper's stylesheet only. Its theme.js is deliberately NOT loaded: every custom
+  element it defines (basic-modal, drawer-component, accordion-details, product-form
+  and 28 others) is already defined by this theme, so loading both throws
+  "Identifier 'QuantityInput' has already been declared" and kills the rest of the
+  script. This theme's own JS hydrates the markup instead.
+{%- endcomment -%}
+<link rel="stylesheet" href="{{ 'col-vendor.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'col-theme.css' | asset_url }}" media="all">
+{%- comment -%}
+  Hypers theme settings variables (:root and .color-scheme-*), scoped to .col-scope.
+  Unscoped they would redefine 14 properties this theme also uses -- --color-background,
+  --color-button and friends -- and recolour the header and footer on this page.
+  Its @font-face rules are re-declared below against local copies of the fonts.
+{%- endcomment -%}
+<link rel="stylesheet" href="{{ 'col-vars.css' | asset_url }}" media="all">
+
+{%- comment -%} col-fonts {%- endcomment -%}
+{%- comment -%}
+  Poppins, the source page's typeface, self-hosted from this theme's assets rather
+  than the source store's CDN. Declared here instead of in col-vars.css because the
+  src needs asset_url, which a static .css file cannot use.
+
+  The family is applied only inside .col-scope. Applied globally it would restyle
+  this page's header, footer and cart drawer, which belong to this theme.
+{%- endcomment -%}
+<style>
+@font-face{font-family:Poppins;font-weight:500;font-style:normal;font-display:swap;src:url({{ 'col-poppins-n5.woff2' | asset_url }}) format("woff2"),url({{ 'col-poppins-n5.woff' | asset_url }}) format("woff");}
+@font-face{font-family:Poppins;font-weight:500;font-style:italic;font-display:swap;src:url({{ 'col-poppins-i5.woff2' | asset_url }}) format("woff2"),url({{ 'col-poppins-i5.woff' | asset_url }}) format("woff");}
+@font-face{font-family:Poppins;font-weight:700;font-style:normal;font-display:swap;src:url({{ 'col-poppins-n7.woff2' | asset_url }}) format("woff2"),url({{ 'col-poppins-n7.woff' | asset_url }}) format("woff");}
+@font-face{font-family:Poppins;font-weight:700;font-style:italic;font-display:swap;src:url({{ 'col-poppins-i7.woff2' | asset_url }}) format("woff2"),url({{ 'col-poppins-i7.woff' | asset_url }}) format("woff");}
+@font-face{font-family:Poppins;font-weight:600;font-style:normal;font-display:swap;src:url({{ 'col-poppins-n6.woff2' | asset_url }}) format("woff2"),url({{ 'col-poppins-n6.woff' | asset_url }}) format("woff");}
+.col-scope, .col-scope *:not(svg):not(svg *){font-family:Poppins,sans-serif;}
+/* Scoping the source stylesheet rewrote its html{} and body{} rules to
+   ".col-scope html" and ".col-scope body" -- selectors that can never match -- so
+   everything they declared was silently lost. That is why the page inherited this
+   theme's 400/28.8px instead of the reference's 500/26px. The full set is re-seated
+   on the scope root here. A prefixing pass is safe for class and :root selectors and
+   destructive for html and body ones. */
+.col-scope{font-family:var(--font-body-family);font-style:var(--font-body-style);font-weight:var(--font-body-weight,500);font-size:var(--font-body-size);line-height:var(--font-body-line-height,1.625);color:rgb(var(--color-foreground));-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-feature-settings:normal;box-sizing:border-box;}
+.col-scope *,.col-scope *::before,.col-scope *::after{box-sizing:border-box;}
+</style>
+
+{%- comment -%}
+  The reference store runs no bundle app, so its buy box is subscription options, a
+  quantity stepper, Add To Cart and Buy with Shop. Kaching Bundles injects its tier
+  block here through a store-wide app embed -- there is no theme markup to remove --
+  so it is hidden with CSS scoped to .col-scope. Only this landing page is affected;
+  NAC, Selerb and magnesium keep their bundle offers.
+
+  kaching-bundles.js hides .product-form__quantity whenever tiers drive quantity, so
+  with the tiers gone the stepper has to be given back explicitly.
+
+  kaching-subscriptions is a separate embed, deliberately left alone -- it renders the
+  subscribe/one-time options the reference also shows.
+  NOTE the selectors below are exact class tokens, not a [class*="kaching-bundles"]
+  wildcard. Kaching stamps "kaching-bundles-form--different" onto the product form
+  itself, so the wildcard matched the form and hid the buy button with it -- the page
+  looked right and silently could not add to cart. Only the tier UI is hidden here.
+{%- endcomment -%}
+<style>
+.col-scope kaching-bundle,
+.col-scope .kaching-bundles{display:none !important;}
+.col-scope .product-form__quantity{display:block !important;}
+</style>
+
+{%- comment -%}
+  Class-name collisions. This theme ships its own image-with-text and multicolumn
+  sections using the same BEM names as the source theme, and its base.css styles the
+  ported markup as if it were its own:
+
+    .image-with-text__content { display:flex; padding: 6rem 7rem 7rem; }
+    .multicolumn-card__info   { padding: 2.5rem; }
+
+  The 7rem inset is what squeezed the image-with-text heading to 375px instead of the
+  reference's 515px, wrapping it onto a third line; the 2.5rem one narrowed the
+  multicolumn text from 413px to 363px. Both are reset to what the reference computes.
+  Scoped to .col-scope, so this theme's own sections are untouched.
+{%- endcomment -%}
+<style>
+.col-scope .image-with-text__content{display:block;padding:0;}
+.col-scope .multicolumn-card__info{padding:0;}
+</style>

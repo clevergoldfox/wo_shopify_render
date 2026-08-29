@@ -1,0 +1,2199 @@
+<link
+  rel="stylesheet"
+  href="{{ 'component-custom-card.css' | asset_url }}"
+  media="print"
+  fetchpriority="low"
+  onload="this.media='all'"
+>
+<script src="{{ 'header.js' | asset_url }}" defer="defer"></script><script src="{{ 'search.js' | asset_url }}" defer="defer"></script><style data-shopify>
+  #shopify-section-{{ section.id }} {
+    --logo-width: 180px;
+    --logo-width-mobile: 90px;
+  }
+  #shopify-section-{{ section.id }} .header__bottom {
+    --section-padding-top: 0px;
+    --section-padding-bottom: 18px;
+  }
+  #shopify-section-{{ section.id }} .header__top {
+    --section-padding-top: 20px;
+    --section-padding-bottom: 20px;
+  }
+  @media (max-width: 1023px) {
+    #shopify-section-{{ section.id }} .header__bottom {
+      --section-padding-top: 0;
+      --section-padding-bottom: 0;
+    }
+    #shopify-section-{{ section.id }} .header__top {
+      --section-padding-top: 1.6rem;
+      --section-padding-bottom: 1.6rem;
+    }
+  }
+</style>
+
+<header
+  data-section-id="{{ section.id }}"
+  class="header items-center color-scheme-10"
+  
+    is="sticky-header" data-sticky-type="always"
+    data-collapse-on-scroll="true"
+  
+>
+  <div class="header__top header__top--logo-center items-center relative section--padding page-width page-width--full"><div class="header__icons header__icons--left lg:justify-start z-1 lg:hidden no-js-hidden">
+        <div class="header__buttons flex items-center">
+          <button
+            class="menu-drawer-button btn btn--inherit flex flex-col items-center justify-center lg:hidden"
+            aria-controls="MenuDrawer"
+            aria-label="Toggle menu"
+          >
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div><div class="header__logo flex justify-center items-center z-1"><a
+      href="/"
+      class="h3 relative flex header__logo--image"
+    ><img
+            srcset="{{ 'Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color_w90.png' | asset_url }} 1x, {{ 'Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color_w180.png' | asset_url }} 2x"
+            src="{{ 'Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color_w90.png' | asset_url }}"
+            loading="eager"
+            width="3000"
+            height="666"
+            alt="Micro Ingredients"
+            class="logo header__logo--mobile lg:hidden"
+          ><img
+          srcset="{{ 'Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color_w180.png' | asset_url }} 1x, {{ 'Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color_w360.png' | asset_url }} 2x"
+          src="{{ 'Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color_w180.png' | asset_url }}"
+          loading="eager"
+          width="3000"
+          height="666"
+          alt="Micro Ingredients"
+          class="logo header__logo--desktop lg:block hidden"
+        ></a></div><div class="header__search flex items-center z-2"><button
+          class="menu-drawer-button toggle-navigation-button btn btn--inherit flex-col items-center justify-center hidden lg:flex shrink-0"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+        </button>
+
+<predictive-search class="block w-full search__form" data-search-recommendation-empty="false" data-results-limit="10">
+  <div class="flex flex-col w-full h-full">
+    <form
+      action="{{ routes.search_url }}"
+      method="get"
+      role="search"
+      id="PredictiveSearch-{{ section.id }}"
+    >
+      <input type="hidden" name="options[prefix]" value="last">
+      <div class="search__field relative flex items-center"><input
+          id="SearchInput-{{ section.id }}"
+          class="search__input form-control"
+          type="search"
+          name="q"
+          
+          placeholder="What are you looking for?"
+          
+        >
+        <label class="visually-hidden" for="SearchInput-{{ section.id }}">Search</label><button
+          type="submit"
+          class="btn--inherit search__field-icon absolute search__icon-search flex items-center justify-center"
+          aria-label="Search"
+        ><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-search icon--large icon--thick"
+  viewBox="0 0 24 24"
+  fill="none"
+>
+  <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16.4434 16.4453L20.9997 21.0016" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+      </div>
+    </form>
+    <div class="search__content page-width v-scrollable hidden color-scheme-1"><div class="search_box search__recommendations flex flex-col md:flex-row gap-y-6">
+          
+            <div class="search__products-recommendation search__box-products flex flex-col flex-grow gap-5 lg:gap-6 order-last md:order-first">
+              <h4 class="h4">Most searched products</h4>
+              <div class="swipe-mobile swipe-mobile--2-cols">
+                <div class="f-grid f-grid--gap-medium f-grid--row-gap-inherit swipe-mobile__inner"><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/micro-ingredients-emily-may-s-glow-hair-bundle" aria-label="Emily May’s Glowing Hair Bundle" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'EmilyMay_sGlowHairbundle_w3125.jpg' | asset_url }}" alt="Emily May’s Glowing Hair Bundle" srcset="{{ 'EmilyMay_sGlowHairbundle_w70.jpg' | asset_url }} 70w, {{ 'EmilyMay_sGlowHairbundle_w140.jpg' | asset_url }} 140w, {{ 'EmilyMay_sGlowHairbundle_w165.jpg' | asset_url }} 165w, {{ 'EmilyMay_sGlowHairbundle_w355.jpg' | asset_url }} 355w, {{ 'EmilyMay_sGlowHairbundle_w450.jpg' | asset_url }} 450w, {{ 'EmilyMay_sGlowHairbundle_w535.jpg' | asset_url }} 535w, {{ 'EmilyMay_sGlowHairbundle_w710.jpg' | asset_url }} 710w, {{ 'EmilyMay_sGlowHairbundle_w900.jpg' | asset_url }} 900w, {{ 'EmilyMay_sGlowHairbundle_w1070.jpg' | asset_url }} 1070w, {{ 'EmilyMay_sGlowHairbundle_w1420.jpg' | asset_url }} 1420w, {{ 'EmilyMay_sGlowHairbundle_w3125.jpg' | asset_url }} 3125w" width="3125" height="3125" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w3000.png' | asset_url }}" alt="Emily May’s Glowing Hair Bundle" srcset="{{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div><form method="post" action="{{ routes.cart_add_url }}" id="quick-add-{{ section.id }}9194470899939" accept-charset="UTF-8" class="product-card__actions product-card__main-actions" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form" is="product-form"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><input
+              type="hidden"
+              name="id"
+              value="48525704560867"
+              class="product-variant-id"
+              
+            >
+            <button
+              id="quick-add-{{ section.id }}9194470899939-submit"
+              type="submit"
+              name="add"
+              
+              aria-label="Add to cart"
+              class="product-card__atc product-card__action-button btn btn--white"
+            >
+              <div class="btn__text flex gap-1 items-center">
+                <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden"><svg
+  viewBox="0 0 20 20"
+  fill="none"
+  class="icon icon-shopping-bag icon--medium icon--thick"
+  xmlns="http://www.w3.org/2000/svg"
+><path d="M6.875 18.125C7.56536 18.125 8.125 17.5654 8.125 16.875C8.125 16.1846 7.56536 15.625 6.875 15.625C6.18464 15.625 5.625 16.1846 5.625 16.875C5.625 17.5654 6.18464 18.125 6.875 18.125Z" fill="currentColor"/>
+    <path d="M15 18.125C15.6904 18.125 16.25 17.5654 16.25 16.875C16.25 16.1846 15.6904 15.625 15 15.625C14.3096 15.625 13.75 16.1846 13.75 16.875C13.75 17.5654 14.3096 18.125 15 18.125Z" fill="currentColor"/>
+    <path d="M1.25 2.5H3.125L5.99609 12.8344C6.06916 13.0976 6.22643 13.3296 6.44384 13.4949C6.66126 13.6603 6.92685 13.7499 7.2 13.75H14.9219C15.1952 13.7501 15.4609 13.6605 15.6785 13.4952C15.8961 13.3298 16.0535 13.0977 16.1266 12.8344L18.125 5.625H3.99297" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</span>
+                <span class="product-card__atc-text product-card__action-text">Add</span>
+              </div>
+              
+
+<div class="loading__spinner hidden">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+
+            </button><input type="hidden" name="product-id" value="9194470899939" /><input type="hidden" name="section-id" value="{{ section.id }}" /></form></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/micro-ingredients-emily-may-s-glow-hair-bundle"
+        >
+          <span class="reversed-link__text">Emily May’s Glowing Hair Bundle</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $70.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $70.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $99.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><form method="post" action="{{ routes.cart_add_url }}" id="list-view-quick-add-{{ section.id }}9194470899939" accept-charset="UTF-8" class="product-card__list-actions-main" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form" is="product-form"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><input
+              type="hidden"
+              name="id"
+              value="48525704560867"
+              class="product-variant-id"
+              
+            >
+            <button
+              id="list-view-quick-add-{{ section.id }}9194470899939-submit"
+              type="submit"
+              name="add"
+              
+              aria-label="Add to cart"
+              class="product-card__list-atc btn btn--primary w-full"
+            >
+              <span class="btn__text flex gap-1 items-center">Add</span>
+              
+
+<div class="loading__spinner hidden">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+
+            </button><input type="hidden" name="product-id" value="9194470899939" /><input type="hidden" name="section-id" value="{{ section.id }}" /></form><a href="/products/micro-ingredients-emily-may-s-glow-hair-bundle" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-9194470899939-{{ section.id }}search__recommendations"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/micro-ingredients-emily-may-s-glow-hair-bundle"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-9194470899939-{{ section.id }}search__recommendations"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-9194470899939-{{ section.id }}search__recommendations"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/pure-oregano-oil-for-cold-relief" aria-label="Micro Ingredients Oregano Oil with Black Seed Oil" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w3000.png' | asset_url }}" alt="Micro Ingredients Oregano Oil with Black Seed Oil" srcset="{{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w2083.jpg' | asset_url }}" alt="Micro Ingredients Oregano Oil with Black Seed Oil" srcset="{{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w70.jpg' | asset_url }} 70w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w140.jpg' | asset_url }} 140w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w165.jpg' | asset_url }} 165w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w355.jpg' | asset_url }} 355w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w450.jpg' | asset_url }} 450w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w535.jpg' | asset_url }} 535w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w710.jpg' | asset_url }} 710w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w900.jpg' | asset_url }} 900w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w1070.jpg' | asset_url }} 1070w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w1420.jpg' | asset_url }} 1420w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div><div class="product-card__actions product-card__main-actions no-js-hidden">
+            <button
+              
+                aria-controls="QuickView-8079721234659-{{ section.id }}search__recommendations"
+                aria-haspopup="dialog"
+              
+              class="product-card__atc product-card__action-button btn btn--white"
+            >
+              <div class="btn__text flex gap-1 items-center">
+                <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden"><svg
+  viewBox="0 0 20 20"
+  fill="none"
+  class="icon icon-shopping-bag icon--medium icon--thick"
+  xmlns="http://www.w3.org/2000/svg"
+><path d="M6.875 18.125C7.56536 18.125 8.125 17.5654 8.125 16.875C8.125 16.1846 7.56536 15.625 6.875 15.625C6.18464 15.625 5.625 16.1846 5.625 16.875C5.625 17.5654 6.18464 18.125 6.875 18.125Z" fill="currentColor"/>
+    <path d="M15 18.125C15.6904 18.125 16.25 17.5654 16.25 16.875C16.25 16.1846 15.6904 15.625 15 15.625C14.3096 15.625 13.75 16.1846 13.75 16.875C13.75 17.5654 14.3096 18.125 15 18.125Z" fill="currentColor"/>
+    <path d="M1.25 2.5H3.125L5.99609 12.8344C6.06916 13.0976 6.22643 13.3296 6.44384 13.4949C6.66126 13.6603 6.92685 13.7499 7.2 13.75H14.9219C15.1952 13.7501 15.4609 13.6605 15.6785 13.4952C15.8961 13.3298 16.0535 13.0977 16.1266 12.8344L18.125 5.625H3.99297" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</span>
+                <span class="product-card__atc-text product-card__action-text">View</span>
+              </div>
+            </button>
+          </div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/pure-oregano-oil-for-cold-relief"
+        >
+          <span class="reversed-link__text">Micro Ingredients Oregano Oil with Black Seed Oil</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        From $24.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      From $24.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $29.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><div class="product-card__list-actions-main">
+            <button
+              
+                aria-controls="QuickView-8079721234659-{{ section.id }}search__recommendations"
+                aria-haspopup="dialog"
+              
+              class="product-card__list-atc btn btn--primary"
+            >
+              <span class="btn__text flex gap-1 items-center">View</span>
+            </button>
+          </div><a href="/products/pure-oregano-oil-for-cold-relief" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-8079721234659-{{ section.id }}search__recommendations"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/pure-oregano-oil-for-cold-relief"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-8079721234659-{{ section.id }}search__recommendations"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-8079721234659-{{ section.id }}search__recommendations"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/micro-ingredients-astaxanthin-12mg-softgels-tanning-pills-strength-carotenoids-skin-supplement-w-100" aria-label="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100%" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w3000.png' | asset_url }}" alt="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100%" srcset="{{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_d5d7ce9a-b092-4a7b-9edc-7aa7071be932_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w3000.png' | asset_url }}" alt="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100%" srcset="{{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_ab29f925-86c3-44be-96c1-9f80486a7f50_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--soldout" aria-hidden="true">Sold out</span></div><div class="product-card__actions product-card__main-actions no-js-hidden">
+            <button
+              
+                aria-controls="QuickView-9206020767971-{{ section.id }}search__recommendations"
+                aria-haspopup="dialog"
+              
+              class="product-card__atc product-card__action-button btn btn--white"
+            >
+              <div class="btn__text flex gap-1 items-center">
+                <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden"><svg
+  viewBox="0 0 20 20"
+  fill="none"
+  class="icon icon-shopping-bag icon--medium icon--thick"
+  xmlns="http://www.w3.org/2000/svg"
+><path d="M6.875 18.125C7.56536 18.125 8.125 17.5654 8.125 16.875C8.125 16.1846 7.56536 15.625 6.875 15.625C6.18464 15.625 5.625 16.1846 5.625 16.875C5.625 17.5654 6.18464 18.125 6.875 18.125Z" fill="currentColor"/>
+    <path d="M15 18.125C15.6904 18.125 16.25 17.5654 16.25 16.875C16.25 16.1846 15.6904 15.625 15 15.625C14.3096 15.625 13.75 16.1846 13.75 16.875C13.75 17.5654 14.3096 18.125 15 18.125Z" fill="currentColor"/>
+    <path d="M1.25 2.5H3.125L5.99609 12.8344C6.06916 13.0976 6.22643 13.3296 6.44384 13.4949C6.66126 13.6603 6.92685 13.7499 7.2 13.75H14.9219C15.1952 13.7501 15.4609 13.6605 15.6785 13.4952C15.8961 13.3298 16.0535 13.0977 16.1266 12.8344L18.125 5.625H3.99297" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</span>
+                <span class="product-card__atc-text product-card__action-text">View</span>
+              </div>
+            </button>
+          </div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/micro-ingredients-astaxanthin-12mg-softgels-tanning-pills-strength-carotenoids-skin-supplement-w-100"
+        >
+          <span class="reversed-link__text">Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100%</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--sold-out "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        From $19.99 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      From $19.99 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><div class="product-card__list-actions-main">
+            <button
+              
+                aria-controls="QuickView-9206020767971-{{ section.id }}search__recommendations"
+                aria-haspopup="dialog"
+              
+              class="product-card__list-atc btn btn--primary"
+            >
+              <span class="btn__text flex gap-1 items-center">View</span>
+            </button>
+          </div><a href="/products/micro-ingredients-astaxanthin-12mg-softgels-tanning-pills-strength-carotenoids-skin-supplement-w-100" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-9206020767971-{{ section.id }}search__recommendations"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/micro-ingredients-astaxanthin-12mg-softgels-tanning-pills-strength-carotenoids-skin-supplement-w-100"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-9206020767971-{{ section.id }}search__recommendations"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-9206020767971-{{ section.id }}search__recommendations"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div>
+              </div>
+            </div><div class="search__most-searched-keywords search__box-others flex flex-col gap-3">
+              <h4 class="h6">Most searched keywords</h4>
+              <ul class="flex flex-col flex-wrap gap-y-2 text-subtext"><li>
+                    <a
+                      href="/search?type=product&options%5Bprefix%5D=last&q=oregano"
+                      class="reversed-link text-capitalize"
+                    >
+                      oregano
+                    </a>
+                  </li><li>
+                    <a
+                      href="/search?type=product&options%5Bprefix%5D=last&q=collagen"
+                      class="reversed-link text-capitalize"
+                    >
+                      collagen
+                    </a>
+                  </li><li>
+                    <a
+                      href="/search?type=product&options%5Bprefix%5D=last&q=nad"
+                      class="reversed-link text-capitalize"
+                    >
+                      nad
+                    </a>
+                  </li><li>
+                    <a
+                      href="/search?type=product&options%5Bprefix%5D=last&q=saffron"
+                      class="reversed-link text-capitalize"
+                    >
+                      saffron
+                    </a>
+                  </li></ul>
+            </div></div><div class="search__box search__results w-full h-full">
+        <div
+          id="PredictiveSearchResults-{{ section.id }}"
+          role="listbox"
+          class="h-full w-full"
+        ></div>
+      </div>
+    </div>
+  </div>
+</predictive-search>
+<button
+        class="btn btn--inherit header__search-close inline-flex btn-remove"
+        aria-label="Close search popup"
+      ><svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--medium icon--thick pointer-events-none"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+    </div>
+
+    <div class="header__icons header__icons--right flex justify-end z-1">
+      <div class="header__buttons flex items-center justify-center"><a
+            href="/customer_authentication/redirect?locale=en&region_country=US"
+            class="account-button reversed-link flex items-center justify-center gap-2 reversed-link--icon-only"
+            aria-label="Account"
+          ><svg
+  class="icon icon-account icon--large icon--thick shrink-0"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2.90625 20.2508C3.82775 18.6544 5.15328 17.3287 6.74958 16.407C8.34588 15.4853 10.1567 15 12 15C13.8433 15 15.6541 15.4853 17.2504 16.407C18.8467 17.3287 20.1722 18.6544 21.0938 20.2508" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+          </a><a
+          href="{{ routes.cart_url }}"
+          class="cart-drawer-button flex items-center justify-center relative cart-icon cart-icon--bordered"
+          
+            aria-controls="CartDrawer"
+          
+          
+        ><svg
+  viewBox="0 0 20 20"
+  fill="none"
+  class="icon icon-shopping-bag icon--large icon--thick"
+  xmlns="http://www.w3.org/2000/svg"
+><path d="M6.875 18.125C7.56536 18.125 8.125 17.5654 8.125 16.875C8.125 16.1846 7.56536 15.625 6.875 15.625C6.18464 15.625 5.625 16.1846 5.625 16.875C5.625 17.5654 6.18464 18.125 6.875 18.125Z" fill="currentColor"/>
+    <path d="M15 18.125C15.6904 18.125 16.25 17.5654 16.25 16.875C16.25 16.1846 15.6904 15.625 15 15.625C14.3096 15.625 13.75 16.1846 13.75 16.875C13.75 17.5654 14.3096 18.125 15 18.125Z" fill="currentColor"/>
+    <path d="M1.25 2.5H3.125L5.99609 12.8344C6.06916 13.0976 6.22643 13.3296 6.44384 13.4949C6.66126 13.6603 6.92685 13.7499 7.2 13.75H14.9219C15.1952 13.7501 15.4609 13.6605 15.6785 13.4952C15.8961 13.3298 16.0535 13.0977 16.1266 12.8344L18.125 5.625H3.99297" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="visually-hidden">Cart</span>
+          <cart-count
+            class="cart-count cart-count--absolute"
+            aria-label="0 items"
+            
+              hidden
+            
+          >0</cart-count>
+        </a>
+      </div>
+    </div>
+  </div><div class="header__bottom color-scheme-10 relative page-width page-width--full">
+      <div class="header__navigation section--padding hidden lg:flex justify-center">
+        <nav class="header__menu flex" role="navigation" aria-label="Primary">
+  <ul class="flex flex-wrap"><li
+        class="inline-flex items-center"
+        
+          style="--hl-link-color: #6ba539;"
+        
+      ><style data-shopify>
+  #Mega-menu-item-product_list_ETLQqA {
+    --menu-columns: 3;
+    --promotions-width: 38%;
+    --promotion-columns: 3;
+  }
+  @media (max-width: 1279px) {
+    #Mega-menu-item-product_list_ETLQqA {
+      --promotions-width: calc(38% + 4%);
+    }
+
+    #Mega-menu-item-product_list_ETLQqA.no-links {
+      --promotions-width: 38%;
+    }
+  }
+</style>
+<details
+  id="Mega-menu-item-product_list_ETLQqA"
+  is="details-mega"
+  trigger="hover"
+  level="top"
+  class=""
+  
+>
+  <summary data-link="/collections/all" class="z-2 font-navigation">
+    <span class="menu__item flex items-center relative hightlight-link hightlight-link--text_color"><span class="flex items-center menu__item-text reversed-link">SHOP BY CATEGORIES<svg
+  class="icon icon-caret-down icon--2xs icon--thick "
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M16.25 7.5L10 13.75L3.75 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+</span></span>
+  </summary>
+  <div class="mega-menu v-scrollable">
+    <div class="mega-menu__container color-scheme-1">
+      <div class="page-width mega-menu__wrapper"><div class="mega-menu__list">
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><div class="mega-menu__item-wrapper"><a href="/collections/vitamins-minerals" class="h6 mega-menu__link mega-menu__link--top font-heading">By Collection</a><ul class="mega-menu__item-child text-subtext"><li class="reversed-link">
+                                <a href="/collections/collagen" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Collagen</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/vitamins" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Vitamins &amp; Minerals</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/omegas" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Fish Oil &amp; Omegas</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/antioxidant-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Antioxidant</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/amino-acid-1" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Amino Acid &amp; Sports</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/culinary-goods" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Culinary Goods &amp; Sweeteners</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/plant-based-powder-1" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Superfoods &amp; Greens</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/organic-fruit-powder" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Fruit Powders</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/organic-mushrooms" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Mushrooms</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/organic-dietary-fibers" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Dietary Fibers</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/organic-herbs" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Herbs</span>
+                                </a>
+                              </li></ul></div></div></div>
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><div class="mega-menu__item-wrapper"><a href="/collections/wellness-supplements-1" class="h6 mega-menu__link mega-menu__link--top font-heading">By Benefit</a><ul class="mega-menu__item-child text-subtext"><li class="reversed-link">
+                                <a href="/collections/natural-beauty-care" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Beauty</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/immune-support-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Wellness &amp; Immunity</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/heart-health-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Heart Health</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/cognition-brain-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Brain Health</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/joint-and-bones-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Bone &amp; Joint </span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/eye-vision-supplement" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Eye Health</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/digestive-health-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Gut Health</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/weight-management" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Weight Management</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/mens-health" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Men&#39;s Health</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/women-men-s-health-1" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Women&#39;s Health</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/energy-performance" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Energy &amp; Performance</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/sleep-mood-supplements" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Sleep &amp; Mood</span>
+                                </a>
+                              </li></ul></div></div></div>
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><div class="mega-menu__item-wrapper"><a href="/collections/best-sellers" class="h6 mega-menu__link mega-menu__link--top font-heading">By Featured</a><ul class="mega-menu__item-child text-subtext"><li class="reversed-link">
+                                <a href="/collections/best-sellers" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Best Sellers</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/new-products" class="block mega-menu__link">
+                                  <span class="reversed-link__text">New Arrivals</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/all" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Shop All</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/usda-organic" class="block mega-menu__link">
+                                  <span class="reversed-link__text">USDA Organic</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/pure-collection" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Pure</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/multi-collagen" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Multi Collagen</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/bundle" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Bundle</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/summer-sale-pick" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Summer Sales</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/subscribe-save" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Subscribe &amp; Save</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/weekly-picks" class="block mega-menu__link">
+                                  <span class="reversed-link__text">Weekly Picks</span>
+                                </a>
+                              </li><li class="reversed-link">
+                                <a href="/collections/vip-48h-sale" class="block mega-menu__link">
+                                  <span class="reversed-link__text">VIP GIFT 48H</span>
+                                </a>
+                              </li></ul></div></div></div></div><div class="mega-menu__promotions mega-menu__column">
+                <menu-product-list
+                  class="block w-full"
+                  data-columns="3"
+                  data-calc-button-position="true"
+                ><div class="relative swiper-show-nav-on-hover"><div class="swiper swiper-equal-height"><div class="swiper-wrapper"><div
+                          class="swiper-slide promotion-item promotion-item--product"
+                          style="--index: 1;"
+                        ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/micro-ingredients-emily-may-s-glow-hair-bundle" aria-label="Emily May’s Glowing Hair Bundle" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'EmilyMay_sGlowHairbundle_w3125.jpg' | asset_url }}" alt="Emily May’s Glowing Hair Bundle" srcset="{{ 'EmilyMay_sGlowHairbundle_w70.jpg' | asset_url }} 70w, {{ 'EmilyMay_sGlowHairbundle_w140.jpg' | asset_url }} 140w, {{ 'EmilyMay_sGlowHairbundle_w165.jpg' | asset_url }} 165w, {{ 'EmilyMay_sGlowHairbundle_w355.jpg' | asset_url }} 355w, {{ 'EmilyMay_sGlowHairbundle_w450.jpg' | asset_url }} 450w, {{ 'EmilyMay_sGlowHairbundle_w535.jpg' | asset_url }} 535w, {{ 'EmilyMay_sGlowHairbundle_w710.jpg' | asset_url }} 710w, {{ 'EmilyMay_sGlowHairbundle_w900.jpg' | asset_url }} 900w, {{ 'EmilyMay_sGlowHairbundle_w1070.jpg' | asset_url }} 1070w, {{ 'EmilyMay_sGlowHairbundle_w1420.jpg' | asset_url }} 1420w, {{ 'EmilyMay_sGlowHairbundle_w3125.jpg' | asset_url }} 3125w" width="3125" height="3125" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w3000.png' | asset_url }}" alt="Emily May’s Glowing Hair Bundle" srcset="{{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/micro-ingredients-emily-may-s-glow-hair-bundle"
+        >
+          <span class="reversed-link__text">Emily May’s Glowing Hair Bundle</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $70.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $70.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $99.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/micro-ingredients-emily-may-s-glow-hair-bundle" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-9194470899939-{{ section.id }}megamenu-desktop"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/micro-ingredients-emily-may-s-glow-hair-bundle"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-9194470899939-{{ section.id }}megamenu-desktop"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-9194470899939-{{ section.id }}megamenu-desktop"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div><div
+                          class="swiper-slide promotion-item promotion-item--product"
+                          style="--index: 2;"
+                        ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules" aria-label="Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w3000.png' | asset_url }}" alt="Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules" srcset="{{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'NMN1000mg120Capsules-06_w2083.jpg' | asset_url }}" alt="Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules" srcset="{{ 'NMN1000mg120Capsules-06_w70.jpg' | asset_url }} 70w, {{ 'NMN1000mg120Capsules-06_w140.jpg' | asset_url }} 140w, {{ 'NMN1000mg120Capsules-06_w165.jpg' | asset_url }} 165w, {{ 'NMN1000mg120Capsules-06_w355.jpg' | asset_url }} 355w, {{ 'NMN1000mg120Capsules-06_w450.jpg' | asset_url }} 450w, {{ 'NMN1000mg120Capsules-06_w535.jpg' | asset_url }} 535w, {{ 'NMN1000mg120Capsules-06_w710.jpg' | asset_url }} 710w, {{ 'NMN1000mg120Capsules-06_w900.jpg' | asset_url }} 900w, {{ 'NMN1000mg120Capsules-06_w1070.jpg' | asset_url }} 1070w, {{ 'NMN1000mg120Capsules-06_w1420.jpg' | asset_url }} 1420w, {{ 'NMN1000mg120Capsules-06_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules"
+        >
+          <span class="reversed-link__text">Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        From $24.99 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      From $24.99 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $89.90 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-9007477489891-{{ section.id }}megamenu-desktop"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-9007477489891-{{ section.id }}megamenu-desktop"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-9007477489891-{{ section.id }}megamenu-desktop"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div><div
+                          class="swiper-slide promotion-item promotion-item--product"
+                          style="--index: 3;"
+                        ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/pure-oregano-oil-for-cold-relief" aria-label="Micro Ingredients Oregano Oil with Black Seed Oil" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w3000.png' | asset_url }}" alt="Micro Ingredients Oregano Oil with Black Seed Oil" srcset="{{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w2083.jpg' | asset_url }}" alt="Micro Ingredients Oregano Oil with Black Seed Oil" srcset="{{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w70.jpg' | asset_url }} 70w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w140.jpg' | asset_url }} 140w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w165.jpg' | asset_url }} 165w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w355.jpg' | asset_url }} 355w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w450.jpg' | asset_url }} 450w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w535.jpg' | asset_url }} 535w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w710.jpg' | asset_url }} 710w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w900.jpg' | asset_url }} 900w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w1070.jpg' | asset_url }} 1070w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w1420.jpg' | asset_url }} 1420w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/pure-oregano-oil-for-cold-relief"
+        >
+          <span class="reversed-link__text">Micro Ingredients Oregano Oil with Black Seed Oil</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        From $24.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      From $24.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $29.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/pure-oregano-oil-for-cold-relief" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-8079721234659-{{ section.id }}megamenu-desktop"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/pure-oregano-oil-for-cold-relief"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-8079721234659-{{ section.id }}megamenu-desktop"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-8079721234659-{{ section.id }}megamenu-desktop"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div><div
+                          class="swiper-slide promotion-item promotion-item--product"
+                          style="--index: 4;"
+                        ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/astaxanthin-softgel" aria-label="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w3000.png' | asset_url }}" alt="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae" srcset="{{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w70.png' | asset_url }} 70w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w140.png' | asset_url }} 140w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w165.png' | asset_url }} 165w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w355.png' | asset_url }} 355w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w450.png' | asset_url }} 450w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w535.png' | asset_url }} 535w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w710.png' | asset_url }} 710w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w900.png' | asset_url }} 900w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w1070.png' | asset_url }} 1070w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w1420.png' | asset_url }} 1420w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'Astaxanthin12mg120softgels_Artboard1copy34_w2083.jpg' | asset_url }}" alt="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae" srcset="{{ 'Astaxanthin12mg120softgels_Artboard1copy34_w70.jpg' | asset_url }} 70w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w140.jpg' | asset_url }} 140w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w165.jpg' | asset_url }} 165w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w355.jpg' | asset_url }} 355w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w450.jpg' | asset_url }} 450w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w535.jpg' | asset_url }} 535w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w710.jpg' | asset_url }} 710w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w900.jpg' | asset_url }} 900w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w1070.jpg' | asset_url }} 1070w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w1420.jpg' | asset_url }} 1420w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/astaxanthin-softgel"
+        >
+          <span class="reversed-link__text">Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $34.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $34.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $42.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/astaxanthin-softgel" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-6753103151267-{{ section.id }}megamenu-desktop"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/astaxanthin-softgel"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-6753103151267-{{ section.id }}megamenu-desktop"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-6753103151267-{{ section.id }}megamenu-desktop"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div></div></div><div class="swiper-controls swiper-controls--nav-floating">
+                        <button
+                          class="btn swiper-button-prev swiper-button swiper-button--drop-shadow"
+                          name="previous"
+                          aria-label="Slide left"
+                        >
+                          <span class="btn__text"><svg
+  class="icon icon-slider-prev rtl-flip-x icon--small icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12.75 16.2505L6.5 10.0005L12.75 3.75049" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+                        </button>
+                        <button
+                          class="btn swiper-button-next swiper-button swiper-button--drop-shadow"
+                          name="next"
+                          aria-label="Slide right"
+                        >
+                          <span class="btn__text"><svg
+  class="icon icon-slider-next rtl-flip-x icon--small icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7.5 3.74121L13.75 9.99121L7.5 16.2412" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+                        </button>
+                      </div></div>
+                </menu-product-list>
+              </div></div>
+    </div>
+  </div>
+</details>
+
+</li><li
+        class="inline-flex items-center"
+        
+      ><a
+              href="/collections/best-sellers"
+              class="menu__item flex relative z-2 font-navigation"
+            ><span class="reversed-link">BEST SELLERS</span></a></li><li
+        class="inline-flex items-center"
+        
+      ><style data-shopify>
+  #Mega-menu-item-product_list_J8x7hd {
+    --menu-columns: 4;
+    --promotions-width: 20%;
+    --promotion-columns: 1;
+  }
+  @media (max-width: 1279px) {
+    #Mega-menu-item-product_list_J8x7hd {
+      --promotions-width: calc(20% + 4%);
+    }
+
+    #Mega-menu-item-product_list_J8x7hd.no-links {
+      --promotions-width: 20%;
+    }
+  }
+</style>
+<details
+  id="Mega-menu-item-product_list_J8x7hd"
+  is="details-mega"
+  trigger="hover"
+  level="top"
+  class=""
+  
+>
+  <summary data-link="/blogs/microingredients-updated" class="z-2 font-navigation">
+    <span class="menu__item flex items-center relative"><span class="flex items-center menu__item-text reversed-link">LEARN<svg
+  class="icon icon-caret-down icon--2xs icon--thick "
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M16.25 7.5L10 13.75L3.75 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+</span></span>
+  </summary>
+  <div class="mega-menu v-scrollable">
+    <div class="mega-menu__container color-scheme-1">
+      <div class="page-width mega-menu__wrapper"><div class="mega-menu__list">
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><a href="/blogs/microingredients-updated" class="h6 mega-menu__link mega-menu__link--top font-heading">Blog</a></div></div>
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><a href="/blogs/recipes" class="h6 mega-menu__link mega-menu__link--top font-heading">Recipes</a></div></div>
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><a href="/collections/subscribe-save" class="h6 mega-menu__link mega-menu__link--top font-heading">Subscribe &amp; Save</a></div></div>
+                <div class="mega-menu__column flex flex-col gap-8"><div class="mega-menu__item"><a href="/pages/store-locator" class="h6 mega-menu__link mega-menu__link--top font-heading">Find Your Store</a></div></div></div></div>
+    </div>
+  </div>
+</details>
+
+</li><li
+        class="inline-flex items-center"
+        
+      ><a
+              href="/apps/bubblehouse/rewards/"
+              class="menu__item flex relative z-2 font-navigation"
+            ><span class="reversed-link">REWARDS</span></a></li></ul>
+</nav>
+
+      </div>
+    </div><menu-drawer id="MenuDrawer" class="menu-drawer drawer drawer--left z-1" hidden>
+  <div class="fixed-overlay" aria-controls="MenuDrawer"></div>
+  <div class="drawer__inner flex flex-col w-full h-full overflow-hidden color-scheme-1">
+    <div class="drawer__content menu-drawer__content flex-grow flex flex-col h-full w-full">
+      <nav class="overflow-hidden flex-grow" role="navigation">
+        <div class="menu-drawer__menus v-scrollable flex flex-col relative w-full h-full" data-parent>
+          <ul class="flex-grow"><li class="menu-drawer__item"><details
+  is="menu-drawer-details"
+  level="top"
+  
+    style="--hl-link-color: #6ba539;"
+  
+>
+  <summary class="menu-drawer__item-link menu-drawer__item-link-heading flex items-center justify-between">
+    <span class="relative  hightlight-link hightlight-link--text_color"><span class="flex items-center ">SHOP BY CATEGORIES</span></span><svg
+  class="icon icon-caret-right rtl-flip-x icon--2xs icon--thick "
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</summary>
+  <div class="menu-drawer__submenu absolute z-1 flex flex-col w-full h-full" data-parent>
+    <button type="button" class="menu-drawer__item-back-link font-navigation flex items-center gap-2 w-full"><svg
+  class="icon icon-caret-left rtl-flip-x icon--small icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12.5 16.25L6.25 10L12.5 3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+SHOP BY CATEGORIES
+    </button>
+    <ul class="flex flex-col h-full v-scrollable" data-parent role="list"><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><details is="accordion-details" class="accordion-details">
+              <summary class="menu-drawer__item-link menu-drawer__item-link-heading accordion-details__summary flex items-center justify-between">
+                <span>By Collection</span><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-plus-toggle icon--2xs icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+>
+  <path class="horizontal" d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="vertical" d="M10 3.125V16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</summary>
+              <div class="flex flex-col w-full"><ul class="v-scrollable h-full w-full"><li class="menu-drawer__item">
+                        <a
+                          href="/collections/collagen"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Collagen</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/vitamins"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Vitamins &amp; Minerals</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/omegas"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Fish Oil &amp; Omegas</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/antioxidant-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Antioxidant</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/amino-acid-1"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Amino Acid &amp; Sports</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/culinary-goods"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Culinary Goods &amp; Sweeteners</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/plant-based-powder-1"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Superfoods &amp; Greens</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/organic-fruit-powder"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Fruit Powders</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/organic-mushrooms"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Mushrooms</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/organic-dietary-fibers"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Dietary Fibers</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/organic-herbs"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Herbs</a>
+                      </li></ul></div>
+            </details></li><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><details is="accordion-details" class="accordion-details">
+              <summary class="menu-drawer__item-link menu-drawer__item-link-heading accordion-details__summary flex items-center justify-between">
+                <span>By Benefit</span><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-plus-toggle icon--2xs icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+>
+  <path class="horizontal" d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="vertical" d="M10 3.125V16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</summary>
+              <div class="flex flex-col w-full"><ul class="v-scrollable h-full w-full"><li class="menu-drawer__item">
+                        <a
+                          href="/collections/natural-beauty-care"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Beauty</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/immune-support-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Wellness &amp; Immunity</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/heart-health-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Heart Health</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/cognition-brain-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Brain Health</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/joint-and-bones-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Bone &amp; Joint </a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/eye-vision-supplement"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Eye Health</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/digestive-health-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Gut Health</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/weight-management"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Weight Management</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/mens-health"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Men&#39;s Health</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/women-men-s-health-1"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Women&#39;s Health</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/energy-performance"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Energy &amp; Performance</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/sleep-mood-supplements"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Sleep &amp; Mood</a>
+                      </li></ul></div>
+            </details></li><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><details is="accordion-details" class="accordion-details">
+              <summary class="menu-drawer__item-link menu-drawer__item-link-heading accordion-details__summary flex items-center justify-between">
+                <span>By Featured</span><svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-plus-toggle icon--2xs icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+>
+  <path class="horizontal" d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="vertical" d="M10 3.125V16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</summary>
+              <div class="flex flex-col w-full"><ul class="v-scrollable h-full w-full"><li class="menu-drawer__item">
+                        <a
+                          href="/collections/best-sellers"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Best Sellers</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/new-products"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >New Arrivals</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/all"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Shop All</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/usda-organic"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >USDA Organic</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/pure-collection"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Pure</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/multi-collagen"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Multi Collagen</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/bundle"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Bundle</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/summer-sale-pick"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Summer Sales</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/subscribe-save"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Subscribe &amp; Save</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/weekly-picks"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >Weekly Picks</a>
+                      </li><li class="menu-drawer__item">
+                        <a
+                          href="/collections/vip-48h-sale"
+                          class="menu-drawer__item-link flex items-center justify-between text-subtext"
+                        >VIP GIFT 48H</a>
+                      </li></ul></div>
+            </details></li><div class="menu-drawer__promotions mega-menu__promotions">
+              <div class="block w-full"><div
+                  class="mega-menu__promotions-grid swipe-mobile swipe-mobile--2-cols f-grid--gap-medium"
+                  id="product-list-product_list_ETLQqA"
+                >
+                  <div
+                    class="swipe-mobile__inner f-grid"
+                    style="--f-columns-md: 3; --f-column-gap: 1.2rem; --f-row-gap: 2rem;"
+                  ><div
+                        class="promotion-item promotion-item--product"
+                        style="--index: 1;"
+                      ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/micro-ingredients-emily-may-s-glow-hair-bundle" aria-label="Emily May’s Glowing Hair Bundle" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'EmilyMay_sGlowHairbundle_w3125.jpg' | asset_url }}" alt="Emily May’s Glowing Hair Bundle" srcset="{{ 'EmilyMay_sGlowHairbundle_w70.jpg' | asset_url }} 70w, {{ 'EmilyMay_sGlowHairbundle_w140.jpg' | asset_url }} 140w, {{ 'EmilyMay_sGlowHairbundle_w165.jpg' | asset_url }} 165w, {{ 'EmilyMay_sGlowHairbundle_w355.jpg' | asset_url }} 355w, {{ 'EmilyMay_sGlowHairbundle_w450.jpg' | asset_url }} 450w, {{ 'EmilyMay_sGlowHairbundle_w535.jpg' | asset_url }} 535w, {{ 'EmilyMay_sGlowHairbundle_w710.jpg' | asset_url }} 710w, {{ 'EmilyMay_sGlowHairbundle_w900.jpg' | asset_url }} 900w, {{ 'EmilyMay_sGlowHairbundle_w1070.jpg' | asset_url }} 1070w, {{ 'EmilyMay_sGlowHairbundle_w1420.jpg' | asset_url }} 1420w, {{ 'EmilyMay_sGlowHairbundle_w3125.jpg' | asset_url }} 3125w" width="3125" height="3125" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w3000.png' | asset_url }}" alt="Emily May’s Glowing Hair Bundle" srcset="{{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_12cd077e-da5b-480f-809e-7ba52095c286_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/micro-ingredients-emily-may-s-glow-hair-bundle"
+        >
+          <span class="reversed-link__text">Emily May’s Glowing Hair Bundle</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $70.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $70.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $99.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/micro-ingredients-emily-may-s-glow-hair-bundle" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-9194470899939-{{ section.id }}megamenu-mobile"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/micro-ingredients-emily-may-s-glow-hair-bundle"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-9194470899939-{{ section.id }}megamenu-mobile"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-9194470899939-{{ section.id }}megamenu-mobile"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div><div
+                        class="promotion-item promotion-item--product"
+                        style="--index: 2;"
+                      ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules" aria-label="Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w3000.png' | asset_url }}" alt="Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules" srcset="{{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_ab643f04-4271-4836-bcf8-706b2865daa8_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'NMN1000mg120Capsules-06_w2083.jpg' | asset_url }}" alt="Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules" srcset="{{ 'NMN1000mg120Capsules-06_w70.jpg' | asset_url }} 70w, {{ 'NMN1000mg120Capsules-06_w140.jpg' | asset_url }} 140w, {{ 'NMN1000mg120Capsules-06_w165.jpg' | asset_url }} 165w, {{ 'NMN1000mg120Capsules-06_w355.jpg' | asset_url }} 355w, {{ 'NMN1000mg120Capsules-06_w450.jpg' | asset_url }} 450w, {{ 'NMN1000mg120Capsules-06_w535.jpg' | asset_url }} 535w, {{ 'NMN1000mg120Capsules-06_w710.jpg' | asset_url }} 710w, {{ 'NMN1000mg120Capsules-06_w900.jpg' | asset_url }} 900w, {{ 'NMN1000mg120Capsules-06_w1070.jpg' | asset_url }} 1070w, {{ 'NMN1000mg120Capsules-06_w1420.jpg' | asset_url }} 1420w, {{ 'NMN1000mg120Capsules-06_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules"
+        >
+          <span class="reversed-link__text">Micro Ingredients NMN Complex 1,000mg Per Serving, Veggie Capsules</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        From $24.99 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      From $24.99 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $89.90 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-9007477489891-{{ section.id }}megamenu-mobile"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/micro-ingredients-nmn-1000mg-per-serving-120-veggie-capsules"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-9007477489891-{{ section.id }}megamenu-mobile"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-9007477489891-{{ section.id }}megamenu-mobile"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div><div
+                        class="promotion-item promotion-item--product"
+                        style="--index: 3;"
+                      ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/pure-oregano-oil-for-cold-relief" aria-label="Micro Ingredients Oregano Oil with Black Seed Oil" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w3000.png' | asset_url }}" alt="Micro Ingredients Oregano Oil with Black Seed Oil" srcset="{{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w70.png' | asset_url }} 70w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w140.png' | asset_url }} 140w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w165.png' | asset_url }} 165w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w355.png' | asset_url }} 355w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w450.png' | asset_url }} 450w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w535.png' | asset_url }} 535w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w710.png' | asset_url }} 710w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w900.png' | asset_url }} 900w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w1070.png' | asset_url }} 1070w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w1420.png' | asset_url }} 1420w, {{ 'Product-Shopify_f70be5f2-5ba4-4497-91f3-c3c3545fd0c7_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w2083.jpg' | asset_url }}" alt="Micro Ingredients Oregano Oil with Black Seed Oil" srcset="{{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w70.jpg' | asset_url }} 70w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w140.jpg' | asset_url }} 140w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w165.jpg' | asset_url }} 165w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w355.jpg' | asset_url }} 355w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w450.jpg' | asset_url }} 450w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w535.jpg' | asset_url }} 535w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w710.jpg' | asset_url }} 710w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w900.jpg' | asset_url }} 900w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w1070.jpg' | asset_url }} 1070w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w1420.jpg' | asset_url }} 1420w, {{ 'OilofOreganowithBlackSeed300Softgels_2_e96ba5fe-dae0-4df4-a6ba-6cae79dccfc1_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/pure-oregano-oil-for-cold-relief"
+        >
+          <span class="reversed-link__text">Micro Ingredients Oregano Oil with Black Seed Oil</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        From $24.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      From $24.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $29.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/pure-oregano-oil-for-cold-relief" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-8079721234659-{{ section.id }}megamenu-mobile"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/pure-oregano-oil-for-cold-relief"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-8079721234659-{{ section.id }}megamenu-mobile"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-8079721234659-{{ section.id }}megamenu-mobile"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div><div
+                        class="promotion-item promotion-item--product"
+                        style="--index: 4;"
+                      ><div
+  class="product-card product-card-style-standard color-inherit"
+>
+  <div class="product-card__wrapper h-full">
+    <div class="product-card__image-wrapper color-scheme-1 bg-none">
+      <a href="/products/astaxanthin-softgel" aria-label="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae" tabindex="-1">
+        <motion-element data-motion="zoom-out-sm" class="block"><div
+                class="media-wrapper product-card__image product-card__image--main"
+                style="--aspect-ratio: 1.0"
+              ><img src="{{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w3000.png' | asset_url }}" alt="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae" srcset="{{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w70.png' | asset_url }} 70w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w140.png' | asset_url }} 140w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w165.png' | asset_url }} 165w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w355.png' | asset_url }} 355w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w450.png' | asset_url }} 450w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w535.png' | asset_url }} 535w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w710.png' | asset_url }} 710w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w900.png' | asset_url }} 900w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w1070.png' | asset_url }} 1070w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w1420.png' | asset_url }} 1420w, {{ 'Product-Walmart_54792090-b534-49fe-9048-70322d862bcf_w3000.png' | asset_url }} 3000w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce" sizes="450px" is="image-lazy">
+              </div><div
+                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  style="--aspect-ratio: 1.0"
+                ><img src="{{ 'Astaxanthin12mg120softgels_Artboard1copy34_w2083.jpg' | asset_url }}" alt="Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae" srcset="{{ 'Astaxanthin12mg120softgels_Artboard1copy34_w70.jpg' | asset_url }} 70w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w140.jpg' | asset_url }} 140w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w165.jpg' | asset_url }} 165w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w355.jpg' | asset_url }} 355w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w450.jpg' | asset_url }} 450w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w535.jpg' | asset_url }} 535w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w710.jpg' | asset_url }} 710w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w900.jpg' | asset_url }} 900w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w1070.jpg' | asset_url }} 1070w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w1420.jpg' | asset_url }} 1420w, {{ 'Astaxanthin12mg120softgels_Artboard1copy34_w2083.jpg' | asset_url }} 2083w" width="2083" height="2083" loading="lazy" class="motion-reduce" sizes="450px" is="image-lazy">
+                </div></motion-element>
+      </a><div class="product-card__badge"><span class="f-badge f-badge--sale" aria-hidden="true">Sale</span></div></div>
+    <div class="product-card__info text-left"><h3 class="product-card__title text-pcard-title">
+        <a
+          class="reversed-link block  text-limit-2-lines"
+          href="/products/astaxanthin-softgel"
+        >
+          <span class="reversed-link__text">Micro Ingredients Astaxanthin 12mg softgels, tanning pills, Strength Carotenoids Skin Supplement w. 100% Natural Astaxanthin from MicroAlgae</span>
+        </a>
+      </h3><div
+  class="
+    f-price f-price--left f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $34.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $34.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $42.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</div>
+    <div class="product-card__list-actions hidden gap-3 flex-col"><a href="/products/astaxanthin-softgel" class="btn btn--secondary">
+        <span class="btn__text flex gap-1 items-center">View details</span>
+      </a>
+    </div>
+  </div>
+<quick-view-modal
+  id="QuickView-6753103151267-{{ section.id }}megamenu-mobile"
+  class="quick-view drawer--loading drawer drawer--right"
+  data-product-url="/products/astaxanthin-softgel"
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="QuickView-6753103151267-{{ section.id }}megamenu-mobile"></div>
+  <div class="drawer__inner flex flex-col color-scheme-1">
+    <div class="drawer__header-title md:hidden">
+      <h3>Choose your option</h3>
+    </div>
+    <button
+      class="drawer__close-btn z-2"
+      aria-controls="QuickView-6753103151267-{{ section.id }}megamenu-mobile"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full quick-view__content"></div>
+  </div>
+</quick-view-modal>
+
+</div></div></div>
+                </div>
+                
+                  <scroll-progress-bar
+                    class="md:hidden no-js-hidden 4"
+                    target="product-list-product_list_ETLQqA"
+                    style="--margin-block-start: 2.4rem;"
+                  >
+                    <div class="progress-container">
+                      <div class="progress-bar no-empty"></div>
+                    </div>
+                  </scroll-progress-bar>
+                
+              </div>
+            </div></ul>
+  </div>
+</details>
+</li><li class="menu-drawer__item"><a
+                    href="/collections/best-sellers"
+                    
+                    class="menu-drawer__item-link menu-drawer__item-link-heading flex items-center justify-between"
+                  >
+                    <span class="relative"><span class="">BEST SELLERS</span></span>
+                  </a></li><li class="menu-drawer__item"><details
+  is="menu-drawer-details"
+  level="top"
+  
+>
+  <summary class="menu-drawer__item-link menu-drawer__item-link-heading flex items-center justify-between">
+    <span class="relative "><span class="flex items-center ">LEARN</span></span><svg
+  class="icon icon-caret-right rtl-flip-x icon--2xs icon--thick "
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</summary>
+  <div class="menu-drawer__submenu absolute z-1 flex flex-col w-full h-full" data-parent>
+    <button type="button" class="menu-drawer__item-back-link font-navigation flex items-center gap-2 w-full"><svg
+  class="icon icon-caret-left rtl-flip-x icon--small icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12.5 16.25L6.25 10L12.5 3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+LEARN
+    </button>
+    <ul class="flex flex-col h-full v-scrollable" data-parent role="list"><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><a
+              href="/blogs/microingredients-updated"
+              class="menu-drawer__item-link flex items-center justify-between"
+            >Blog</a></li><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><a
+              href="/blogs/recipes"
+              class="menu-drawer__item-link flex items-center justify-between"
+            >Recipes</a></li><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><a
+              href="/collections/subscribe-save"
+              class="menu-drawer__item-link flex items-center justify-between"
+            >Subscribe & Save</a></li><li class="menu-drawer__item menu-drawer__item--product_list" level="child"><a
+              href="/pages/store-locator"
+              class="menu-drawer__item-link flex items-center justify-between"
+            >Find Your Store</a></li></ul>
+  </div>
+</details>
+</li><li class="menu-drawer__item"><a
+                    href="/apps/bubblehouse/rewards/"
+                    
+                    class="menu-drawer__item-link menu-drawer__item-link-heading flex items-center justify-between"
+                  >
+                    <span class="relative"><span class="">REWARDS</span></span>
+                  </a></li></ul>
+          <div class="drawer__footer menu-drawer__footer flex justify-center flex-col gap-y-6">
+            <div class="grid gap-4"><a
+                  href="/customer_authentication/redirect?locale=en&region_country=US"
+                  class="account-button flex items-center gap-2"
+                ><svg
+  class="icon icon-account icon--large icon--thick shrink-0"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2.90625 20.2508C3.82775 18.6544 5.15328 17.3287 6.74958 16.407C8.34588 15.4853 10.1567 15 12 15C13.8433 15 15.6541 15.4853 17.2504 16.407C18.8467 17.3287 20.1722 18.6544 21.0938 20.2508" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<span>Sign in/ Register</span>
+                </a><div class="menu-drawer__localization-form flex flex-wrap gap-x-6 gap-y-4"></div></div><div class="menu-drawer__social-icons">
+                
+
+<ul
+  class="list-unstyled flex flex-wrap gap-x-3 gap-y-2 items-center socials--bordered flex-wrap"
+  role="list"
+><li class="social__item inline-flex">
+      <a
+        href="https://www.facebook.com/microingredients"
+        class="social__link inline-flex"
+      ><svg
+  aria-hidden="true"
+  focusable="false"
+  role="presentation"
+  class="icon icon-facebook icon--large"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M9.1875 13.5223V21H13.2656V13.5223H16.3066L16.9395 10.084H13.2656V8.86758C13.2656 7.05 13.9793 6.35391 15.8215 6.35391C16.3945 6.35391 16.8551 6.36797 17.1223 6.39609V3.27773C16.6195 3.14062 15.3891 3 14.6789 3C10.9207 3 9.1875 4.77539 9.1875 8.60391V10.084H6.86719V13.5223H9.1875Z" fill="currentColor"/>
+</svg>
+<span class="visually-hidden">Facebook</span>
+      </a>
+    </li><li class="social__item inline-flex">
+      <a
+        href="https://www.instagram.com/microingredients_official/"
+        class="social__link inline-flex"
+      ><svg
+  aria-hidden="true"
+  focusable="false"
+  role="presentation"
+  class="icon icon-instagram icon--large"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M11.7255 3C9.35597 3 9.0586 3.01036 8.12796 3.05271C7.19914 3.09525 6.56515 3.2423 6.0104 3.45806C5.43656 3.68091 4.9498 3.97902 4.46485 4.46416C3.97953 4.94913 3.68144 5.43591 3.45787 6.00958C3.24157 6.56453 3.09434 7.19872 3.05253 8.12721C3.01091 9.05788 3 9.35544 3 11.725C3 14.0946 3.01054 14.391 3.05271 15.3217C3.09543 16.2506 3.24248 16.8846 3.45805 17.4393C3.68107 18.0132 3.97917 18.5 4.4643 18.9849C4.94907 19.4703 5.43584 19.7691 6.00931 19.9919C6.56442 20.2077 7.1986 20.3548 8.12724 20.3973C9.05787 20.4396 9.35506 20.45 11.7244 20.45C14.094 20.45 14.3905 20.4396 15.3211 20.3973C16.25 20.3548 16.8847 20.2077 17.4398 19.9919C18.0135 19.7691 18.4995 19.4703 18.9843 18.9849C19.4696 18.5 19.7677 18.0132 19.9912 17.4395C20.2057 16.8846 20.353 16.2504 20.3966 15.3219C20.4384 14.3912 20.4493 14.0946 20.4493 11.725C20.4493 9.35544 20.4384 9.05806 20.3966 8.12739C20.353 7.19854 20.2057 6.56453 19.9912 6.00976C19.7677 5.43591 19.4696 4.94913 18.9843 4.46416C18.4989 3.97884 18.0136 3.68073 17.4393 3.45806C16.8831 3.2423 16.2487 3.09525 15.3199 3.05271C14.3892 3.01036 14.093 3 11.7227 3H11.7255ZM10.9428 4.57232C11.1751 4.57195 11.4343 4.57232 11.7255 4.57232C14.055 4.57232 14.3311 4.58068 15.251 4.62249C16.1016 4.66139 16.5633 4.80353 16.8709 4.92295C17.278 5.08109 17.5683 5.27014 17.8735 5.57551C18.1789 5.88089 18.3679 6.17172 18.5264 6.57889C18.6458 6.88608 18.7881 7.34778 18.8269 8.19846C18.8687 9.11822 18.8777 9.39452 18.8777 11.723C18.8777 14.0515 18.8687 14.3278 18.8269 15.2475C18.788 16.0982 18.6458 16.5599 18.5264 16.8671C18.3683 17.2743 18.1789 17.5642 17.8735 17.8694C17.5681 18.1748 17.2782 18.3638 16.8709 18.522C16.5637 18.6419 16.1016 18.7837 15.251 18.8226C14.3313 18.8644 14.055 18.8735 11.7255 18.8735C9.39578 18.8735 9.11968 18.8644 8.19994 18.8226C7.34928 18.7833 6.8876 18.6412 6.57987 18.5218C6.17271 18.3636 5.88189 18.1746 5.57652 17.8692C5.27116 17.5638 5.08212 17.2737 4.92362 16.8664C4.8042 16.5592 4.66188 16.0975 4.62316 15.2468C4.58136 14.3271 4.573 14.0508 4.573 11.7208C4.573 9.39088 4.58136 9.11604 4.62316 8.19628C4.66206 7.3456 4.8042 6.8839 4.92362 6.57634C5.08176 6.16917 5.27116 5.87834 5.57652 5.57297C5.88189 5.26759 6.17271 5.07855 6.57987 4.92005C6.88741 4.80008 7.34928 4.6583 8.19994 4.61921C9.0048 4.58286 9.31671 4.57195 10.9428 4.57014V4.57232ZM16.3827 6.02103C15.8046 6.02103 15.3357 6.48945 15.3357 7.06767C15.3357 7.6457 15.8046 8.11467 16.3827 8.11467C16.9607 8.11467 17.4296 7.6457 17.4296 7.06767C17.4296 6.48964 16.9607 6.02067 16.3827 6.02067V6.02103ZM11.7255 7.24435C9.25109 7.24435 7.24495 9.25055 7.24495 11.725C7.24495 14.1994 9.25109 16.2047 11.7255 16.2047C14.1998 16.2047 16.2053 14.1994 16.2053 11.725C16.2053 9.25055 14.1997 7.24435 11.7253 7.24435H11.7255ZM11.7255 8.81667C13.3315 8.81667 14.6337 10.1187 14.6337 11.725C14.6337 13.3311 13.3315 14.6333 11.7255 14.6333C10.1192 14.6333 8.81722 13.3311 8.81722 11.725C8.81722 10.1187 10.1192 8.81667 11.7255 8.81667Z" fill="currentColor"/>
+</svg>
+<span class="visually-hidden">Instagram</span>
+      </a>
+    </li><li class="social__item inline-flex">
+      <a
+        href="https://www.tiktok.com/@microingredients"
+        class="social__link inline-flex"
+      ><svg
+  aria-hidden="true"
+  focusable="false"
+  role="presentation"
+  class="icon icon-tiktok icon--large"
+  fill="none"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M10.2664 17.2589C11.6014 17.2589 12.6837 16.3032 12.6837 14.8417V4H15.5826C15.42 5.97723 17.3855 7.88718 19.5532 7.8435V10.5695C17.6994 10.5695 16.123 9.78561 15.5743 9.35059V14.8417C15.5743 17.2589 13.6728 20 10.2664 20C6.8601 20 5 17.2589 5 14.8417C5 11.43 8.61044 9.45136 11.0017 9.93497V12.7115C10.8814 12.669 10.5712 12.6061 10.3069 12.6061C8.96086 12.5564 7.8492 13.6482 7.8492 14.8417C7.8492 16.1767 8.93143 17.2589 10.2664 17.2589Z" fill="currentColor"/>
+</svg>
+<span class="visually-hidden">TikTok</span>
+      </a>
+    </li></ul>
+
+              </div></div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</menu-drawer>
+</header>
+<div class="fixed-overlay fixed-overlay--header-section z-10"></div>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Micro Ingredients",
+    
+      "logo": "\/cdn\/shop\/files\/Micro-Ingredients_Primary-Logo_Digital_Combined-Horizontal_Color.png?v=1781650709\u0026width=500",
+    
+    "sameAs": [
+      "",
+      "https:\/\/www.facebook.com\/microingredients",
+      "",
+      "https:\/\/www.instagram.com\/microingredients_official\/",
+      "https:\/\/www.tiktok.com\/@microingredients",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": ""
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "shopify-section-group-header-group header-section",
+  "settings": []
+}
+{% endschema %}

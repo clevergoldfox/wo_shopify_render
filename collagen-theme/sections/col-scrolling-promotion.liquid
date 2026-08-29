@@ -1,0 +1,63 @@
+<style data-shopify>#shopify-section-{{ section.id }} {
+    --section-padding-top: 10px;
+    --section-padding-bottom: 10px;
+    --h-spacing: 80px;
+    --h-spacing-mobile: 24px;
+    --duration: 60.0s;
+  }
+  
+</style><div
+  class="section section--padding section--scrolling-promotion color-scheme-8"
+  data-section-index="5"
+>
+  <scrolling-promotion
+    data-section-type="scrolling-promotion"
+    data-section-id="{{ section.id }}"
+    
+      data-pause-on-hover
+    
+    class="scrolling-promotion scrolling-promotion--left"
+  >
+    <div class="promotion"><div
+              class="promotion__item promotion__item-text"
+              
+              style="--text-opacity: 1.0;"
+            ><div
+                  
+                  class="block promotion__item-wrap self-center"
+                >
+                  <div class="promotion__text h4">
+                    30 Days Free Return
+                  </div>
+                </div></div><div
+              class="promotion__item promotion__item-text"
+              
+              style="--text-opacity: 1.0;"
+            ><div
+                  
+                  class="block promotion__item-wrap self-center"
+                >
+                  <div class="promotion__text h4">
+                    Fast Delivery
+                  </div>
+                </div></div><div
+              class="promotion__item promotion__item-text"
+              
+              style="--text-opacity: 1.0;"
+            ><div
+                  
+                  class="block promotion__item-wrap self-center"
+                >
+                  <div class="promotion__text h4">
+                    Free Shipping Over $59
+                  </div>
+                </div></div></div>
+  </scrolling-promotion>
+</div>
+
+{% schema %}
+{
+  "name": "Scrolling Promotion",
+  "settings": []
+}
+{% endschema %}

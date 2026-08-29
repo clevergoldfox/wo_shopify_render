@@ -1,0 +1,415 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: 0px;
+    --section-padding-bottom: 0px;
+  }
+</style>
+<div class="section section-app section--padding">
+  <div class="page-width"><div id="shopify-block-AZE9yOVVaWHpTNzdoR__areviews_reviews_importer_areviews_display_reviews_EP9NxQ" class="shopify-block shopify-app-block">
+    <!-- BEGIN app snippet: InjectSchema -->
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <script>
+            (function () {
+                "use strict";
+
+                try {
+
+                    if (window.areviewsSchemaProcessed) return;
+                    window.areviewsSchemaProcessed = true;
+
+                    const areviewsSchemaSettings = {
+                        richSnippets: 1,
+                        reviewSnippets: 1,
+                        fallbackProductSchema: 0,
+                        hasAggregateRating: 1
+                    };
+                    const areviewsAggregateRating = {
+                        "@type": "AggregateRating",
+                        "description": "areviews",
+                        "ratingValue": "5.0",
+                        "reviewCount": "3"
+                    };
+                    const areviewsReviewSource = parseAreviewsReviewSource("[{\"author\":\"Vickie Kemp\",\"commented_at\":\"2025-03-13\",\"content\":\"I have been using this for about a month I am 45 and it really works on fine lines.highly recommend\",\"star\":5},{\"author\":\"Pat Quinn\",\"commented_at\":\"2025-01-14\",\"content\":\"Outstanding product. Has all the right stuff, great price. Definitely seeing results.\",\"star\":5},{\"author\":\"Stormy\",\"commented_at\":\"2024-10-07\",\"content\":\"I am already noticing a difference in my skin and nail growth! Will be buying more\",\"star\":5}]");
+                    const areviewsSchemaReviews = areviewsSchemaSettings.reviewSnippets ? normalizeAreviewsReviews(areviewsReviewSource) : [];
+                    const areviewsShouldIncludeAggregateRating = areviewsSchemaSettings.richSnippets && hasValidAggregateRating(areviewsAggregateRating);
+                    const areviewsShouldIncludeReviews = areviewsSchemaSettings.reviewSnippets && areviewsSchemaReviews.length > 0;
+
+                    let areviewsProductSchemaFound = false;
+                    let areviewsFallbackScriptEl = null;
+                    let areviewsObserver = null;
+
+                    const areviews_fullFallbackSchema = {
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "@id":{{ canonical_url | json }},
+                        "name": "Micro Ingredients Multi Collagen Complex, 240 Capsules",
+                        "url":{{ canonical_url | json }},
+                        "productID": "{{ product.id }}",
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "Micro Ingredients"
+                        },
+                        "description": "\nMicro Ingredients offers a multi collagen peptides complex with each bottle providing extra strength capsules and a full-spectrum collagen blend with five essential types. \n\n\nPackaging \u0026amp; Dosage Options \n\n\n\n\n240 Capsules – 80 Servings \n\n\n\n\n\n\n3 Capsules Daily – 1,100mg Multi Collagen Complex, 2,500mcg Biotin, 72mg Vitamin C, and 55mg Hyaluronic Acid Per Serving  \n\n\n\n\nHow it Works \n\n\n\n\n5 Collagen Types in Every Serving: Features collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula. \n\n\n\n\n\n\nComprehensive Extra Strength Formula: Includes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for optimal absorption, utilization, and strength of collagen. \n\n\n\n\nClean \u0026amp; Trusted \n\n\n\n\nManufactured in cGMP compliant facility \n\n\n\n\n\n\nNon-GMO and free of wheat, soy, dairy, gluten, \u0026amp; tree nuts \n\n\n\n\n\n\n3rd party lab tested for purity, safety, and potency \n\n\n",
+                        
+                        "image": "{{ 'Product-Shopify1.png' | asset_url }}&width=1500",
+                        
+                        
+                        
+"offers": {
+                            "@type": "Offer",
+                            "priceCurrency":{{ cart.currency.iso_code | json }},"price":"{{ product.price | divided_by: 100.0 }}","itemCondition": "http://schema.org/NewCondition",
+                            "availability": "http://schema.org/InStock",
+                            "url":{{ canonical_url | json }},
+                            
+                            "image": "{{ 'Product-Shopify1.png' | asset_url }}&width=1500",
+                            
+                            
+                            "name": "Micro Ingredients Multi Collagen Complex, 240 Capsules",
+                            
+                            
+                            "sku": "BA-MI-MCC0300",
+                            
+                            "description": "\nMicro Ingredients offers a multi collagen peptides complex with each bottle providing extra strength capsules and a full-spectrum collagen blend with five essential types. \n\n\nPackaging \u0026amp; Dosage Options \n\n\n\n\n240 Capsules – 80 Servings \n\n\n\n\n\n\n3 Capsules Daily – 1,100mg Multi Collagen Complex, 2,500mcg Biotin, 72mg Vitamin C, and 55mg Hyaluronic Acid Per Serving  \n\n\n\n\nHow it Works \n\n\n\n\n5 Collagen Types in Every Serving: Features collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula. \n\n\n\n\n\n\nComprehensive Extra Strength Formula: Includes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for optimal absorption, utilization, and strength of collagen. \n\n\n\n\nClean \u0026amp; Trusted \n\n\n\n\nManufactured in cGMP compliant facility \n\n\n\n\n\n\nNon-GMO and free of wheat, soy, dairy, gluten, \u0026amp; tree nuts \n\n\n\n\n\n\n3rd party lab tested for purity, safety, and potency \n\n\n",
+                            
+                            "priceValidUntil": "2027-08-27"
+                        }
+                        
+                    };
+
+                    if (areviewsShouldIncludeAggregateRating) {
+                        areviews_fullFallbackSchema.aggregateRating = areviewsAggregateRating;
+                    }
+
+                    if (areviewsShouldIncludeReviews) {
+                        areviews_fullFallbackSchema.review = areviewsSchemaReviews;
+                    }
+
+                    function hasValidAggregateRating(aggregateRating) {
+                        if (!areviewsSchemaSettings.hasAggregateRating) return false;
+
+                        return Number(aggregateRating.ratingValue) > 0 &&
+                            Number(aggregateRating.reviewCount) > 0;
+                    }
+
+                    function shouldReplaceAggregateRating(existing) {
+                        if (!existing || typeof existing !== "object") return true;
+                        if (existing.description === "areviews") return true;
+
+                        const value = Number(existing.ratingValue);
+                        const count = Number(existing.reviewCount || existing.ratingCount);
+
+                        return !(value > 0 && count > 0);
+                    }
+
+                    function hasMeaningfulReviews(existing) {
+                        if (Array.isArray(existing)) return existing.length > 0;
+                        return !!existing && typeof existing === "object";
+                    }
+
+                    function parseAreviewsReviewSource(value) {
+                        try {
+                            const parsed = JSON.parse(String(value || "[]"));
+
+                            return Array.isArray(parsed) ? parsed : [];
+                        } catch (error) {
+                            return [];
+                        }
+                    }
+
+                    function normalizeAreviewsReviews(reviews) {
+                        if (!Array.isArray(reviews)) return [];
+
+                        return reviews.slice(0, 10).map(function (review) {
+                            if (!review || typeof review !== "object") return null;
+
+                            const author = cleanSchemaText(review.author || "Customer");
+                            const body = cleanSchemaText(review.content || "");
+                            const datePublished = cleanSchemaText(review.commented_at || "");
+                            const ratingValue = parseInt(review.star, 10);
+
+                            if (!body || !ratingValue || ratingValue < 1 || ratingValue > 5) {
+                                return null;
+                            }
+
+                            const schemaReview = {
+                                "@type": "Review",
+                                "author": {
+                                    "@type": "Person",
+                                    "name": author || "Customer"
+                                },
+                                "reviewBody": body,
+                                "reviewRating": {
+                                    "@type": "Rating",
+                                    "ratingValue": String(ratingValue),
+                                    "bestRating": "5",
+                                    "worstRating": "1"
+                                }
+                            };
+
+                            if (datePublished) {
+                                schemaReview.datePublished = datePublished;
+                            }
+
+                            return schemaReview;
+                        }).filter(Boolean);
+                    }
+
+                    function cleanSchemaText(value) {
+                        return String(value || "")
+                            .replace(/<[^>]*>/g, " ")
+                            .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, " ")
+                            .replace(/\s+/g, " ")
+                            .trim();
+                    }
+
+                    function isProductSchema(json) {
+                        if (!json || typeof json !== "object") return false;
+
+                        const type = json["@type"];
+                        if (type === "Product" || type === "ProductGroup") return true;
+
+                        return Array.isArray(type) && (
+                            type.indexOf("Product") !== -1 ||
+                            type.indexOf("ProductGroup") !== -1
+                        );
+                    }
+
+                    function injectAreviewsProductSchema(json) {
+                        if (!json || typeof json !== "object") return false;
+
+                        if (Array.isArray(json)) {
+                            return json.reduce(function (handled, item) {
+                                return injectAreviewsProductSchema(item) || handled;
+                            }, false);
+                        }
+
+                        if (isProductSchema(json)) {
+                            areviewsProductSchemaFound = true;
+                            let changed = false;
+
+                            if (areviewsShouldIncludeAggregateRating && shouldReplaceAggregateRating(json.aggregateRating)) {
+                                json.aggregateRating = areviewsAggregateRating;
+                                changed = true;
+                            }
+
+                            if (areviewsShouldIncludeReviews && !hasMeaningfulReviews(json.review)) {
+                                json.review = areviewsSchemaReviews;
+                                changed = true;
+                            }
+
+                            return changed;
+                        }
+
+                        if (Array.isArray(json["@graph"])) {
+                            return injectAreviewsProductSchema(json["@graph"]);
+                        }
+
+                        return false;
+                    }
+
+                    function injectFullSchema() {
+                        const scriptEl = document.createElement("script");
+                        scriptEl.type = "application/ld+json";
+                        scriptEl.setAttribute("data-areviews-processed", "true");
+                        scriptEl.setAttribute("data-areviews-fallback", "true");
+                        scriptEl.textContent = JSON.stringify(areviews_fullFallbackSchema);
+                        (document.head || document.body).appendChild(scriptEl);
+                        areviewsFallbackScriptEl = scriptEl;
+                    }
+
+                    function removeFallbackSchema() {
+                        if (areviewsFallbackScriptEl && areviewsFallbackScriptEl.parentNode) {
+                            areviewsFallbackScriptEl.parentNode.removeChild(areviewsFallbackScriptEl);
+                        }
+                        areviewsFallbackScriptEl = null;
+                    }
+
+                    function processSchemas() {
+                        try {
+                            const ldJsonScripts = document.querySelectorAll("script[type='application/ld+json']");
+
+                            ldJsonScripts.forEach((script) => {
+                                if (script.hasAttribute("data-areviews-processed")) return;
+
+                                let json;
+
+                                try {
+                                    json = JSON.parse(script.textContent);
+                                } catch (e) {
+                                    script.setAttribute("data-areviews-processed", "skipped-invalid");
+                                    return;
+                                }
+
+                                if (injectAreviewsProductSchema(json)) {
+                                    script.textContent = JSON.stringify(json);
+                                }
+                                script.setAttribute("data-areviews-processed", "true");
+                            });
+
+                            if (areviewsProductSchemaFound && areviewsFallbackScriptEl) {
+                                removeFallbackSchema();
+                            }
+                        } catch (error) {
+                            // Suppressed intentionally so AReviews schema never breaks theme/app code.
+                        }
+                    }
+
+                    function maybeInjectFallback() {
+                        if (areviewsProductSchemaFound || areviewsFallbackScriptEl) return;
+
+                        if (areviewsSchemaSettings.fallbackProductSchema &&
+                            (areviewsShouldIncludeAggregateRating || areviewsShouldIncludeReviews)) {
+                            injectFullSchema();
+                        }
+                    }
+
+                    function startObserving() {
+                        if (!window.MutationObserver) return;
+
+                        areviewsObserver = new MutationObserver(function (mutations) {
+                            let sawNewSchema = false;
+
+                            for (let i = 0; i < mutations.length; i++) {
+                                const added = mutations[i].addedNodes;
+
+                                for (let j = 0; j < added.length; j++) {
+                                    const node = added[j];
+                                    if (node.nodeType !== 1) continue;
+
+                                    if ((node.tagName === "SCRIPT" && node.type === "application/ld+json") ||
+                                        (node.querySelector && node.querySelector("script[type='application/ld+json']"))) {
+                                        sawNewSchema = true;
+                                        break;
+                                    }
+                                }
+
+                                if (sawNewSchema) break;
+                            }
+
+                            if (sawNewSchema) processSchemas();
+                        });
+
+                        areviewsObserver.observe(document.documentElement, {
+                            childList: true,
+                            subtree: true
+                        });
+
+                        setTimeout(stopObserving, 10000);
+                    }
+
+                    function stopObserving() {
+                        if (areviewsObserver) {
+                            areviewsObserver.disconnect();
+                            areviewsObserver = null;
+                        }
+                    }
+
+                    function start() {
+                        processSchemas();
+                        startObserving();
+
+                        const scheduleFallback = function () {
+                            setTimeout(function () {
+                                processSchemas();
+                                maybeInjectFallback();
+                            }, 2500);
+                        };
+
+                        if (document.readyState === "complete") {
+                            scheduleFallback();
+                        } else {
+                            window.addEventListener("load", scheduleFallback, { once: true });
+                        }
+                    }
+
+                    if (document.readyState === "loading") {
+                        document.addEventListener("DOMContentLoaded", start, { once: true });
+                    } else {
+                        start();
+                    }
+
+                } catch (error) {
+                    // Suppressed intentionally so AReviews schema never breaks theme/app code.
+                }
+            })();
+        </script>
+    
+
+<!-- END app snippet -->
+    <!-- BEGIN app snippet: AreviewsReviewsSection -->
+    <div id='AreviewsContainer'>
+        <div id='az_reviews' class='az_reviews AReviewsApp' data-product_id='{{ product.id }}'>
+
+        </div>
+    </div>
+
+<link href='https://areviewsapp.com/css/reviews_online.css' rel='stylesheet' type='text/css'>
+
+
+
+<script type='text/javascript'>
+    var customer_id = null;
+    var success = false;
+    var counter = 0;
+</script>
+
+
+
+<script>var product_id = document.getElementById('az_reviews').dataset.product_id;</script>
+<script src='https://areviewsapp.com/js_codes/areviews_app.js' defer></script>
+
+
+<!-- END app snippet -->
+
+
+
+<style>
+  
+
+  
+
+     
+
+     
+
+
+
+</style>
+	
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Col Custom 4",
+  "class": "section col-scope",
+  "settings": []
+}
+{% endschema %}

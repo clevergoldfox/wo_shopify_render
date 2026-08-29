@@ -11,7 +11,7 @@
   "sections": {
     "gp_section_631340594190353010": {
       "settings": {
-        "checksum": "b498a933624205e6dac0311fcad6ff22f94fead97f307073e804d3c698800d33_1_1_1_0__1",
+        "checksum": "b498a933624205e6dac0311fcad6ff22f94fead97f307073e804d3c698800d33_1_1_0_0__1",
         "gg4OMwhyBY9_text": "<p><span style=\"background-color:rgb(251,238,240);color:rgb(125,31,43);\"><strong>🇰🇷 Formulated in Korea</strong></span></p>",
         "ggIjLIUTLq2_errorMessage": "Cannot add product to cart",
         "ggIjLIUTLq2_label": "ADD TO CART, CLAIM MY FREE BOTTLE",
@@ -33,7 +33,7 @@
     },
     "gp_section_631340594408522572": {
       "settings": {
-        "checksum": "3c82b9ced754814105aa58230708f980b43a4a2ebbf9c8a3a624496ab8a95e59_1_1_1_0__1",
+        "checksum": "3c82b9ced754814105aa58230708f980b43a4a2ebbf9c8a3a624496ab8a95e59_1_1_0_0__1",
         "gg2FyVotT5e_text": "<p>This has become part of my daily routine!</p>",
         "gg3uJQB5usx_text": "<p><strong>Megan K. 58</strong></p>",
         "gg3yIKIaqOC_text": "<p>🍀</p>",
@@ -74,7 +74,7 @@
     },
     "gp_section_631342202840220657": {
       "settings": {
-        "checksum": "fb4dc2417413db866a0c5baf2a65406d15b516e412f72daaca8f66403070bcd7_1_1_1_0__1",
+        "checksum": "fb4dc2417413db866a0c5baf2a65406d15b516e412f72daaca8f66403070bcd7_1_1_0_0__1",
         "ggDelw7kVYU_text": "<p>Peptides + Low-Molecular Collagen visibly firm and lift, across the face and the neck most creams ignore.</p>",
         "ggIV4nLXhQv_text": "<p><span style=\"background-color:rgb(255,250,251);color:rgb(125,31,43);\"><strong>WHY WOMEN CHOOSE NUVIRA</strong></span></p>",
         "ggMrgZOzDS-_text": "Gentle every night",
@@ -84,14 +84,13 @@
         "ggpA3FN6X2N_text": "Firms &amp; lifts",
         "ggpJY7vIy3k_text": "Firmer, lifted skin that finally matches how young you feel",
         "ggvLyQzRaWP_text": "<p>No retinol sting, no peeling, no downtime. Just firmer, smoother skin while you sleep.</p>",
-        "ggw6ueKELG3_text": "<p>Most NAD serums sit on top of your skin and rinse off by morning. Ours is bonded to EGF and shrunk small enough to truly absorb, 345% deeper.</p>",
-        "section_preload": "true"
+        "ggw6ueKELG3_text": "<p>Most NAD serums sit on top of your skin and rinse off by morning. Ours is bonded to EGF and shrunk small enough to truly absorb, 345% deeper.</p>"
       },
       "type": "gp-section-631342202840220657"
     },
     "gp_section_631342465370031089": {
       "settings": {
-        "checksum": "4ba421684b3dd7f0e327bcc100ee52db0e1d46eb79bff007dee43378615a4944_1_1_1_0__1",
+        "checksum": "4ba421684b3dd7f0e327bcc100ee52db0e1d46eb79bff007dee43378615a4944_1_1_0_0__1",
         "gg7sjJtMFK2_text": "<p>The carrier protein that shrinks NAD so it finally absorbs.</p>",
         "gg8AaIIewzH_text": "<p>Holds 1,000× its weight in water, inside your skin, not on top.</p>",
         "ggAu-nwIF1O_text": "<p><span style=\"background-color:rgb(246,226,229);color:rgb(125,31,43);\"><strong>THE REASON NOTHING WORKED BEFORE</strong></span></p>",
@@ -110,7 +109,7 @@
     },
     "gp_section_631342887702889074": {
       "settings": {
-        "checksum": "faedbc1caad3cb8c3b7ed564c61335276a752052d2d75e9fbcb28eb173efb348_1_1_1_0__1",
+        "checksum": "faedbc1caad3cb8c3b7ed564c61335276a752052d2d75e9fbcb28eb173efb348_1_1_0_0__1",
         "ggKw2cHtosc_text": "<p><span style=\"background-color:rgba(255, 255, 255, 0);color:rgb(74,58,61);\">Real, gradual results, the honest kind that last. Firmer, smoother, lifted skin that finally matches how young you still feel inside.</span></p>",
         "ggplWDKrlEs_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/1001/1086/0617/files/nad-before.jpg-3.webp",
         "ggtXD_1rqWo_text": "Visible lift &amp; firmness in 2 weeks"
@@ -119,19 +118,19 @@
     },
     "gp_section_631343219170345722": {
       "settings": {
-        "checksum": "c34e28e64061d49f1acfd3c05b52e5cadc1ef6011da4752e3814376c7e89d097_1_1_1_0__1"
+        "checksum": "c34e28e64061d49f1acfd3c05b52e5cadc1ef6011da4752e3814376c7e89d097_1_1_0_0__1"
       },
       "type": "gp-section-631343219170345722"
     },
     "gp_section_631343972198908748": {
       "settings": {
-        "checksum": "a9fd30549199c8a70fb6695eb41dee49b3352e7e6926fdb46a4d7503e7d64be6_1_1_1_0__1"
+        "checksum": "a9fd30549199c8a70fb6695eb41dee49b3352e7e6926fdb46a4d7503e7d64be6_1_1_0_0__1"
       },
       "type": "gp-section-631343972198908748"
     },
     "gp_section_631344984703894348": {
       "settings": {
-        "checksum": "980580a6beb81f83dbb29a651e9a660ecea249c0da702c19e06c3cf4a92eec4f_1_1_1_0__1",
+        "checksum": "980580a6beb81f83dbb29a651e9a660ecea249c0da702c19e06c3cf4a92eec4f_1_1_0_0__1",
         "gg32b3T_73O_text": "<p><br><span style=\"background-color:rgb(255,255,255);color:rgb(74,58,61);\">You're covered by our 60-Day Money-Back Guarantee. If you're not thrilled, send it back for a full refund.</span></p>",
         "gg3_72PabO9_text": "<p>Frequently asked questions</p>",
         "gg3m0FXeqjh_text": "<p>Yes. It's formulated to be gentle, no retinol, no stinging, no peeling. Soothing ingredients support the skin barrier. As with any new product, patch-test first.</p>",
@@ -149,7 +148,7 @@
     },
     "gp_section_631402505254732533": {
       "settings": {
-        "checksum": "e26f8cd7f62e4660873eaaee8cad1a2567760208d7555bead95ebec21c6927bd_1_1_1_0__1"
+        "checksum": "e26f8cd7f62e4660873eaaee8cad1a2567760208d7555bead95ebec21c6927bd_1_1_0_0__1"
       },
       "type": "gp-section-631402505254732533"
     }

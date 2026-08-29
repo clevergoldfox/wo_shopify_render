@@ -1,0 +1,194 @@
+<compare-drawer
+  class="drawer drawer--loading modal compare-drawer"
+  id="CompareDrawer"
+  shopify-design-mode
+  hidden
+>
+  <div class="fixed-overlay" aria-controls="CompareDrawer"></div>
+  <div class="drawer__inner color-scheme-1">
+    <button
+      class="drawer__close-btn"
+      aria-controls="CompareDrawer"
+      aria-label="Close"
+    >
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    </button>
+
+<div class="loading__spinner drawer__loading-spinner">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+<div class="drawer__body v-scrollable h-full">
+      <h3 class="compare-drawer__title h3 text-center">Product Comparison</h3>
+      <div class="compare-table-container h-scrollable relative z-0">
+        <table class="compare-table text-subtext"><tr data-compare-key="info">
+              <td class="td-label background-1 text-body"></td>
+            </tr><tr data-compare-key="description">
+              <td class="td-label background-1 text-body">Description
+</td>
+            </tr><tr data-compare-key="price">
+              <td class="td-label background-1 text-body">Price
+</td>
+            </tr><tr data-compare-key="vendor">
+              <td class="td-label background-1 text-body">Vendor
+</td>
+            </tr><tr data-compare-key="type">
+              <td class="td-label background-1 text-body">Type
+</td>
+            </tr><tr data-compare-key="variants">
+              <td class="td-label background-1 text-body">Product variants
+</td>
+            </tr></table>
+      </div>
+    </div>
+  </div>
+  <template id="MainProduct-compare__rows">
+    <table>
+      <tr><td data-compare-key="info"><div class="product-featured-image relative">
+                    <div
+                      class="media-wrapper hover-wrapper blocks-radius"
+                      style="--aspect-ratio: 1;"
+                    ><img src="{{ 'Product-Shopify1_w3000.png' | asset_url }}" alt="Micro Ingredients Multi Collagen Complex, 240 Capsules" srcset="{{ 'Product-Shopify1_w170.png' | asset_url }} 170w, {{ 'Product-Shopify1_w340.png' | asset_url }} 340w" width="3000" height="3000" loading="lazy" fetchpriority="low" class="motion-reduce hover-scale-up" sizes="170px" is="image-lazy">
+</div>
+                    <button
+                      is="compare-remove"
+                      data-product-id="{{ product.id }}"
+                      class="compare-table--remove btn btn--white"
+                      aria-label="Remove"
+                    >
+                      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--extra-small icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </button>
+                  </div>
+                  <div class="compare-table__col-info text-center">
+                    <h3 class="text-pcard-title">
+                      <a class="reversed-link block" href="{{ product.url }}">
+                        <span class="reversed-link__text">Micro Ingredients Multi Collagen Complex, 240 Capsules</span>
+                      </a>
+                    </h3><a href="{{ product.url }}" class="btn btn--primary btn--small">
+                        <span class="btn__text flex gap-1 items-center">View details</span>
+                      </a></div></td><td data-compare-key="description"><div class="rte text-limit-3-lines"><div class="OutlineElement Ltr SCXW265340512 BCX0">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">Micro Ingredients offers a multi collagen peptides complex with each bottle providing </span><span class="NormalTextRun SCXW265340512 BCX0">extra strength</span><span class="NormalTextRun SCXW265340512 BCX0"> capsules and a full-spectrum collagen blend with five essential types.</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</div>
+<div class="OutlineElement Ltr SCXW265340512 BCX0">
+<p class="Paragraph SCXW265340512 BCX0"><span style="color: rgb(15, 113, 72);"><strong><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW265340512 BCX0">Packaging &amp; Dosage Options</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></strong></span></p>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="0" data-list-defn-props='{"335551671":0,"335552541":1,"335559685":720,"335559991":360,"469769226":"inherit","469769242":[8226],"469777803":"left","469777804":"•","469777815":"hybridMultilevel"}' data-listid="27" data-font="inherit" data-leveltext="•" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">240 Capsules – 80 Servings</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="2" data-list-defn-props='{"335551671":0,"335552541":1,"335559685":720,"335559991":360,"469769226":"inherit","469769242":[8226],"469777803":"left","469777804":"•","469777815":"hybridMultilevel"}' data-listid="27" data-font="inherit" data-leveltext="•" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">3</span><span class="NormalTextRun SCXW265340512 BCX0"> </span><span class="NormalTextRun SCXW265340512 BCX0">Capsules</span><span class="NormalTextRun SCXW265340512 BCX0"> Daily –</span><span class="NormalTextRun SCXW265340512 BCX0"> </span><span class="NormalTextRun SCXW265340512 BCX0">1,100mg</span><span class="NormalTextRun SCXW265340512 BCX0"> Multi Collagen Complex, 2,500mcg Biotin, 72mg</span><span class="NormalTextRun SCXW265340512 BCX0"> </span><span class="NormalTextRun SCXW265340512 BCX0">Vitamin C, and </span><span class="NormalTextRun SCXW265340512 BCX0">55mg</span><span class="NormalTextRun SCXW265340512 BCX0"> Hyaluronic Acid Per Serving </span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div>
+<div class="OutlineElement Ltr SCXW265340512 BCX0">
+<p class="Paragraph SCXW265340512 BCX0"><span style="color: rgb(15, 113, 72);"><strong><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW265340512 BCX0">How it Works</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></strong></span></p>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="1" data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-listid="32" data-font="Symbol" data-leveltext="" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">5</span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW265340512 BCX0"> Collagen</span><span class="NormalTextRun SCXW265340512 BCX0"> Types</span><span class="NormalTextRun SCXW265340512 BCX0"> in Every Serving</span><span class="NormalTextRun SCXW265340512 BCX0">:</span></span><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0"> </span><span class="NormalTextRun SCXW265340512 BCX0">Features collagen types I, II, III, V, and X sourced from natural bovine, chicken bone broth, fish, and eggshell membrane to create a complete multi-source collagen formula.</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="2" data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-listid="32" data-font="Symbol" data-leveltext="" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">Comprehensive Extra Strength Formula:</span></span><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0"> </span><span class="NormalTextRun SCXW265340512 BCX0">Includes biotin, hyaluronic acid, and vitamin C, providing a diverse formula for </span><span class="NormalTextRun SCXW265340512 BCX0">optimal</span><span class="NormalTextRun SCXW265340512 BCX0"> absorption, </span><span class="NormalTextRun SCXW265340512 BCX0">utilization</span><span class="NormalTextRun SCXW265340512 BCX0">, and strength of collagen.</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div>
+<div class="OutlineElement Ltr SCXW265340512 BCX0">
+<p class="Paragraph SCXW265340512 BCX0"><span style="color: rgb(15, 113, 72);"><strong><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW265340512 BCX0">Clean &amp; Trusted</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></strong></span></p>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="0" data-list-defn-props='{"335551671":0,"335552541":1,"335559685":720,"335559991":360,"469769226":"inherit","469769242":[8226],"469777803":"left","469777804":"•","469777815":"hybridMultilevel"}' data-listid="30" data-font="inherit" data-leveltext="•" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">Manufactured in cGMP compliant facility</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="1" data-list-defn-props='{"335551671":0,"335552541":1,"335559685":720,"335559991":360,"469769226":"inherit","469769242":[8226],"469777803":"left","469777804":"•","469777815":"hybridMultilevel"}' data-listid="30" data-font="inherit" data-leveltext="•" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">Non-</span><span class="NormalTextRun SCXW265340512 BCX0">GMO and free of</span><span class="NormalTextRun SCXW265340512 BCX0"> wheat,</span><span class="NormalTextRun SCXW265340512 BCX0"> soy, </span><span class="NormalTextRun SCXW265340512 BCX0">dairy, </span><span class="NormalTextRun SCXW265340512 BCX0">gluten, &amp; tree nuts</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div>
+<div class="ListContainerWrapper SCXW265340512 BCX0">
+<ul role="list" class="BulletListStyle1 SCXW265340512 BCX0">
+<li class="OutlineElement Ltr SCXW265340512 BCX0" role="listitem" data-aria-level="1" data-aria-posinset="2" data-list-defn-props='{"335551671":0,"335552541":1,"335559685":720,"335559991":360,"469769226":"inherit","469769242":[8226],"469777803":"left","469777804":"•","469777815":"hybridMultilevel"}' data-listid="30" data-font="inherit" data-leveltext="•" aria-setsize="-1">
+<p class="Paragraph SCXW265340512 BCX0"><span class="TextRun SCXW265340512 BCX0" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW265340512 BCX0">3rd party lab tested for purity, safety, and potency</span></span><span data-ccp-props="{}" class="EOP SCXW265340512 BCX0"> </span></p>
+</li>
+</ul>
+</div></div></td><td data-compare-key="price"><div
+  class="
+    f-price f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $24.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $24.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $29.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+
+</td><td data-compare-key="vendor">Micro Ingredients</td><td data-compare-key="type"></td><td data-compare-key="variants"></td></tr>
+    </table>
+  </template></compare-drawer>
+
+{% schema %}
+{
+  "name": "Product Compare",
+  "class": "shopify-section-group-overlay-group section-group-overlay-product-compare",
+  "settings": []
+}
+{% endschema %}

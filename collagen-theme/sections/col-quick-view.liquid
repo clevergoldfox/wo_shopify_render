@@ -1,0 +1,420 @@
+<quick-view-modal
+    id="MainProductQuickView-{{ section.id }}-{{ product.id }}"
+    class="quick-view drawer drawer--right"
+    data-product-url="{{ product.url }}"
+    shopify-design-mode
+    hidden
+  >
+    <div class="fixed-overlay" aria-controls="MainProductQuickView-{{ section.id }}-{{ product.id }}"></div>
+    <div class="drawer__inner flex flex-col color-scheme-1">
+      <div class="drawer__header-title md:hidden">
+        <h3>Choose your option</h3>
+      </div>
+      <button
+        class="drawer__close-btn z-2"
+        aria-label="Close"
+        aria-controls="MainProductQuickView-{{ section.id }}-{{ product.id }}"
+      >
+        <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-close icon--large icon--thick"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path d="M18.75 5.13496L5.25 18.8544" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 18.8544L5.25 5.13496" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+      </button>
+      <div class="drawer__body h-full quick-view__content v-scrollable">
+        <template id="MainProduct-quick-view__content">
+          <link href="{{ 'col-section-main-product.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+          <link href="{{ 'col-component-deferred-media.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+          
+<script src="{{ 'col-product-info.js' | asset_url }}" defer="defer"></script>
+
+          
+          <product-info
+            data-section="{{ section.id }}"
+            data-product-id="{{ product.id }}"
+            data-update-url="false"
+            data-url="{{ product.url }}"
+            data-view-mode="quick-view"
+            class="product flex flex-wrap product--mobile-thumbs-hide product-- product--stacked product--media-has-6 product--media-has-many"
+          >
+            <div class="product__media-wrapper w-full relative">
+              <div class="product__media-container sticky-element">
+                
+<media-gallery
+  id="MediaGallery-{{ section.id }}"
+  role="region"
+  class="product__media-gallery block relative"
+  aria-label="Gallery Viewer"
+  data-media-layout="stacked"
+  data-only-image="false"
+  data-enable-image-zoom="false"
+  data-enable-desktop-slider="false"
+  data-enable-mobile-thumbnails="false"
+  data-media-item-gap="8"
+  data-media-item-gap-mobile="12"
+  data-context="quickview"
+  style="--media-item-gap: 8px; --media-item-gap-mobile: 12px"
+>
+  <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
+  <div class="product__media-gallery-viewer-wrap relative swiper-show-nav-on-hover">
+    <div
+      id="GalleryViewer-{{ section.id }}"
+      class="product__media-gallery-viewer blocks-radius swiper"
+    >
+      <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+        Skip to product information
+      </a>
+      <div
+        id="Slider-Gallery-{{ section.id }}"
+        class="product__media-list flex swiper-wrapper"
+      >
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="38643239911651"
+  data-media-type="image"
+  data-media-index="0"
+  data-src="{{ 'Product-Shopify1_w1946.png' | asset_url }}"
+  data-pswp-width="3000"
+  data-pswp-height="3000"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'Product-Shopify1_w1946.png' | asset_url }}" alt="" srcset="{{ 'Product-Shopify1_w400.png' | asset_url }} 400w, {{ 'Product-Shopify1_w620.png' | asset_url }} 620w, {{ 'Product-Shopify1_w690.png' | asset_url }} 690w, {{ 'Product-Shopify1_w810.png' | asset_url }} 810w, {{ 'Product-Shopify1_w980.png' | asset_url }} 980w, {{ 'Product-Shopify1_w1240.png' | asset_url }} 1240w, {{ 'Product-Shopify1_w1380.png' | asset_url }} 1380w, {{ 'Product-Shopify1_w1620.png' | asset_url }} 1620w" width="1946" height="1946" loading="eager" is="image-lazy" fetchpriority="high" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * ) - 4.5rem) / 1)">
+        </motion-element></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="37809300668643"
+  data-media-type="image"
+  data-media-index="1"
+  data-src="{{ 'MultiCollagenComplex_2copy_w1946.jpg' | asset_url }}"
+  data-pswp-width="2083"
+  data-pswp-height="2083"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'MultiCollagenComplex_2copy_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'MultiCollagenComplex_2copy_w400.jpg' | asset_url }} 400w, {{ 'MultiCollagenComplex_2copy_w620.jpg' | asset_url }} 620w, {{ 'MultiCollagenComplex_2copy_w690.jpg' | asset_url }} 690w, {{ 'MultiCollagenComplex_2copy_w810.jpg' | asset_url }} 810w, {{ 'MultiCollagenComplex_2copy_w980.jpg' | asset_url }} 980w, {{ 'MultiCollagenComplex_2copy_w1240.jpg' | asset_url }} 1240w, {{ 'MultiCollagenComplex_2copy_w1380.jpg' | asset_url }} 1380w, {{ 'MultiCollagenComplex_2copy_w1620.jpg' | asset_url }} 1620w" width="1946" height="1946" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * ) - 4.5rem) / 1)">
+        </motion-element></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="38308279910627"
+  data-media-type="image"
+  data-media-index="2"
+  data-src="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1946.jpg' | asset_url }}"
+  data-pswp-width="2481"
+  data-pswp-height="2482"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 0.999597099113618;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w400.jpg' | asset_url }} 400w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w620.jpg' | asset_url }} 620w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w690.jpg' | asset_url }} 690w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w810.jpg' | asset_url }} 810w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w980.jpg' | asset_url }} 980w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1240.jpg' | asset_url }} 1240w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1380.jpg' | asset_url }} 1380w, {{ 'new-old_2fc69714-b475-4a62-b367-65dced11e46a_w1620.jpg' | asset_url }} 1620w" width="1946" height="1947" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * ) - 4.5rem) / 1)">
+        </motion-element></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="37809309155555"
+  data-media-type="image"
+  data-media-index="3"
+  data-src="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1946.jpg' | asset_url }}"
+  data-pswp-width="2094"
+  data-pswp-height="2094"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w400.jpg' | asset_url }} 400w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w620.jpg' | asset_url }} 620w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w690.jpg' | asset_url }} 690w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w810.jpg' | asset_url }} 810w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w980.jpg' | asset_url }} 980w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1240.jpg' | asset_url }} 1240w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1380.jpg' | asset_url }} 1380w, {{ 'MultiCollagenComplex_3_00a1c1ae-ac6a-42ae-a9d0-77f94aae059b_w1620.jpg' | asset_url }} 1620w" width="1946" height="1946" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * ) - 4.5rem) / 1)">
+        </motion-element></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="34940620996835"
+  data-media-type="image"
+  data-media-index="4"
+  data-src="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1946.jpg' | asset_url }}"
+  data-pswp-width="2084"
+  data-pswp-height="2085"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 0.9995203836930455;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1946.jpg' | asset_url }}" alt="" srcset="{{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w400.jpg' | asset_url }} 400w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w620.jpg' | asset_url }} 620w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w690.jpg' | asset_url }} 690w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w810.jpg' | asset_url }} 810w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w980.jpg' | asset_url }} 980w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1240.jpg' | asset_url }} 1240w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1380.jpg' | asset_url }} 1380w, {{ '4_f6184450-3d1d-4a0e-9c15-73b78b0dd003_w1620.jpg' | asset_url }} 1620w" width="1946" height="1947" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * ) - 4.5rem) / 1)">
+        </motion-element></div>
+</div>
+
+
+
+<div
+  tabindex="-1"
+  class="product__media-item swiper-slide"
+  data-media-id="34940635152611"
+  data-media-type="image"
+  data-media-index="5"
+  data-src="{{ 'Multi_Collagen_Complex_6_w1946.jpg' | asset_url }}"
+  data-pswp-width="2083"
+  data-pswp-height="2083"
+>
+  <div
+    class="product__media-item-container relative flex overflow-hidden blocks-radius media-type-image"
+    style="--aspect-ratio: 1.0;"
+  ><motion-element data-motion="zoom-out-sm" class="block product__media media-wrapper">
+          <img src="{{ 'Multi_Collagen_Complex_6_w1946.jpg' | asset_url }}" alt="" srcset="{{ 'Multi_Collagen_Complex_6_w400.jpg' | asset_url }} 400w, {{ 'Multi_Collagen_Complex_6_w620.jpg' | asset_url }} 620w, {{ 'Multi_Collagen_Complex_6_w690.jpg' | asset_url }} 690w, {{ 'Multi_Collagen_Complex_6_w810.jpg' | asset_url }} 810w, {{ 'Multi_Collagen_Complex_6_w980.jpg' | asset_url }} 980w, {{ 'Multi_Collagen_Complex_6_w1240.jpg' | asset_url }} 1240w, {{ 'Multi_Collagen_Complex_6_w1380.jpg' | asset_url }} 1380w, {{ 'Multi_Collagen_Complex_6_w1620.jpg' | asset_url }} 1620w" width="1946" height="1946" loading="lazy" is="image-lazy" fetchpriority="low" sizes="(max-width: 767px) calc(100vw - 3rem), calc(((min(1630px, 100vw) * ) - 4.5rem) / 1)">
+        </motion-element></div>
+</div>
+
+</div>
+    </div><div class="swiper-controls swiper-controls--nav-floating swiper-controls--grouped-mobile swiper-controls--pagination-fraction justify-center md:hidden">
+        <button
+          type="button"
+          class="btn swiper-button swiper-button--drop-shadow swiper-button--blank-mobile swiper-button-prev"
+          name="previous"
+          aria-label="Slide left"
+        >
+          <span class="btn__text"><svg
+  class="icon icon-slider-prev rtl-flip-x icon--medium icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M12.75 16.2505L6.5 10.0005L12.75 3.75049" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+        </button><div class="swiper-pagination flex md:hidden"></div><button
+          type="button"
+          class="btn swiper-button swiper-button--drop-shadow swiper-button--blank-mobile swiper-button-next"
+          name="next"
+          aria-label="Slide right"
+        >
+          <span class="btn__text"><svg
+  class="icon icon-slider-next rtl-flip-x icon--medium icon--thick"
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7.5 3.74121L13.75 9.99121L7.5 16.2412" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+        </button>
+      </div></div></media-gallery>
+
+              </div>
+            </div>
+            <div class="product__info-wrapper w-full">
+              <div
+  id="ProductInfo-{{ section.id }}"
+  data-section="{{ section.id }}"
+  data-url="{{ product.url }}"
+  class="product__info-container sticky-element"
+>
+  <div class="product__blocks accordion-parent"><div
+            class="product__block product__block--badges product__badges flex flex-wrap items-center"
+            id="Badges-{{ section.id }}"
+            
+          ><span class="f-badge f-badge--sale">Sale</span></div><div class="product__block product__block--title" >
+            <h1 class="product__title h4">Micro Ingredients Multi Collagen Complex, 240 Capsules</h1>
+            <a href="{{ product.url }}" class="product__title">
+              <h2 class="h1">
+                Micro Ingredients Multi Collagen Complex, 240 Capsules
+              </h2>
+            </a>
+          </div><div class="product__block product__block--price" >
+            <div id="price-{{ section.id }}" role="status"><div
+  class="
+    f-price f-price--large f-price--on-sale "
+><div class="f-price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        $24.95 USD
+      </span></div>
+  <div class="f-price__sale">
+    <span class="visually-hidden visually-hidden--inline">Sale price</span>
+    <span class="f-price-item f-price-item--sale">
+      $24.95 USD
+    </span>
+      <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      <span class="f-price-item f-price-item--regular">
+        <s>
+          
+            $29.95 USD
+          
+        </s>
+      </span></div>
+  <div class="f-price__unit-wrapper hidden">
+    <span class="visually-hidden">Unit price</span>
+    <div class="f-price__unit"><span data-unit-price></span><span aria-hidden="true">/</span><span class="visually-hidden">per&nbsp;</span><span data-unit-price-base-unit></span></div>
+  </div>
+</div>
+</div><div class="product__tax text-sm text-subtext rte"><a href="/policies/shipping-policy">Shipping</a> calculated at checkout.
+</div><form method="post" action="{{ routes.cart_add_url }}" id="product-form-installment-{{ section.id }}" accept-charset="UTF-8" class="installment" enctype="multipart/form-data"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+              <shopify-payment-terms variant-id="{{ product.selected_or_first_available_variant.id }}" shopify-meta="{&quot;type&quot;:&quot;product&quot;,&quot;currency_code&quot;:&quot;USD&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;variants&quot;:[{&quot;id&quot;:{{ product.selected_or_first_available_variant.id }},&quot;price_per_term&quot;:&quot;$12.47&quot;,&quot;full_price&quot;:&quot;$24.95&quot;,&quot;eligible&quot;:false,&quot;available&quot;:true,&quot;number_of_payment_terms&quot;:2}],&quot;min_price&quot;:&quot;$35.00&quot;,&quot;max_price&quot;:&quot;$30,000.00&quot;,&quot;financing_plans&quot;:[{&quot;min_price&quot;:&quot;$35.00&quot;,&quot;max_price&quot;:&quot;$49.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:2}]},{&quot;min_price&quot;:&quot;$50.00&quot;,&quot;max_price&quot;:&quot;$999.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:4},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:6},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:12}]},{&quot;min_price&quot;:&quot;$1,000.00&quot;,&quot;max_price&quot;:&quot;$30,000.00&quot;,&quot;terms&quot;:[{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:6},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:12}]}],&quot;installments_buyer_prequalification_enabled&quot;:false,&quot;seller_id&quot;:5415235}"></shopify-payment-terms>
+<input type="hidden" name="product-id" value="{{ product.id }}" /><input type="hidden" name="section-id" value="{{ section.id }}" /></form></div><div class="product__block product__block--variant_picker" >
+            
+
+          </div><div class="product__block product__block--buy_buttons" >
+<div
+    class="product-form"
+    data-hide-errors="false"
+    data-section-id="{{ section.id }}"
+  >
+    <div class="product-form__error-message-wrapper" role="alert" hidden>
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="icon icon-error"
+        viewBox="0 0 13 13"
+      >
+        <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+        <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+        <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+        <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+      </svg>
+      <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div>
+    </div><form method="post" action="{{ routes.cart_add_url }}" id="product-form-{{ section.id }}" accept-charset="UTF-8" class="main-product-form grid gap-4" enctype="multipart/form-data" data-type="add-to-cart-form" is="product-form" data-hide-errors="false"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><input
+        type="hidden"
+        name="id"
+        value="{{ product.selected_or_first_available_variant.id }}"
+        
+        class="product-variant-id"
+      ><div class="product-form__buttons flex flex-wrap items-end gap-x-2 gap-y-4" id="QuantityForm-{{ section.id }}"><div class="product-form__quantity">
+            <label class="quantity__label form__label visually-hidden" for="Quantity-{{ section.id }}">
+              <span class="font-body-bolder">Quantity</span>
+            </label>
+            <quantity-input
+              class="quantity"
+              data-section-id="{{ section.id }}"
+              data-product-id="{{ product.id }}"
+            >
+              <button class="quantity__button" name="minus" type="button">
+                <span class="visually-hidden">Decrease quantity for Micro Ingredients Multi Collagen Complex, 240 Capsules</span>
+                <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-minus icon--medium icon--thick"
+  fill="none"
+  viewBox="0 0 20 20"
+>
+  <path d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              </button>
+              <input
+                class="quantity__input"
+                type="number"
+                name="quantity"
+                id="Quantity-{{ section.id }}"
+                data-cart-quantity="0"
+                step="1"
+                value="1"
+                data-quantity-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                data-min="1"
+                min="1"
+                
+                inputmode="numeric"
+                autocomplete="off"
+                form="product-form-{{ section.id }}"
+              >
+              <button class="quantity__button" name="plus" type="button">
+                <span class="visually-hidden">Increase quantity for Micro Ingredients Multi Collagen Complex, 240 Capsules</span>
+                <svg
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="icon icon-plus icon--medium icon--thick"
+  fill="none"
+  viewBox="0 0 20 20"
+>
+  <path d="M3.125 10H16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 3.125V16.875" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              </button>
+            </quantity-input>
+          </div><button
+          id="ProductSubmitButton-{{ section.id }}"
+          type="submit"
+          name="add"
+          class="product-form__submit btn btn--secondary"
+          
+        >
+          <span class="btn__text">Add to cart
+</span>
+
+<div class="loading__spinner hidden">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="spinner icon icon--extra-medium"
+    viewBox="0 0 66 66"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>
+</button><div data-shopify="payment-button" class="shopify-payment-button"> <shopify-accelerated-checkout recommended="{&quot;supports_subs&quot;:true,&quot;supports_def_opts&quot;:false,&quot;name&quot;:&quot;shop_pay&quot;,&quot;wallet_params&quot;:{&quot;shopId&quot;:18661287,&quot;merchantName&quot;:&quot;Micro Ingredients&quot;,&quot;personalized&quot;:true}}" fallback="{&quot;supports_subs&quot;:true,&quot;supports_def_opts&quot;:true,&quot;name&quot;:&quot;buy_it_now&quot;,&quot;wallet_params&quot;:{}}" access-token="fe1f22797b979c6ebdde36a7d96939a2" buyer-country="US" buyer-locale="en" buyer-currency="USD" variant-params="[{&quot;id&quot;:{{ product.selected_or_first_available_variant.id }},&quot;requiresShipping&quot;:true}]" shop-id="18661287" enabled-flags="[&quot;a1d1f9a1&quot;]" > <div class="shopify-payment-button__button" role="button" disabled aria-hidden="true" style="background-color: transparent; border: none"> <div class="shopify-payment-button__skeleton">&nbsp;</div> </div> <div class="shopify-payment-button__more-options shopify-payment-button__skeleton" role="button" disabled aria-hidden="true">&nbsp;</div> </shopify-accelerated-checkout> <small id="shopify-buyer-consent" class="hidden" aria-hidden="true" data-consent-type="subscription"> This item is a deferred, subscription, or recurring purchase. By continuing, I agree to the <span id="shopify-subscription-policy-button">cancellation policy</span> and authorize you to charge my payment method at the prices, frequency and dates listed on this page until my order is fulfilled or I cancel, if permitted. </small> </div>
+</div>
+      <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div><input type="hidden" name="product-id" value="{{ product.id }}" /><input type="hidden" name="section-id" value="{{ section.id }}" /></form></div></div></div><div class="product__view-details text-left z-1">
+      <a
+        
+          href="{{ product.url }}"
+        
+        class="btn btn--plain btn--with-icon"
+      >
+        <span class="btn__text">View full details</span>
+        <span class="btn__icon inline-flex"><svg
+  class="icon icon-caret-right rtl-flip-x icon--2xs icon--thick "
+  viewBox="0 0 20 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+      </a>
+    </div></div>
+
+            </div>
+          </product-info>
+          <product-recently-viewed data-product-id="{{ product.id }}" class="hidden"></product-recently-viewed><script src="{{ 'col-media-gallery.js' | asset_url }}" defer="defer"></script></template>
+      </div>
+    </div>
+  </quick-view-modal>
+
+{% schema %}
+{
+  "name": "Quick View",
+  "class": "shopify-section-group-overlay-group section-group-overlay-quick-view",
+  "settings": []
+}
+{% endschema %}

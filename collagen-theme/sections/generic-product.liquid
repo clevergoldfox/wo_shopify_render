@@ -1,0 +1,89 @@
+{%- comment -%}
+  The default product page for this theme.
+
+  The collagen replica used to live at templates/product.json, which made it every
+  product's page. It now lives at templates/product.collagen.json and is reached only
+  by a product whose Theme template is set to "collagen". This section is what every
+  other product falls back to: plain, functional, and using the theme's own classes so
+  it does not look foreign next to the replica.
+{%- endcomment -%}
+
+<div class="section section--padding">
+  <div class="page-width page-width--fixed">
+    <div class="product flex flex-wrap" style="gap:4rem">
+
+      <div class="product__media-wrapper" style="flex:1 1 420px;min-width:320px">
+        {%- if product.featured_image -%}
+          <img
+            src="{{ product.featured_image | image_url: width: 900 }}"
+            srcset="{{ product.featured_image | image_url: width: 450 }} 450w,
+                    {{ product.featured_image | image_url: width: 900 }} 900w"
+            sizes="(min-width: 750px) 45vw, 100vw"
+            alt="{{ product.featured_image.alt | escape }}"
+            width="900" height="900" loading="eager"
+            style="width:100%;height:auto;border-radius:1rem">
+        {%- endif -%}
+
+        {%- if product.images.size > 1 -%}
+          <div class="flex flex-wrap" style="gap:1rem;margin-top:1.5rem">
+            {%- for image in product.images offset: 1 limit: 6 -%}
+              <img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | escape }}"
+                   width="80" height="80" loading="lazy"
+                   style="width:80px;height:80px;object-fit:cover;border-radius:.6rem">
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="product__info-wrapper" style="flex:1 1 420px;min-width:320px">
+        <h1 class="h1">{{ product.title }}</h1>
+
+        <div class="price" style="margin:1.5rem 0;font-size:2rem">
+          {%- assign variant = product.selected_or_first_available_variant -%}
+          <strong>{{ variant.price | money }}</strong>
+          {%- if variant.compare_at_price > variant.price -%}
+            <s style="opacity:.6;margin-left:.8rem">{{ variant.compare_at_price | money }}</s>
+          {%- endif -%}
+        </div>
+
+        {%- if product.available -%}
+          {%- form 'product', product, class: 'main-product-form' -%}
+            {%- unless product.has_only_default_variant -%}
+              <div style="margin-bottom:1.5rem">
+                <label class="form__label" for="variant-{{ section.id }}">
+                  {{ product.options_with_values.first.name }}
+                </label>
+                <select id="variant-{{ section.id }}" name="id" class="select__select" style="width:100%;padding:1rem">
+                  {%- for v in product.variants -%}
+                    <option value="{{ v.id }}"{% if v == variant %} selected{% endif %}
+                            {% unless v.available %}disabled{% endunless %}>
+                      {{ v.title }} — {{ v.price | money }}
+                    </option>
+                  {%- endfor -%}
+                </select>
+              </div>
+            {%- else -%}
+              <input type="hidden" name="id" value="{{ variant.id }}">
+            {%- endunless -%}
+
+            <button type="submit" name="add" class="btn btn--primary" style="width:100%;padding:1.4rem">
+              {{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}
+            </button>
+          {%- endform -%}
+        {%- else -%}
+          <button class="btn" disabled style="width:100%;padding:1.4rem">Sold out</button>
+        {%- endif -%}
+
+        <div class="rte" style="margin-top:2.5rem">{{ product.description }}</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Generic Product",
+  "settings": []
+}
+{% endschema %}
