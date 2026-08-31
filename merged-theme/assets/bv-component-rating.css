@@ -1,0 +1,10 @@
+.bv-scope .rating, .bv-scope.rating{display:inline-block;margin:0}
+.bv-scope .product .rating-star, .bv-scope.product .rating-star{--letter-spacing: .8;--font-size: 1.7}
+.bv-scope .card-wrapper .rating-star, .bv-scope.card-wrapper .rating-star{--letter-spacing: .7;--font-size: 1.4}
+.bv-scope .rating-star, .bv-scope.rating-star{--percent: calc( ( var(--rating) / var(--rating-max) + var(--rating-decimal) * var(--font-size) / (var(--rating-max) * (var(--letter-spacing) + var(--font-size))) ) * 100% );letter-spacing:calc(var(--letter-spacing) * 1rem);font-size:calc(var(--font-size) * 1rem);line-height:1;display:inline-block;font-family:Times;margin:0}
+.bv-scope .rating-star:before, .bv-scope.rating-star:before{content:"\2605\2605\2605\2605\2605";background:linear-gradient(90deg,var(--color-icon) var(--percent),rgba(var(--color-foreground),.15) var(--percent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.bv-scope .rating-count, .bv-scope.rating-count{display:inline-block;margin:0}
+@media(forced-colors:active){
+.bv-scope .rating, .bv-scope.rating{display:none}
+.bv-scope .rating-text, .bv-scope.rating-text{display:block}
+}

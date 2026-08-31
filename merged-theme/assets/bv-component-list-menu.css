@@ -1,0 +1,25 @@
+.bv-scope .list-menu--right, .bv-scope.list-menu--right{
+  right: 0;
+}
+.bv-scope .list-menu--disclosure, .bv-scope.list-menu--disclosure{
+  position: absolute;
+  min-width: 100%;
+  width: 20rem;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+}
+.bv-scope .list-menu--disclosure:focus, .bv-scope.list-menu--disclosure:focus{
+  outline: none;
+}
+.bv-scope .list-menu__item--active, .bv-scope.list-menu__item--active{
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.bv-scope .list-menu__item--active:hover, .bv-scope.list-menu__item--active:hover{
+  text-decoration-thickness: 0.2rem;
+}
+.bv-scope .list-menu--disclosure.localization-selector, .bv-scope.list-menu--disclosure.localization-selector{
+  max-height: 18rem;
+  overflow: auto;
+  width: 10rem;
+  padding: 0.5rem;
+}

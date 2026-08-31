@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "bv-main": {
+      "type": "bv-main"
+    },
+    "bv-custom-1": {
+      "type": "bv-custom-1"
+    }
+  },
+  "order": [
+    "bv-main",
+    "bv-custom-1"
+  ]
+}

@@ -173,3 +173,75 @@ Copy, photography, the True Nutra branding, the "#1 Vitamin D brand in the USA" 
 "Trusted by 80,000+" claims, the 4.8/5 from 2,142 reviews, the Trustpilot and Light Labs
 references, and the 90-day guarantee all belong to True Nutra. The review count and
 rating in particular are theirs, not this product's.
+
+---
+
+# Stick de Sombra Tricolor 3 en 1 (Brevonnio) — `brevonnio` template
+
+Ported from `brevonnio.com/products/stick-de-sombra-tricolor-3-en-1`. A Shopify PDP, so
+the same pipeline as the True Nutra page; it uses this store's header, footer and cart.
+
+| | |
+|---|---|
+| `templates/product.brevonnio.json` | 2 sections |
+| `sections/bv-main.liquid` | gallery, offers, buy box — 209KB, fits in one file |
+| `sections/bv-custom-1.liquid` | everything below the fold: testimonials, comparison table, FAQ, reviews |
+| `snippets/bv-inline-css-1.liquid` | the source theme's inline head CSS, scoped |
+| `assets/bv-*` | 64 files |
+
+Renders at 8751px with **294 images, none broken, zero Liquid errors**.
+
+## The custom-element collision, again
+
+The source theme is Dawn-derived and so is this one. **All 33 custom elements it
+defines** — `product-form`, `quantity-input`, `media-gallery`, `cart-drawer`,
+`search-form` and the rest — are already defined here, so loading both threw
+`Identifier 'QuantityInput' has already been declared` and killed the rest of the
+script. Exactly the collagen failure.
+
+Seven files are therefore not loaded: `custom-elements.min.js`, `global.min.js`
+(re-declares `subscribers`), `media-gallery.js`, `product-modal.js`, `search-form.js`,
+`cart-notification.js` and `scripts.js`. This theme hydrates the identical markup.
+
+Kept, because none of them define elements: the bundle/offer engine
+(`bundle.min.js`), the progressive gift monitor, Swiper and the sizing plugin.
+
+**Visible consequence:** the gallery renders as a stack rather than the source's
+carousel, because its slider was `media-gallery.js`. All six images are present and in
+order.
+
+Eleven more scripts are dropped as before — Shopify platform bundles that lazily import
+chunks the capture never saw, and app scripts for apps this store does not run. The two
+`kaching-subscriptions` files go too: this store has that app embedded already.
+
+## What is dynamic, and what is not
+
+Dynamic: product id, the three offer variants mapped in page order, cart routes,
+`product.url`. 63 substitutions; the buy form carries this store's variant.
+
+**Not dynamic: the offer prices.** `$499.00`, `$998.00`, `$1,497.00` and the crossed-out
+`$1,998.00` / `$4,995.00` / `$7,992.00` are the source store's MXN figures, baked into
+the markup. Same caveat as the True Nutra page — until the product carries matching
+prices, the block advertises numbers the cart will not honour.
+
+## Two widgets that are this store's, not the source's
+
+The screenshot shows a second offer block ("ÚLTIMAS UNIDADES CON DESCUENTO") and a
+"Suscríbete & Ahorra 10%" selector below the ported offers. Those are **this store's own
+Kaching Bundles and subscription embeds** firing on the test product. They will not
+appear on the Brevonnio product unless offers are configured for it.
+
+## Creating the product
+
+`brevonnio-product.csv` — handle `stick-de-sombra-tricolor-3-en-1`, three variants on a
+`Paquete` option matching the offers in page order (the template maps offer 1/2/3 to
+variant 1/2/3 by position, so do not reorder them), 10 gallery images.
+
+Then set **Theme template → `brevonnio`**.
+
+## Content
+
+Copy, photography, the Brevonnio branding, the "Amado por +50.000 mujeres" claim, the
+named testimonials, the 98% / 97% / 95% statistics and the comparison table are all
+Brevonnio's. The statistics and testimonials in particular are claims this store would
+be making.

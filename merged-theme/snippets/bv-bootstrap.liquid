@@ -1,0 +1,51 @@
+{%- comment -%}
+  Everything the Brevonnio page needs, loaded only on its own template.
+
+  All of its CSS -- the inline head block and the theme stylesheets -- is rewritten
+  under .bv-scope, a class every bv-* section carries via its schema, with
+  html/body/:root mapped to the scope root rather than ".bv-scope html", which could
+  never match.
+
+  Dropped, not vendored: Shopify platform bundles (storefront, load_feature,
+  shop_events_listener, webmcp) that lazily import chunks the capture never saw, and
+  app scripts for apps this store does not run. The two kaching-subscriptions files
+  are dropped because this store has that app embedded already.
+{%- endcomment -%}
+{% render 'bv-inline-css-1' %}
+<link rel="stylesheet" href="{{ 'bv-accelerated-checkout-backwards-compat.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-base.min.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-vendors.min.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-custom.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-list-menu.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-search.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-menu-drawer.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-base-deferred.min.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-cart-drawer.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-discounts.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-sticky-atc.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-rating.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-bundle.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-component-list-social.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-disclosure.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-swiper-bundle.min.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-atlas-cart-upsells-drawer.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-atlas-cart-upsells-carousel.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-kaching-subscriptions.css' | asset_url }}" media="all">
+<link rel="stylesheet" href="{{ 'bv-kaching-subscriptions-block.css' | asset_url }}" media="all">
+
+{%- comment -%}
+  The source theme's element files are deliberately NOT loaded. All 33 custom elements
+  it defines -- product-form, quantity-input, media-gallery, cart-drawer, search-form and
+  the rest -- are already defined by this theme, so loading both throws
+  "Identifier QuantityInput has already been declared" and kills the rest of the script.
+  global.min.js goes with them: it re-declares subscribers. This theme hydrates the
+  identical markup.
+
+  Kept: the page's own logic -- the bundle/offer engine, the progressive gift monitor,
+  Swiper and the sizing plugin -- none of which define custom elements.
+{%- endcomment -%}
+<script src="{{ 'bv-SizingPlugin.prod.js' | asset_url }}" defer></script>
+<script src="{{ 'bv-vendors.js' | asset_url }}" defer></script>
+<script src="{{ 'bv-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'bv-progressive-gift-monitor-standalone.js' | asset_url }}" defer></script>
+<script src="{{ 'bv-swiper-bundle.min.js' | asset_url }}" defer></script>

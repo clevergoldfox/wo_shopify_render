@@ -1,0 +1,25 @@
+.bv-scope .discounts, .bv-scope.discounts{
+  font-size: 1.2rem;
+}
+.bv-scope .discounts__discount, .bv-scope.discounts__discount{
+  display: flex;
+  align-items: center;
+  line-height: calc(1 + 0.5 / var(--font-body-scale));
+}
+.bv-scope .discounts__discount svg, .bv-scope.discounts__discount svg{
+  color: rgba(var(--color-button), var(--alpha-button-background));
+}
+.bv-scope .discounts__discount--position, .bv-scope.discounts__discount--position{
+  justify-content: center;
+}
+@media screen and (min-width: 750px){
+.bv-scope .discounts__discount--position, .bv-scope.discounts__discount--position{
+    justify-content: flex-end;
+  }
+}
+.bv-scope .discounts__discount > .icon, .bv-scope.discounts__discount > .icon{
+  color: rgb(var(--color-foreground));
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.7rem;
+}

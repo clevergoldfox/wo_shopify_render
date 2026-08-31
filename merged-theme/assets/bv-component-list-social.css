@@ -1,0 +1,18 @@
+.bv-scope .list-social, .bv-scope.list-social{display:flex;flex-wrap:wrap;justify-content:flex-end}
+@media only screen and (max-width:749px){
+.bv-scope .list-social, .bv-scope.list-social{justify-content:center}
+}
+.bv-scope .list-social__item .icon, .bv-scope.list-social__item .icon{height:1.8rem;width:1.8rem}
+.bv-scope .list-social__link, .bv-scope.list-social__link{align-items:center;display:flex;padding:1.3rem;color:rgb(var(--color-foreground))}
+.bv-scope .list-social__link:hover .icon, .bv-scope.list-social__link:hover .icon{transform:scale(var(--animation-scale))}
+.bv-scope .list-social__item, .bv-scope.list-social__item{transition:transform .2s ease}
+.bv-scope .list-social__item:hover, .bv-scope.list-social__item:hover{transform:translateY(-2px)}
+.bv-scope .list-social__item:has(.icon-facebook):hover, .bv-scope.list-social__item:has(.icon-facebook):hover{background:#3a5a99}
+.bv-scope .list-social__item:has(.icon-youtube):hover, .bv-scope.list-social__item:has(.icon-youtube):hover{background:#e52d27}
+.bv-scope .list-social__item:has(.icon-twitter):hover, .bv-scope.list-social__item:has(.icon-twitter):hover{background:#020304}
+.bv-scope .list-social__item:has(.icon-instagram):hover, .bv-scope.list-social__item:has(.icon-instagram):hover{background:#e1306c}
+.bv-scope .list-social__item:has(.icon-tiktok):hover, .bv-scope.list-social__item:has(.icon-tiktok):hover{background:#010101}
+.bv-scope .list-social__item:has(.icon-pinterest):hover, .bv-scope.list-social__item:has(.icon-pinterest):hover{background:#bd081c}
+.bv-scope .list-social__item:has(.icon-snapchat):hover, .bv-scope.list-social__item:has(.icon-snapchat):hover{background:#fffc00}
+.bv-scope .list-social__item:has(.icon-tumblr):hover, .bv-scope.list-social__item:has(.icon-tumblr):hover{background:#35465d}
+.bv-scope .list-social__item:has(.icon-vimeo):hover, .bv-scope.list-social__item:has(.icon-vimeo):hover{background:#1ab7ea}
