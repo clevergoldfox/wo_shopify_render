@@ -49,3 +49,29 @@
 <script src="{{ 'bv-bundle.min.js' | asset_url }}" defer></script>
 <script src="{{ 'bv-progressive-gift-monitor-standalone.js' | asset_url }}" defer></script>
 <script src="{{ 'bv-swiper-bundle.min.js' | asset_url }}" defer></script>
+
+{%- comment -%} bv-atc-colour {%- endcomment -%}
+{%- comment -%}
+  The add-to-cart button took its colours from
+    .bv-scope .button { background-color: rgb(var(--color-base-accent-3)); }
+  which depends on a variable resolving. The client reported it rendering white with
+  invisible text until hover, so the colours are stated outright here instead: solid
+  black at rest, dark grey on hover, white label in both. !important because the
+  source theme also sets these on :hover and we want one predictable answer.
+{%- endcomment -%}
+<style>
+.bv-scope button[name="atlas-bundler-add"],
+.bv-scope .atc-button,
+.bv-scope .product-form-button{background-color:#000 !important;border-color:#000 !important;}
+.bv-scope button[name="atlas-bundler-add"]:hover,
+.bv-scope .atc-button:hover,
+.bv-scope .product-form-button:hover,
+.bv-scope button[name="atlas-bundler-add"]:focus,
+.bv-scope .atc-button:focus{background-color:#333 !important;border-color:#333 !important;}
+.bv-scope button[name="atlas-bundler-add"],
+.bv-scope button[name="atlas-bundler-add"] *,
+.bv-scope .atc-button,
+.bv-scope .atc-button *,
+.bv-scope .product-form-button,
+.bv-scope .product-form-button *{color:#fff !important;}
+</style>
